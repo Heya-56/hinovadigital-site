@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diagnostic Systémique | Hinova Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: #061A22;
+            color: #E0F7FA;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .hero-bg {
+            background-image:
+              linear-gradient(rgba(6,26,34,0.7), rgba(6,26,34,0.7)),
+              url('/banner.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .site-logo { width: 40px; height: auto; max-width: 100%; display: block; }
+        .nav-tab { color:#E0F7FA; text-decoration:none; padding:0.65rem 0.9rem; border-radius:0.55rem; font-family:'Inter',sans-serif; font-size:0.9rem; display:block; }
+        .nav-tab:hover, .nav-tab.active { background:rgba(10,184,196,0.14); color:#0AB8C4; }
+        .nav-burger { background:transparent; border:1px solid rgba(224,247,250,0.25); color:#E0F7FA; width:44px; height:44px; border-radius:0.6rem; display:flex; align-items:center; justify-content:center; font-size:1.3rem; line-height:1; cursor:pointer; transition:border-color .15s ease, background .15s ease; }
+        .nav-burger:hover { border-color:#0AB8C4; background:rgba(10,184,196,0.1); }
+        .nav-dropdown { position:absolute; top:calc(100% + 10px); right:0; min-width:230px; background:rgba(6,26,34,0.97); border:1px solid rgba(10,184,196,0.25); border-radius:0.85rem; padding:0.6rem; display:none; flex-direction:column; gap:0.25rem; z-index:200; box-shadow:0 20px 45px rgba(0,0,0,0.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+        .nav-dropdown.open { display:flex; }
+        .site-header { position:relative; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:1.5rem 1.5rem 0; }
+        @media (min-width:768px){ .site-header{ padding:2rem 3rem 0; } }
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(10,184,196,0.4), transparent);
+            margin: 0 auto;
+        }
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #0AB8C4, #E0F7FA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gold-label {
+            color: #C09552;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            text-shadow: 0 0 10px rgba(193,149,82,0.18);
+        }
+        .gold-accent {
+            color: #C09552;
+            text-shadow: 0 0 12px rgba(193,149,82,0.2);
+        }
+        .glass {
+            background: rgba(10, 50, 63, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(10, 184, 196, 0.18);
+            border-radius: 1rem;
+            width: 100%;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .reveal {
+            opacity: 0; 
+            transform: translateY(32px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes glow {
+            0%,100% { text-shadow: 0 0 12px rgba(193,149,82,0.2), 0 0 24px rgba(193,149,82,0.12); }
+            50% { text-shadow: 0 0 24px rgba(193,149,82,0.35), 0 0 48px rgba(193,149,82,0.18); }
+        }
+        .hero-title { animation: fadeUp 0.8s ease forwards; }
+        .hero-heading {
+            max-width: 980px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.12;
+            letter-spacing: 0.02em;
+            padding: 0 1rem;
+        }
+        .gold-glow { animation: glow 4s ease-in-out infinite; }
+        
+        /* Tally Embed Styling */
+        iframe { border: none; width: 100%; height: 800px; border-radius: 1rem; }
+        .back-to-top { position:fixed; bottom:22px; right:22px; width:46px; height:46px; border-radius:50%; background:rgba(6,26,34,0.92); border:1px solid rgba(10,184,196,0.4); color:#0AB8C4; display:flex; align-items:center; justify-content:center; font-size:1.25rem; cursor:pointer; opacity:0; visibility:hidden; transform:translateY(12px); transition: opacity .3s ease, transform .3s ease, visibility .3s ease, border-color .2s ease, background .2s ease; z-index:150; box-shadow:0 8px 24px rgba(0,0,0,0.35); text-decoration:none; }
+    .back-to-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
+    .back-to-top:hover, .back-to-top:focus-visible { border-color:#0AB8C4; background:rgba(10,184,196,0.16); outline:none; }
+    @media (prefers-reduced-motion: reduce) { .back-to-top { transition:none; } }
+</style>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/webp" href="/logo-hinova.webp" />
+    <link rel="apple-touch-icon" href="/logo-hinova.webp" />
+    <meta name="theme-color" content="#061A22" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Hinova" />
+</head>
+
+<body>
+    <header class="site-header">
+        <img src="/logo-hinova.webp" alt="Logo Hinova Digital Corp" class="site-logo drop-shadow-lg" />
+        <div style="position:relative;">
+            <button id="navBurgerBtn" class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+            <nav id="navDropdown" class="nav-dropdown">
+                <a href="index.html" class="nav-tab">Accueil</a>
+                <a href="vision.html" class="nav-tab">Notre vision</a>
+                <a href="academie.html" class="nav-tab">Académie</a>
+                <a href="blog.html" class="nav-tab">Journal</a>
+                <a href="diagnostic.html" class="nav-tab active" aria-current="page">Diagnostic - IA</a>
+                <a href="index.html#notre-histoire" class="nav-tab">Notre histoire</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-bg relative min-h-[65vh] flex flex-col items-center justify-center text-center px-6 py-16 md:py-24">
+        <img src="/logo-hinova.webp" alt="Logo Hinova Digital Corp" class="site-logo mb-8 drop-shadow-lg hero-title" style="display:none;" />
+        <div class="mb-8 max-w-xs">
+            <div class="divider mb-6"></div>
+            <p class="gold-label gold-glow">Diagnostic Systémique</p>
+            <div class="divider mt-6"></div>
+        </div>
+        <h1 class="font-montserrat font-black text-4xl md:text-5xl lg:text-6xl mb-6 hero-title hero-heading" style="animation-delay: 0.1s;">
+            <span class="text-gradient-cyan">Identifiez vos freins</span>
+            <span class="text-gradient-cyan">à la croissance digitale</span>
+        </h1>
+        <p class="font-inter text-base md:text-lg max-w-2xl hero-title" style="animation-delay: 0.2s; color:#B0D8DF;">
+            Remplis ce formulaire et reçois un diagnostic personnalisé du potentiel d'automation de ton entreprise, sous 48h.
+        </p>
+    </section>
+
+    <section class="py-24 px-6 md:px-12 lg:px-20">
+        <div class="max-w-2xl mx-auto">
+            <div class="glass reveal visible">
+                <div class="mb-8 text-center">
+                    <p class="gold-label mb-4">Prêt à transformer votre entreprise ?</p>
+                    <div class="divider max-w-xs mx-auto"></div>
+                </div>
+                <form id="diagForm" action="https://api.web3forms.com/submit" method="POST" class="text-left space-y-5">
+                    <input type="hidden" name="access_key" value="efc09b6d-e9d9-4f7f-8f19-7b9dc7e5c933">
+                    <input type="hidden" name="subject" value="Nouveau Diagnostic Systémique — Hinova Digital">
+                    <input type="hidden" name="from_name" value="Formulaire Diagnostic — hinovadigitalcorp.com">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div>
+                            <label for="name" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#81A1A8;">Nom & prénom *</label>
+                            <input type="text" id="name" name="name" required class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(6,26,34,0.6); border:1px solid rgba(10,184,196,0.25); color:#E0F7FA;">
+                        </div>
+                        <div>
+                            <label for="entreprise" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#81A1A8;">Entreprise</label>
+                            <input type="text" id="entreprise" name="entreprise" class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(6,26,34,0.6); border:1px solid rgba(10,184,196,0.25); color:#E0F7FA;">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div>
+                            <label for="email" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#81A1A8;">E-mail *</label>
+                            <input type="email" id="email" name="email" required class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(6,26,34,0.6); border:1px solid rgba(10,184,196,0.25); color:#E0F7FA;">
+                        </div>
+                        <div>
+                            <label for="phone" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#81A1A8;">Téléphone (WhatsApp de préférence)</label>
+                            <input type="tel" id="phone" name="phone" class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(6,26,34,0.6); border:1px solid rgba(10,184,196,0.25); color:#E0F7FA;">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="secteur" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#81A1A8;">Secteur d'activité *</label>
+                        <input type="text" id="secteur" name="secteur" required placeholder="Ex : artisanat, tourisme, restauration, e-commerce..." class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(6,26,34,0.6); border:1px solid rgba(10,184,196,0.25); color:#E0F7FA;">
+                    </div>
+
+                    <div>
+                        <label class="block font-inter text-xs uppercase tracking-widest mb-3" style="color:#81A1A8;">Où se situe ton principal frein aujourd'hui ? *</label>
+                        <div class="space-y-2">
+                            <label class="flex items-start gap-3 font-inter text-sm cursor-pointer" style="color:#B0D8DF;">
+                                <input type="radio" name="frein_principal" value="Prospection internationale / décalage horaire" required class="mt-1"> Prospection internationale &amp; décalage horaire
+                            </label>
+                            <label class="flex items-start gap-3 font-inter text-sm cursor-pointer" style="color:#B0D8DF;">
+                                <input type="radio" name="frein_principal" value="Processus manuels / organisation interne" class="mt-1"> Processus manuels &amp; organisation interne
+                            </label>
+                            <label class="flex items-start gap-3 font-inter text-sm cursor-pointer" style="color:#B0D8DF;">
+                                <input type="radio" name="frein_principal" value="Impayés / trésorerie" class="mt-1"> Impayés &amp; tension de trésorerie
+                            </label>
+                            <label class="flex items-start gap-3 font-inter text-sm cursor-pointer" style="color:#B0D8DF;">
+                                <input type="radio" name="frein_principal" value="Autre" class="mt-1"> Autre
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#81A1A8;">Décris ton contexte en quelques mots</label>
+                        <textarea id="message" name="message" rows="4" class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(6,26,34,0.6); border:1px solid rgba(10,184,196,0.25); color:#E0F7FA;"></textarea>
+                    </div>
+
+                    <button type="submit" id="diagSubmitBtn" class="w-full font-montserrat font-bold uppercase tracking-widest text-sm py-4 rounded-lg transition" style="background:#0AB8C4; color:#061A22;">
+                        Recevoir mon diagnostic personnalisé
+                    </button>
+
+                    <p id="diagFormMsg" class="font-inter text-sm text-center hidden"></p>
+                </form>
+
+                <script>
+                    const diagForm = document.getElementById('diagForm');
+                    const diagMsg = document.getElementById('diagFormMsg');
+                    const diagBtn = document.getElementById('diagSubmitBtn');
+                    diagForm.addEventListener('submit', async function (e) {
+                        e.preventDefault();
+                        diagBtn.disabled = true;
+                        diagBtn.textContent = 'Envoi en cours…';
+                        const formData = new FormData(diagForm);
+                        try {
+                            const res = await fetch(diagForm.action, {
+                                method: 'POST',
+                                headers: { 'Accept': 'application/json' },
+                                body: formData
+                            });
+                            const result = await res.json();
+                            diagMsg.classList.remove('hidden');
+                            if (result.success) {
+                                diagForm.reset();
+                                diagForm.querySelectorAll('input, textarea, button').forEach(el => el.style.display = 'none');
+                                diagMsg.style.color = '#0AB8C4';
+                                diagMsg.innerHTML = '✅ Merci ! Ton diagnostic est en cours de préparation — je reviens vers toi sous 48h ouvrées.';
+                            } else {
+                                diagMsg.style.color = '#E07A5F';
+                                diagMsg.textContent = "Une erreur est survenue. Réessaie ou écris-moi directement à contact@hinovadigitalcorp.com";
+                                diagBtn.disabled = false;
+                                diagBtn.textContent = 'Recevoir mon diagnostic personnalisé';
+                            }
+                        } catch (err) {
+                            diagMsg.classList.remove('hidden');
+                            diagMsg.style.color = '#E07A5F';
+                            diagMsg.textContent = "Connexion impossible. Réessaie ou écris-moi directement à contact@hinovadigitalcorp.com";
+                            diagBtn.disabled = false;
+                            diagBtn.textContent = 'Recevoir mon diagnostic personnalisé';
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-transparent via-[rgba(10,184,196,0.05)] to-transparent">
+        <div class="max-w-3xl mx-auto text-center reveal visible" style="animation-delay: 0.3s;">
+            <h2 class="font-montserrat font-bold text-2xl md:text-3xl mb-8">
+                Pourquoi ce diagnostic ?
+            </h2>
+            <div class="divider max-w-xs mx-auto mb-8"></div>
+            <p class="font-inter text-base md:text-lg leading-relaxed" style="color:#B0D8DF;">
+                <span class="gold-accent">L'intelligence artificielle et l'automation</span> ne sont rien sans une compréhension profonde de votre écosystème. 
+                Notre diagnostic évalue vos processus actuels, identifie les goulots d'étranglement, et vous propose un plan d'action réaliste et aligné avec votre croissance.
+            </p>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center px-6 border-t border-[rgba(10,184,196,0.2)]">
+        <div class="divider max-w-xs mx-auto mb-6"></div>
+        <p class="font-inter text-xs" style="color:#81A1A8;">
+		<a href="/politique-de-confidentialite.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#0AB8C4; text-decoration:none">Politique de Confidentialité</a>
+            © 2026 Hinova Digital Corp. — L'Agilité et la Résilience au Fenua
+        </p>
+    </footer>
+
+    <script>
+        // Animation reveal au scroll
+        function revealOnScroll() {
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < window.innerHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+    <script>
+        (function(){
+            const btn = document.getElementById('navBurgerBtn');
+            const menu = document.getElementById('navDropdown');
+            if(!btn || !menu) return;
+            btn.addEventListener('click', function(e){
+                e.stopPropagation();
+                const open = menu.classList.toggle('open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.addEventListener('click', function(e){
+                if(!menu.contains(e.target) && e.target !== btn){
+                    menu.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+  <button id="backToTop" class="back-to-top" aria-label="Retour en haut de page" title="Retour en haut">↑</button>
+  <script>
+    (function(){
+      const btn = document.getElementById('backToTop');
+      if(!btn) return;
+      const toggle = () => { if(window.scrollY > 400) btn.classList.add('visible'); else btn.classList.remove('visible'); };
+      window.addEventListener('scroll', toggle, { passive:true });
+      toggle();
+      btn.addEventListener('click', function(){
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      });
+    })();
+  </script>
+</body>
+</html>
