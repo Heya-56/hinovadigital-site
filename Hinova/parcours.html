@@ -3,52 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="HINOVADIGITAL.APP — Votre parcours entrepreneur.">
-<title>Mon parcours — HINOVADIGITAL.APP</title>
-<link rel="stylesheet" href="css/ecosystem.css">
+<meta name="description" content="HINOVADIGITAL.APP — Identifiez votre situation et découvrez la trajectoire adaptée à votre projet.">
+<title>HINOVADIGITAL.APP — Mon parcours</title>
 </head>
 <body>
 <header>
-  <a class="brand" href="ecosystem.html"><b>H</b><span>HINOVA <small>ECOSYSTEM</small></span></a>
+  <a href="ecosystem.html"><b>H</b><span>HINOVA <small>ECOSYSTEM</small></span></a>
   <nav>
     <a href="ecosystem.html">Écosystème</a>
     <a href="solutions.html">Solutions</a>
-    <a class="active" href="parcours.html">Mon parcours</a>
+    <a href="parcours.html">Mon parcours</a>
     <a href="academie.html">Académie</a>
   </nav>
-  <a class="navcta" href="parcours.html">COMMENCER</a>
+  <a href="parcours.html">COMMENCER</a>
 </header>
 
 <main>
-<section class="hero inner">
-  <label>HINOVADIGITAL.APP · PARCOURS</label>
+<section>
+  <label>HINOVADIGITAL.APP · VOTRE PARCOURS</label>
   <h1>Votre projet.<br><em>Votre trajectoire.</em></h1>
-  <p>Identifiez votre situation, vos objectifs et vos besoins. Le moteur HINOVA vous accompagne vers la solution adaptée.</p>
+  <p>Identifiez votre situation et découvrez la trajectoire adaptée à votre projet.</p>
+  <a href="#diagnostic">COMMENCER</a>
 </section>
 
-<section class="section diagnostic">
-  <div>
-    <label>ÉTAPE 01</label>
-    <h2>Commençons par<br><em>votre situation.</em></h2>
-    <p>Répondez aux questions. Vos réponses sont analysées par le moteur de trajectoire HINOVA afin d'orienter la suite de votre parcours.</p>
-  </div>
+<section id="diagnostic">
+  <label>ÉTAPE 01 · VOTRE SITUATION</label>
+  <h2>Quelques questions pour<br><em>comprendre votre projet.</em></h2>
+  <p>Répondez simplement aux questions. Votre parcours sera déterminé à partir de votre situation et de vos besoins.</p>
 
-  <div class="diagbox">
-    <div class="progress"><span id="progress"></span></div>
-    <div id="question-area">
-      <div class="loading">Chargement de votre parcours…</div>
-    </div>
+  <div id="questions-container">
+    <!-- Les questions seront alimentées par Airtable/Worker -->
   </div>
 </section>
 
-<section class="band">
-  <div>
-    <label>UNE TRAJECTOIRE, PAS UNE SIMPLE OFFRE</label>
-    <h2>Votre situation<br><em>guide la suite.</em></h2>
+<section id="resultat">
+  <label>VOTRE TRAJECTOIRE</label>
+  <h2>La solution adaptée<br><em>à votre projet.</em></h2>
+  <div id="recommendation">
+    <!-- Résultat de la trajectoire -->
   </div>
+</section>
+
+<section>
+  <label>HINOVA DIGITAL</label>
+  <h2>Une trajectoire.<br><em>Pas une solution imposée.</em></h2>
+  <p>Votre situation constitue le point de départ. L'objectif est de vous orienter vers la solution la plus cohérente avec votre projet.</p>
   <div>
-    <p>Le parcours utilise les questions, règles de trajectoire et offres déjà configurées dans le moteur commercial HINOVA.</p>
-    <a class="btn ghost" href="solutions.html">VOIR LES SOLUTIONS</a>
+    <a href="solutions.html">VOIR LES SOLUTIONS</a>
+    <a href="contact.html">PARLER DE MON PROJET</a>
   </div>
 </section>
 </main>
@@ -57,7 +59,5 @@
   <b>HINOVA DIGITAL</b>
   <span>Digital Systems Architect from French Polynesia</span>
 </footer>
-
-<script src="js/ecosystem.js" defer></script>
 </body>
 </html>
