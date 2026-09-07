@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HINOVADIGITAL.APP — Mon parcours</title>
+<meta name="description" content="Identifiez votre situation et découvrez la trajectoire adaptée à votre projet.">
+<link rel="canonical" href="https://hinovadigitalcorp.com/parcours">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/webp" href="/logo-hinova.webp">
+<link rel="apple-touch-icon" href="/logo-hinova.webp">
+<meta name="theme-color" content="#061A22">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hinova">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{navy:'#061A22','navy-mid':'#0A323F',cyan:'#0AB8C4',gold:'#C09552',pearl:'#E0F7FA',slate:'#81A1A8'},fontFamily:{montserrat:['Montserrat','sans-serif'],inter:['Inter','sans-serif']},animation:{'fade-up':'fadeUp .7s ease forwards',glow:'glow 3s ease-in-out infinite',float:'float 6s ease-in-out infinite'},keyframes:{fadeUp:{'0%':{opacity:'0',transform:'translateY(30px)'},'100%':{opacity:'1',transform:'translateY(0)'}},glow:{'0%,100%':{boxShadow:'0 0 20px rgba(10,184,196,.3)'},'50%':{boxShadow:'0 0 40px rgba(10,184,196,.6)'}},float:{'0%,100%':{transform:'translateY(0px)'},'50%':{transform:'translateY(-12px)'}}}}}}
+</script>
+<link rel="stylesheet" href="/css/ecosystem.css">
+</head>
+<body><section class="hero-bg relative min-h-[70vh] flex flex-col">
+<div class="px-6 pt-6 md:px-12 md:pt-8 flex items-center justify-between gap-4">
+<a href="/" aria-label="HINOVA DIGITAL"><img src="/logo-hinova.webp" alt="Logo Hinova Digital Corp" class="site-logo protected-asset drop-shadow-lg"></a>
+<div class="flex items-center gap-3 ml-auto" style="position:relative">
+<button id="navBurgerBtn" class="nav-burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+<nav id="navDropdown" class="nav-dropdown"><a href="/" class="nav-tab">Accueil</a><a href="/vision.html" class="nav-tab">Notre vision</a><a href="/ecosystem" class="nav-tab">Écosystème</a><a href="/solutions" class="nav-tab">Solutions</a><a href="/parcours" class="nav-tab active" aria-current="page">Mon parcours</a><a href="/academie.html" class="nav-tab">Académie</a><a href="/blog.html" class="nav-tab">Journal</a></nav>
+</div></div>
+<div class="flex-1 flex items-center px-6 py-12 md:px-12 md:py-16 lg:px-20 max-w-4xl mx-auto w-full"><div class="flex flex-col gap-6 items-center text-center w-full">
+<p class="gold-label">HINOVADIGITAL.APP · VOTRE PARCOURS</p><h1 class="font-montserrat font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl hero-heading w-full max-w-3xl"><span style="color:#E0F7FA">Votre projet.</span><span class="gold-title">Votre trajectoire.</span></h1>
+<p class="font-inter text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl" style="color:#B0D8DF">Identifiez votre situation et découvrez la trajectoire adaptée à votre projet.</p><a href="#diagnostic" class="btn-cyan">COMMENCER</a>
+</div></div><div class="absolute bottom-0 left-0 right-0 h-24" style="background:linear-gradient(to bottom,transparent,#061A22);pointer-events:none"></div></section>
+<section id="diagnostic" class="py-24 px-6 md:px-12 lg:px-20 max-w-5xl mx-auto"><div class="text-center mb-12"><p class="gold-label mb-3">ÉTAPE 01 · VOTRE SITUATION</p><h2 class="font-montserrat font-black text-3xl md:text-5xl" style="color:#E0F7FA">Quelques questions pour<br><span class="gold-title">comprendre votre projet.</span></h2><p class="font-inter max-w-2xl mx-auto mt-5" style="color:#81A1A8">Répondez aux questions. Le moteur utilisera les règles de trajectoire de votre base.</p></div>
+<div id="questions-container" class="glass p-8 md:p-12"><p class="engine-status loading-pulse">Chargement du parcours…</p></div></section>
+<section id="resultat" class="py-24 px-6 md:px-12 lg:px-20 max-w-5xl mx-auto"><div class="text-center mb-10"><p class="gold-label">VOTRE TRAJECTOIRE</p><h2 class="font-montserrat font-black text-3xl md:text-5xl" style="color:#E0F7FA">La solution adaptée<br><span class="gold-title">à votre projet.</span></h2></div><div id="recommendation" class="result-panel p-8 md:p-12 text-center"><p class="engine-status">Votre recommandation apparaîtra ici.</p></div></section>
+<section class="py-20 px-6 md:px-12 lg:px-20" style="background:rgba(10,50,63,.28);border-block:1px solid rgba(10,184,196,.12)"><div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center"><div><p class="gold-label mb-4">HINOVA DIGITAL</p><h2 class="font-montserrat font-black text-3xl md:text-5xl" style="color:#E0F7FA">Une trajectoire.<br><span class="gold-title">Pas une solution imposée.</span></h2></div><div><p class="font-inter leading-relaxed mb-6" style="color:#B0D8DF">Votre situation constitue le point de départ. L'objectif est de vous orienter vers la solution la plus cohérente avec votre projet.</p><div class="flex flex-wrap gap-4"><a href="/solutions" class="btn-cyan">VOIR LES SOLUTIONS</a><a href="/contact.html" class="btn-ghost">PARLER DE MON PROJET</a></div></div></div></section>
+</main><footer class="px-6 py-10 text-center"><p class="gold-label">HINOVA DIGITAL</p><p class="font-inter text-xs mt-2" style="color:#81A1A8">Digital Systems Architect from French Polynesia</p></footer>
+<button id="backToTop" class="back-to-top" aria-label="Retour en haut">↑</button>
+<script src="/js/ecosystem.js" defer></script>
+</body></html>

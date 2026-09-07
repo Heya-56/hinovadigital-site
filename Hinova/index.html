@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- ══ SEO PRIMARY ══════════════════════════════════════════ -->
+    <title>Hinova Digital Corp — Venture Tech Lab Polynésie | Souveraineté Numérique & Leapfrogging</title>
+    <meta name="description" content="Hinova Digital Corp, agence Lab Tech en Polynésie française : infrastructures numériques souveraines et ultra-rapides, automatisation d'entreprise et leapfrogging technologique pour les acteurs du Fenua. Diagnostic gratuit." />
+    <meta name="keywords" content="agence lab tech Polynésie, souveraineté numérique Polynésie, lab tech Tahiti, automatisation entreprise Fenua, leapfrogging technologique, infrastructure numérique souveraine Polynésie, architecture décentralisée Tahiti, agence digitale Polynésie française, automatisation entreprise Tahiti, Hinova Digital Corp, Heianui Tapare" />
+    <meta name="author" content="Heianui Tapare — Hinova Digital Corp" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://hinovadigitalcorp.com/" />
+
+    <!-- ══ HREFLANG (bilingual) ═════════════════════════════════ -->
+    <link rel="alternate" hreflang="fr" href="https://hinovadigitalcorp.com/" />
+    <link rel="alternate" hreflang="en" href="https://hinovadigitalcorp.com/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://hinovadigitalcorp.com/" />
+
+    <!-- ══ OPEN GRAPH ═══════════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hinovadigitalcorp.com/" />
+    <meta property="og:site_name" content="Hinova Digital Corp" />
+    <meta property="og:locale" content="fr_PF" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:title" content="Hinova Digital Corp — Agence Lab Tech : souveraineté numérique & leapfrogging au Fenua" />
+    <meta property="og:description" content="Infrastructures numériques souveraines et ultra-rapides, automatisation d'entreprise et applications sur-mesure — le Lab Tech qui pilote le saut technologique de la Polynésie française." />
+    <meta property="og:image" content="/banner.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Hinova Digital Corp — Agence Lab Tech, souveraineté numérique au Fenua" />
+
+    <!-- ══ PWA / ICÔNE ÉCRAN D'ACCUEIL ═══════════════════════════ -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/webp" href="/logo-hinova.webp" />
+    <link rel="apple-touch-icon" href="/logo-hinova.webp" />
+    <meta name="theme-color" content="#061A22" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Hinova" />
+
+    <!-- ══ FONTS & TAILWIND ═════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'navy': '#061A22',
+              'navy-mid':'#0A323F',
+              'cyan': '#0AB8C4',
+              'gold': '#C09552',
+              'pearl': '#E0F7FA',
+              'slate': '#81A1A8',
+            },
+            fontFamily: {
+              montserrat: ['Montserrat', 'sans-serif'],
+              inter: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'fade-up': 'fadeUp 0.7s ease forwards',
+              'glow': 'glow 3s ease-in-out infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              glow: {
+                '0%,100%': { boxShadow: '0 0 20px rgba(10,184,196,0.3)' },
+                '50%': { boxShadow: '0 0 40px rgba(10,184,196,0.6)' },
+              },
+              float: {
+                '0%,100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-12px)' },
+              },
+            },
+          }
+        }
+      }
+    </script>
+
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        background-color: #061A22;
+        color: #E0F7FA;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* ══ BOUCLIER ANTI-VOL VISUEL ══ */
+      .protected-asset {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        pointer-events: none;
+      }
+
+      .glass {
+        background: rgba(10, 50, 63, 0.45);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(10, 184, 196, 0.18);
+        border-radius: 1rem;
+      }
+      .glass-gold {
+        background: rgba(10, 50, 63, 0.45);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(192, 149, 82, 0.35);
+        border-radius: 1rem;
+      }
+      .hero-bg {
+        background-image:
+          linear-gradient(180deg, rgba(6,26,34,0.68) 0%, rgba(6,26,34,0.6) 45%, rgba(6,26,34,0.85) 100%),
+          url('/leapfrogging.webp');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .hero-heading, .hero-bg .gold-label {
+        text-shadow: 0 2px 22px rgba(6,26,34,0.95), 0 1px 4px rgba(6,26,34,1);
+      }
+      .hero-bg p[data-i18n="hero_subtitle"] {
+        text-shadow: 0 1px 12px rgba(6,26,34,0.9);
+      }
+      .hero-heading {
+        text-align: center;
+        margin: 0 auto 1.1rem;
+        line-height: 1.14;
+        letter-spacing: 0.03em;
+        padding: 0 0.5rem;
+        word-break: normal;
+        overflow-wrap: break-word;
+      }
+      .hero-heading span { display: block; }
+      
+      .portrait-wrap { position: relative; display: inline-block; }
+      .portrait-wrap::before {
+        content: '';
+        position: absolute;
+        inset: -3px;
+        border-radius: 1.25rem;
+        background: linear-gradient(135deg, #C09552, #0AB8C4, #C09552);
+        z-index: 0;
+        animation: rotateBorder 4s linear infinite;
+      }
+      @keyframes rotateBorder {
+        0% { filter: hue-rotate(0deg); }
+        100% { filter: hue-rotate(360deg); }
+      }
+      .portrait-wrap img {
+        position: relative; z-index: 1;
+        border-radius: 1.25rem; display: block;
+        width: 100%; max-width: 380px; object-fit: cover;
+        box-shadow: 0 0 40px rgba(10,184,196,0.35), 0 0 80px rgba(10,184,196,0.15);
+      }
+      .portrait-wrap .clip-corner {
+        position: absolute; bottom: 0; right: 0;
+        width: 50px; height: 50px;
+        background: #061A22; z-index: 2;
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      }
+      .reveal {
+        opacity: 0; transform: translateY(32px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+      .btn-cyan {
+        background: #0AB8C4; color: #061A22;
+        font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem;
+        padding: 0.9rem 2rem; border-radius: 0.6rem; border: none; cursor: pointer;
+        transition: all 0.3s ease; box-shadow: 0 0 20px rgba(10,184,196,0.45);
+        text-decoration: none; display: inline-block;
+      }
+      @media (hover: hover) and (pointer: fine) {
+        .btn-cyan:hover {
+          background: #0dd0de; box-shadow: 0 0 36px rgba(10,184,196,0.75);
+          transform: translateY(-2px);
+        }
+      }
+      .btn-ghost {
+        background: transparent; color: #E0F7FA;
+        font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem;
+        padding: 0.85rem 1.9rem; border-radius: 0.6rem; border: 1px solid rgba(224,247,250,0.35);
+        transition: all 0.3s ease; text-decoration: none; display: inline-block;
+      }
+      .btn-ghost:hover { border-color:#0AB8C4; color:#0AB8C4; background: rgba(10,184,196,0.08); }
+      .lang-btn {
+        background: transparent;
+        border: 1px solid rgba(10,184,196,0.45);
+        color: #0AB8C4;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700; font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        padding: 0.35rem 0.75rem;
+        border-radius: 0.4rem;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+      .lang-btn:hover, .nav-tab:hover { background: rgba(10,184,196,0.15); border-color: #0AB8C4; }
+      .nav-tab {
+        color: #E0F7FA; border: 1px solid rgba(224,247,250,0.18); background: rgba(10,50,63,0.55);
+        font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.95rem;
+        letter-spacing: 0.12em; padding: 0.7rem 1.15rem; border-radius: 0.65rem;
+        text-decoration: none; transition: all 0.25s ease; text-align: center; min-width: 130px;
+      }
+      .nav-tab strong { color: #0AB8C4; }
+      .nav-tab.active { background: #0AB8C4; border-color: #0AB8C4; color: #061A22; }
+      .nav-tab.active strong { color: #061A22; }
+      .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(10,184,196,0.4), transparent); margin: 0 auto; }
+      .text-gradient-cyan { background: linear-gradient(135deg, #0AB8C4, #E0F7FA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 900; letter-spacing: 0.04em; }
+      .gold { color: #C09552; }
+      .gold-title {
+        color: #C09552; font-weight: 900; letter-spacing: 0.12em; line-height: 1.05;
+        text-shadow: 0 0 24px rgba(193,149,82,0.32), 0 0 30px rgba(10,184,196,0.08);
+        animation: goldGlow 4s ease-in-out infinite alternate; will-change: text-shadow, transform;
+      }
+      .gold-title.small { font-size: 1.15rem; }
+      .gold-label { color: #C09552; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.85rem; }
+      .gold-number { color: #C09552; font-weight: 900; text-shadow: 0 0 12px rgba(193,149,82,0.2); }
+      @keyframes goldGlow {
+        0% { text-shadow: 0 0 12px rgba(193,149,82,0.2), 0 0 24px rgba(193,149,82,0.12); transform: translateY(0); }
+        100% { text-shadow: 0 0 24px rgba(193,149,82,0.35), 0 0 48px rgba(193,149,82,0.18); transform: translateY(-1px); }
+      }
+      @media (min-width: 768px) { .gold-title { font-size: 1.55rem; } .gold-title.small { font-size: 1.35rem; } }
+      @media (min-width: 1024px) { .gold-title { font-size: 1.75rem; } .gold-title.small { font-size: 1.45rem; } }
+      
+      .card-hover { transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease; }
+      .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(10,184,196,0.18); border-color: rgba(10,184,196,0.5) !important; }
+      .arch-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 1.2rem; }
+      .dot { position: absolute; border-radius: 50%; animation: float 6s ease-in-out infinite; }
+      @media (max-width: 768px) { .hero-bg { background-attachment: scroll; } }
+      
+      /* =========================================================================
+         GRILLES DE SÉCURITÉ EN CAS DE BLOCAGE DE TAILWIND PAR LE NAVIGATEUR
+         ========================================================================= */
+      .hero-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+      @media (min-width: 900px) {
+        .hero-grid { grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
+        .portrait-wrap img { max-width: 480px; }
+      }
+      
+      .services-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+      @media (min-width: 900px) {
+        .services-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; align-items: stretch; }
+      }
+
+      .team-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+      @media (min-width: 900px) {
+        .team-grid { grid-template-columns: repeat(2, 1fr); gap: 4rem; align-items: stretch; }
+      }
+
+      .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      @media (min-width: 900px) {
+        .stats-grid { grid-template-columns: repeat(4, 1fr); }
+      }
+      /* ========================================================================= */
+
+      .team-photo { width: 100%; max-width: 420px; height: auto; object-fit: cover; border-radius: 0.75rem; display: block; }
+      .team-photo.small { max-width: 360px; }
+      @media (min-width: 1024px) { .team-photo { max-width: 480px; } }
+      .team-card img { width: 100%; height: auto; max-height: 420px; object-fit: cover; }
+      .site-logo { width: 40px; height: auto; max-width: 100%; display: block; }
+      .footer-logo { width: 56px; }
+      @media (min-width: 1024px) { .site-logo { width: 48px; } .footer-logo { width: 64px; } }
+
+      /* ---- hamburger nav dropdown ---- */
+      .nav-burger { background:transparent; border:1px solid rgba(224,247,250,0.25); color:#E0F7FA; width:44px; height:44px; border-radius:0.6rem; display:flex; align-items:center; justify-content:center; font-size:1.3rem; line-height:1; cursor:pointer; transition:border-color .15s ease, background .15s ease; }
+      .nav-burger:hover { border-color:#0AB8C4; background:rgba(10,184,196,0.1); }
+      .nav-dropdown { position:absolute; top:calc(100% + 10px); right:0; min-width:230px; background:rgba(6,26,34,0.97); border:1px solid rgba(10,184,196,0.25); border-radius:0.85rem; padding:0.6rem; display:none; flex-direction:column; gap:0.25rem; z-index:200; box-shadow:0 20px 45px rgba(0,0,0,0.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+      .nav-dropdown.open { display:flex; }
+      .nav-dropdown a.nav-tab { padding:0.7rem 0.9rem; border-radius:0.55rem; display:block; }
+      .nav-dropdown a.nav-tab:hover, .nav-dropdown a.nav-tab.active { background:rgba(10,184,196,0.14); }
+        .back-to-top { position:fixed; bottom:22px; right:22px; width:46px; height:46px; border-radius:50%; background:rgba(6,26,34,0.92); border:1px solid rgba(10,184,196,0.4); color:#0AB8C4; display:flex; align-items:center; justify-content:center; font-size:1.25rem; cursor:pointer; opacity:0; visibility:hidden; transform:translateY(12px); transition: opacity .3s ease, transform .3s ease, visibility .3s ease, border-color .2s ease, background .2s ease; z-index:150; box-shadow:0 8px 24px rgba(0,0,0,0.35); text-decoration:none; }
+    .back-to-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
+    .back-to-top:hover, .back-to-top:focus-visible { border-color:#0AB8C4; background:rgba(10,184,196,0.16); outline:none; }
+    @media (prefers-reduced-motion: reduce) { .back-to-top { transition:none; } }
+</style>
+  </head>
+
+  <body>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- HERO SECTION -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="hero-bg relative min-h-screen flex flex-col">
+
+      <div class="dot" style="width:6px;height:6px;background:#0AB8C4;top:15%;left:8%;animation-delay:0s;opacity:0.6"></div>
+      <div class="dot" style="width:4px;height:4px;background:#C09552;top:35%;left:90%;animation-delay:2s;opacity:0.5"></div>
+      <div class="dot" style="width:5px;height:5px;background:#0AB8C4;top:70%;left:5%;animation-delay:4s;opacity:0.4"></div>
+      <div class="dot" style="width:3px;height:3px;background:#C09552;top:80%;left:85%;animation-delay:1s;opacity:0.5"></div>
+
+      <div class="px-6 pt-6 md:px-12 md:pt-8 flex items-center justify-between gap-4">
+        <img src="/logo-hinova.webp" alt="Logo Hinova Digital Corp" class="site-logo protected-asset drop-shadow-lg" />
+        <div class="nav-wrap flex items-center gap-3 ml-auto" style="position:relative;">
+          <button id="lang-btn" class="lang-btn" onclick="toggleLanguage()" aria-label="Switch language">EN</button>
+          <button id="navBurgerBtn" class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+          <nav id="navDropdown" class="nav-dropdown">
+            <a href="index.html" class="nav-tab active" aria-current="page">Accueil</a>
+            <a href="vision.html" class="nav-tab">Notre vision</a>
+            <a href="academie.html" class="nav-tab">Académie</a>
+            <a href="blog.html" class="nav-tab">Journal</a>
+            <a href="diagnostic.html" class="nav-tab">Diagnostic <strong>- IA</strong></a>
+            <a href="index.html#notre-histoire" class="nav-tab">Notre histoire</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="flex-1 flex items-center px-6 py-12 md:px-12 md:py-16 lg:px-20 max-w-4xl mx-auto w-full">
+        <div class="flex flex-col gap-6 md:gap-7 items-center text-center w-full">
+            <h1 data-i18n="hero_surtitle" class="font-montserrat font-700 text-sm md:text-base uppercase tracking-widest gold-label">
+            HINOVA DIGITAL CORP - VENTURE TECH LAB<br>
+            LEAPFROGGING PACIFICA - SOUVERAINETÉ NUMÉRIQUE
+          </h1>
+
+          <h1 class="font-montserrat font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight md:leading-relaxed hero-heading w-full max-w-2xl lg:max-w-3xl">
+            <span data-i18n="hero_h1_line1" style="color:#E0F7FA;">Conquiers l'international</span>
+            <span data-i18n="hero_h1_line2" style="color:#E0F7FA;">depuis la Polynésie française.</span>
+          </h1>
+
+          <p data-i18n="hero_subtitle" class="font-inter text-sm md:text-base lg:text-lg leading-relaxed max-w-xl" style="color:#B0D8DF;">
+            Hello, c'est Heya. Je suis <strong style="color:#E0F7FA;">Architecte Digitale</strong> et Ingénieure en développement de business. Je suis ravie de t'accueillir chez Hinova Digital Corporation. En tant que fondatrice, je souhaite te remercier de nous rejoindre aujourd'hui. Découvre comment la méthode que j'ai développée t'aide dès maintenant à conquérir le monde — avec accessibilité, simplicité et en restant souverain de tes outils, sans jamais quitter ta maison, H24/7j.
+          </p>
+
+          <div class="glass-gold p-5 mt-1 w-full max-w-xl">
+            <p data-i18n="hero_offer_title" class="font-montserrat font-bold text-sm md:text-base gold-title small">🚀 Rū-fau-tumu</p>
+            <p data-i18n="hero_offer_body" class="font-inter text-xs md:text-sm mt-1 leading-relaxed" style="color:#E0F7FA;">
+              Accédes à l'expertise, comprends tes outils, maitrises tes outils et bâtis des infrastructures rentables sans tension.
+            </p>
+          </div>
+
+          <div class="pt-1">
+            <a href="academie.html" id="cta-academy" class="btn-cyan">
+              <span data-i18n="hero_cta">👉 Je rejoins l'Académie</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-0 left-0 right-0 h-24" style="background: linear-gradient(to bottom, transparent, #061A22); pointer-events:none;"></div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- SECTION 2 — DIAGNOSTIC -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="py-28 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <p data-i18n="diag_label" class="font-montserrat text-xs uppercase tracking-widest mb-3" style="color:#0AB8C4;">Diagnostic</p>
+        <h2 class="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl" style="color:#E0F7FA;">
+          <span data-i18n="diag_h2_line1">Tu as déjà ce qu'il faut pour conquérir l'international.</span><br />
+          <span data-i18n="diag_h2_line2" class="gold-title">Voici ce qui te retient encore.</span>
+        </h2>
+        <div class="divider w-40 mt-6"></div>
+      </div>
+
+      <!-- ON UTILISE LA CLASSE .services-grid EN SECOURS -->
+      <div class="services-grid grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 xl:gap-16 items-stretch">
+        <div class="glass p-10 card-hover reveal" style="transition-delay:0.1s">
+          <div class="arch-icon" style="background:rgba(10,184,196,0.12);">📉</div>
+          <h3 data-i18n="diag_c1_title" class="font-montserrat font-bold text-lg mb-3 uppercase tracking-wide" style="color:#0AB8C4;">L'acquisition sous perfusion</h3>
+          <p data-i18n="diag_c1_body" class="font-inter text-sm leading-relaxed" style="color:#81A1A8;">
+            <em style="color:#C09552;">J'ai remarqué...</em> que tu dépends du bouche-à-oreille ou des algorithmes de Facebook pour trouver des clients. Tu es "locataire" de ta visibilité : si l'algorithme change, ton chiffre d'affaires s'effondre. Tu manques d'une machine d'acquisition prévisible et qui t'appartient à 100 %.
+          </p>
+          <div class="mt-6 pt-4" style="border-top: 1px solid rgba(10,184,196,0.15);">
+            <p data-i18n="diag_c1_sol" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#0AB8C4;">Solution → Moteur d'acquisition propriétaire</p>
+          </div>
+        </div>
+
+        <div class="glass p-10 card-hover reveal" style="transition-delay:0.2s">
+          <div class="arch-icon" style="background:rgba(192,149,82,0.12);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 21V10C6 6.13 8.69 3 12 3C15.31 3 18 6.13 18 10V21" stroke="#C09552" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="4" y1="21" x2="20" y2="21" stroke="#C09552" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="9.5" y1="10.5" x2="14.5" y2="10.5" stroke="#C09552" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="12" y1="8" x2="12" y2="13" stroke="#C09552" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 data-i18n="diag_c2_title" class="font-montserrat font-bold text-lg mb-3 uppercase tracking-wide gold-title">Le cimetière des logiciels</h3>
+          <p data-i18n="diag_c2_body" class="font-inter text-sm leading-relaxed" style="color:#81A1A8;">
+            <em style="color:#C09552;">J'ai remarqué...</em> que tu paies de multiples abonnements (CRM, CMS, outils de gestion) mais que tu n'en exploites que 10 %. Ces outils ne communiquent pas entre eux, t'obligeant à faire des copier-coller manuels. Tu paies un loyer technologique lourd sans aucun retour sur investissement.
+          </p>
+          <div class="mt-6 pt-4" style="border-top: 1px solid rgba(192,149,82,0.15);">
+            <p data-i18n="diag_c2_sol" class="font-montserrat text-xs font-bold uppercase tracking-widest gold-label">Solution → Architecture unifiée & sur-mesure</p>
+          </div>
+        </div>
+
+        <div class="glass p-10 card-hover reveal" style="transition-delay:0.3s">
+          <div class="arch-icon" style="background:rgba(10,184,196,0.12);">🧱</div>
+          <h3 data-i18n="diag_c3_title" class="font-montserrat font-bold text-lg mb-3 uppercase tracking-wide" style="color:#0AB8C4;">Le plafond de verre opérationnel</h3>
+          <p data-i18n="diag_c3_body" class="font-inter text-sm leading-relaxed" style="color:#81A1A8;">
+            <em style="color:#C09552;">J'ai remarqué...</em> que tu stagnes parce que tu es le seul moteur de ton entreprise. Dès que tu as plus de volume ou que tu vises l'international, tu n'arrives plus à suivre la cadence (devis en retard, relances oubliées). Ton modèle actuel n'est pas conçu pour passer à l'échelle sans t'épuiser.
+          </p>
+          <div class="mt-6 pt-4" style="border-top: 1px solid rgba(10,184,196,0.15);">
+            <p data-i18n="diag_c3_sol" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#0AB8C4;">Solution → Automatisation systémique H24</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- SECTION 2.5 — H.E.Y.A. : LES 4 PILIERS DE POSTURE -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      <div class="text-center mb-14 reveal">
+        <p data-i18n="heya_label" class="font-montserrat text-xs uppercase tracking-widest mb-3 gold-label">Positionnement</p>
+        <h2 class="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl" style="color:#E0F7FA;">
+          <span data-i18n="heya_h2_line1" class="text-gradient-cyan">H.E.Y.A.</span><br />
+          <span data-i18n="heya_h2_line2" style="color:#E0F7FA;">4 piliers pour un leapfrogging en force adapté à notre Fenua.</span>
+        </h2>
+        <div class="divider w-40 mt-6"></div>
+      </div>
+
+      <div class="services-grid grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8 items-stretch">
+        <div class="glass p-7 card-hover reveal heya-card" style="transition-delay:0.1s; background-image:linear-gradient(180deg, rgba(6,26,34,0.55) 0%, rgba(6,26,34,0.92) 78%), url('/H-heritage.jpg'); background-repeat:no-repeat; background-size:cover, 140% auto; background-position:center, 50% top;">
+          <div class="arch-icon" style="background:rgba(10,184,196,0.18);">🌺</div>
+          <h3 data-i18n="heya_h_title" class="font-montserrat font-black text-base uppercase tracking-wide mb-3" style="color:#0AB8C4;">H — Heritage</h3>
+          <p data-i18n="heya_h_body" class="font-inter text-sm leading-relaxed" style="color:#E0F7FA;">S'ancrer dans des valeurs fortes, valoriser le savoir-faire local et bâtir des actifs numériques pérennes qui traversent le temps.</p>
+        </div>
+        <div class="glass p-7 card-hover reveal heya-card bg-cover bg-center" style="transition-delay:0.2s; background-image:linear-gradient(180deg, rgba(6,26,34,0.55) 0%, rgba(6,26,34,0.92) 78%), url('/E-empowerment.jpg');">
+          <div class="arch-icon" style="background:rgba(192,149,82,0.18);">🔓</div>
+          <h3 data-i18n="heya_e_title" class="font-montserrat font-black text-base uppercase tracking-wide mb-3 gold-title">E — Empowerment</h3>
+          <p data-i18n="heya_e_body" class="font-inter text-sm leading-relaxed" style="color:#E0F7FA;">Reprendre le contrôle total de sa technologie : propriétaire de son code et de ses données, sans dépendre d'abonnements SaaS tiers.</p>
+        </div>
+        <div class="glass p-7 card-hover reveal heya-card bg-cover bg-center" style="transition-delay:0.3s; background-image:linear-gradient(180deg, rgba(6,26,34,0.55) 0%, rgba(6,26,34,0.92) 78%), url('/Y-yield.jpg');">
+          <div class="arch-icon" style="background:rgba(10,184,196,0.18);">📈</div>
+          <h3 data-i18n="heya_y_title" class="font-montserrat font-black text-base uppercase tracking-wide mb-3" style="color:#0AB8C4;">Y — Yield</h3>
+          <p data-i18n="heya_y_body" class="font-inter text-sm leading-relaxed" style="color:#E0F7FA;">Maximiser la valeur produite et le retour sur investissement grâce à des infrastructures ultra-légères, à coût quasi nul.</p>
+        </div>
+        <div class="glass p-7 card-hover reveal heya-card bg-cover" style="transition-delay:0.4s; background-image:linear-gradient(180deg, rgba(6,26,34,0.55) 0%, rgba(6,26,34,0.92) 78%), url('/A-accessibility.jpg'); background-position:center, right center;">
+          <div class="arch-icon" style="background:rgba(192,149,82,0.18);">📲</div>
+          <h3 data-i18n="heya_a_title" class="font-montserrat font-black text-base uppercase tracking-wide mb-3 gold-title">A — Accessibility</h3>
+          <p data-i18n="heya_a_body" class="font-inter text-sm leading-relaxed" style="color:#E0F7FA;">Rendre la technologie instantanément disponible pour le client final — via PWA, lien direct ou QR Code — sans friction ni installation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- SECTION 2.7 — NOTRE MANIÈRE DE CONSTRUIRE (lien vers vision.html) -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="px-6 md:px-12 lg:px-20 max-w-5xl mx-auto pb-24">
+      <div class="glass p-8 md:p-10 text-center reveal">
+        <p class="font-montserrat text-xs uppercase tracking-widest mb-4" style="color:#0AB8C4;">Notre manière de construire</p>
+        <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-montserrat font-bold text-xs md:text-sm uppercase tracking-wide" style="color:#E0F7FA;">
+          <span>Comprendre</span><span style="color:#0AB8C4;">→</span>
+          <span>Simplifier</span><span style="color:#0AB8C4;">→</span>
+          <span>Architecturer</span><span style="color:#0AB8C4;">→</span>
+          <span>Sécuriser</span><span style="color:#0AB8C4;">→</span>
+          <span>Industrialiser</span><span style="color:#0AB8C4;">→</span>
+          <span>Transmettre</span>
+        </div>
+        <p class="font-inter text-sm mt-5 max-w-xl mx-auto" style="color:#81A1A8;">« Nous ne construisons pas une villa numérique quand un fare numérique suffit. »</p>
+        <a href="vision.html" class="btn-ghost mt-6">Découvrir notre vision</a>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- SECTION 3.5 — L'ÉQUIPE (DUO DE CHOC) -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section id="notre-histoire" class="py-28 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      
+      <div class="text-center mb-16 reveal">
+        <p data-i18n="team_label" class="font-montserrat text-xs uppercase tracking-widest mb-3" style="color:#C09552;">Notre Équipe</p>
+        <h2 class="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl" style="color:#E0F7FA;">
+          <span data-i18n="team_h2_line1">L'Intelligence Artificielle n'est rien,</span><br />
+          <span data-i18n="team_h2_line2" style="color:#0AB8C4;">sans l'Intelligence Humaine.</span>
+        </h2>
+        <div class="divider w-40 mt-6"></div>
+      </div>
+
+      <!-- ON UTILISE LA CLASSE .team-grid EN SECOURS -->
+      <div class="team-grid grid grid-cols-1 md:grid-cols-2 gap-16 max-w-5xl mx-auto">
+        <div class="glass p-8 card-hover reveal team-card" style="transition-delay:0.1s; border-color: rgba(10,184,196,0.3);">
+          <img src="/photo-architect.webp" alt="Heianui Tapare" class="protected-asset team-photo mb-6" style="box-shadow: 0 10px 30px rgba(10,184,196,0.15);">
+          <h3 class="font-montserrat font-black text-2xl mb-1 text-gradient-cyan">Heianui</h3>
+          <p data-i18n="team_h_role" class="font-montserrat text-xs font-bold uppercase tracking-widest mb-4 gold-label">Fondatrice, Architecte Digitale & Business Developer International</p>
+          <p data-i18n="team_h_desc" class="font-inter text-sm leading-relaxed" style="color:#81A1A8;">
+            "J'ai fondé Hinova face à un constat clair : notre Fenua a pris du retard, alors que les solutions pour nous propulser à l'international sont déjà à portée de main. Loin de remplacer l'humain, l'intelligence artificielle est devenue cet assistant infatigable qui décuple notre vitesse de traitement et notre puissance d'action. Aujourd'hui, l'émergence de nouveaux talents au Fenua prouve que ce saut technologique n'est plus une option, mais une nécessité absolue pour rester compétitifs et maîtres de notre destin numérique sur la scène internationale." - Experte en création et développement de business multisectoriel, je fais le pont entre ta vision et sa réalisation digitale, pour transformer tes idées en machines rentables.
+          </p>
+        </div>
+
+        <div class="glass p-8 card-hover reveal team-card" style="transition-delay:0.2s; border-color: rgba(192,149,82,0.3);">
+          <img src="/photo-bellona.webp" alt="Bellona" class="protected-asset team-photo small mb-6" style="box-shadow: 0 10px 30px rgba(192,149,82,0.15);">
+          <h3 class="font-montserrat font-black text-2xl mb-1 gold">Bellona</h3>
+          <p data-i18n="team_b_role" class="font-montserrat text-xs font-bold uppercase tracking-widest mb-4" style="color:#0AB8C4;">Co-fondatrice & Directrice de la croissance (Head of Growth)</p>
+          <p data-i18n="team_b_desc" class="font-inter text-sm leading-relaxed" style="color:#81A1A8;">
+            "Quand Heianui m'a parlé d'Hinova, j'ai été immédiatement conquise. Je la connais depuis qu'elle est toute petite : elle a ce mélange d'idées ingénieuses et elle pense toujours différemment. De par mon expérience, j'ai connu les cicatrices des échecs professionnels provoqués par ces « vendeurs de rêves » qui se sont multipliés en Polynésie. J'ai dû me relever seule, après avoir tout perdu. Aujourd'hui, je porte Hinova avec une conviction : nous avons trop diabolisé la technologie. Au contraire, quand elle est utilisée avec bienveillance et intelligence, elle est le levier qui permet de protéger son business, de se reconstruire et de durer." - Experte en stratégie de développement, elle identifie les freins à ta croissance pour les transformer en opportunités sur les marchés européen et du Pacifique.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- COOKIE CONSENT BANNER (RGPD) -->
+    <div id="cookieConsent" aria-hidden="true" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:9999; padding:1.25rem 1.5rem; background:rgba(6,26,34,0.97); backdrop-filter:blur(14px); border-top:1px solid rgba(10,184,196,0.3);">
+      <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1.25rem; justify-content:space-between;">
+        <p class="font-inter text-sm" style="color:#B0D8DF; flex:1; min-width:260px;">
+          🍪 Nous utilisons des cookies pour améliorer ton expérience et mesurer notre audience. Certaines de tes données personnelles peuvent être collectées ; tu peux à tout moment refuser ou te désabonner. Détails dans notre
+          <a href="/politique-de-confidentialite.html" style="color:#0AB8C4; text-decoration:underline;">Politique de Confidentialité</a>.
+        </p>
+        <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+          <button id="cookieRefuseBtn" style="background:transparent; color:#E0F7FA; border:1px solid rgba(224,247,250,0.25); padding:0.7rem 1.3rem; border-radius:0.6rem; font-family:'Inter',sans-serif; font-size:0.85rem;">Refuser</button>
+          <button id="cookieAcceptBtn" class="btn-cyan" style="padding:0.7rem 1.3rem; font-size:0.85rem;">Accepter</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- FOOTER LÉGAL & PREMIUM -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <footer class="py-12 text-center px-6" style="background: #061A22; border-top: 1px solid rgba(10,184,196,0.2);">
+      <img src="/logo-hinova.webp" alt="Hinova Digital Corp" class="site-logo footer-logo protected-asset object-contain mx-auto mb-6 opacity-80 drop-shadow-lg" />
+      <div class="max-w-2xl mx-auto" style="border-top: 1px solid rgba(10,184,196,0.1); padding-top: 24px;">
+        <p data-i18n="legal_footer" class="font-inter text-xs leading-loose" style="color:#81A1A8;">
+          © 2026 Hinova Digital Corp. Tous droits réservés.<br>
+          Toute reproduction des textes, logos ou images est strictement interdite sans autorisation préalable.<br>
+          Immatriculation : SIRET 978 221 281 00014 | RCS Lorient, FRANCE
+        </p>
+        <p data-i18n="footer_portfolio_link" class="mt-4 font-inter text-xs" style="color:#81A1A8;">
+          Découvre aussi mon univers créatif sur <a href="https://heyatapare.com" target="_blank" rel="noopener noreferrer" style="color:#0AB8C4; text-decoration:underline;">heyatapare.com</a>
+        </p>
+        <p class="mt-4" style="display:flex;gap:18px;justify-content:center;flex-wrap:wrap">
+          <a href="academie.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#0AB8C4; text-decoration:none">Académie</a>
+          <a href="blog.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#0AB8C4; text-decoration:none">Journal</a>
+          <a href="/politique-de-confidentialite.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#0AB8C4; text-decoration:none">Politique de Confidentialité</a>
+          <a href="mentions.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#0AB8C4; text-decoration:none">Mentions Légales</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- JAVASCRIPT — i18n, scroll & Sécurité Anti-vol -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+   <script>
+      document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+
+      const t = {
+        fr: {
+          pageTitle: "Hinova Digital Corp — Agence Lab Tech Polynésie | Souveraineté Numérique & Leapfrogging",
+          metaDesc: "Hinova Digital Corp, agence Lab Tech en Polynésie française : infrastructures numériques souveraines et ultra-rapides, automatisation d'entreprise et leapfrogging technologique pour les acteurs du Fenua.",
+          hero_surtitle: "Hinova Digital Corp — Agence Lab Tech : souveraineté numérique, leapfrogging technologique et conquête internationale depuis le Fenua.",
+          hero_h1_line1: "Conquiers l'international",
+          hero_h1_line2: "depuis la Polynésie française.",
+          hero_subtitle: "Hello, c'est Heya. Je suis <strong style=\"color:#E0F7FA;\">Architecte Digitale</strong> et Ingénieure en développement de business. Je suis ravie de t'accueillir chez Hinova Digital Corporation. En tant que fondatrice, je souhaite te remercier de nous rejoindre aujourd'hui. Découvre comment la méthode que j'ai développée t'aide dès maintenant à conquérir le monde — avec accessibilité, simplicité et en restant souverain de tes outils, sans jamais quitter ta maison, H24/7j.",
+          hero_offer_title:"🚀 Rū-fau-tumu",
+          hero_offer_body: "Accédes à l'expertise, comprends tes outils, maitrises tes outils et bâtis des infrastructures rentables sans tension.",
+          hero_cta: "👉 Je rejoins l'Académie",
+          diag_label: "Diagnostic",
+          diag_h2_line1: "Tu as déjà ce qu'il faut pour conquérir l'international.",
+          diag_h2_line2: "Voici ce qui te retient encore.",
+          diag_c1_title: "L'acquisition sous perfusion",
+          diag_c1_body: "<em style=\"color:#C09552;\">J'ai remarqué...</em> que tu dépends du bouche-à-oreille ou des algorithmes de Facebook pour trouver des clients. Tu es \"locataire\" de ta visibilité : si l'algorithme change, ton chiffre d'affaires s'effondre. Tu manques d'une machine d'acquisition prévisible et qui t'appartient à 100 %.",
+          diag_c1_sol: "Solution → Moteur d'acquisition propriétaire",
+          diag_c2_title: "Le cimetière des logiciels",
+          diag_c2_body: "<em style=\"color:#C09552;\">J'ai remarqué...</em> que tu paies de multiples abonnements (CRM, CMS, outils de gestion) mais que tu n'en exploites que 10 %. Ces outils ne communiquent pas entre eux, t'obligeant à faire des copier-coller manuels. Tu paies un loyer technologique lourd sans aucun retour sur investissement.",
+          diag_c2_sol: "Solution → Architecture unifiée & sur-mesure",
+          diag_c3_title: "Le plafond de verre opérationnel",
+          diag_c3_body: "<em style=\"color:#C09552;\">J'ai remarqué...</em> que tu stagnes parce que tu es le seul moteur de ton entreprise. Dès que tu as plus de volume ou que tu vises l'international, tu n'arrives plus à suivre la cadence (devis en retard, relances oubliées). Ton modèle actuel n'est pas conçu pour passer à l'échelle sans t'épuiser.",
+          diag_c3_sol: "Solution → Automatisation systémique H24",
+          heya_label: "Positionnement",
+          heya_h2_line1: "H.E.Y.A.",
+          heya_h2_line2: "4 piliers pour un leapfrogging en force adapté à notre Fenua.",
+          heya_h_title: "H — Heritage",
+          heya_h_body: "S'ancrer dans des valeurs fortes, valoriser le savoir-faire local et bâtir des actifs numériques pérennes qui traversent le temps.",
+          heya_e_title: "E — Empowerment",
+          heya_e_body: "Reprendre le contrôle total de sa technologie : propriétaire de son code et de ses données, sans dépendre d'abonnements SaaS tiers.",
+          heya_y_title: "Y — Yield",
+          heya_y_body: "Maximiser la valeur produite et le retour sur investissement grâce à des infrastructures ultra-légères, à coût quasi nul.",
+          heya_a_title: "A — Accessibility",
+          heya_a_body: "Rendre la technologie instantanément disponible pour le client final — via PWA, lien direct ou QR Code — sans friction ni installation.",
+          team_label: "Notre Équipe",
+          team_h2_line1: "L'Intelligence Artificielle n'est rien,",
+          team_h2_line2: "sans l'Intelligence Humaine.",
+          team_h_role: "Fondatrice, Architecte Digitale & Business Developer International",
+          team_h_desc: "\"J'ai fondé Hinova parce que la triste vérité est que notre fenua prend du retard, sur beaucoup de plans. La solution qu'est l'Intelligence artificielle, n'est pas de remplacer l'être humain. Au contraire c'est un assistant infatigable qui aide énormement notamment dans sa vitesse de traitement et de travail. De plus, l'émergence des nouvelles technologies et les talents aux idées innovantes sur le fenua, démontre que le saut technologique est indispensable pour ne pas se perdre la course du numérique sur l'échelle internationale.\" - Experte en création et développement de business multisectoriel, elle fait le pont entre ta vision et la réalisation digitale.",
+          team_b_role: "Co-fondatrice & Directrice de la croissance (Head of Growth)",
+          team_b_desc: "\"Quand Heianui m'a parlé de Hinova, j'ai été tout de suite conquise parce que de 1) je la connais depuis qu'elle est toute petite, c'était une gamine très intelligente, elle a toujours des idées folles mais au final réalistes; et de 2) Hinova, j'en vu qu'une infime partie mais ça a suffi pour que je m'en approprie un angle de vue différent. De par mon expérience, notamment dans les échecs professionnels dû à des \"vendeurs de rêves\" qui se sont multipliés en Polynésie, j'ai appris seule à me relever d'un business qui m'avait laissé endettée et littéralement sans toit. Aujourd'hui, avec du recul, je me rends compte que la technologie on l'a tellement diabolisé alors qu'elle peut aider.\" - Experte en stratégie de développement, elle identifie les freins à ta croissance pour les transformer en opportunités sur les marchés européen et Pacifique.",
+          contact_label: "Programme Local",
+          contact_h2: "Vérifie ton éligibilité à l'Audit Systémique",
+          contact_sub: "Réservé à <strong style=\"color:#0AB8C4;\"> toutes entreprises polynésiennes et internationales</strong> — intégration et automatisation à -50%.",
+          legal_footer: "© 2026 Hinova Digital Corp. Tous droits réservés.<br>Toute reproduction des textes, logos ou images est strictement interdite sans autorisation préalable.<br>Immatriculation : SIRET 978 221 281 00014 | RCS Lorient, FRANCE",
+          footer_portfolio_link: "Découvre aussi mon univers créatif sur <a href=\"https://heyatapare.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#0AB8C4; text-decoration:underline;\">heyatapare.com</a>",
+          legal_link: "Mentions Légales & Politique de Confidentialité",
+        },
+        en: {
+          pageTitle: "Hinova Digital Corp — Lab Tech Agency Polynesia | Digital Sovereignty & Leapfrogging",
+          metaDesc: "Hinova Digital Corp, a Lab Tech agency in French Polynesia: sovereign, ultra-fast digital infrastructures, business automation, and technological leapfrogging for Fenua businesses.",
+          hero_surtitle: "Hinova Digital Corp — Lab Tech Agency: digital sovereignty, technological leapfrogging, and international conquest from the Fenua.",
+          hero_h1_line1: "Conquer the international market",
+          hero_h1_line2: "from French Polynesia.",
+          hero_subtitle: "Hello, it's Heya. I'm <strong style=\"color:#E0F7FA;\">Digital Architect</strong> and Business Development Engineer. I'm delighted to welcome you to Hinova Digital Corporation. As founder, I want to thank you for joining us today. Discover how the method I've developed helps you conquer the world right now — with accessibility, simplicity, and full ownership of your tools, without ever leaving home, 24/7.",
+          hero_offer_title: "🚀 Rū-fau-tumu",
+          hero_offer_body: "Access expertise, understand your tools, master your tools, and build profitable infrastructures with zero tension.",
+          hero_cta: "👉 Join the Academy",
+          diag_label: "Diagnosis",
+          diag_h2_line1: "You already have what it takes to go international.",
+          diag_h2_line2: "Here's what's still holding you back.",
+          diag_c1_title: "Acquisition on Life Support",
+          diag_c1_body: "<em style=\"color:#C09552;\">I've noticed...</em> that you depend on word-of-mouth or Facebook's algorithm to find clients. You're a \"renter\" of your own visibility: if the algorithm changes, your revenue collapses. You're missing a predictable acquisition engine that you actually own.",
+          diag_c1_sol: "Solution → Proprietary Acquisition Engine",
+          diag_c2_title: "The Software Graveyard",
+          diag_c2_body: "<em style=\"color:#C09552;\">I've noticed...</em> that you pay for multiple subscriptions (CRM, CMS, management tools) but only use about 10% of them. These tools don't talk to each other, forcing manual copy-pasting. You're paying a heavy tech rent with zero return on investment.",
+          diag_c2_sol: "Solution → Unified, Custom-Built Architecture",
+          diag_c3_title: "The Operational Glass Ceiling",
+          diag_c3_body: "<em style=\"color:#C09552;\">I've noticed...</em> that you're stuck because you're the only engine driving your business. As soon as volume picks up or you target international markets, you can't keep pace (late quotes, forgotten follow-ups). Your current model wasn't built to scale without burning you out.",
+          diag_c3_sol: "Solution → Round-the-Clock Systemic Automation",
+          heya_label: "Positioning",
+          heya_h2_line1: "H.E.Y.A.",
+          heya_h2_line2: "4 pillars for technology you actually own.",
+          heya_h_title: "H — Heritage",
+          heya_h_body: "Root the business in strong values, showcase local know-how, and build durable digital assets that stand the test of time.",
+          heya_e_title: "E — Empowerment",
+          heya_e_body: "Take full control of your technology: own your code and your data, without depending on third-party SaaS subscriptions.",
+          heya_y_title: "Y — Yield",
+          heya_y_body: "Maximize the value produced and the return on investment with ultra-lightweight, near-zero-cost infrastructure.",
+          heya_a_title: "A — Accessibility",
+          heya_a_body: "Make the technology instantly available to the end client — via PWA, direct link, or QR Code — with zero friction and no install.",
+          team_label: "Our Team",
+          team_h2_line1: "Artificial Intelligence is nothing",
+          team_h2_line2: "without Human Intelligence.",
+          team_h_role: "Founder, Digital Architect & International Business Developer",
+          team_h_desc: "\"I founded Hinova because the sad truth is that our fenua is falling behind on many levels. The solution that Artificial Intelligence provides is not to replace human beings. On the contrary, it is an untiring assistant that helps tremendously, particularly in its processing and working speed. Furthermore, the emergence of new technologies and talents with innovative ideas in the fenua proves that the technological leap is essential not to get lost in the international digital race.\" - Expert in multi-sector business creation and development, she bridges the gap between your vision and digital execution.",
+          team_b_role: "Co-founder & Head of Growth",
+          team_b_desc: "\"When Heianui told me about Hinova, I was immediately won over because 1) I've known her since she was very little, she was a highly intelligent kid, always having crazy yet realistic ideas; and 2) I've only seen a tiny part of Hinova, but it was enough for me to embrace a different perspective. From my experience, especially through professional failures caused by the 'dream sellers' who multiplied in French Polynesia, I learned on my own to rise from a business that left me indebted and literally roofless. Today, with hindsight, I realize that technology has been demonized so much, whereas it can actually help.\" - Expert in development strategy, she identifies bottlenecks to your growth to transform them into opportunities in the European and Pacific markets.",
+          contact_label: "Local Program",
+          contact_h2: "Check Your Eligibility for the Systemic Audit",
+          contact_sub: "Reserved for <strong style=\"color:#0AB8C4;\">all Polynesian and international businesses</strong> — integration and automation at -50%.",
+          legal_footer: "© 2026 Hinova Digital Corp. All rights reserved.<br>Any reproduction of texts, logos, or images is strictly prohibited without prior permission.<br>Registration: SIRET 978 221 281 00014 | RCS Lorient, FRANCE",
+          footer_portfolio_link: "Also discover my online resume <a href=\"https://heyatapare.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#0AB8C4; text-decoration:underline;\">heyatapare.com</a>",
+          legal_link: "Legal Notice & Privacy Policy",
+        }
+      };
+
+      let currentLang = 'fr';
+
+      function applyLanguage(lang) {
+        currentLang = lang;
+        const dict = t[lang];
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.dataset.i18n;
+          if (dict[key] !== undefined) el.innerHTML = dict[key];
+        });
+        document.documentElement.lang = lang;
+        document.title = dict.pageTitle;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.content = dict.metaDesc;
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogTitle) ogTitle.content = dict.pageTitle;
+        if (ogDesc) ogDesc.content = dict.metaDesc;
+        document.getElementById('lang-btn').textContent = lang === 'fr' ? 'EN' : 'FR';
+        try { localStorage.setItem('hd_lang', lang); } catch(e) {}
+      }
+
+      function toggleLanguage() { applyLanguage(currentLang === 'fr' ? 'en' : 'fr'); }
+
+      (function () {
+        let saved = null;
+        try { saved = localStorage.getItem('hd_lang'); } catch(e) {}
+        const urlLang = new URLSearchParams(window.location.search).get('lang');
+        const browserLang = (navigator.language || 'fr').toLowerCase();
+        const autoLang = browserLang.startsWith('fr') ? 'fr' : 'en';
+        const lang = saved || urlLang || autoLang;
+        if (lang === 'en') applyLanguage('en');
+      })();
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+
+    <script>
+      (function(){
+        const btn = document.getElementById('navBurgerBtn');
+        const menu = document.getElementById('navDropdown');
+        if(!btn || !menu) return;
+        btn.addEventListener('click', function(e){
+          e.stopPropagation();
+          const open = menu.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        document.addEventListener('click', function(e){
+          if(!menu.contains(e.target) && e.target !== btn){
+            menu.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      (function(){
+        const banner = document.getElementById('cookieConsent');
+        const acceptBtn = document.getElementById('cookieAcceptBtn');
+        const refuseBtn = document.getElementById('cookieRefuseBtn');
+
+        function show() {
+          if(!banner) return;
+          banner.style.display = 'block';
+          banner.setAttribute('aria-hidden', 'false');
+        }
+        function hide(choice) {
+          if(!banner) return;
+          banner.style.display = 'none';
+          banner.setAttribute('aria-hidden', 'true');
+          try{ localStorage.setItem('hd_cookie_consent', choice); }catch(e){}
+        }
+
+        let consent = null;
+        try{ consent = localStorage.getItem('hd_cookie_consent'); }catch(e){}
+        if(!consent) { window.addEventListener('load', ()=> setTimeout(show, 600)); }
+
+        if(acceptBtn) acceptBtn.addEventListener('click', ()=> hide('accepted'));
+        if(refuseBtn) refuseBtn.addEventListener('click', ()=> hide('refused'));
+      })();
+    </script>
+
+	<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"6ada3ed99eb047d78b61a9eb612e2878","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+  <button id="backToTop" class="back-to-top" aria-label="Retour en haut de page" title="Retour en haut">↑</button>
+  <script>
+    (function(){
+      const btn = document.getElementById('backToTop');
+      if(!btn) return;
+      const toggle = () => { if(window.scrollY > 400) btn.classList.add('visible'); else btn.classList.remove('visible'); };
+      window.addEventListener('scroll', toggle, { passive:true });
+      toggle();
+      btn.addEventListener('click', function(){
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      });
+    })();
+  </script>
+</body>
+</html>
