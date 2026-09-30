@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projets & Tech Lab — Hinova Digital Corp</title>
+<meta name="description" content="Découvrez les projets actuellement explorés, développés et testés par Hinova Digital Corp depuis la Polynésie française.">
+<link rel="icon" type="image/webp" href="/logo-hinova.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{--navy:#061A22;--mid:#0A323F;--cyan:#0AB8C4;--gold:#C09552;--pearl:#E0F7FA;--slate:#9AB9BF}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--pearl);font-family:Inter,sans-serif}
+h1,h2,h3,.nav{font-family:Montserrat,sans-serif}.glass{background:rgba(10,50,63,.42);border:1px solid rgba(10,184,196,.18);backdrop-filter:blur(16px);border-radius:20px}.gold{color:var(--gold)}.cyan{color:var(--cyan)}
+.hero{background:radial-gradient(circle at 78% 22%,rgba(10,184,196,.16),transparent 30%),radial-gradient(circle at 15% 75%,rgba(192,149,82,.10),transparent 28%),linear-gradient(180deg,#061A22 0%,#082630 100%)}
+.grid-bg{background-image:linear-gradient(rgba(10,184,196,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(10,184,196,.045) 1px,transparent 1px);background-size:42px 42px}
+.card{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}.card:hover{transform:translateY(-6px);border-color:rgba(10,184,196,.48);box-shadow:0 18px 55px rgba(0,0,0,.25)}
+.status{font:700 .7rem Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(192,149,82,.35);color:var(--gold);padding:.38rem .65rem;border-radius:999px;display:inline-flex}
+.tag{font-size:.72rem;color:#b9d8dd;background:rgba(224,247,250,.055);border:1px solid rgba(224,247,250,.1);padding:.3rem .55rem;border-radius:999px}
+.navlink{color:#d7eef1;text-decoration:none;border:1px solid rgba(224,247,250,.12);padding:.65rem .9rem;border-radius:10px;font:700 .8rem Montserrat,sans-serif}.navlink:hover{border-color:var(--cyan);color:var(--cyan)}
+.project-number{font:900 3.5rem Montserrat,sans-serif;color:rgba(10,184,196,.12);line-height:1}
+.arch-line{height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
+@media(max-width:700px){.desktop-nav{display:none}}
+</style>
+</head>
+<body>
+<header class="max-w-7xl mx-auto px-5 md:px-10 pt-6 flex items-center justify-between gap-4">
+<a href="index.html"><img src="/logo-hinova.webp" alt="Hinova Digital Corp" style="width:48px"></a>
+<nav class="desktop-nav flex gap-2">
+<a class="navlink" href="index.html">Accueil</a>
+<a class="navlink" href="vision.html">Notre vision</a>
+<a class="navlink" href="projets-lab.html" style="border-color:#0AB8C4;color:#0AB8C4">Projets</a>
+<a class="navlink" href="academie.html">Académie</a>
+</nav>
+</header>
+
+<main>
+<section class="hero grid-bg">
+<div class="max-w-6xl mx-auto px-5 md:px-10 pt-20 pb-24 md:pt-28 md:pb-32 text-center">
+<p class="gold font-bold uppercase tracking-[.2em] text-xs md:text-sm">HINOVA DIGITAL CORP · VENTURE TECH LAB</p>
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-black mt-5 leading-tight">Ce que nous<br><span class="cyan">construisons maintenant.</span></h1>
+<p class="max-w-2xl mx-auto mt-7 text-base md:text-lg leading-8 text-slate-300">Des infrastructures numériques pensées depuis la Polynésie, testées sur des problèmes réels et conçues pour pouvoir évoluer bien au-delà du premier prototype.</p>
+<div class="flex flex-wrap justify-center gap-3 mt-9">
+<span class="status">● EN CONSTRUCTION</span><span class="status">● PROTOTYPE</span><span class="status">● TERRAIN</span><span class="status">● R&amp;D</span>
+</div>
+</div>
+</section>
+
+<section class="max-w-7xl mx-auto px-5 md:px-10 py-16 md:py-24">
+<div class="max-w-3xl mb-12">
+<p class="gold font-bold uppercase tracking-[.16em] text-xs">LE LAB</p>
+<h2 class="text-3xl md:text-5xl font-black mt-3">Pas un portfolio.<br><span class="cyan">Un laboratoire vivant.</span></h2>
+<p class="text-slate-300 mt-5 leading-8">Certains projets deviennent des produits. D'autres servent à tester une architecture, une brique ou un nouveau modèle. Leur point commun : ils répondent à un besoin concret et nous permettent d'apprendre en construisant.</p>
+</div>
+
+<div class="grid md:grid-cols-2 gap-6">
+<article class="card glass p-7 md:p-9">
+<div class="flex justify-between items-start"><span class="project-number">01</span><span class="status">MVP · ÉCOSYSTÈME</span></div>
+<h3 class="text-2xl font-extrabold mt-5">ManaHub</h3>
+<p class="cyan font-semibold mt-1">Orchestration e-commerce pour le Fenua</p>
+<p class="text-slate-300 leading-7 mt-5">Une infrastructure pensée pour connecter commerce, artisans, services et parcours numériques locaux, avec une architecture modulaire qui permet de faire évoluer chaque brique indépendamment.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="tag">E-commerce</span><span class="tag">Social Commerce</span><span class="tag">Orchestration</span><span class="tag">Architecture modulaire</span></div>
+</article>
+
+<article class="card glass p-7 md:p-9">
+<div class="flex justify-between items-start"><span class="project-number">02</span><span class="status">ARCHITECTURE · DEV</span></div>
+<h3 class="text-2xl font-extrabold mt-5">ManaLog</h3>
+<p class="cyan font-semibold mt-1">La brique logistique de l'écosystème</p>
+<p class="text-slate-300 leading-7 mt-5">Une infrastructure dédiée à l'orchestration des flux e-commerce : commandes, fournisseurs, stock, dispatch et livraison. Une brique conçue pour pouvoir vivre seule ou s'intégrer à d'autres systèmes.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="tag">Supply Chain</span><span class="tag">Logistique</span><span class="tag">Dispatch</span><span class="tag">E-commerce</span></div>
+</article>
+
+<article class="card glass p-7 md:p-9">
+<div class="flex justify-between items-start"><span class="project-number">03</span><span class="status">PROTOTYPE</span></div>
+<h3 class="text-2xl font-extrabold mt-5">Tere</h3>
+<p class="cyan font-semibold mt-1">Géolocaliser le commerce itinérant</p>
+<p class="text-slate-300 leading-7 mt-5">Un moteur pensé pour rendre visibles les vendeurs de bord de route et vendeurs itinérants, en transformant une présence temporaire en donnée géographique accessible.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="tag">Géolocalisation</span><span class="tag">Marketplace</span><span class="tag">Architecture modulaire</span><span class="tag">Temps réel</span></div>
+</article>
+
+<article class="card glass p-7 md:p-9">
+<div class="flex justify-between items-start"><span class="project-number">04</span><span class="status">R&amp;D · TERRAIN</span></div>
+<h3 class="text-2xl font-extrabold mt-5">Atlas Pacifica</h3>
+<p class="cyan font-semibold mt-1">Données météo-climat &amp; cartographie</p>
+<p class="text-slate-300 leading-7 mt-5">Une infrastructure expérimentale combinant cartographie, données climatiques, observation et historiques d'événements pour explorer de nouveaux outils d'aide à la compréhension des risques dans le Pacifique.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="tag">Climate Tech</span><span class="tag">GIS</span><span class="tag">Data</span><span class="tag">Architecture modulaire</span></div>
+</article>
+
+<article class="card glass p-7 md:p-9">
+<div class="flex justify-between items-start"><span class="project-number">05</span><span class="status">MVP · R&amp;D</span></div>
+<h3 class="text-2xl font-extrabold mt-5">CreatorOS</h3>
+<p class="cyan font-semibold mt-1">AI Content Creator Operating System</p>
+<p class="text-slate-300 leading-7 mt-5">Un environnement modulaire pour structurer la création de contenu, les automatisations et les workflows assistés par IA, avec l'objectif de réduire la friction entre idée, production et diffusion.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="tag">IA</span><span class="tag">Automation</span><span class="tag">Content</span><span class="tag">Workflows</span></div>
+</article>
+
+<article class="card glass p-7 md:p-9">
+<div class="flex justify-between items-start"><span class="project-number">06</span><span class="status">ARCHITECTURE LAB</span></div>
+<h3 class="text-2xl font-extrabold mt-5">Modular Architecture Lab</h3>
+<p class="cyan font-semibold mt-1">Construire des systèmes qui peuvent changer</p>
+<p class="text-slate-300 leading-7 mt-5">Nos expérimentations portent aussi sur la manière de construire : interfaces, données, APIs, services et infrastructure sont pensés comme des briques remplaçables plutôt qu'une seule application monolithique.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="tag">Architecture</span><span class="tag">Systèmes modulaires</span><span class="tag">Interopérabilité</span><span class="tag">Évolutivité</span></div>
+</article>
+</div>
+</section>
+
+<section class="max-w-7xl mx-auto px-5 md:px-10 pb-20">
+<div class="arch-line mb-14"></div>
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<p class="gold font-bold uppercase tracking-[.16em] text-xs">NOTRE MANIÈRE DE CONSTRUIRE</p>
+<h2 class="text-3xl md:text-5xl font-black mt-3">Un projet n'est jamais<br><span class="cyan">une boîte fermée.</span></h2>
+<p class="text-slate-300 leading-8 mt-6">Chez Hinova, nous cherchons à éviter qu'une décision technique enferme tout le système. Une interface peut rester stable pendant que son moteur change. Une base de données peut être remplacée. Une API peut évoluer. Une brique peut sortir de l'écosystème et devenir un produit autonome.</p>
+</div>
+<div class="glass p-7 md:p-9">
+<div class="grid grid-cols-2 gap-4 text-center">
+<div class="p-4 rounded-xl bg-white/[.03]"><div class="cyan font-black text-xl">INTERFACE</div><div class="text-xs text-slate-400 mt-2">expérience</div></div>
+<div class="p-4 rounded-xl bg-white/[.03]"><div class="gold font-black text-xl">API</div><div class="text-xs text-slate-400 mt-2">connexion</div></div>
+<div class="p-4 rounded-xl bg-white/[.03]"><div class="cyan font-black text-xl">MODULES</div><div class="text-xs text-slate-400 mt-2">briques</div></div>
+<div class="p-4 rounded-xl bg-white/[.03]"><div class="gold font-black text-xl">DATA</div><div class="text-xs text-slate-400 mt-2">propriété</div></div>
+</div>
+<p class="text-center text-slate-300 mt-7 font-semibold">Chaque brique peut évoluer sans obliger tout le système à être reconstruit.</p>
+</div>
+</div>
+</section>
+
+<section class="hero grid-bg border-y border-white/5">
+<div class="max-w-4xl mx-auto px-5 py-20 md:py-28 text-center">
+<p class="gold font-bold uppercase tracking-[.18em] text-xs">LEAPFROGGING PACIFICA</p>
+<h2 class="text-3xl md:text-5xl font-black mt-4">Nous ne construisons pas seulement pour aujourd'hui.</h2>
+<p class="text-lg text-slate-300 leading-8 mt-6">Nous construisons des briques capables de devenir les infrastructures de demain.</p>
+<p class="cyan font-extrabold mt-6">Depuis le Fenua. Pour le Fenua. Et potentiellement bien au-delà.</p>
+</div>
+</section>
+</main>
+
+<footer class="max-w-7xl mx-auto px-5 md:px-10 py-10 flex flex-col md:flex-row justify-between gap-4 text-sm text-slate-400">
+<span>© 2026 Hinova Digital Corp.</span>
+<a href="index.html" class="cyan hover:underline">Retour à Hinova Digital Corp →</a>
+</footer>
+</body>
+</html>
