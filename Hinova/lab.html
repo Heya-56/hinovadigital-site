@@ -16,7 +16,7 @@
 h1,h2,h3,h4,.nav{font-family:Montserrat,sans-serif}.gold{color:var(--gold)}.cyan{color:var(--cyan)}.muted{color:#a9c5ca}
 .glass{background:rgba(10,50,63,.48);border:1px solid rgba(10,184,196,.18);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:20px}
 .hero{position:relative;overflow:hidden;background:#061A22}.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,26,34,.9) 0%,rgba(6,26,34,.42) 45%,rgba(6,26,34,.68) 100%);pointer-events:none}
-.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.92}
+.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.88;transition:opacity .3s ease}
 .grid-bg{background-image:linear-gradient(rgba(10,184,196,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(10,184,196,.045) 1px,transparent 1px);background-size:42px 42px}
 .navlink{color:#d7eef1;text-decoration:none;border:1px solid rgba(224,247,250,.12);padding:.65rem .9rem;border-radius:10px;font:700 .8rem Montserrat,sans-serif}.navlink:hover,.navlink.active{border-color:var(--cyan);color:var(--cyan)}
 .eyebrow{font:800 .72rem Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase}.tag{font-size:.7rem;color:#b9d8dd;background:rgba(224,247,250,.055);border:1px solid rgba(224,247,250,.1);padding:.3rem .55rem;border-radius:999px}
@@ -47,7 +47,7 @@ h1,h2,h3,h4,.nav{font-family:Montserrat,sans-serif}.gold{color:var(--gold)}.cyan
 
 <main>
 <section class="hero min-h-[720px] md:min-h-[790px] flex items-center">
-<img class="hero-image" src="/leapfrogging-pacifica.webp" alt="Leapfrogging Pacifica — innovation et connexion des territoires du Pacifique">
+<img class="hero-image" src="/leapfrogging-pacifica.webp" alt="Leapfrogging Pacifica — innovation et connexion des territoires du Pacifique" onerror="this.onerror=null;this.src='/leapfrogging.webp';">
 <div class="relative z-10 max-w-7xl mx-auto w-full px-5 md:px-10 py-24">
 <div class="max-w-2xl">
 <p class="gold eyebrow">HINOVA DIGITAL CORP · DIGITAL LAB</p>
@@ -222,11 +222,11 @@ atlas:{eyebrow:"TERRITOIRE · DATA",title:"Atlas Pacifica",subtitle:"Comprendre 
 manalog:{eyebrow:"LOGISTIQUE · COMMERCE",title:"ManaLog",subtitle:"La brique logistique du commerce",why:"Faire grandir le commerce implique de savoir ce qui se passe après la commande. ManaLog explore l'orchestration des flux qui relient commande, stock, fournisseurs, dispatch et livraison.",functions:["Suivre les commandes","Organiser les flux fournisseurs","Structurer le stock et le dispatch","Préparer la livraison et le suivi"],url:null},
 tere:{eyebrow:"COMMERCE ITINÉRANT",title:"Tere",subtitle:"Rendre visible le commerce itinérant",why:"Un vendeur itinérant peut avoir une excellente offre mais rester invisible dès qu'il change de lieu. Tere explore comment la localisation peut reconnecter présence physique et découverte numérique.",functions:["Géolocaliser les vendeurs","Afficher une présence temporaire","Permettre la découverte depuis mobile","Faire évoluer la visibilité selon le terrain"],url:null},
 creator:{eyebrow:"IA · CRÉATION",title:"CreatorOS",subtitle:"Transformer l'idée en contenu",why:"La création de contenu devient vite une chaîne de tâches répétitives. CreatorOS explore un environnement où l'humain garde la direction tandis que les tâches peuvent être structurées et accélérées.",functions:["Structurer les idées","Organiser les workflows de création","Accélérer certaines tâches répétitives","Préparer la diffusion des contenus"],url:null},
-rufau:{eyebrow:"TRANSMISSION · ACADÉMIE",title:"Rū-fau-tumu",subtitle:"Réveiller le potentiel numérique",why:"La technologie n'a de valeur que si les personnes savent s'en servir. L'Académie transmet les bases nécessaires pour comprendre, maîtriser et construire avec les outils numériques.",functions:["Apprendre par la pratique","Comprendre les outils numériques","Créer des projets concrets","Développer l'autonomie numérique"],url:"/academie"},
+rufau:{eyebrow:"TRANSMISSION · ACADÉMIE",title:"Rū-fau-tumu",subtitle:"Réveiller le potentiel numérique",why:"La technologie n'a de valeur que si les personnes savent s'en servir. L'Académie transmet les bases nécessaires pour comprendre, maîtriser et construire avec les outils numériques.",functions:["Apprendre par la pratique","Comprendre les outils numériques","Créer des projets concrets","Développer l'autonomie numérique"],url:"/academie.html"},
 ariihub:{eyebrow:"PROTOTYPAGE · EXPÉRIMENTATION",title:"Ariihub",subtitle:"Tester avant de déployer",why:"Une idée mérite d'être confrontée rapidement à l'usage. Ariihub sert d'espace d'expérimentation pour observer, ajuster et décider avant d'aller plus loin.",functions:["Prototyper rapidement","Tester une expérience","Observer les usages","Préparer une évolution vers un produit"],url:null}
 };
 const modal=document.getElementById("moduleModal"),closeBtn=document.getElementById("modalClose");
-document.querySelectorAll("[data-module]").forEach(card=>card.addEventListener("click",()=>openModule(card.dataset.module)));
+document.querySelectorAll("[data-module]").forEach(card=>{card.setAttribute("role","button");card.setAttribute("tabindex","0");card.addEventListener("click",()=>openModule(card.dataset.module));card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openModule(card.dataset.module)}});});
 function openModule(key){
  const m=modules[key]; if(!m)return;
  document.getElementById("modalEyebrow").textContent=m.eyebrow;
