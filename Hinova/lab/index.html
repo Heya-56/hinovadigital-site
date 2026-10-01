@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab — Hinova Digital Corp | Leapfrogging Pacifica</title>
+<meta name="description" content="Le Hinova Digital Lab : des solutions numériques imaginées, expérimentées et construites depuis la Polynésie pour le Pacifique et au-delà.">
+<link rel="icon" type="image/webp" href="/logo-hinova.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{--navy:#061A22;--mid:#0A323F;--cyan:#0AB8C4;--gold:#C09552;--pearl:#E0F7FA;--slate:#9AB9BF}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--pearl);font-family:Inter,sans-serif}
+h1,h2,h3,h4,.nav{font-family:Montserrat,sans-serif}.gold{color:var(--gold)}.cyan{color:var(--cyan)}.muted{color:#a9c5ca}
+.glass{background:rgba(10,50,63,.48);border:1px solid rgba(10,184,196,.18);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:20px}
+.hero{position:relative;overflow:hidden;background:#061A22}.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,26,34,.9) 0%,rgba(6,26,34,.42) 45%,rgba(6,26,34,.68) 100%);pointer-events:none}
+.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.92}
+.grid-bg{background-image:linear-gradient(rgba(10,184,196,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(10,184,196,.045) 1px,transparent 1px);background-size:42px 42px}
+.navlink{color:#d7eef1;text-decoration:none;border:1px solid rgba(224,247,250,.12);padding:.65rem .9rem;border-radius:10px;font:700 .8rem Montserrat,sans-serif}.navlink:hover,.navlink.active{border-color:var(--cyan);color:var(--cyan)}
+.eyebrow{font:800 .72rem Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase}.tag{font-size:.7rem;color:#b9d8dd;background:rgba(224,247,250,.055);border:1px solid rgba(224,247,250,.1);padding:.3rem .55rem;border-radius:999px}
+.card{position:relative;cursor:pointer;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}.card:hover{transform:translateY(-6px);border-color:rgba(10,184,196,.55);box-shadow:0 20px 60px rgba(0,0,0,.28)}
+.number{font:900 3.2rem Montserrat,sans-serif;color:rgba(10,184,196,.13);line-height:1}.module-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(10,184,196,.09);border:1px solid rgba(10,184,196,.2);font-size:1.45rem}
+.modal{position:fixed;inset:0;background:rgba(2,10,14,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:500;display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}
+.modal-box{width:min(760px,100%);max-height:90vh;overflow:auto;background:#071e27;border:1px solid rgba(10,184,196,.28);border-radius:24px;box-shadow:0 30px 100px rgba(0,0,0,.55)}
+.close{border:1px solid rgba(224,247,250,.18);background:transparent;color:var(--pearl);width:40px;height:40px;border-radius:10px;cursor:pointer;font-size:1.2rem}.close:hover{border-color:var(--cyan);color:var(--cyan)}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.82rem 1.25rem;border-radius:10px;text-decoration:none;font:800 .78rem Montserrat,sans-serif;letter-spacing:.04em;transition:.2s}
+.cta-primary{background:var(--cyan);color:var(--navy);box-shadow:0 0 25px rgba(10,184,196,.2)}.cta-primary:hover{transform:translateY(-2px);box-shadow:0 0 35px rgba(10,184,196,.42)}
+.cta-secondary{border:1px solid rgba(224,247,250,.2);color:var(--pearl)}.cta-secondary:hover{border-color:var(--cyan);color:var(--cyan)}
+.disabled{opacity:.45;cursor:not-allowed;pointer-events:none}
+@media(max-width:700px){.desktop-nav{display:none}.hero-image{object-position:58% center}}
+</style>
+</head>
+<body>
+
+<header class="max-w-7xl mx-auto px-5 md:px-10 pt-6 flex items-center justify-between gap-4 relative z-20">
+<a href="index.html"><img src="/logo-hinova.webp" alt="Hinova Digital Corp" style="width:48px"></a>
+<nav class="desktop-nav flex gap-2">
+<a class="navlink" href="index.html">Accueil</a>
+<a class="navlink" href="vision.html">Notre vision</a>
+<a class="navlink active" href="/lab">Lab</a>
+<a class="navlink" href="academie.html">Académie</a>
+<a class="navlink" href="blog.html">Journal</a>
+</nav>
+</header>
+
+<main>
+<section class="hero min-h-[720px] md:min-h-[790px] flex items-center">
+<img class="hero-image" src="/leapfrogging-pacifica.webp" alt="Leapfrogging Pacifica — innovation et connexion des territoires du Pacifique">
+<div class="relative z-10 max-w-7xl mx-auto w-full px-5 md:px-10 py-24">
+<div class="max-w-2xl">
+<p class="gold eyebrow">HINOVA DIGITAL CORP · DIGITAL LAB</p>
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-black mt-5 leading-[.95]">LEAPFROGGING<br><span class="cyan">PACIFICA.</span></h1>
+<p class="text-xl md:text-2xl font-semibold mt-7 text-white">Des solutions d'aujourd'hui pour un Pacifique de demain.</p>
+<p class="muted text-base md:text-lg leading-8 mt-5 max-w-xl">Le Lab est l'espace où nos idées deviennent des systèmes, des applications et des infrastructures capables de répondre aux réalités du Fenua — puis de dépasser ses frontières.</p>
+<div class="flex flex-wrap gap-3 mt-8">
+<a class="cta cta-primary" href="#modules">Explorer les modules ↓</a>
+<a class="cta cta-secondary" href="#vision">Comprendre le Lab</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="vision" class="max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-28">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<p class="gold eyebrow">LE LAB</p>
+<h2 class="text-3xl md:text-5xl font-black mt-3">Nous ne construisons pas<br><span class="cyan">des applications isolées.</span></h2>
+<p class="muted leading-8 mt-6">Nous construisons des réponses. À un entrepreneur qui veut se digitaliser. À un artisan qui veut vendre au-delà du Fenua. À un territoire qui doit mieux comprendre ses données. À une entreprise qui doit organiser ses flux.</p>
+<p class="muted leading-8 mt-4">Chaque module possède sa propre raison d'être, ses propres usages et son propre chemin d'évolution. Ils peuvent fonctionner ensemble, ou devenir des solutions à part entière.</p>
+</div>
+<div class="glass p-8 md:p-10">
+<p class="gold eyebrow">LA PHILOSOPHIE</p>
+<h3 class="text-2xl md:text-3xl font-extrabold mt-4">Construire sans s'enfermer.</h3>
+<div class="grid grid-cols-2 gap-4 mt-7">
+<div class="p-5 rounded-xl bg-white/[.03]"><div class="cyan font-black">MODULAIRE</div><div class="text-xs text-slate-400 mt-2">des briques indépendantes</div></div>
+<div class="p-5 rounded-xl bg-white/[.03]"><div class="gold font-black">ÉVOLUTIF</div><div class="text-xs text-slate-400 mt-2">pensé pour changer</div></div>
+<div class="p-5 rounded-xl bg-white/[.03]"><div class="cyan font-black">INTEROPÉRABLE</div><div class="text-xs text-slate-400 mt-2">capable de dialoguer</div></div>
+<div class="p-5 rounded-xl bg-white/[.03]"><div class="gold font-black">TERRITORIAL</div><div class="text-xs text-slate-400 mt-2">ancré dans nos réalités</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="modules" class="grid-bg border-y border-white/5">
+<div class="max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-28">
+<div class="max-w-3xl mb-12">
+<p class="gold eyebrow">SECTION 02 · LES MODULES</p>
+<h2 class="text-3xl md:text-5xl font-black mt-3">Tout ce que nous<br><span class="cyan">explorons actuellement.</span></h2>
+<p class="muted mt-5 leading-8">Clique sur un module pour découvrir son <strong class="text-white">Why</strong>, ses fonctions et son rôle dans l'écosystème. Le Lab évolue en permanence : certains projets sont en expérimentation, d'autres en développement ou déjà testables.</p>
+</div>
+
+<div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+<article class="card glass p-7" data-module="manahub">
+<div class="flex justify-between items-start"><div class="module-icon">🌺</div><span class="number">01</span></div>
+<p class="gold eyebrow mt-6">ENTREPRENEURIAT · ÉCOSYSTÈME</p><h3 class="text-2xl font-extrabold mt-2">ManaHub</h3>
+<p class="cyan font-semibold mt-1">Le hub de l'entrepreneur du Fenua</p>
+<p class="muted leading-7 mt-4">Donner aux entrepreneurs un espace pour structurer, présenter, développer et faire évoluer leur activité.</p>
+<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Entrepreneurs</span><span class="tag">Commerce</span><span class="tag">Écosystème</span></div>
+</article>
+
+<article class="card glass p-7" data-module="artisans">
+<div class="flex justify-between items-start"><div class="module-icon">🐚</div><span class="number">02</span></div>
+<p class="gold eyebrow mt-6">COMMERCE · INTERNATIONAL</p><h3 class="text-2xl font-extrabold mt-2">Artisans du Pacifique</h3>
+<p class="cyan font-semibold mt-1">Du savoir-faire local au marché mondial</p>
+<p class="muted leading-7 mt-4">Créer un parcours permettant aux artisans et créateurs du Pacifique de rendre leur offre visible au-delà de leur territoire.</p>
+<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Artisanat</span><span class="tag">Export</span><span class="tag">International</span></div>
+</article>
+
+<article class="card glass p-7" data-module="hinova">
+<div class="flex justify-between items-start"><div class="module-icon">⚡</div><span class="number">03</span></div>
+<p class="gold eyebrow mt-6">DIGITALISATION · PACIFIQUE</p><h3 class="text-2xl font-extrabold mt-2">Hinova Digital</h3>
+<p class="cyan font-semibold mt-1">Numériser l'entrepreneuriat</p>
+<p class="muted leading-7 mt-4">Accompagner l'entrepreneur dans l'identification de ses besoins et dans la construction progressive de son environnement numérique.</p>
+<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Diagnostic</span><span class="tag">Digitalisation</span><span class="tag">Accompagnement</span></div>
+</article>
+
+<article class="card glass p-7" data-module="pacificompta">
+<div class="flex justify-between items-start"><div class="module-icon">📊</div><span class="number">04</span></div>
+<p class="gold eyebrow mt-6">GESTION · ENTREPRISE</p><h3 class="text-2xl font-extrabold mt-2">Pacificompta</h3>
+<p class="cyan font-semibold mt-1">La gestion pensée pour le Pacifique</p>
+<p class="muted leading-7 mt-4">Explorer une expérience de gestion et de suivi adaptée aux réalités des entrepreneurs et petites structures du territoire.</p>
+<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Gestion</span><span class="tag">Comptabilité</span><span class="tag">PME</span></div>
+</article>
+
+<article class="card glass p-7" data-module="atlas">
+<div class="flex justify-between items-start"><div class="module-icon">🌊</div><span class="number">05</span></div>
+<p class="gold eyebrow mt-6">TERRITOIRE · DATA</p><h3 class="text-2xl font-extrabold mt-2">Atlas Pacifica</h3>
+<p class="cyan font-semibold mt-1">Comprendre le Pacifique par la donnée</p>
+<p class="muted leading-7 mt-4">Croiser cartographie, climat, observation et historique pour mieux comprendre les territoires et leurs risques.</p>
+<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Climat</span><span class="tag">Cartographie</span><span class="tag">Data</span></div>
+</article>
+
+<article class="card glass p-7" data-module="manalog">
+<div class="flex justify-between items-start"><div class="module-icon">🚚</div><span class="number">06</span></div>
+<p class="gold eyebrow mt-6">LOGISTIQUE · COMMERCE</p><h3 class="text-2xl font-extrabold mt-2">ManaLog</h3>
+<p class="cyan font-semibold mt-1">La brique logistique du commerce</p>
+<p class="muted leading-7 mt-4">Organiser les flux liés aux commandes, fournisseurs, stocks, dispatch et livraison autour d'un même parcours.</p>
+<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Supply Chain</span><span class="tag">Dispatch</span><span class="tag">Livraison</span></div>
+</article>
+
+<article class="card glass p-7" data-module="tere">
+<div class="flex justify-between items-start"><div class="module-icon">📍</div><span class="number">07</span></div>
+<p class="gold eyebrow mt-6">COMMERCE ITINÉRANT</p><h3 class="text-2xl font-extrabold mt-2">Tere</h3>
+<p class="cyan font-semibold mt-1">Rendre visible le commerce itinérant</p>
+<p class="muted leading-7 mt-4">Donner une présence numérique aux vendeurs de bord de route et vendeurs itinérants grâce à la géolocalisation.</p>
+<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Géolocalisation</span><span class="tag">Mobile</span><span class="tag">Commerce local</span></div>
+</article>
+
+<article class="card glass p-7" data-module="creator">
+<div class="flex justify-between items-start"><div class="module-icon">🤖</div><span class="number">08</span></div>
+<p class="gold eyebrow mt-6">IA · CRÉATION</p><h3 class="text-2xl font-extrabold mt-2">CreatorOS</h3>
+<p class="cyan font-semibold mt-1">Transformer l'idée en contenu</p>
+<p class="muted leading-7 mt-4">Structurer les étapes de création, automatiser les tâches répétitives et accélérer le passage de l'idée à la diffusion.</p>
+<div class="flex flex-wrap gap-2 mt-5"><span class="tag">IA</span><span class="tag">Création</span><span class="tag">Automatisation</span></div>
+</article>
+
+<article class="card glass p-7" data-module="rufau">
+<div class="flex justify-between items-start"><div class="module-icon">🎓</div><span class="number">09</span></div>
+<p class="gold eyebrow mt-6">TRANSMISSION · ACADÉMIE</p><h3 class="text-2xl font-extrabold mt-2">Rū-fau-tumu</h3>
+<p class="cyan font-semibold mt-1">Réveiller le potentiel numérique</p>
+<p class="muted leading-7 mt-4">Transmettre les compétences et permettre aux entrepreneurs d'apprendre à comprendre, maîtriser et construire avec leurs outils.</p>
+<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Formation</span><span class="tag">No-code</span><span class="tag">IA</span></div>
+</article>
+
+<article class="card glass p-7" data-module="ariihub">
+<div class="flex justify-between items-start"><div class="module-icon">🧪</div><span class="number">10</span></div>
+<p class="gold eyebrow mt-6">PROTOTYPAGE · EXPÉRIMENTATION</p><h3 class="text-2xl font-extrabold mt-2">Ariihub</h3>
+<p class="cyan font-semibold mt-1">Tester avant de déployer</p>
+<p class="muted leading-7 mt-4">Un espace d'expérimentation pour transformer rapidement une idée en expérience concrète et observer les usages avant d'aller plus loin.</p>
+<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Prototype</span><span class="tag">UX</span><span class="tag">Expérimentation</span></div>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-28">
+<div class="glass p-8 md:p-12 text-center">
+<p class="gold eyebrow">LEAPFROGGING PACIFICA</p>
+<h2 class="text-3xl md:text-5xl font-black mt-4">Une idée peut commencer ici.</h2>
+<p class="muted max-w-2xl mx-auto leading-8 mt-5">Le Lab n'est pas figé. Les modules évoluent, se connectent, deviennent parfois des produits indépendants. C'est précisément ce qui nous permet d'expérimenter aujourd'hui les usages qui pourront servir demain.</p>
+<a href="diagnostic.html" class="cta cta-primary mt-8">Parler de votre projet →</a>
+</div>
+</section>
+</main>
+
+<footer class="max-w-7xl mx-auto px-5 md:px-10 py-10 flex flex-col md:flex-row justify-between gap-4 text-sm text-slate-400">
+<span>© 2026 Hinova Digital Corp.</span>
+<a href="index.html" class="cyan hover:underline">Retour à Hinova Digital Corp →</a>
+</footer>
+
+<div id="moduleModal" class="modal" aria-hidden="true">
+<div class="modal-box">
+<div class="p-6 md:p-9">
+<div class="flex justify-between gap-4 items-start">
+<div><p id="modalEyebrow" class="gold eyebrow"></p><h2 id="modalTitle" class="text-3xl md:text-4xl font-black mt-2"></h2><p id="modalSubtitle" class="cyan font-semibold mt-2"></p></div>
+<button class="close" id="modalClose" aria-label="Fermer">×</button>
+</div>
+<div class="mt-8 grid md:grid-cols-2 gap-7">
+<div><p class="gold eyebrow">WHY · POURQUOI ?</p><p id="modalWhy" class="muted leading-8 mt-3"></p></div>
+<div><p class="gold eyebrow">FONCTIONS · CE QUE NOUS EXPLORONS</p><ul id="modalFunctions" class="muted leading-8 mt-3 space-y-2"></ul></div>
+</div>
+<div class="mt-8 pt-7 border-t border-white/10 flex flex-wrap gap-3">
+<a id="modalCta" class="cta cta-primary" target="_blank" rel="noopener noreferrer">Découvrir / tester l'application →</a>
+<a id="modalAcademy" class="cta cta-secondary" href="#modules">Retour aux modules</a>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+const modules={
+manahub:{eyebrow:"ENTREPRENEURIAT · ÉCOSYSTÈME",title:"ManaHub",subtitle:"Le hub de l'entrepreneur du Fenua",why:"L'entrepreneur ne devrait pas devoir assembler seul une multitude d'outils pour exister, vendre et développer son activité. ManaHub explore un point de convergence pensé autour de ses besoins.",functions:["Présenter son activité et ses offres","Structurer son parcours numérique","Connecter commerce, services et opportunités","Faire évoluer chaque brique selon les besoins"],url:null},
+artisans:{eyebrow:"COMMERCE · INTERNATIONAL",title:"Artisans du Pacifique",subtitle:"Du savoir-faire local au marché mondial",why:"Le Pacifique possède des savoir-faire, des produits et des histoires qui peuvent voyager. Le projet explore le parcours numérique nécessaire pour passer d'une activité locale à une visibilité internationale.",functions:["Présenter les créations et le savoir-faire","Créer une vitrine orientée international","Faciliter la découverte des produits","Construire un parcours commercial évolutif"],url:null},
+hinova:{eyebrow:"DIGITALISATION · PACIFIQUE",title:"Hinova Digital",subtitle:"Numériser l'entrepreneuriat",why:"La transformation numérique ne devrait pas commencer par une liste de logiciels. Elle doit commencer par la réalité de l'entrepreneur, ses contraintes et ce qu'il cherche réellement à accomplir.",functions:["Identifier les besoins numériques","Cartographier les usages et processus","Construire un parcours de digitalisation","Faire évoluer progressivement l'environnement de travail"],url:"https://hinovadigitalcorp.com/"},
+pacificompta:{eyebrow:"GESTION · ENTREPRISE",title:"Pacificompta",subtitle:"La gestion pensée pour le Pacifique",why:"Les petites structures ont besoin de visibilité sur leur activité sans que la gestion devienne une seconde entreprise. Pacificompta explore une expérience plus accessible et contextualisée.",functions:["Suivre les éléments essentiels de gestion","Centraliser les informations utiles","Faciliter le suivi de l'activité","Préparer une évolution progressive de l'outil"],url:null},
+atlas:{eyebrow:"TERRITOIRE · DATA",title:"Atlas Pacifica",subtitle:"Comprendre le Pacifique par la donnée",why:"Les territoires produisent énormément de données. L'enjeu est de les rendre lisibles, croisables et utiles pour comprendre les phénomènes qui façonnent le Pacifique.",functions:["Explorer des données territoriales","Visualiser des phénomènes sur une carte","Croiser plusieurs sources d'information","Aider à comprendre les risques et évolutions"],url:"https://qgis-anomaly-mto.hinovadigital.workers.dev/"},
+manalog:{eyebrow:"LOGISTIQUE · COMMERCE",title:"ManaLog",subtitle:"La brique logistique du commerce",why:"Faire grandir le commerce implique de savoir ce qui se passe après la commande. ManaLog explore l'orchestration des flux qui relient commande, stock, fournisseurs, dispatch et livraison.",functions:["Suivre les commandes","Organiser les flux fournisseurs","Structurer le stock et le dispatch","Préparer la livraison et le suivi"],url:null},
+tere:{eyebrow:"COMMERCE ITINÉRANT",title:"Tere",subtitle:"Rendre visible le commerce itinérant",why:"Un vendeur itinérant peut avoir une excellente offre mais rester invisible dès qu'il change de lieu. Tere explore comment la localisation peut reconnecter présence physique et découverte numérique.",functions:["Géolocaliser les vendeurs","Afficher une présence temporaire","Permettre la découverte depuis mobile","Faire évoluer la visibilité selon le terrain"],url:null},
+creator:{eyebrow:"IA · CRÉATION",title:"CreatorOS",subtitle:"Transformer l'idée en contenu",why:"La création de contenu devient vite une chaîne de tâches répétitives. CreatorOS explore un environnement où l'humain garde la direction tandis que les tâches peuvent être structurées et accélérées.",functions:["Structurer les idées","Organiser les workflows de création","Accélérer certaines tâches répétitives","Préparer la diffusion des contenus"],url:null},
+rufau:{eyebrow:"TRANSMISSION · ACADÉMIE",title:"Rū-fau-tumu",subtitle:"Réveiller le potentiel numérique",why:"La technologie n'a de valeur que si les personnes savent s'en servir. L'Académie transmet les bases nécessaires pour comprendre, maîtriser et construire avec les outils numériques.",functions:["Apprendre par la pratique","Comprendre les outils numériques","Créer des projets concrets","Développer l'autonomie numérique"],url:"/academie"},
+ariihub:{eyebrow:"PROTOTYPAGE · EXPÉRIMENTATION",title:"Ariihub",subtitle:"Tester avant de déployer",why:"Une idée mérite d'être confrontée rapidement à l'usage. Ariihub sert d'espace d'expérimentation pour observer, ajuster et décider avant d'aller plus loin.",functions:["Prototyper rapidement","Tester une expérience","Observer les usages","Préparer une évolution vers un produit"],url:null}
+};
+const modal=document.getElementById("moduleModal"),closeBtn=document.getElementById("modalClose");
+document.querySelectorAll("[data-module]").forEach(card=>card.addEventListener("click",()=>openModule(card.dataset.module)));
+function openModule(key){
+ const m=modules[key]; if(!m)return;
+ document.getElementById("modalEyebrow").textContent=m.eyebrow;
+ document.getElementById("modalTitle").textContent=m.title;
+ document.getElementById("modalSubtitle").textContent=m.subtitle;
+ document.getElementById("modalWhy").textContent=m.why;
+ document.getElementById("modalFunctions").innerHTML=m.functions.map(x=>"<li>• "+x+"</li>").join("");
+ const cta=document.getElementById("modalCta");
+ if(m.url){cta.href=m.url;cta.classList.remove("disabled");cta.textContent="Découvrir / tester l'application →";}
+ else{cta.removeAttribute("href");cta.classList.add("disabled");cta.textContent="Accès public prochainement";}
+ modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";
+}
+function closeModule(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true");document.body.style.overflow="";}
+closeBtn.addEventListener("click",closeModule);
+modal.addEventListener("click",e=>{if(e.target===modal)closeModule()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModule()});
+document.getElementById("modalAcademy").addEventListener("click",closeModule);
+</script>
+</body>
+</html>
