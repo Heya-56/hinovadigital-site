@@ -30,6 +30,7 @@ h1,h2,h3,h4,.nav{font-family:Montserrat,sans-serif}.gold{color:var(--gold)}.cyan
 .cta-secondary{border:1px solid rgba(224,247,250,.2);color:var(--pearl)}.cta-secondary:hover{border-color:var(--cyan);color:var(--cyan)}
 .disabled{opacity:.45;cursor:not-allowed;pointer-events:none}
 @media(max-width:700px){.desktop-nav{display:none}.hero-image{object-position:58% center}}
+.module-visual{height:220px;overflow:hidden;background:#061A22}.module-visual img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease,opacity .3s ease}.logo-visual{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.045),transparent 62%)}.logo-visual img{object-fit:contain!important;padding:16px}.card:hover .module-visual img{transform:scale(1.04)}
 </style>
 </head>
 <body>
@@ -94,87 +95,59 @@ h1,h2,h3,h4,.nav{font-family:Montserrat,sans-serif}.gold{color:var(--gold)}.cyan
 
 <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
 
-<article class="card glass p-7" data-module="manahub">
-<div class="flex justify-between items-start"><div class="module-icon">🌺</div><span class="number">01</span></div>
-<p class="gold eyebrow mt-6">ENTREPRENEURIAT · ÉCOSYSTÈME</p><h3 class="text-2xl font-extrabold mt-2">ManaHub</h3>
-<p class="cyan font-semibold mt-1">Le hub de l'entrepreneur du Fenua</p>
-<p class="muted leading-7 mt-4">Donner aux entrepreneurs un espace pour structurer, présenter, développer et faire évoluer leur activité.</p>
-<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Entrepreneurs</span><span class="tag">Commerce</span><span class="tag">Écosystème</span></div>
-</article>
+<article class="card glass p-0 overflow-hidden" data-module="manahub">
+<div class="module-visual"><img src="/manahub-logo.webp" alt="ManaHub" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌺</div><span class="number">01</span></div>
+<p class="gold eyebrow mt-6">ENTREPRENEURIAT · ÉCOSYSTÈME</p><h3 class="text-2xl font-extrabold mt-2">ManaHub</h3><p class="cyan font-semibold mt-1">Connecter l'entrepreneuriat du Fenua</p><p class="muted leading-7 mt-4">Un écosystème numérique pensé pour relier entrepreneurs, commerce, services et opportunités.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Entrepreneurs</span><span class="tag">Commerce</span><span class="tag">Écosystème</span></div></div></article>
 
-<article class="card glass p-7" data-module="artisans">
-<div class="flex justify-between items-start"><div class="module-icon">🐚</div><span class="number">02</span></div>
-<p class="gold eyebrow mt-6">COMMERCE · INTERNATIONAL</p><h3 class="text-2xl font-extrabold mt-2">Artisans du Pacifique</h3>
-<p class="cyan font-semibold mt-1">Du savoir-faire local au marché mondial</p>
-<p class="muted leading-7 mt-4">Créer un parcours permettant aux artisans et créateurs du Pacifique de rendre leur offre visible au-delà de leur territoire.</p>
-<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Artisanat</span><span class="tag">Export</span><span class="tag">International</span></div>
-</article>
+<article class="card glass p-0 overflow-hidden" data-module="pacificompta">
+<div class="module-visual"><img src="/banner.webp" alt="Pacificompta" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🐠</div><span class="number">02</span></div>
+<p class="gold eyebrow mt-6">GESTION · ENTREPRISE</p><h3 class="text-2xl font-extrabold mt-2">Pacificompta</h3><p class="cyan font-semibold mt-1">La gestion pensée pour le Pacifique</p><p class="muted leading-7 mt-4">Explorer une expérience de gestion et de suivi adaptée aux réalités des entrepreneurs et petites structures.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Gestion</span><span class="tag">Comptabilité</span><span class="tag">PME</span></div></div></article>
 
-<article class="card glass p-7" data-module="hinova">
-<div class="flex justify-between items-start"><div class="module-icon">⚡</div><span class="number">03</span></div>
-<p class="gold eyebrow mt-6">DIGITALISATION · PACIFIQUE</p><h3 class="text-2xl font-extrabold mt-2">Hinova Digital</h3>
-<p class="cyan font-semibold mt-1">Numériser l'entrepreneuriat</p>
-<p class="muted leading-7 mt-4">Accompagner l'entrepreneur dans l'identification de ses besoins et dans la construction progressive de son environnement numérique.</p>
-<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Diagnostic</span><span class="tag">Digitalisation</span><span class="tag">Accompagnement</span></div>
-</article>
+<article class="card glass p-0 overflow-hidden" data-module="hinovaapp">
+<div class="module-visual"><img src="/photo-architect.webp" alt="Hinova Digital App" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌏</div><span class="number">03</span></div>
+<p class="gold eyebrow mt-6">DIGITALISATION · PACIFIQUE</p><h3 class="text-2xl font-extrabold mt-2">Hinova Digital App</h3><p class="cyan font-semibold mt-1">La porte d'entrée numérique de l'écosystème</p><p class="muted leading-7 mt-4">Une expérience numérique destinée à rassembler services, parcours et points d'accès de l'écosystème Hinova.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Services</span><span class="tag">Mobile</span><span class="tag">Écosystème</span></div></div></article>
 
-<article class="card glass p-7" data-module="pacificompta">
-<div class="flex justify-between items-start"><div class="module-icon">📊</div><span class="number">04</span></div>
-<p class="gold eyebrow mt-6">GESTION · ENTREPRISE</p><h3 class="text-2xl font-extrabold mt-2">Pacificompta</h3>
-<p class="cyan font-semibold mt-1">La gestion pensée pour le Pacifique</p>
-<p class="muted leading-7 mt-4">Explorer une expérience de gestion et de suivi adaptée aux réalités des entrepreneurs et petites structures du territoire.</p>
-<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Gestion</span><span class="tag">Comptabilité</span><span class="tag">PME</span></div>
-</article>
+<article class="card glass p-0 overflow-hidden" data-module="fenua">
+<div class="module-visual"><img src="/leapfrogging.webp" alt="Fenua-resilience.app" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌱</div><span class="number">04</span></div>
+<p class="gold eyebrow mt-6">RÉSILIENCE · TERRITOIRE</p><h3 class="text-2xl font-extrabold mt-2">Fenua-resilience.app</h3><p class="cyan font-semibold mt-1">Comprendre les vulnérabilités du territoire</p><p class="muted leading-7 mt-4">Un projet orienté données, anticipation et résilience pour mieux comprendre les enjeux du territoire.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Résilience</span><span class="tag">Territoire</span><span class="tag">Données</span></div></div></article>
 
-<article class="card glass p-7" data-module="atlas">
-<div class="flex justify-between items-start"><div class="module-icon">🌊</div><span class="number">05</span></div>
-<p class="gold eyebrow mt-6">TERRITOIRE · DATA</p><h3 class="text-2xl font-extrabold mt-2">Atlas Pacifica</h3>
-<p class="cyan font-semibold mt-1">Comprendre le Pacifique par la donnée</p>
-<p class="muted leading-7 mt-4">Croiser cartographie, climat, observation et historique pour mieux comprendre les territoires et leurs risques.</p>
-<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Climat</span><span class="tag">Cartographie</span><span class="tag">Data</span></div>
-</article>
+<article class="card glass p-0 overflow-hidden" data-module="hinova">
+<div class="module-visual"><img src="/logo-hinova.webp" alt="Hinova Digital" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">⚡</div><span class="number">05</span></div>
+<p class="gold eyebrow mt-6">SOLUTIONS · ARCHITECTURE</p><h3 class="text-2xl font-extrabold mt-2">Hinova Digital</h3><p class="cyan font-semibold mt-1">Créer des solutions numériques</p><p class="muted leading-7 mt-4">Concevoir des solutions modulaires et évolutives pour transformer une idée, un besoin ou un processus en produit numérique.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Architecture</span><span class="tag">Solutions</span><span class="tag">Innovation</span></div></div></article>
 
-<article class="card glass p-7" data-module="manalog">
-<div class="flex justify-between items-start"><div class="module-icon">🚚</div><span class="number">06</span></div>
-<p class="gold eyebrow mt-6">LOGISTIQUE · COMMERCE</p><h3 class="text-2xl font-extrabold mt-2">ManaLog</h3>
-<p class="cyan font-semibold mt-1">La brique logistique du commerce</p>
-<p class="muted leading-7 mt-4">Organiser les flux liés aux commandes, fournisseurs, stocks, dispatch et livraison autour d'un même parcours.</p>
-<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Supply Chain</span><span class="tag">Dispatch</span><span class="tag">Livraison</span></div>
-</article>
+<article class="card glass p-0 overflow-hidden" data-module="atlas">
+<div class="module-visual"><img src="/leapfrogging-pacifica.webp" alt="Atlas Pacifica" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌪️</div><span class="number">06</span></div>
+<p class="gold eyebrow mt-6">CLIMAT · DATA · TERRITOIRE</p><h3 class="text-2xl font-extrabold mt-2">Atlas Pacifica</h3><p class="cyan font-semibold mt-1">Comprendre le Pacifique par la donnée</p><p class="muted leading-7 mt-4">Explorer et croiser cartographie, climat, observation et historique pour mieux comprendre les phénomènes du Pacifique.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Climat</span><span class="tag">Cartographie</span><span class="tag">Data</span></div></div></article>
 
-<article class="card glass p-7" data-module="tere">
-<div class="flex justify-between items-start"><div class="module-icon">📍</div><span class="number">07</span></div>
-<p class="gold eyebrow mt-6">COMMERCE ITINÉRANT</p><h3 class="text-2xl font-extrabold mt-2">Tere</h3>
-<p class="cyan font-semibold mt-1">Rendre visible le commerce itinérant</p>
-<p class="muted leading-7 mt-4">Donner une présence numérique aux vendeurs de bord de route et vendeurs itinérants grâce à la géolocalisation.</p>
-<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Géolocalisation</span><span class="tag">Mobile</span><span class="tag">Commerce local</span></div>
-</article>
+<article class="card glass p-0 overflow-hidden" data-module="rufau">
+<div class="module-visual"><img src="/A-accessibility.jpg" alt="Rū-fau-tumu Académie" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🗡️</div><span class="number">07</span></div>
+<p class="gold eyebrow mt-6">TRANSMISSION · ACADÉMIE</p><h3 class="text-2xl font-extrabold mt-2">Rū-fau-tumu Académie</h3><p class="cyan font-semibold mt-1">Réveiller le potentiel numérique</p><p class="muted leading-7 mt-4">Transmettre les compétences pour comprendre, maîtriser et construire avec les outils numériques.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Formation</span><span class="tag">No-code</span><span class="tag">IA</span></div></div></article>
 
-<article class="card glass p-7" data-module="creator">
-<div class="flex justify-between items-start"><div class="module-icon">🤖</div><span class="number">08</span></div>
-<p class="gold eyebrow mt-6">IA · CRÉATION</p><h3 class="text-2xl font-extrabold mt-2">CreatorOS</h3>
-<p class="cyan font-semibold mt-1">Transformer l'idée en contenu</p>
-<p class="muted leading-7 mt-4">Structurer les étapes de création, automatiser les tâches répétitives et accélérer le passage de l'idée à la diffusion.</p>
-<div class="flex flex-wrap gap-2 mt-5"><span class="tag">IA</span><span class="tag">Création</span><span class="tag">Automatisation</span></div>
-</article>
+<article class="card glass p-0 overflow-hidden" data-module="crashboy">
+<div class="module-visual"><img src="/crashboy-skull.webp" alt="Crashboy Tahiti" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🏄</div><span class="number">08</span></div>
+<p class="gold eyebrow mt-6">MOBILITÉ · COMMUNAUTÉ</p><h3 class="text-2xl font-extrabold mt-2">Crashboy Tahiti</h3><p class="cyan font-semibold mt-1">Mobilité, culture et expérience</p><p class="muted leading-7 mt-4">Un univers numérique autour de la mobilité, de la communauté et de la culture des sports de glisse.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Mobilité</span><span class="tag">Communauté</span><span class="tag">Expérience</span></div></div></article>
 
-<article class="card glass p-7" data-module="rufau">
-<div class="flex justify-between items-start"><div class="module-icon">🎓</div><span class="number">09</span></div>
-<p class="gold eyebrow mt-6">TRANSMISSION · ACADÉMIE</p><h3 class="text-2xl font-extrabold mt-2">Rū-fau-tumu</h3>
-<p class="cyan font-semibold mt-1">Réveiller le potentiel numérique</p>
-<p class="muted leading-7 mt-4">Transmettre les compétences et permettre aux entrepreneurs d'apprendre à comprendre, maîtriser et construire avec leurs outils.</p>
-<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Formation</span><span class="tag">No-code</span><span class="tag">IA</span></div>
-</article>
+<article class="card glass p-0 overflow-hidden" data-module="nbv">
+<div class="module-visual"><img src="/H-heritage.jpg" alt="Natural Beauty Vahine" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌿</div><span class="number">09</span></div>
+<p class="gold eyebrow mt-6">BEAUTÉ · NATURE · COMMERCE</p><h3 class="text-2xl font-extrabold mt-2">Natural Beauty Vahine</h3><p class="cyan font-semibold mt-1">Une marque beauté à identité polynésienne</p><p class="muted leading-7 mt-4">Développer un univers de marque, de produits et de commerce autour d'une identité naturelle et féminine.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Beauté</span><span class="tag">Marque</span><span class="tag">Commerce</span></div></div></article>
 
-<article class="card glass p-7" data-module="ariihub">
-<div class="flex justify-between items-start"><div class="module-icon">🧪</div><span class="number">10</span></div>
-<p class="gold eyebrow mt-6">PROTOTYPAGE · EXPÉRIMENTATION</p><h3 class="text-2xl font-extrabold mt-2">Ariihub</h3>
-<p class="cyan font-semibold mt-1">Tester avant de déployer</p>
-<p class="muted leading-7 mt-4">Un espace d'expérimentation pour transformer rapidement une idée en expérience concrète et observer les usages avant d'aller plus loin.</p>
-<div class="flex flex-wrap gap-2 mt-5"><span class="tag">Prototype</span><span class="tag">UX</span><span class="tag">Expérimentation</span></div>
-</article>
+<article class="card glass p-0 overflow-hidden" data-module="heya">
+<div class="module-visual"><img src="/photo-heya.webp" alt="HeyaTapare.com" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌺</div><span class="number">10</span></div>
+<p class="gold eyebrow mt-6">IDENTITÉ · PARCOURS · VISION</p><h3 class="text-2xl font-extrabold mt-2">HeyaTapare.com</h3><p class="cyan font-semibold mt-1">L'espace personnel de vision et de projets</p><p class="muted leading-7 mt-4">Un espace personnel qui rassemble une vision, des projets, des expérimentations et un parcours autour du numérique et de l'entrepreneuriat.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Identité</span><span class="tag">Portfolio</span><span class="tag">Vision</span></div></div></article>
+<article class="card glass p-0 overflow-hidden" data-module="creatoros">
+<div class="module-visual logo-visual"><img src="/creatoros-lab.webp" alt="CreatorOS" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🎬</div><span class="number">11</span></div>
+<p class="gold eyebrow mt-6">IA · CRÉATION</p><h3 class="text-2xl font-extrabold mt-2">CreatorOS</h3><p class="cyan font-semibold mt-1">Structurer et accélérer la création de contenu</p><p class="muted leading-7 mt-4">Un environnement pour organiser les idées, les workflows et les tâches répétitives sans perdre la direction humaine.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">IA</span><span class="tag">Contenu</span><span class="tag">Workflows</span></div></div></article>
+
+<article class="card glass p-0 overflow-hidden" data-module="manalog">
+<div class="module-visual logo-visual"><img src="/manalog-lab.webp" alt="ManaLog" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">📦</div><span class="number">12</span></div>
+<p class="gold eyebrow mt-6">LOGISTIQUE · OPÉRATIONS</p><h3 class="text-2xl font-extrabold mt-2">ManaLog</h3><p class="cyan font-semibold mt-1">Piloter les flux, du stock à l'expédition</p><p class="muted leading-7 mt-4">Un logiciel logistique pensé pour organiser les opérations d'un dépôt et suivre les flux avec une logique adaptée au Fenua.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Stock</span><span class="tag">Préparation</span><span class="tag">Expédition</span></div></div></article>
+
+<article class="card glass p-0 overflow-hidden" data-module="maaterre">
+<div class="module-visual logo-visual"><img src="/maa-tere-lab.webp" alt="Maa Tere" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🩷</div><span class="number">13</span></div>
+<p class="gold eyebrow mt-6">COMMERCE · MOBILITÉ</p><h3 class="text-2xl font-extrabold mt-2">Maa Tere</h3><p class="cyan font-semibold mt-1">Faire vivre le commerce au-delà d'un point fixe</p><p class="muted leading-7 mt-4">Un projet autour du commerce itinérant et de l'expérience terrain, pensé pour rapprocher l'offre, les personnes et les lieux.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Commerce</span><span class="tag">Mobilité</span><span class="tag">Terrain</span></div></div></article>
 
 </div>
+
 </div>
 </section>
 
@@ -214,16 +187,18 @@ h1,h2,h3,h4,.nav{font-family:Montserrat,sans-serif}.gold{color:var(--gold)}.cyan
 
 <script>
 const modules={
-manahub:{eyebrow:"ENTREPRENEURIAT · ÉCOSYSTÈME",title:"ManaHub",subtitle:"Le hub de l'entrepreneur du Fenua",why:"L'entrepreneur ne devrait pas devoir assembler seul une multitude d'outils pour exister, vendre et développer son activité. ManaHub explore un point de convergence pensé autour de ses besoins.",functions:["Présenter son activité et ses offres","Structurer son parcours numérique","Connecter commerce, services et opportunités","Faire évoluer chaque brique selon les besoins"],url:null},
-artisans:{eyebrow:"COMMERCE · INTERNATIONAL",title:"Artisans du Pacifique",subtitle:"Du savoir-faire local au marché mondial",why:"Le Pacifique possède des savoir-faire, des produits et des histoires qui peuvent voyager. Le projet explore le parcours numérique nécessaire pour passer d'une activité locale à une visibilité internationale.",functions:["Présenter les créations et le savoir-faire","Créer une vitrine orientée international","Faciliter la découverte des produits","Construire un parcours commercial évolutif"],url:null},
-hinova:{eyebrow:"DIGITALISATION · PACIFIQUE",title:"Hinova Digital",subtitle:"Numériser l'entrepreneuriat",why:"La transformation numérique ne devrait pas commencer par une liste de logiciels. Elle doit commencer par la réalité de l'entrepreneur, ses contraintes et ce qu'il cherche réellement à accomplir.",functions:["Identifier les besoins numériques","Cartographier les usages et processus","Construire un parcours de digitalisation","Faire évoluer progressivement l'environnement de travail"],url:"https://hinovadigitalcorp.com/"},
-pacificompta:{eyebrow:"GESTION · ENTREPRISE",title:"Pacificompta",subtitle:"La gestion pensée pour le Pacifique",why:"Les petites structures ont besoin de visibilité sur leur activité sans que la gestion devienne une seconde entreprise. Pacificompta explore une expérience plus accessible et contextualisée.",functions:["Suivre les éléments essentiels de gestion","Centraliser les informations utiles","Faciliter le suivi de l'activité","Préparer une évolution progressive de l'outil"],url:null},
-atlas:{eyebrow:"TERRITOIRE · DATA",title:"Atlas Pacifica",subtitle:"Comprendre le Pacifique par la donnée",why:"Les territoires produisent énormément de données. L'enjeu est de les rendre lisibles, croisables et utiles pour comprendre les phénomènes qui façonnent le Pacifique.",functions:["Explorer des données territoriales","Visualiser des phénomènes sur une carte","Croiser plusieurs sources d'information","Aider à comprendre les risques et évolutions"],url:"https://qgis-anomaly-mto.hinovadigital.workers.dev/"},
-manalog:{eyebrow:"LOGISTIQUE · COMMERCE",title:"ManaLog",subtitle:"La brique logistique du commerce",why:"Faire grandir le commerce implique de savoir ce qui se passe après la commande. ManaLog explore l'orchestration des flux qui relient commande, stock, fournisseurs, dispatch et livraison.",functions:["Suivre les commandes","Organiser les flux fournisseurs","Structurer le stock et le dispatch","Préparer la livraison et le suivi"],url:null},
-tere:{eyebrow:"COMMERCE ITINÉRANT",title:"Tere",subtitle:"Rendre visible le commerce itinérant",why:"Un vendeur itinérant peut avoir une excellente offre mais rester invisible dès qu'il change de lieu. Tere explore comment la localisation peut reconnecter présence physique et découverte numérique.",functions:["Géolocaliser les vendeurs","Afficher une présence temporaire","Permettre la découverte depuis mobile","Faire évoluer la visibilité selon le terrain"],url:null},
-creator:{eyebrow:"IA · CRÉATION",title:"CreatorOS",subtitle:"Transformer l'idée en contenu",why:"La création de contenu devient vite une chaîne de tâches répétitives. CreatorOS explore un environnement où l'humain garde la direction tandis que les tâches peuvent être structurées et accélérées.",functions:["Structurer les idées","Organiser les workflows de création","Accélérer certaines tâches répétitives","Préparer la diffusion des contenus"],url:null},
-rufau:{eyebrow:"TRANSMISSION · ACADÉMIE",title:"Rū-fau-tumu",subtitle:"Réveiller le potentiel numérique",why:"La technologie n'a de valeur que si les personnes savent s'en servir. L'Académie transmet les bases nécessaires pour comprendre, maîtriser et construire avec les outils numériques.",functions:["Apprendre par la pratique","Comprendre les outils numériques","Créer des projets concrets","Développer l'autonomie numérique"],url:"/academie.html"},
-ariihub:{eyebrow:"PROTOTYPAGE · EXPÉRIMENTATION",title:"Ariihub",subtitle:"Tester avant de déployer",why:"Une idée mérite d'être confrontée rapidement à l'usage. Ariihub sert d'espace d'expérimentation pour observer, ajuster et décider avant d'aller plus loin.",functions:["Prototyper rapidement","Tester une expérience","Observer les usages","Préparer une évolution vers un produit"],url:null}
+manahub:{eyebrow:"ENTREPRENEURIAT · ÉCOSYSTÈME",title:"ManaHub",subtitle:"Connecter l'entrepreneuriat du Fenua",why:"ManaHub explore un point de convergence pour aider entrepreneurs, commerce et services à se connecter autour d'un écosystème local.",functions:["Présenter une activité et ses offres","Structurer un parcours numérique","Connecter commerce, services et opportunités","Faire évoluer chaque brique selon les besoins"],url:null},
+pacificompta:{eyebrow:"GESTION · ENTREPRISE",title:"Pacificompta",subtitle:"La gestion pensée pour le Pacifique",why:"Pacificompta explore une expérience de gestion plus accessible et contextualisée pour les entrepreneurs et petites structures.",functions:["Suivre les éléments essentiels de gestion","Centraliser les informations utiles","Faciliter le suivi de l'activité","Préparer une évolution progressive de l'outil"],url:null},
+hinovaapp:{eyebrow:"DIGITALISATION · PACIFIQUE",title:"Hinova Digital App",subtitle:"La porte d'entrée numérique de l'écosystème",why:"L'application explore un point d'accès simple aux services et expériences numériques de l'écosystème Hinova.",functions:["Rassembler les points d'accès utiles","Faciliter la découverte des services","Créer des parcours mobiles","Faire évoluer l'expérience selon les usages"],url:null},
+fenua:{eyebrow:"RÉSILIENCE · TERRITOIRE",title:"Fenua-resilience.app",subtitle:"Comprendre les vulnérabilités du territoire",why:"Le projet explore comment les données peuvent aider à mieux comprendre les vulnérabilités du territoire et soutenir la préparation.",functions:["Structurer des informations territoriales","Croiser des données utiles","Visualiser des enjeux","Soutenir l'anticipation et la préparation"],url:null},
+hinova:{eyebrow:"SOLUTIONS · ARCHITECTURE",title:"Hinova Digital",subtitle:"Créer des solutions numériques",why:"Hinova Digital transforme un besoin ou une idée en solution numérique structurée, évolutive et adaptée au contexte.",functions:["Cadrer un besoin","Concevoir une solution","Structurer les parcours et fonctionnalités","Faire évoluer progressivement le produit"],url:"https://hinovadigitalcorp.com/"},
+atlas:{eyebrow:"CLIMAT · DATA · TERRITOIRE",title:"Atlas Pacifica",subtitle:"Comprendre le Pacifique par la donnée",why:"Atlas Pacifica explore la mise en relation de données climatiques, météorologiques, cartographiques et historiques du Pacifique.",functions:["Explorer des données territoriales","Visualiser des phénomènes sur carte","Croiser plusieurs sources","Aider à comprendre les risques et évolutions"],url:"https://qgis-anomaly-mto.hinovadigital.workers.dev/"},
+rufau:{eyebrow:"TRANSMISSION · ACADÉMIE",title:"Rū-fau-tumu Académie",subtitle:"Réveiller le potentiel numérique",why:"L'Académie transmet les compétences nécessaires pour comprendre, maîtriser et construire avec les outils numériques.",functions:["Apprendre par la pratique","Comprendre les outils numériques","Créer des projets concrets","Développer l'autonomie numérique"],url:"/academie.html"},
+crashboy:{eyebrow:"MOBILITÉ · COMMUNAUTÉ",title:"Crashboy Tahiti",subtitle:"Mobilité, culture et expérience",why:"Crashboy Tahiti explore un univers numérique autour de la mobilité, de la communauté et de la culture des sports de glisse.",functions:["Présenter l'univers et la communauté","Valoriser les expériences","Créer une présence mobile","Développer des parcours communautaires"],url:null},
+nbv:{eyebrow:"BEAUTÉ · NATURE · COMMERCE",title:"Natural Beauty Vahine",subtitle:"Une marque beauté à identité polynésienne",why:"NBV explore un univers de marque et de commerce autour d'une identité naturelle, féminine et polynésienne.",functions:["Présenter la marque et ses produits","Construire une identité commerciale","Créer un parcours de découverte","Préparer une évolution du commerce"],url:null},
+heya:{eyebrow:"IDENTITÉ · PARCOURS · VISION",title:"HeyaTapare.com",subtitle:"L'espace personnel de vision et de projets",why:"HeyaTapare.com rassemble une vision, des projets, des expérimentations et un parcours autour du numérique et de l'entrepreneuriat.",functions:["Présenter les projets","Structurer le parcours personnel","Partager une vision","Faire évoluer l'univers au fil des projets"],url:"https://heyatapare.com"}creatoros:{eyebrow:"IA · CRÉATION",title:"CreatorOS",subtitle:"Structurer et accélérer la création de contenu",why:"CreatorOS explore un environnement où l'humain garde la direction tandis que les tâches de création peuvent être structurées et accélérées.",functions:["Structurer les idées","Organiser les workflows de création","Accélérer certaines tâches répétitives","Préparer et réutiliser les contenus"],url:null},
+manalog:{eyebrow:"LOGISTIQUE · OPÉRATIONS",title:"ManaLog",subtitle:"Piloter les flux, du stock à l'expédition",why:"ManaLog explore une expérience de gestion logistique adaptée aux opérations d'un dépôt, de la réception au suivi des expéditions.",functions:["Suivre le stock","Préparer les commandes","Organiser les expéditions","Suivre les flux opérationnels"],url:null},
+maaterre:{eyebrow:"COMMERCE · MOBILITÉ",title:"Maa Tere",subtitle:"Faire vivre le commerce au-delà d'un point fixe",why:"Maa Tere explore un modèle de commerce mobile et de proximité, pensé autour du terrain, de la mobilité et de l'expérience client.",functions:["Organiser une activité itinérante","Présenter les offres et disponibilités","Structurer les parcours terrain","Faire évoluer le service selon les usages"],url:null},
 };
 const modal=document.getElementById("moduleModal"),closeBtn=document.getElementById("modalClose");
 document.querySelectorAll("[data-module]").forEach(card=>{card.setAttribute("role","button");card.setAttribute("tabindex","0");card.addEventListener("click",()=>openModule(card.dataset.module));card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openModule(card.dataset.module)}});});
