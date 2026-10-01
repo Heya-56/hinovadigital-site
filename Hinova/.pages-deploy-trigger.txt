@@ -1,3 +1,4 @@
 Cloudflare Pages deployment trigger.
 Lab modules and site-wide navigation updated 2026-10-01T00:40-10:00.
-Last trigger: 2026-10-01T10:16:00-10:00
+Last trigger: 2026-10-01T13:02:00-10:00
+Custom domain /lab/ should serve the same current Lab build.
