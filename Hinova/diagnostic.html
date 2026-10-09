@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diagnostic Systémique | Hinova Digital</title>
+    <title>Diagnostic offert | Hinova Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <style>
@@ -102,11 +102,12 @@
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/webp" href="/logo-hinova.webp" />
     <link rel="apple-touch-icon" href="/logo-hinova.webp" />
-    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="theme-color" content="#08343A" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Hinova" />
     <link rel="stylesheet" href="/css/theme.css" />
+      <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}</script>
   </head>
 
 <body>
@@ -129,15 +130,15 @@
         <img src="/logo-hinova.webp" alt="Logo Hinova Digital" class="site-logo mb-8 drop-shadow-lg hero-title" style="display:none;" />
         <div class="mb-8 max-w-xs">
             <div class="divider mb-6"></div>
-            <p class="gold-label gold-glow">Diagnostic Systémique</p>
+            <p class="gold-label gold-glow">Diagnostic offert</p>
             <div class="divider mt-6"></div>
         </div>
         <h1 class="font-montserrat font-black text-4xl md:text-5xl lg:text-6xl mb-6 hero-title hero-heading" style="animation-delay: 0.1s;">
-            <span class="text-gradient-cyan">Identifiez vos freins</span>
-            <span class="text-gradient-cyan">à la croissance digitale</span>
+            <span class="text-gradient-cyan">Où votre entreprise</span>
+            <span class="text-gradient-cyan">perd-elle du temps ?</span>
         </h1>
         <p class="font-inter text-base md:text-lg max-w-2xl hero-title" style="animation-delay: 0.2s; color:#33555B;">
-            Remplis ce formulaire et reçois un diagnostic personnalisé du potentiel d'automation de ton entreprise, sous 48h.
+            Deux minutes pour répondre. Sous 48 h, vous recevez une analyse claire de ce qui peut être automatisé chez vous — et par où commencer.
         </p>
     </section>
 
@@ -145,12 +146,12 @@
         <div class="max-w-2xl mx-auto">
             <div class="glass reveal visible">
                 <div class="mb-8 text-center">
-                    <p class="gold-label mb-4">Prêt à transformer votre entreprise ?</p>
+                    <p class="gold-label mb-4">Votre diagnostic personnalisé</p>
                     <div class="divider max-w-xs mx-auto"></div>
                 </div>
                 <form id="diagForm" action="https://api.web3forms.com/submit" method="POST" class="text-left space-y-5">
                     <input type="hidden" name="access_key" value="efc09b6d-e9d9-4f7f-8f19-7b9dc7e5c933">
-                    <input type="hidden" name="subject" value="Nouveau Diagnostic Systémique — Hinova Digital">
+                    <input type="hidden" name="subject" value="Nouveau Diagnostic offert — Hinova Digital">
                     <input type="hidden" name="from_name" value="Formulaire Diagnostic — hinovadigitalcorp.com">
                     <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
@@ -182,7 +183,7 @@
                     </div>
 
                     <div>
-                        <label class="block font-inter text-xs uppercase tracking-widest mb-3" style="color:#4E6A6E;">Où se situe ton principal frein aujourd'hui ? *</label>
+                        <label class="block font-inter text-xs uppercase tracking-widest mb-3" style="color:#4E6A6E;">Quel est votre principal frein aujourd'hui ? *</label>
                         <div class="space-y-2">
                             <label class="flex items-start gap-3 font-inter text-sm cursor-pointer" style="color:#33555B;">
                                 <input type="radio" name="frein_principal" value="Prospection internationale / décalage horaire" required class="mt-1"> Prospection internationale &amp; décalage horaire
@@ -200,12 +201,12 @@
                     </div>
 
                     <div>
-                        <label for="message" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#4E6A6E;">Décris ton contexte en quelques mots</label>
+                        <label for="message" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#4E6A6E;">Votre contexte en quelques mots (facultatif)</label>
                         <textarea id="message" name="message" rows="4" class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(8,52,58,0.6); border:1px solid rgba(30,111,217,0.25); color:#0B2F35;"></textarea>
                     </div>
 
                     <button type="submit" id="diagSubmitBtn" class="w-full font-montserrat font-bold uppercase tracking-widest text-sm py-4 rounded-lg transition" style="background:#1E6FD9; color:#FFFFFF;">
-                        Recevoir mon diagnostic personnalisé
+                        Recevoir mon diagnostic sous 48 h
                     </button>
 
                     <p id="diagFormMsg" class="font-inter text-sm text-center hidden"></p>
@@ -237,14 +238,14 @@
                                 diagMsg.style.color = '#E07A5F';
                                 diagMsg.textContent = "Une erreur est survenue. Réessaie ou écris-moi directement à contact@hinovadigitalcorp.com";
                                 diagBtn.disabled = false;
-                                diagBtn.textContent = 'Recevoir mon diagnostic personnalisé';
+                                diagBtn.textContent = 'Recevoir mon diagnostic sous 48 h';
                             }
                         } catch (err) {
                             diagMsg.classList.remove('hidden');
                             diagMsg.style.color = '#E07A5F';
                             diagMsg.textContent = "Connexion impossible. Réessaie ou écris-moi directement à contact@hinovadigitalcorp.com";
                             diagBtn.disabled = false;
-                            diagBtn.textContent = 'Recevoir mon diagnostic personnalisé';
+                            diagBtn.textContent = 'Recevoir mon diagnostic sous 48 h';
                         }
                     });
                 </script>
@@ -255,12 +256,12 @@
     <section class="py-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-transparent via-[rgba(30,111,217,0.05)] to-transparent">
         <div class="max-w-3xl mx-auto text-center reveal visible" style="animation-delay: 0.3s;">
             <h2 class="font-montserrat font-bold text-2xl md:text-3xl mb-8">
-                Pourquoi ce diagnostic ?
+                Ce que vous recevez
             </h2>
             <div class="divider max-w-xs mx-auto mb-8"></div>
             <p class="font-inter text-base md:text-lg leading-relaxed" style="color:#33555B;">
-                <span class="gold-accent">L'intelligence artificielle et l'automation</span> ne sont rien sans une compréhension profonde de votre écosystème. 
-                Notre diagnostic évalue vos processus actuels, identifie les goulots d'étranglement, et vous propose un plan d'action réaliste et aligné avec votre croissance.
+                <span class="gold-accent">Pas de jargon, pas d'engagement</span> : un regard extérieur sur votre organisation. 
+                Nous repérons les tâches qui vous coûtent le plus de temps, puis nous vous proposons un plan d'action réaliste, à la mesure de votre entreprise.
             </p>
         </div>
     </section>

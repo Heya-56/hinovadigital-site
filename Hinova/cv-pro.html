@@ -229,11 +229,12 @@
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/webp" href="/logo-hinova.webp" />
     <link rel="apple-touch-icon" href="/logo-hinova.webp" />
-    <meta name="theme-color" content="#061A22" />
+    <meta name="theme-color" content="#08343A" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Hinova" />
-</head>
+    <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}</script>
+  </head>
 <body>
 
     <!-- Onglets de Navigation -->
