@@ -1,0 +1,129 @@
+/* ═══════════════════════════════════════════════════════════════
+   HINOVA DIGITAL — Thème "Lagon numérique" (oct. 2026)
+   Teal sombre (zones fortes) · Bleu numérique (lignes, liens)
+   Doré (accents) · Fonds blancs (lecture)
+   Généré avec la méthode UI/UX Pro Max : Trust & Authority + Conversion
+   ═══════════════════════════════════════════════════════════════ */
+:root {
+  --hv-teal-900: #08343A;   /* teal sombre : hero, footer, menus */
+  --hv-teal-700: #0E4A51;
+  --hv-teal-050: #EEF5F5;   /* surfaces douces */
+  --hv-blue:     #1E6FD9;   /* bleu numérique : lignes, liens, focus */
+  --hv-gold:     #B5823A;   /* accents, CTA secondaires */
+  --hv-gold-lt:  #D9B370;   /* doré sur fond sombre */
+  --hv-ink:      #0B2F35;   /* texte principal */
+  --hv-muted:    #4E6A6E;
+  --hv-white:    #FFFFFF;
+  --hv-line:     rgba(30,111,217,.22);
+  --hv-shadow:   0 10px 30px -12px rgba(8,52,58,.18);
+}
+
+html, body { background: var(--hv-white) !important; color: var(--hv-ink); }
+::selection { background: rgba(30,111,217,.18); }
+
+/* Typo : lisibilité (UX : base 16px, interligne 1.6) */
+body { font-size: 16px; line-height: 1.6; }
+h1, h2, h3, .font-montserrat { letter-spacing: -.01em; text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* Cartes "glass" → cartes blanches nettes, liseré bleu numérique */
+.glass, .glass-gold, .card, [class*="glass-"] {
+  background: var(--hv-white) !important;
+  backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+  border: 1px solid var(--hv-line) !important;
+  box-shadow: var(--hv-shadow);
+}
+.glass-gold { border-color: rgba(181,130,58,.45) !important; border-top: 3px solid var(--hv-gold) !important; }
+.glass:hover, .glass-gold:hover { box-shadow: 0 18px 40px -16px rgba(8,52,58,.28); }
+
+/* Sections alternées pour rythmer la lecture */
+main > section:nth-of-type(even), body > section:nth-of-type(odd):not(:first-of-type) {
+  background: linear-gradient(180deg, var(--hv-white), var(--hv-teal-050));
+}
+
+/* ── ZONES TEAL SOMBRE : hero, footer, menu déroulant, bandeaux ── */
+.hero-bg, .hero-video-section, section.hero, footer, .nav-dropdown, .dark-zone {
+  background-color: var(--hv-teal-900) !important;
+  color: #F2F8F8 !important;
+}
+.hero-bg *, footer *, .nav-dropdown *, .dark-zone * { border-color: rgba(255,255,255,.14); }
+.hero-bg :is(h1,h2,h3,p,span,li,a,div), footer :is(h1,h2,h3,p,span,li,div),
+.nav-dropdown :is(a,span,li), .dark-zone :is(h1,h2,h3,p,span,li,div) {
+  color: #EAF4F4;
+}
+:is(.hero-bg, .hero-video-section, section.hero, footer, .nav-dropdown, .dark-zone) :is(.text-gold, .gold-label, [class*="gold"]) { color: var(--hv-gold-lt) !important; }
+:is(.hero-bg, .hero-video-section, section.hero, footer, .nav-dropdown, .dark-zone) :is(.text-cyan, a:hover) { color: #7DB4FF !important; }
+:is(.hero-bg, .hero-video-section, section.hero, footer, .nav-dropdown, .dark-zone) :is(.text-slate, .text-pearl) { color: #C9DDDF !important; }
+footer { border-top: 3px solid var(--hv-gold) !important; }
+footer a { color: #D6E7E8 !important; }
+footer a:hover { color: var(--hv-gold-lt) !important; }
+
+/* Ligne numérique signature sous les titres de section */
+section h2::after {
+  content: ""; display: block; width: 56px; height: 2px; margin-top: .75rem;
+  background: linear-gradient(90deg, var(--hv-blue), var(--hv-gold));
+}
+.text-center h2::after, h2.text-center::after { margin-left: auto; margin-right: auto; }
+.hero-bg h2::after { display: none; }
+
+/* Liens et boutons */
+a { transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
+main a:not([class*="btn"]):not([class*="bg-"]) { text-underline-offset: 3px; }
+.bg-cyan, [class*="btn-primary"] { background-color: var(--hv-blue) !important; color: #fff !important; }
+.bg-gold, [class*="btn-gold"] { background-color: var(--hv-gold) !important; color: #fff !important; }
+.bg-gold:hover, .bg-cyan:hover { filter: brightness(1.07); }
+button, a[href], [role="button"] { cursor: pointer; }
+
+/* Accessibilité : focus visibles, cibles tactiles 44px */
+:focus-visible { outline: 3px solid var(--hv-blue) !important; outline-offset: 3px; border-radius: 6px; }
+.hero-bg :focus-visible, footer :focus-visible { outline-color: var(--hv-gold-lt) !important; }
+nav a, button { min-height: 44px; }
+
+/* Formulaires lisibles sur fond blanc */
+input, select, textarea {
+  background: #fff !important; color: var(--hv-ink) !important;
+  border: 1px solid rgba(11,47,53,.22) !important; border-radius: .6rem;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--hv-blue) !important; box-shadow: 0 0 0 3px rgba(30,111,217,.15); }
+::placeholder { color: #7A9296 !important; }
+
+/* Images : coins doux + ombre légère */
+main img:not([class*="logo"]):not([width="16"]) { border-radius: .9rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Zones sombres : forcer un texte clair même sur styles inline */
+:is(.hero-bg, .hero-video-section, section.hero, footer, .nav-dropdown, .dark-zone) :is(h1,h2,h3,h4,p,span,strong,em,li,small,div)[style*="color"],
+.hero-bg .hero-heading span { color: #F4FAFA !important; }
+.hero-bg .hero-heading, .hero-bg .gold-label { text-shadow: 0 2px 18px rgba(8,52,58,.55) !important; }
+.hero-bg .gold-label { color: var(--hv-gold-lt) !important; }
+.hero-bg :is(.glass, .glass-gold) {
+  background: rgba(255,255,255,.07) !important; border: 1px solid rgba(217,179,112,.55) !important;
+  box-shadow: none; backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important;
+}
+.hero-bg strong { color: var(--hv-gold-lt) !important; }
+.hero-bg .nav-burger, .hero-bg .lang-btn, .hero-video-section .nav-burger, .hero-video-section .lang-btn { color: #F4FAFA !important; border-color: rgba(255,255,255,.35) !important; background: rgba(255,255,255,.06) !important; }
+
+/* Titres dorés : pas de halo sur fond blanc, taille homogène dans les cartes */
+.gold-title, .gold-number { text-shadow: none !important; animation: none !important; }
+.glass .gold-title, .glass-gold .gold-title, .card-hover .gold-title {
+  font-size: 1.05rem !important; letter-spacing: .04em; text-transform: uppercase; line-height: 1.3;
+}
+@media (min-width: 768px) { .services-grid.md\:grid-cols-4 { grid-template-columns: repeat(2, minmax(0,1fr)) !important; } }
+@media (min-width: 1100px) { .services-grid.md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0,1fr)) !important; } }
+
+/* Titres des héros : blanc lisible, y compris textes en dégradé */
+:is(.hero-bg, .hero-video-section, section.hero) :is(h1, h1 *, h2, h2 *) {
+  color: #F4FAFA !important; -webkit-text-fill-color: #F4FAFA !important; background-image: none !important;
+}
+:is(.hero-bg, .hero-video-section, section.hero) :is(h1, h2) :is(.text-cyan, [class*="accent"], [class*="grad"], em) {
+  color: var(--hv-gold-lt) !important; -webkit-text-fill-color: var(--hv-gold-lt) !important;
+}
+:is(.hero-bg, .hero-video-section, section.hero) .gold-label, :is(.hero-bg, .hero-video-section, section.hero) .gold-label * {
+  color: var(--hv-gold-lt) !important; -webkit-text-fill-color: var(--hv-gold-lt) !important;
+}
+.site-header { background: #fff; border-bottom: 1px solid var(--hv-line); }
+.site-header .nav-burger, .site-header .lang-btn { color: var(--hv-ink) !important; border: 1px solid var(--hv-line) !important; background: #fff !important; }
+section.hero p { color: #DCEAEA !important; text-shadow: 0 1px 10px rgba(8,52,58,.6); }

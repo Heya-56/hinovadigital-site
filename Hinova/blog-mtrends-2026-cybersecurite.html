@@ -12,43 +12,44 @@
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{background:#061A22;color:#E0F7FA;font-family:'Inter',sans-serif;padding:24px}
+    body{background:#FFFFFF;color:#0B2F35;font-family:'Inter',sans-serif;padding:24px}
     .site-logo{width:40px}
-    a.nav-tab{color:#E0F7FA;text-decoration:none;padding:0.65rem 0.9rem;border-radius:0.55rem;display:block;font-size:0.9rem}
-    a.nav-tab:hover, a.nav-tab.active{background:rgba(10,184,196,0.14);color:#0AB8C4}
-    .nav-burger{background:transparent;border:1px solid rgba(224,247,250,0.25);color:#E0F7FA;width:44px;height:44px;border-radius:0.6rem;display:flex;align-items:center;justify-content:center;font-size:1.3rem;line-height:1;cursor:pointer}
-    .nav-burger:hover{border-color:#0AB8C4;background:rgba(10,184,196,0.1)}
-    .nav-dropdown{position:absolute;top:calc(100% + 10px);right:0;min-width:230px;background:rgba(6,26,34,0.97);border:1px solid rgba(10,184,196,0.25);border-radius:0.85rem;padding:0.6rem;display:none;flex-direction:column;gap:0.25rem;z-index:200;box-shadow:0 20px 45px rgba(0,0,0,0.45);backdrop-filter:blur(14px)}
+    a.nav-tab{color:#0B2F35;text-decoration:none;padding:0.65rem 0.9rem;border-radius:0.55rem;display:block;font-size:0.9rem}
+    a.nav-tab:hover, a.nav-tab.active{background:rgba(30,111,217,0.14);color:#1E6FD9}
+    .nav-burger{background:transparent;border:1px solid rgba(11,47,53,0.25);color:#0B2F35;width:44px;height:44px;border-radius:0.6rem;display:flex;align-items:center;justify-content:center;font-size:1.3rem;line-height:1;cursor:pointer}
+    .nav-burger:hover{border-color:#1E6FD9;background:rgba(30,111,217,0.1)}
+    .nav-dropdown{position:absolute;top:calc(100% + 10px);right:0;min-width:230px;background:rgba(8,52,58,0.97);border:1px solid rgba(30,111,217,0.25);border-radius:0.85rem;padding:0.6rem;display:none;flex-direction:column;gap:0.25rem;z-index:200;box-shadow:0 20px 45px rgba(0,0,0,0.45);backdrop-filter:blur(14px)}
     .nav-dropdown.open{display:flex}
     .container{max-width:760px;margin:40px auto}
-    .gold-label{color:#C09552;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:0.78rem}
-    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(10,184,196,0.4),transparent);margin:0 auto}
-    article h2{font-family:'Montserrat',sans-serif;font-weight:900;color:#0AB8C4;font-size:1.4rem;margin:2.4rem 0 1rem;line-height:1.25}
-    article p{color:#B0D8DF;font-size:0.95rem;line-height:1.75;margin-bottom:1rem}
-    article ul{margin:0.5rem 0 1.2rem 1.3rem;color:#B0D8DF;font-size:0.95rem;line-height:1.8}
+    .gold-label{color:#B5823A;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:0.78rem}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(30,111,217,0.4),transparent);margin:0 auto}
+    article h2{font-family:'Montserrat',sans-serif;font-weight:900;color:#1E6FD9;font-size:1.4rem;margin:2.4rem 0 1rem;line-height:1.25}
+    article p{color:#33555B;font-size:0.95rem;line-height:1.75;margin-bottom:1rem}
+    article ul{margin:0.5rem 0 1.2rem 1.3rem;color:#33555B;font-size:0.95rem;line-height:1.8}
     article ul li{margin-bottom:0.35rem}
-    article ul li::marker{color:#0AB8C4}
-    article strong{color:#E0F7FA}
-    .lede{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.05rem;color:#E0F7FA;line-height:1.6;border-left:2px solid #0AB8C4;padding-left:1rem;margin:1.5rem 0}
-    .back-link{display:inline-flex;align-items:center;gap:0.4rem;color:#0AB8C4;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1.5rem}
+    article ul li::marker{color:#1E6FD9}
+    article strong{color:#0B2F35}
+    .lede{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.05rem;color:#0B2F35;line-height:1.6;border-left:2px solid #1E6FD9;padding-left:1rem;margin:1.5rem 0}
+    .back-link{display:inline-flex;align-items:center;gap:0.4rem;color:#1E6FD9;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1.5rem}
     .back-link:hover{text-decoration:underline}
-    .cta-box{background:rgba(10,50,63,0.45);border:1px solid rgba(10,184,196,0.25);border-radius:12px;padding:1.75rem;margin-top:3rem;text-align:center}
-    .btn-cyan{background:#0AB8C4;color:#061A22;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.9rem;padding:0.8rem 1.6rem;border-radius:0.6rem;border:none;cursor:pointer;text-decoration:none;display:inline-block;margin-top:0.75rem}
-    .btn-cyan:hover{background:#0dd0de}
-    .meta-row{display:flex;gap:12px;align-items:center;color:#81A1A8;font-size:0.78rem;margin:0.75rem 0 1.75rem;flex-wrap:wrap}
-    .back-to-top{position:fixed;bottom:22px;right:22px;width:46px;height:46px;border-radius:50%;background:rgba(6,26,34,0.92);border:1px solid rgba(10,184,196,0.4);color:#0AB8C4;display:flex;align-items:center;justify-content:center;font-size:1.25rem;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s ease,transform .3s ease,visibility .3s ease,border-color .2s ease,background .2s ease;z-index:150;box-shadow:0 8px 24px rgba(0,0,0,0.35);text-decoration:none}
+    .cta-box{background:rgba(255,255,255,0.45);border:1px solid rgba(30,111,217,0.25);border-radius:12px;padding:1.75rem;margin-top:3rem;text-align:center}
+    .btn-cyan{background:#1E6FD9;color:#FFFFFF;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.9rem;padding:0.8rem 1.6rem;border-radius:0.6rem;border:none;cursor:pointer;text-decoration:none;display:inline-block;margin-top:0.75rem}
+    .btn-cyan:hover{background:#2B7FEA}
+    .meta-row{display:flex;gap:12px;align-items:center;color:#4E6A6E;font-size:0.78rem;margin:0.75rem 0 1.75rem;flex-wrap:wrap}
+    .back-to-top{position:fixed;bottom:22px;right:22px;width:46px;height:46px;border-radius:50%;background:rgba(8,52,58,0.92);border:1px solid rgba(30,111,217,0.4);color:#1E6FD9;display:flex;align-items:center;justify-content:center;font-size:1.25rem;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s ease,transform .3s ease,visibility .3s ease,border-color .2s ease,background .2s ease;z-index:150;box-shadow:0 8px 24px rgba(0,0,0,0.35);text-decoration:none}
     .back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
-    .back-to-top:hover,.back-to-top:focus-visible{border-color:#0AB8C4;background:rgba(10,184,196,0.16);outline:none}
+    .back-to-top:hover,.back-to-top:focus-visible{border-color:#1E6FD9;background:rgba(30,111,217,0.16);outline:none}
     @media (prefers-reduced-motion: reduce){.back-to-top{transition:none}}
   </style>
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/webp" href="/logo-hinova.webp" />
     <link rel="apple-touch-icon" href="/logo-hinova.webp" />
-    <meta name="theme-color" content="#061A22" />
+    <meta name="theme-color" content="#FFFFFF" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Hinova" />
-</head>
+    <link rel="stylesheet" href="/css/theme.css" />
+  </head>
 <body>
   <header style="display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto">
     <img src="/logo-hinova.webp" alt="Hinova" class="site-logo" />
@@ -69,11 +70,11 @@
     <a href="blog.html" class="back-link">← Retour au journal</a>
 
     <p class="gold-label">Cybersécurité &amp; architecture</p>
-    <h1 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.9rem;line-height:1.25;color:#E0F7FA;margin-top:0.6rem;">
+    <h1 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.9rem;line-height:1.25;color:#0B2F35;margin-top:0.6rem;">
       Rapport M-Trends de Google Cloud : ce que les entreprises polynésiennes doivent retenir en 2026
     </h1>
     <div class="meta-row">
-      <span>Hinova Digital Corp</span>
+      <span>Hinova Digital</span>
       <span>·</span>
       <span>2026</span>
     </div>
@@ -195,14 +196,14 @@
 
     <div class="cta-box">
       <p class="gold-label" style="margin-bottom:0.5rem;">Envie d'un audit ?</p>
-      <p style="color:#B0D8DF;font-size:0.9rem;">Fais le diagnostic systémique de ton entreprise et identifie où se situent tes vrais risques numériques.</p>
+      <p style="color:#33555B;font-size:0.9rem;">Fais le diagnostic systémique de ton entreprise et identifie où se situent tes vrais risques numériques.</p>
       <a href="diagnostic.html" class="btn-cyan">Faire le diagnostic</a>
     </div>
   </main>
 
-  <footer style="text-align:center;color:#81A1A8;margin-top:40px;max-width:760px;margin-left:auto;margin-right:auto">
-    <a href="/politique-de-confidentialite.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#0AB8C4; text-decoration:none">Politique de Confidentialité</a>
-    © 2026 Hinova Digital Corp.
+  <footer style="text-align:center;color:#4E6A6E;margin-top:40px;max-width:760px;margin-left:auto;margin-right:auto">
+    <a href="/politique-de-confidentialite.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1E6FD9; text-decoration:none">Politique de Confidentialité</a>
+    © 2026 Hinova Digital.
   </footer>
 
   <script>
