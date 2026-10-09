@@ -8,18 +8,18 @@
   --hv-teal-900: #08343A;   /* teal sombre : hero, footer, menus */
   --hv-teal-700: #0E4A51;
   --hv-teal-050: #EEF5F5;   /* surfaces douces */
-  --hv-blue:     #1E6FD9;   /* bleu numérique : lignes, liens, focus */
+  --hv-blue:     #1B64C8;   /* bleu numérique : lignes, liens, focus */
   --hv-gold:     #B5823A;   /* accents, CTA secondaires */
   --hv-gold-lt:  #D9B370;   /* doré sur fond sombre */
   --hv-ink:      #0B2F35;   /* texte principal */
   --hv-muted:    #4E6A6E;
   --hv-white:    #FFFFFF;
-  --hv-line:     rgba(30,111,217,.22);
+  --hv-line:     rgba(27,100,200,.22);
   --hv-shadow:   0 10px 30px -12px rgba(8,52,58,.18);
 }
 
 html, body { background: var(--hv-white) !important; color: var(--hv-ink); }
-::selection { background: rgba(30,111,217,.18); }
+::selection { background: rgba(27,100,200,.18); }
 
 /* Typo : lisibilité (UX : base 16px, interligne 1.6) */
 body { font-size: 16px; line-height: 1.6; }
@@ -84,7 +84,7 @@ input, select, textarea {
   background: #fff !important; color: var(--hv-ink) !important;
   border: 1px solid rgba(11,47,53,.22) !important; border-radius: .6rem;
 }
-input:focus, select:focus, textarea:focus { border-color: var(--hv-blue) !important; box-shadow: 0 0 0 3px rgba(30,111,217,.15); }
+input:focus, select:focus, textarea:focus { border-color: var(--hv-blue) !important; box-shadow: 0 0 0 3px rgba(27,100,200,.15); }
 ::placeholder { color: #7A9296 !important; }
 
 /* Images : coins doux + ombre légère */
@@ -154,3 +154,8 @@ section.hero :is(.cta-secondary, a[class*="secondary"]) { color: #F4FAFA !import
   .desktop-nav { display: flex !important; flex-wrap: wrap; justify-content: flex-end; gap: .35rem; }
   .desktop-nav .navlink { padding: .45rem .7rem; font-size: .78rem; min-height: 40px; display: inline-flex; align-items: center; }
 }
+
+/* Contraste AA : doré foncé pour les petits textes sur fond clair, texte blanc pur sur boutons */
+.gold-label, .proof-eyebrow, .eyebrow, .text-gold, em[style*="B5823A"] { color: #8F6424 !important; }
+:is(.hero-bg, .hero-video-section, section.hero, footer, .dark-zone, #cookieConsent) :is(.gold-label, .eyebrow, .text-gold, .gold) { color: var(--hv-gold-lt) !important; }
+.btn-cyan, .btn-cyan *, .bg-cyan, .nav-cta, .cta-primary, .cta-primary * { color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; }

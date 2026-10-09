@@ -8,14 +8,14 @@ Source de vérité visuelle du site hinovadigitalcorp.com. Établi avec le skill
 |---|---|---|---|
 | Teal sombre | `#08343A` | `--hv-teal-900` | Héros, footer, menus |
 | Surface douce | `#EEF5F5` | `--hv-teal-050` | Sections alternées |
-| Bleu numérique | `#1E6FD9` | `--hv-blue` | Lignes, liens, focus, CTA principal |
+| Bleu numérique | `#1B64C8` | `--hv-blue` | Lignes, liens, focus, CTA principal |
 | Doré | `#B5823A` | `--hv-gold` | Accents, labels, CTA secondaire |
 | Doré clair | `#D9B370` | `--hv-gold-lt` | Doré sur fond sombre |
 | Encre | `#0B2F35` | `--hv-ink` | Texte principal |
 | Texte secondaire | `#4E6A6E` | `--hv-muted` | Paragraphes secondaires |
 | Fond | `#FFFFFF` | `--hv-white` | Lecture |
 
-Ancienne palette remappée : `#061A22`→blanc (fond) / teal sombre (overlays), `#0AB8C4`→`#1E6FD9`,
+Ancienne palette remappée : `#061A22`→blanc (fond) / teal sombre (overlays), `#0AB8C4`→`#1B64C8`,
 `#E0F7FA`→`#0B2F35`, `#C09552`→`#B5823A`.
 
 ## Typographie

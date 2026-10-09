@@ -1,7 +1,7 @@
 /* Hinova Digital — service worker (PWA)
    Pages : réseau d'abord (contenu toujours à jour), cache en secours hors ligne.
    Images, polices, CSS, JS : cache d'abord (chargement instantané). */
-const VERSION = 'hinova-v2026-10-08f';
+const VERSION = 'hinova-v2026-10-08g';
 const CORE = ['/', '/index.html', '/vision.html', '/academie.html', '/diagnostic.html',
   '/css/tailwind.css', '/css/theme.css', '/logo-hinova.webp', '/icon-192.png', '/icon-512.png', '/manifest.json'];
 

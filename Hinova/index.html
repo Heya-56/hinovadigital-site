@@ -72,7 +72,7 @@
         background: rgba(255,255,255,0.45);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(30,111,217,0.18);
+        border: 1px solid rgba(27,100,200,0.18);
         border-radius: 1rem;
       }
       .glass-gold {
@@ -113,7 +113,7 @@
         position: absolute;
         inset: -3px;
         border-radius: 1.25rem;
-        background: linear-gradient(135deg, #B5823A, #1E6FD9, #B5823A);
+        background: linear-gradient(135deg, #B5823A, #1B64C8, #B5823A);
         z-index: 0;
         animation: rotateBorder 4s linear infinite;
       }
@@ -125,7 +125,7 @@
         position: relative; z-index: 1;
         border-radius: 1.25rem; display: block;
         width: 100%; max-width: 380px; object-fit: cover;
-        box-shadow: 0 0 40px rgba(30,111,217,0.35), 0 0 80px rgba(30,111,217,0.15);
+        box-shadow: 0 0 40px rgba(27,100,200,0.35), 0 0 80px rgba(27,100,200,0.15);
       }
       .portrait-wrap .clip-corner {
         position: absolute; bottom: 0; right: 0;
@@ -139,15 +139,15 @@
       }
       .reveal.visible { opacity: 1; transform: translateY(0); }
       .btn-cyan {
-        background: #1E6FD9; color: #FFFFFF;
+        background: #1B64C8; color: #FFFFFF;
         font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem;
         padding: 0.9rem 2rem; border-radius: 0.6rem; border: none; cursor: pointer;
-        transition: all 0.3s ease; box-shadow: 0 0 20px rgba(30,111,217,0.45);
+        transition: all 0.3s ease; box-shadow: 0 0 20px rgba(27,100,200,0.45);
         text-decoration: none; display: inline-block;
       }
       @media (hover: hover) and (pointer: fine) {
         .btn-cyan:hover {
-          background: #2B7FEA; box-shadow: 0 0 36px rgba(30,111,217,0.75);
+          background: #2B7FEA; box-shadow: 0 0 36px rgba(27,100,200,0.75);
           transform: translateY(-2px);
         }
       }
@@ -157,11 +157,11 @@
         padding: 0.85rem 1.9rem; border-radius: 0.6rem; border: 1px solid rgba(11,47,53,0.35);
         transition: all 0.3s ease; text-decoration: none; display: inline-block;
       }
-      .btn-ghost:hover { border-color:#1E6FD9; color:#1E6FD9; background: rgba(30,111,217,0.08); }
+      .btn-ghost:hover { border-color:#1B64C8; color:#1B64C8; background: rgba(27,100,200,0.08); }
       .lang-btn {
         background: transparent;
-        border: 1px solid rgba(30,111,217,0.45);
-        color: #1E6FD9;
+        border: 1px solid rgba(27,100,200,0.45);
+        color: #1B64C8;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700; font-size: 0.75rem;
         letter-spacing: 0.1em;
@@ -170,22 +170,22 @@
         cursor: pointer;
         transition: all 0.25s ease;
       }
-      .lang-btn:hover, .nav-tab:hover { background: rgba(30,111,217,0.15); border-color: #1E6FD9; }
+      .lang-btn:hover, .nav-tab:hover { background: rgba(27,100,200,0.15); border-color: #1B64C8; }
       .nav-tab {
         color: #0B2F35; border: 1px solid rgba(11,47,53,0.18); background: rgba(255,255,255,0.55);
         font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.95rem;
         letter-spacing: 0.12em; padding: 0.7rem 1.15rem; border-radius: 0.65rem;
         text-decoration: none; transition: all 0.25s ease; text-align: center; min-width: 130px;
       }
-      .nav-tab strong { color: #1E6FD9; }
-      .nav-tab.active { background: #1E6FD9; border-color: #1E6FD9; color: #FFFFFF; }
+      .nav-tab strong { color: #1B64C8; }
+      .nav-tab.active { background: #1B64C8; border-color: #1B64C8; color: #FFFFFF; }
       .nav-tab.active strong { color: #FFFFFF; }
-      .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(30,111,217,0.4), transparent); margin: 0 auto; }
-      .text-gradient-cyan { background: linear-gradient(135deg, #1E6FD9, #0B2F35); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 900; letter-spacing: 0.04em; }
+      .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(27,100,200,0.4), transparent); margin: 0 auto; }
+      .text-gradient-cyan { background: linear-gradient(135deg, #1B64C8, #0B2F35); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 900; letter-spacing: 0.04em; }
       .gold { color: #B5823A; }
       .gold-title {
         color: #B5823A; font-weight: 900; letter-spacing: 0.12em; line-height: 1.05;
-        text-shadow: 0 0 24px rgba(181,130,58,0.32), 0 0 30px rgba(30,111,217,0.08);
+        text-shadow: 0 0 24px rgba(181,130,58,0.32), 0 0 30px rgba(27,100,200,0.08);
         animation: goldGlow 4s ease-in-out infinite alternate; will-change: text-shadow, transform;
       }
       .gold-title.small { font-size: 1.15rem; }
@@ -199,7 +199,7 @@
       @media (min-width: 1024px) { .gold-title { font-size: 1.75rem; } .gold-title.small { font-size: 1.45rem; } }
       
       .card-hover { transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease; }
-      .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(30,111,217,0.18); border-color: rgba(30,111,217,0.5) !important; }
+      .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(27,100,200,0.18); border-color: rgba(27,100,200,0.5) !important; }
       .arch-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 1.2rem; }
       .dot { position: absolute; border-radius: 50%; animation: float 6s ease-in-out infinite; }
       @media (max-width: 768px) { .hero-bg { background-attachment: scroll; } }
@@ -239,22 +239,22 @@
 
       /* ---- hamburger nav dropdown ---- */
       .nav-burger { background:transparent; border:1px solid rgba(11,47,53,0.25); color:#0B2F35; width:44px; height:44px; border-radius:0.6rem; display:flex; align-items:center; justify-content:center; font-size:1.3rem; line-height:1; cursor:pointer; transition:border-color .15s ease, background .15s ease; }
-      .nav-burger:hover { border-color:#1E6FD9; background:rgba(30,111,217,0.1); }
-      .nav-dropdown { position:absolute; top:calc(100% + 10px); right:0; min-width:230px; background:rgba(8,52,58,0.97); border:1px solid rgba(30,111,217,0.25); border-radius:0.85rem; padding:0.6rem; display:none; flex-direction:column; gap:0.25rem; z-index:200; box-shadow:0 20px 45px rgba(0,0,0,0.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+      .nav-burger:hover { border-color:#1B64C8; background:rgba(27,100,200,0.1); }
+      .nav-dropdown { position:absolute; top:calc(100% + 10px); right:0; min-width:230px; background:rgba(8,52,58,0.97); border:1px solid rgba(27,100,200,0.25); border-radius:0.85rem; padding:0.6rem; display:none; flex-direction:column; gap:0.25rem; z-index:200; box-shadow:0 20px 45px rgba(0,0,0,0.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
       .nav-dropdown.open { display:flex; }
       .nav-dropdown a.nav-tab { padding:0.7rem 0.9rem; border-radius:0.55rem; display:block; }
-      .nav-dropdown a.nav-tab:hover, .nav-dropdown a.nav-tab.active { background:rgba(30,111,217,0.14); }
-        .back-to-top { position:fixed; bottom:22px; right:22px; width:46px; height:46px; border-radius:50%; background:rgba(8,52,58,0.92); border:1px solid rgba(30,111,217,0.4); color:#1E6FD9; display:flex; align-items:center; justify-content:center; font-size:1.25rem; cursor:pointer; opacity:0; visibility:hidden; transform:translateY(12px); transition: opacity .3s ease, transform .3s ease, visibility .3s ease, border-color .2s ease, background .2s ease; z-index:150; box-shadow:0 8px 24px rgba(0,0,0,0.35); text-decoration:none; }
+      .nav-dropdown a.nav-tab:hover, .nav-dropdown a.nav-tab.active { background:rgba(27,100,200,0.14); }
+        .back-to-top { position:fixed; bottom:22px; right:22px; width:46px; height:46px; border-radius:50%; background:rgba(8,52,58,0.92); border:1px solid rgba(27,100,200,0.4); color:#1B64C8; display:flex; align-items:center; justify-content:center; font-size:1.25rem; cursor:pointer; opacity:0; visibility:hidden; transform:translateY(12px); transition: opacity .3s ease, transform .3s ease, visibility .3s ease, border-color .2s ease, background .2s ease; z-index:150; box-shadow:0 8px 24px rgba(0,0,0,0.35); text-decoration:none; }
     .back-to-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
-    .back-to-top:hover, .back-to-top:focus-visible { border-color:#1E6FD9; background:rgba(30,111,217,0.16); outline:none; }
+    .back-to-top:hover, .back-to-top:focus-visible { border-color:#1B64C8; background:rgba(27,100,200,0.16); outline:none; }
     @media (prefers-reduced-motion: reduce) { .back-to-top { transition:none; } }
 
       /* ══ Bandeau de preuves ══ */
-      .proof-strip { padding-top: 2.5rem; padding-bottom: 2.5rem; background: #fff; border-bottom: 1px solid rgba(30,111,217,.15); }
+      .proof-strip { padding-top: 2.5rem; padding-bottom: 2.5rem; background: #fff; border-bottom: 1px solid rgba(27,100,200,.15); }
       .proof-eyebrow { text-align:center; font: 700 .75rem 'Montserrat',sans-serif; letter-spacing:.14em; text-transform:uppercase; color:#B5823A; margin-bottom:1.25rem; }
       .proof-grid { list-style:none; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
       @media (min-width:900px){ .proof-grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
-      .proof-grid li { display:flex; flex-direction:column; align-items:center; text-align:center; gap:.35rem; padding:1rem .75rem; border-top:2px solid #1E6FD9; }
+      .proof-grid li { display:flex; flex-direction:column; align-items:center; text-align:center; gap:.35rem; padding:1rem .75rem; border-top:2px solid #1B64C8; }
       .proof-num { font: 900 clamp(1.9rem,4vw,2.6rem)/1 'Montserrat',sans-serif; color:#08343A; font-variant-numeric: tabular-nums; }
       .proof-lbl { font-size:.9rem; line-height:1.4; color:#4E6A6E; max-width:16rem; }
       .proof-more { text-align:center; margin-top:1.25rem; font-size:.875rem; color:#4E6A6E; }
@@ -271,15 +271,15 @@
     <!-- ═══════════════════════════════════════════════════════ -->
     <section class="hero-bg relative min-h-screen flex flex-col">
 
-      <div class="dot" style="width:6px;height:6px;background:#1E6FD9;top:15%;left:8%;animation-delay:0s;opacity:0.6"></div>
+      <div class="dot" style="width:6px;height:6px;background:#1B64C8;top:15%;left:8%;animation-delay:0s;opacity:0.6"></div>
       <div class="dot" style="width:4px;height:4px;background:#B5823A;top:35%;left:90%;animation-delay:2s;opacity:0.5"></div>
-      <div class="dot" style="width:5px;height:5px;background:#1E6FD9;top:70%;left:5%;animation-delay:4s;opacity:0.4"></div>
+      <div class="dot" style="width:5px;height:5px;background:#1B64C8;top:70%;left:5%;animation-delay:4s;opacity:0.4"></div>
       <div class="dot" style="width:3px;height:3px;background:#B5823A;top:80%;left:85%;animation-delay:1s;opacity:0.5"></div>
 
       <div class="px-6 pt-6 md:px-12 md:pt-8 flex items-center justify-between gap-4">
         <img src="/logo-hinova.webp" alt="Logo Hinova Digital" class="site-logo protected-asset drop-shadow-lg" />
         <div class="nav-wrap flex items-center gap-3 ml-auto" style="position:relative;">
-          <button id="lang-btn" class="lang-btn" onclick="toggleLanguage()" aria-label="Switch language">EN</button>
+          <button id="lang-btn" class="lang-btn" onclick="toggleLanguage()" title="Changer de langue / Switch language">EN</button>
           <button id="navBurgerBtn" class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
           <nav id="navDropdown" class="nav-dropdown">
             <a href="/" class="nav-tab active" aria-current="page">Accueil</a>
@@ -340,7 +340,7 @@
     <!-- ═══════════════════════════════════════════════════════ -->
     <section class="py-28 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
       <div class="text-center mb-16 reveal">
-        <p data-i18n="diag_label" class="font-montserrat text-xs uppercase tracking-widest mb-3" style="color:#1E6FD9;">Diagnostic</p>
+        <p data-i18n="diag_label" class="font-montserrat text-xs uppercase tracking-widest mb-3" style="color:#1B64C8;">Diagnostic</p>
         <h2 class="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl" style="color:#0B2F35;">
           <span data-i18n="diag_h2_line1">Votre savoir-faire est prêt pour l'international.</span><br />
           <span data-i18n="diag_h2_line2" class="gold-title">Trois freins vous retiennent encore.</span>
@@ -351,11 +351,11 @@
       <!-- ON UTILISE LA CLASSE .services-grid EN SECOURS -->
       <div class="services-grid grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 xl:gap-16 items-stretch">
         <div class="glass p-10 card-hover reveal" style="transition-delay:0.1s">
-          <div class="arch-icon" style="background:rgba(30,111,217,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E6FD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg></div>
-          <h3 data-i18n="diag_c1_title" class="font-montserrat font-bold text-lg mb-3 uppercase tracking-wide" style="color:#1E6FD9;">Une visibilité qui ne vous appartient pas</h3>
+          <div class="arch-icon" style="background:rgba(27,100,200,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1B64C8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg></div>
+          <h3 data-i18n="diag_c1_title" class="font-montserrat font-bold text-lg mb-3 uppercase tracking-wide" style="color:#1B64C8;">Une visibilité qui ne vous appartient pas</h3>
           <p data-i18n="diag_c1_body" class="font-inter text-sm leading-relaxed" style="color:#4E6A6E;"><em>Constat :</em> vos clients arrivent par le bouche-à-oreille ou par l'algorithme d'une plateforme. Le jour où il change, votre chiffre d'affaires vacille. Il vous manque un canal d'acquisition prévisible, qui vous appartient à 100 %.</p>
-          <div class="mt-6 pt-4" style="border-top: 1px solid rgba(30,111,217,0.15);">
-            <p data-i18n="diag_c1_sol" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1E6FD9;">Notre réponse → un moteur d'acquisition propriétaire</p>
+          <div class="mt-6 pt-4" style="border-top: 1px solid rgba(27,100,200,0.15);">
+            <p data-i18n="diag_c1_sol" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1B64C8;">Notre réponse → un moteur d'acquisition propriétaire</p>
           </div>
         </div>
 
@@ -376,11 +376,11 @@
         </div>
 
         <div class="glass p-10 card-hover reveal" style="transition-delay:0.3s">
-          <div class="arch-icon" style="background:rgba(30,111,217,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E6FD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
-          <h3 data-i18n="diag_c3_title" class="font-montserrat font-bold text-lg mb-3 uppercase tracking-wide" style="color:#1E6FD9;">Une croissance qui repose sur vous seul</h3>
+          <div class="arch-icon" style="background:rgba(27,100,200,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1B64C8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+          <h3 data-i18n="diag_c3_title" class="font-montserrat font-bold text-lg mb-3 uppercase tracking-wide" style="color:#1B64C8;">Une croissance qui repose sur vous seul</h3>
           <p data-i18n="diag_c3_body" class="font-inter text-sm leading-relaxed" style="color:#4E6A6E;"><em>Constat :</em> dès que le volume augmente, les devis prennent du retard et les relances s'oublient. Votre organisation actuelle ne peut pas grandir sans vous épuiser — et encore moins viser l'export.</p>
-          <div class="mt-6 pt-4" style="border-top: 1px solid rgba(30,111,217,0.15);">
-            <p data-i18n="diag_c3_sol" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1E6FD9;">Notre réponse → des automatisations IA actives 24 h/24</p>
+          <div class="mt-6 pt-4" style="border-top: 1px solid rgba(27,100,200,0.15);">
+            <p data-i18n="diag_c3_sol" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1B64C8;">Notre réponse → des automatisations IA actives 24 h/24</p>
           </div>
         </div>
       </div>
@@ -401,8 +401,8 @@
 
       <div class="services-grid grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8 items-stretch">
         <div class="glass p-7 card-hover reveal heya-card" style="transition-delay:0.1s; background-image:linear-gradient(180deg, rgba(8,52,58,0.55) 0%, rgba(8,52,58,0.92) 78%), url('/H-heritage.jpg'); background-repeat:no-repeat; background-size:cover, 140% auto; background-position:center, 50% top;">
-          <div class="arch-icon" style="background:rgba(30,111,217,0.18);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E6FD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V12"/><path d="M12 12C12 7 8 4 4 4c0 5 3 8 8 8z"/><path d="M12 12c0-5 4-8 8-8 0 5-3 8-8 8z"/></svg></div>
-          <h3 data-i18n="heya_h_title" class="font-montserrat font-black text-base uppercase tracking-wide mb-3" style="color:#1E6FD9;">Ancrage</h3>
+          <div class="arch-icon" style="background:rgba(27,100,200,0.18);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1B64C8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V12"/><path d="M12 12C12 7 8 4 4 4c0 5 3 8 8 8z"/><path d="M12 12c0-5 4-8 8-8 0 5-3 8-8 8z"/></svg></div>
+          <h3 data-i18n="heya_h_title" class="font-montserrat font-black text-base uppercase tracking-wide mb-3" style="color:#1B64C8;">Ancrage</h3>
           <p data-i18n="heya_h_body" class="font-inter text-sm leading-relaxed" style="color:#0B2F35;">Valoriser votre savoir-faire et votre identité locale, et en faire des actifs numériques durables.</p>
         </div>
         <div class="glass p-7 card-hover reveal heya-card bg-cover bg-center" style="transition-delay:0.2s; background-image:linear-gradient(180deg, rgba(8,52,58,0.55) 0%, rgba(8,52,58,0.92) 78%), url('/E-empowerment.jpg');">
@@ -411,8 +411,8 @@
           <p data-i18n="heya_e_body" class="font-inter text-sm leading-relaxed" style="color:#0B2F35;">Vous restez propriétaire de votre code et de vos données. Aucune dépendance à un abonnement tiers imposé.</p>
         </div>
         <div class="glass p-7 card-hover reveal heya-card bg-cover bg-center" style="transition-delay:0.3s; background-image:linear-gradient(180deg, rgba(8,52,58,0.55) 0%, rgba(8,52,58,0.92) 78%), url('/Y-yield.jpg');">
-          <div class="arch-icon" style="background:rgba(30,111,217,0.18);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E6FD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-          <h3 data-i18n="heya_y_title" class="font-montserrat font-black text-base uppercase tracking-wide mb-3" style="color:#1E6FD9;">Rendement</h3>
+          <div class="arch-icon" style="background:rgba(27,100,200,0.18);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1B64C8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+          <h3 data-i18n="heya_y_title" class="font-montserrat font-black text-base uppercase tracking-wide mb-3" style="color:#1B64C8;">Rendement</h3>
           <p data-i18n="heya_y_body" class="font-inter text-sm leading-relaxed" style="color:#0B2F35;">Une infrastructure légère et rapide, au coût de fonctionnement minimal : chaque franc investi travaille pour vous.</p>
         </div>
         <div class="glass p-7 card-hover reveal heya-card bg-cover" style="transition-delay:0.4s; background-image:linear-gradient(180deg, rgba(8,52,58,0.55) 0%, rgba(8,52,58,0.92) 78%), url('/A-accessibility.jpg'); background-position:center, right center;">
@@ -428,13 +428,13 @@
     <!-- ═══════════════════════════════════════════════════════ -->
     <section class="px-6 md:px-12 lg:px-20 max-w-5xl mx-auto pb-24">
       <div class="glass p-8 md:p-10 text-center reveal">
-        <p class="font-montserrat text-xs uppercase tracking-widest mb-4" style="color:#1E6FD9;">Notre manière de construire</p>
+        <p class="font-montserrat text-xs uppercase tracking-widest mb-4" style="color:#1B64C8;">Notre manière de construire</p>
         <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-montserrat font-bold text-xs md:text-sm uppercase tracking-wide" style="color:#0B2F35;">
-          <span>Comprendre</span><span style="color:#1E6FD9;">→</span>
-          <span>Simplifier</span><span style="color:#1E6FD9;">→</span>
-          <span>Architecturer</span><span style="color:#1E6FD9;">→</span>
-          <span>Sécuriser</span><span style="color:#1E6FD9;">→</span>
-          <span>Industrialiser</span><span style="color:#1E6FD9;">→</span>
+          <span>Comprendre</span><span style="color:#1B64C8;">→</span>
+          <span>Simplifier</span><span style="color:#1B64C8;">→</span>
+          <span>Architecturer</span><span style="color:#1B64C8;">→</span>
+          <span>Sécuriser</span><span style="color:#1B64C8;">→</span>
+          <span>Industrialiser</span><span style="color:#1B64C8;">→</span>
           <span>Transmettre</span>
         </div>
         <p class="font-inter text-sm mt-5 max-w-xl mx-auto" style="color:#4E6A6E;">« Nous ne construisons pas une villa numérique quand un fare numérique suffit. »</p>
@@ -451,15 +451,15 @@
         <p data-i18n="team_label" class="font-montserrat text-xs uppercase tracking-widest mb-3" style="color:#B5823A;">L'équipe</p>
         <h2 class="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl" style="color:#0B2F35;">
           <span data-i18n="team_h2_line1">L'intelligence artificielle accélère.</span><br />
-          <span data-i18n="team_h2_line2" style="color:#1E6FD9;">L'intelligence humaine décide.</span>
+          <span data-i18n="team_h2_line2" style="color:#1B64C8;">L'intelligence humaine décide.</span>
         </h2>
         <div class="divider w-40 mt-6"></div>
       </div>
 
       <!-- ON UTILISE LA CLASSE .team-grid EN SECOURS -->
       <div class="team-grid grid grid-cols-1 md:grid-cols-2 gap-16 max-w-5xl mx-auto">
-        <div class="glass p-8 card-hover reveal team-card" style="transition-delay:0.1s; border-color: rgba(30,111,217,0.3);">
-          <img src="/photo-architect.webp" alt="Heianui Tapare" class="protected-asset team-photo mb-6" style="box-shadow: 0 10px 30px rgba(30,111,217,0.15);">
+        <div class="glass p-8 card-hover reveal team-card" style="transition-delay:0.1s; border-color: rgba(27,100,200,0.3);">
+          <img src="/photo-architect.webp" alt="Heianui Tapare" class="protected-asset team-photo mb-6" style="box-shadow: 0 10px 30px rgba(27,100,200,0.15);">
           <h3 class="font-montserrat font-black text-2xl mb-1 text-gradient-cyan">Heianui</h3>
           <p data-i18n="team_h_role" class="font-montserrat text-xs font-bold uppercase tracking-widest mb-4 gold-label">Fondatrice · Architecte numérique & développement commercial international</p>
           <p data-i18n="team_h_desc" class="font-inter text-sm leading-relaxed" style="color:#4E6A6E;">« J'ai fondé Hinova parce que notre fenua prend du retard sur le numérique, alors que nos talents ont des idées remarquables. L'IA ne remplace pas l'humain : c'est un assistant infatigable qui multiplie notre vitesse. Le saut technologique est la condition pour peser à l'international. » — Spécialiste de la création et du développement d'entreprises multisectorielles, elle fait le lien entre votre vision et sa réalisation numérique.</p>
@@ -468,18 +468,18 @@
         <div class="glass p-8 card-hover reveal team-card" style="transition-delay:0.2s; border-color: rgba(181,130,58,0.3);">
           <img src="/photo-bellona.webp" alt="Bellona" class="protected-asset team-photo small mb-6" style="box-shadow: 0 10px 30px rgba(181,130,58,0.15);">
           <h3 class="font-montserrat font-black text-2xl mb-1 gold">Bellona</h3>
-          <p data-i18n="team_b_role" class="font-montserrat text-xs font-bold uppercase tracking-widest mb-4" style="color:#1E6FD9;">Co-fondatrice · Directrice de la croissance</p>
+          <p data-i18n="team_b_role" class="font-montserrat text-xs font-bold uppercase tracking-widest mb-4" style="color:#1B64C8;">Co-fondatrice · Directrice de la croissance</p>
           <p data-i18n="team_b_desc" class="font-inter text-sm leading-relaxed" style="color:#4E6A6E;">« Je connais Heianui depuis toujours : des idées audacieuses, et toujours réalistes. J'ai vu en Polynésie trop d'entrepreneurs abîmés par des "vendeurs de rêve" — j'en ai fait partie, et je me suis relevée seule. Avec le recul, je sais que la technologie, bien choisie, aide vraiment. » — Spécialiste de la stratégie de développement, elle transforme les freins à votre croissance en opportunités sur les marchés européens et du Pacifique.</p>
         </div>
       </div>
     </section>
     
     <!-- COOKIE CONSENT BANNER (RGPD) -->
-    <div id="cookieConsent" aria-hidden="true" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:9999; padding:1.25rem 1.5rem; background:rgba(8,52,58,0.97); backdrop-filter:blur(14px); border-top:1px solid rgba(30,111,217,0.3);">
+    <div id="cookieConsent" aria-hidden="true" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:9999; padding:1.25rem 1.5rem; background:rgba(8,52,58,0.97); backdrop-filter:blur(14px); border-top:1px solid rgba(27,100,200,0.3);">
       <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:1.25rem; justify-content:space-between;">
         <p class="font-inter text-sm" style="color:#33555B; flex:1; min-width:260px;">
           🍪 Nous utilisons des cookies pour améliorer ton expérience et mesurer notre audience. Certaines de tes données personnelles peuvent être collectées ; tu peux à tout moment refuser ou te désabonner. Détails dans notre
-          <a href="/politique-de-confidentialite.html" style="color:#1E6FD9; text-decoration:underline;">Politique de Confidentialité</a>.
+          <a href="/politique-de-confidentialite.html" style="color:#1B64C8; text-decoration:underline;">Politique de Confidentialité</a>.
         </p>
         <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
           <button id="cookieRefuseBtn" style="background:transparent; color:#0B2F35; border:1px solid rgba(11,47,53,0.25); padding:0.7rem 1.3rem; border-radius:0.6rem; font-family:'Inter',sans-serif; font-size:0.85rem;">Refuser</button>
@@ -492,18 +492,18 @@
     <!-- ═══════════════════════════════════════════════════════ -->
     <!-- FOOTER LÉGAL & PREMIUM -->
     <!-- ═══════════════════════════════════════════════════════ -->
-    <footer class="py-12 text-center px-6" style="background: #FFFFFF; border-top: 1px solid rgba(30,111,217,0.2);">
+    <footer class="py-12 text-center px-6" style="background: #FFFFFF; border-top: 1px solid rgba(27,100,200,0.2);">
       <img src="/logo-hinova.webp" alt="Hinova Digital" class="site-logo footer-logo protected-asset object-contain mx-auto mb-6 opacity-80 drop-shadow-lg" />
-      <div class="max-w-2xl mx-auto" style="border-top: 1px solid rgba(30,111,217,0.1); padding-top: 24px;">
+      <div class="max-w-2xl mx-auto" style="border-top: 1px solid rgba(27,100,200,0.1); padding-top: 24px;">
         <p data-i18n="legal_footer" class="font-inter text-xs leading-loose" style="color:#4E6A6E;">© 2026 Hinova Digital. Tous droits réservés.<br>Toute reproduction des textes, logos ou images est interdite sans autorisation préalable.<br>SIRET 978 221 281 00014 · RCS Lorient, France</p>
         <p data-i18n="footer_portfolio_link" class="mt-4 font-inter text-xs" style="color:#4E6A6E;">
-          Découvre aussi mon univers créatif sur <a href="https://heyatapare.com" target="_blank" rel="noopener noreferrer" style="color:#1E6FD9; text-decoration:underline;">heyatapare.com</a>
+          Découvre aussi mon univers créatif sur <a href="https://heyatapare.com" target="_blank" rel="noopener noreferrer" style="color:#1B64C8; text-decoration:underline;">heyatapare.com</a>
         </p>
         <p class="mt-4" style="display:flex;gap:18px;justify-content:center;flex-wrap:wrap">
-          <a href="academie.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1E6FD9; text-decoration:none">Académie</a>
-          <a href="blog.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1E6FD9; text-decoration:none">Journal</a>
-          <a href="/politique-de-confidentialite.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1E6FD9; text-decoration:none">Politique de Confidentialité</a>
-          <a href="mentions.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1E6FD9; text-decoration:none">Mentions Légales</a>
+          <a href="academie.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1B64C8; text-decoration:none">Académie</a>
+          <a href="blog.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1B64C8; text-decoration:none">Journal</a>
+          <a href="/politique-de-confidentialite.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1B64C8; text-decoration:none">Politique de Confidentialité</a>
+          <a href="mentions.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1B64C8; text-decoration:none">Mentions Légales</a>
         </p>
       </div>
     </footer>
@@ -566,7 +566,7 @@
           contact_h2: "Vérifiez votre éligibilité à l'audit systémique",
           contact_sub: "Ouvert aux <strong>entreprises polynésiennes et internationales</strong> — intégration et automatisation à −50 % pendant le programme.",
           legal_footer: "© 2026 Hinova Digital. Tous droits réservés.<br>Toute reproduction des textes, logos ou images est interdite sans autorisation préalable.<br>SIRET 978 221 281 00014 · RCS Lorient, France",
-          footer_portfolio_link: "Découvre aussi mon univers créatif sur <a href=\"https://heyatapare.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#1E6FD9; text-decoration:underline;\">heyatapare.com</a>",
+          footer_portfolio_link: "Découvre aussi mon univers créatif sur <a href=\"https://heyatapare.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#1B64C8; text-decoration:underline;\">heyatapare.com</a>",
           legal_link: "Mentions Légales & Politique de Confidentialité",
         },
         en: {
@@ -620,7 +620,7 @@
           contact_h2: "Check your eligibility for the systemic audit",
           contact_sub: "Open to <strong>Polynesian and international businesses</strong> — integration and automation at −50% during the program.",
           legal_footer: "© 2026 Hinova Digital. All rights reserved.<br>Reproduction of texts, logos or images is prohibited without prior permission.<br>SIRET 978 221 281 00014 · RCS Lorient, France",
-          footer_portfolio_link: "Also discover my online resume <a href=\"https://heyatapare.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#1E6FD9; text-decoration:underline;\">heyatapare.com</a>",
+          footer_portfolio_link: "Also discover my online resume <a href=\"https://heyatapare.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#1B64C8; text-decoration:underline;\">heyatapare.com</a>",
           legal_link: "Legal Notice & Privacy Policy",
         }
       };

@@ -25,20 +25,20 @@
         }
         .site-logo { width: 40px; height: auto; max-width: 100%; display: block; }
         .nav-tab { color:#0B2F35; text-decoration:none; padding:0.65rem 0.9rem; border-radius:0.55rem; font-family:'Inter',sans-serif; font-size:0.9rem; display:block; }
-        .nav-tab:hover, .nav-tab.active { background:rgba(30,111,217,0.14); color:#1E6FD9; }
+        .nav-tab:hover, .nav-tab.active { background:rgba(27,100,200,0.14); color:#1B64C8; }
         .nav-burger { background:transparent; border:1px solid rgba(11,47,53,0.25); color:#0B2F35; width:44px; height:44px; border-radius:0.6rem; display:flex; align-items:center; justify-content:center; font-size:1.3rem; line-height:1; cursor:pointer; transition:border-color .15s ease, background .15s ease; }
-        .nav-burger:hover { border-color:#1E6FD9; background:rgba(30,111,217,0.1); }
-        .nav-dropdown { position:absolute; top:calc(100% + 10px); right:0; min-width:230px; background:rgba(8,52,58,0.97); border:1px solid rgba(30,111,217,0.25); border-radius:0.85rem; padding:0.6rem; display:none; flex-direction:column; gap:0.25rem; z-index:200; box-shadow:0 20px 45px rgba(0,0,0,0.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+        .nav-burger:hover { border-color:#1B64C8; background:rgba(27,100,200,0.1); }
+        .nav-dropdown { position:absolute; top:calc(100% + 10px); right:0; min-width:230px; background:rgba(8,52,58,0.97); border:1px solid rgba(27,100,200,0.25); border-radius:0.85rem; padding:0.6rem; display:none; flex-direction:column; gap:0.25rem; z-index:200; box-shadow:0 20px 45px rgba(0,0,0,0.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
         .nav-dropdown.open { display:flex; }
         .site-header { position:relative; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:1.5rem 1.5rem 0; }
         @media (min-width:768px){ .site-header{ padding:2rem 3rem 0; } }
         .divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(30,111,217,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(27,100,200,0.4), transparent);
             margin: 0 auto;
         }
         .text-gradient-cyan {
-            background: linear-gradient(135deg, #1E6FD9, #0B2F35);
+            background: linear-gradient(135deg, #1B64C8, #0B2F35);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -59,7 +59,7 @@
             background: rgba(255,255,255,0.45);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(30,111,217,0.18);
+            border: 1px solid rgba(27,100,200,0.18);
             border-radius: 1rem;
             width: 100%;
             max-width: 820px;
@@ -94,9 +94,9 @@
         
         /* Tally Embed Styling */
         iframe { border: none; width: 100%; height: 800px; border-radius: 1rem; }
-        .back-to-top { position:fixed; bottom:22px; right:22px; width:46px; height:46px; border-radius:50%; background:rgba(8,52,58,0.92); border:1px solid rgba(30,111,217,0.4); color:#1E6FD9; display:flex; align-items:center; justify-content:center; font-size:1.25rem; cursor:pointer; opacity:0; visibility:hidden; transform:translateY(12px); transition: opacity .3s ease, transform .3s ease, visibility .3s ease, border-color .2s ease, background .2s ease; z-index:150; box-shadow:0 8px 24px rgba(0,0,0,0.35); text-decoration:none; }
+        .back-to-top { position:fixed; bottom:22px; right:22px; width:46px; height:46px; border-radius:50%; background:rgba(8,52,58,0.92); border:1px solid rgba(27,100,200,0.4); color:#1B64C8; display:flex; align-items:center; justify-content:center; font-size:1.25rem; cursor:pointer; opacity:0; visibility:hidden; transform:translateY(12px); transition: opacity .3s ease, transform .3s ease, visibility .3s ease, border-color .2s ease, background .2s ease; z-index:150; box-shadow:0 8px 24px rgba(0,0,0,0.35); text-decoration:none; }
     .back-to-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
-    .back-to-top:hover, .back-to-top:focus-visible { border-color:#1E6FD9; background:rgba(30,111,217,0.16); outline:none; }
+    .back-to-top:hover, .back-to-top:focus-visible { border-color:#1B64C8; background:rgba(27,100,200,0.16); outline:none; }
     @media (prefers-reduced-motion: reduce) { .back-to-top { transition:none; } }
 </style>
     <link rel="manifest" href="/manifest.json" />
@@ -159,28 +159,28 @@
                     <div class="grid md:grid-cols-2 gap-5">
                         <div>
                             <label for="name" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#4E6A6E;">Nom & prénom *</label>
-                            <input type="text" id="name" name="name" required class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(8,52,58,0.6); border:1px solid rgba(30,111,217,0.25); color:#0B2F35;">
+                            <input type="text" id="name" name="name" required class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(8,52,58,0.6); border:1px solid rgba(27,100,200,0.25); color:#0B2F35;">
                         </div>
                         <div>
                             <label for="entreprise" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#4E6A6E;">Entreprise</label>
-                            <input type="text" id="entreprise" name="entreprise" class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(8,52,58,0.6); border:1px solid rgba(30,111,217,0.25); color:#0B2F35;">
+                            <input type="text" id="entreprise" name="entreprise" class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(8,52,58,0.6); border:1px solid rgba(27,100,200,0.25); color:#0B2F35;">
                         </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-5">
                         <div>
                             <label for="email" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#4E6A6E;">E-mail *</label>
-                            <input type="email" id="email" name="email" required class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(8,52,58,0.6); border:1px solid rgba(30,111,217,0.25); color:#0B2F35;">
+                            <input type="email" id="email" name="email" required class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(8,52,58,0.6); border:1px solid rgba(27,100,200,0.25); color:#0B2F35;">
                         </div>
                         <div>
                             <label for="phone" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#4E6A6E;">Téléphone (WhatsApp de préférence)</label>
-                            <input type="tel" id="phone" name="phone" class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(8,52,58,0.6); border:1px solid rgba(30,111,217,0.25); color:#0B2F35;">
+                            <input type="tel" id="phone" name="phone" class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(8,52,58,0.6); border:1px solid rgba(27,100,200,0.25); color:#0B2F35;">
                         </div>
                     </div>
 
                     <div>
                         <label for="secteur" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#4E6A6E;">Secteur d'activité *</label>
-                        <input type="text" id="secteur" name="secteur" required placeholder="Ex : artisanat, tourisme, restauration, e-commerce..." class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(8,52,58,0.6); border:1px solid rgba(30,111,217,0.25); color:#0B2F35;">
+                        <input type="text" id="secteur" name="secteur" required placeholder="Ex : artisanat, tourisme, restauration, e-commerce..." class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(8,52,58,0.6); border:1px solid rgba(27,100,200,0.25); color:#0B2F35;">
                     </div>
 
                     <div>
@@ -203,10 +203,10 @@
 
                     <div>
                         <label for="message" class="block font-inter text-xs uppercase tracking-widest mb-2" style="color:#4E6A6E;">Votre contexte en quelques mots (facultatif)</label>
-                        <textarea id="message" name="message" rows="4" class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(8,52,58,0.6); border:1px solid rgba(30,111,217,0.25); color:#0B2F35;"></textarea>
+                        <textarea id="message" name="message" rows="4" class="w-full rounded-lg px-4 py-3 font-inter text-sm" style="background:rgba(8,52,58,0.6); border:1px solid rgba(27,100,200,0.25); color:#0B2F35;"></textarea>
                     </div>
 
-                    <button type="submit" id="diagSubmitBtn" class="w-full font-montserrat font-bold uppercase tracking-widest text-sm py-4 rounded-lg transition" style="background:#1E6FD9; color:#FFFFFF;">
+                    <button type="submit" id="diagSubmitBtn" class="w-full font-montserrat font-bold uppercase tracking-widest text-sm py-4 rounded-lg transition" style="background:#1B64C8; color:#FFFFFF;">
                         Recevoir mon diagnostic sous 48 h
                     </button>
 
@@ -233,7 +233,7 @@
                             if (result.success) {
                                 diagForm.reset();
                                 diagForm.style.display = 'none'; diagMsg.setAttribute('role','status'); diagMsg.scrollIntoView({behavior:'smooth',block:'center'});
-                                diagMsg.style.color = '#1E6FD9';
+                                diagMsg.style.color = '#1B64C8';
                                 diagMsg.innerHTML = '<strong>Merci, c\'est bien reçu.</strong><br>Votre diagnostic est en préparation : vous le recevez par e-mail sous 48 h ouvrées.';
                             } else {
                                 diagMsg.style.color = '#E07A5F';
@@ -254,7 +254,7 @@
         </div>
     </section>
 
-    <section class="py-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-transparent via-[rgba(30,111,217,0.05)] to-transparent">
+    <section class="py-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-transparent via-[rgba(27,100,200,0.05)] to-transparent">
         <div class="max-w-3xl mx-auto text-center reveal visible" style="animation-delay: 0.3s;">
             <h2 class="font-montserrat font-bold text-2xl md:text-3xl mb-8">
                 Ce que vous recevez
@@ -267,10 +267,10 @@
         </div>
     </section>
 
-    <footer class="py-12 text-center px-6 border-t border-[rgba(30,111,217,0.2)]">
+    <footer class="py-12 text-center px-6 border-t border-[rgba(27,100,200,0.2)]">
         <div class="divider max-w-xs mx-auto mb-6"></div>
         <p class="font-inter text-xs" style="color:#4E6A6E;">
-		<a href="/politique-de-confidentialite.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1E6FD9; text-decoration:none">Politique de Confidentialité</a>
+		<a href="/politique-de-confidentialite.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1B64C8; text-decoration:none">Politique de Confidentialité</a>
             © 2026 Hinova Digital. — L'Agilité et la Résilience au Fenua
         </p>
     </footer>
