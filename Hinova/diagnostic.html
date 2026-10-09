@@ -116,13 +116,13 @@
         <div style="position:relative;">
             <button id="navBurgerBtn" class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
             <nav id="navDropdown" class="nav-dropdown">
-                <a href="index.html" class="nav-tab">Accueil</a>
-                <a href="vision.html" class="nav-tab">Notre vision</a>
-                <a href="academie.html" class="nav-tab">Académie</a>
-                <a href="blog.html" class="nav-tab">Journal</a>
-                <a href="diagnostic.html" class="nav-tab active" aria-current="page">Diagnostic - IA</a>
-                <a href="index.html#notre-histoire" class="nav-tab">Notre histoire</a>
-            </nav>
+            <a href="/" class="nav-tab">Accueil</a>
+            <a href="/vision.html" class="nav-tab">Vision</a>
+            <a href="/lab/" class="nav-tab">Lab</a>
+            <a href="/academie.html" class="nav-tab">Académie</a>
+            <a href="/blog.html" class="nav-tab">Journal</a>
+            <a href="/diagnostic.html" class="nav-tab nav-cta active">Diagnostic offert</a>
+          </nav>
         </div>
     </header>
 
@@ -209,8 +209,8 @@
                         Recevoir mon diagnostic sous 48 h
                     </button>
 
-                    <p id="diagFormMsg" class="font-inter text-sm text-center hidden"></p>
                 </form>
+                <p id="diagFormMsg" class="font-inter text-base text-center hidden" aria-live="polite" style="padding:1.5rem 0;"></p>
 
                 <script>
                     const diagForm = document.getElementById('diagForm');
@@ -231,19 +231,19 @@
                             diagMsg.classList.remove('hidden');
                             if (result.success) {
                                 diagForm.reset();
-                                diagForm.querySelectorAll('input, textarea, button').forEach(el => el.style.display = 'none');
+                                diagForm.style.display = 'none'; diagMsg.setAttribute('role','status'); diagMsg.scrollIntoView({behavior:'smooth',block:'center'});
                                 diagMsg.style.color = '#1E6FD9';
-                                diagMsg.innerHTML = '✅ Merci ! Ton diagnostic est en cours de préparation — je reviens vers toi sous 48h ouvrées.';
+                                diagMsg.innerHTML = '<strong>Merci, c\'est bien reçu.</strong><br>Votre diagnostic est en préparation : vous le recevez par e-mail sous 48 h ouvrées.';
                             } else {
                                 diagMsg.style.color = '#E07A5F';
-                                diagMsg.textContent = "Une erreur est survenue. Réessaie ou écris-moi directement à contact@hinovadigitalcorp.com";
+                                diagMsg.textContent = "L'envoi n'a pas abouti. Réessayez dans un instant, ou écrivez-nous à contact@hinovadigitalcorp.com.";
                                 diagBtn.disabled = false;
                                 diagBtn.textContent = 'Recevoir mon diagnostic sous 48 h';
                             }
                         } catch (err) {
                             diagMsg.classList.remove('hidden');
                             diagMsg.style.color = '#E07A5F';
-                            diagMsg.textContent = "Connexion impossible. Réessaie ou écris-moi directement à contact@hinovadigitalcorp.com";
+                            diagMsg.textContent = "Connexion impossible. Vérifiez votre réseau et réessayez, ou écrivez-nous à contact@hinovadigitalcorp.com.";
                             diagBtn.disabled = false;
                             diagBtn.textContent = 'Recevoir mon diagnostic sous 48 h';
                         }

@@ -141,3 +141,16 @@ section.hero :is(.cta-secondary, a[class*="secondary"]) { color: #F4FAFA !import
 /* CTA secondaires bordés dans les héros sombres */
 :is(.hero-bg, .hero-video-section) a.border { color: #F4FAFA !important; border-color: rgba(255,255,255,.45) !important; background: rgba(255,255,255,.06); }
 :is(.hero-bg, .hero-video-section) a.border span { color: inherit !important; }
+
+/* Texte blanc hérité des anciennes pages sombres : redevient encre hors zones sombres */
+.text-white:not(:is(.hero-bg, .hero-video-section, section.hero, footer, .dark-zone, #cookieConsent, .modal-box, [class*="bg-"], .cta, .btn-cyan) *):not([class*="bg-"]):not(.cta):not(.btn-cyan):not(:is(section.hero, .hero-bg) .text-white) { color: var(--hv-ink) !important; }
+
+/* Navigation unifiée : 5 liens + CTA « Diagnostic offert » */
+.nav-cta { background: var(--hv-blue) !important; color: #fff !important; border-color: var(--hv-blue) !important; font-weight: 700; }
+.nav-cta:hover { filter: brightness(1.08); }
+.nav-dropdown .nav-cta { margin-top: .35rem; text-align: center; border-radius: .6rem; }
+.navlink.active { border-color: var(--hv-blue) !important; color: var(--hv-blue) !important; }
+@media (max-width: 700px) {
+  .desktop-nav { display: flex !important; flex-wrap: wrap; justify-content: flex-end; gap: .35rem; }
+  .desktop-nav .navlink { padding: .45rem .7rem; font-size: .78rem; min-height: 40px; display: inline-flex; align-items: center; }
+}
