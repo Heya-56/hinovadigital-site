@@ -289,6 +289,16 @@
     .back-to-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
     .back-to-top:hover, .back-to-top:focus-visible { border-color:#1E6FD9; background:rgba(30,111,217,0.16); outline:none; }
     @media (prefers-reduced-motion: reduce) { .back-to-top { transition:none; } }
+
+      /* ══ Bandeau de preuves ══ */
+      .proof-strip { padding-top: 2.5rem; padding-bottom: 2.5rem; background: #fff; border-bottom: 1px solid rgba(30,111,217,.15); }
+      .proof-eyebrow { text-align:center; font: 700 .75rem 'Montserrat',sans-serif; letter-spacing:.14em; text-transform:uppercase; color:#B5823A; margin-bottom:1.25rem; }
+      .proof-grid { list-style:none; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+      @media (min-width:900px){ .proof-grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+      .proof-grid li { display:flex; flex-direction:column; align-items:center; text-align:center; gap:.35rem; padding:1rem .75rem; border-top:2px solid #1E6FD9; }
+      .proof-num { font: 900 clamp(1.9rem,4vw,2.6rem)/1 'Montserrat',sans-serif; color:#08343A; font-variant-numeric: tabular-nums; }
+      .proof-lbl { font-size:.9rem; line-height:1.4; color:#4E6A6E; max-width:16rem; }
+      .proof-more { text-align:center; margin-top:1.25rem; font-size:.875rem; color:#4E6A6E; }
 </style>
       <link rel="stylesheet" href="/css/theme.css" />
       <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}</script>
@@ -351,6 +361,19 @@
       </div>
 
       <div class="absolute bottom-0 left-0 right-0 h-24" style="background: linear-gradient(to bottom, transparent, #FFFFFF); pointer-events:none;"></div>
+    </section>
+    <!-- ══ BANDEAU DE PREUVES (chiffres réels, oct. 2026) ══ -->
+    <section class="proof-strip px-6 md:px-12 lg:px-20" aria-labelledby="proofTitle">
+      <div class="max-w-6xl mx-auto">
+        <p id="proofTitle" data-i18n="proof_title" class="proof-eyebrow">Déjà en production</p>
+        <ul class="proof-grid">
+          <li><span class="proof-num">8</span><span data-i18n="proof_1" class="proof-lbl">boutiques en ligne livrées</span></li>
+          <li><span class="proof-num">2</span><span data-i18n="proof_2" class="proof-lbl">orchestrateurs business en production</span></li>
+          <li><span class="proof-num">18</span><span data-i18n="proof_3" class="proof-lbl">apprenants formés à l'Académie</span></li>
+          <li><span class="proof-num">48&nbsp;h</span><span data-i18n="proof_4" class="proof-lbl">pour recevoir votre diagnostic</span></li>
+        </ul>
+        <p data-i18n="proof_more" class="proof-more">Aussi en cours : une plateforme supply chain commandée, une application de réseau social, et 3 architectes en compagnonnage.</p>
+      </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════ -->
@@ -534,6 +557,12 @@
 
       const t = {
         fr: {
+          proof_title: "Déjà en production",
+          proof_1: "boutiques en ligne livrées",
+          proof_2: "orchestrateurs business en production",
+          proof_3: "apprenants formés à l'Académie",
+          proof_4: "pour recevoir votre diagnostic",
+          proof_more: "Aussi en cours : une plateforme supply chain commandée, une application de réseau social, et 3 architectes en compagnonnage.",
           pageTitle: "Hinova Digital — Architecture numérique & IA pour les entreprises de Polynésie",
           metaDesc: "Hinova Digital conçoit des sites, applications et automatisations IA qui vous appartiennent : infrastructure souveraine et ultra-rapide, pensée pour les entreprises de Polynésie française. Diagnostic offert.",
           hero_surtitle: "Hinova Digital · Venture Tech Lab<br>Architecture numérique & IA · Polynésie française",
@@ -582,6 +611,12 @@
           legal_link: "Mentions Légales & Politique de Confidentialité",
         },
         en: {
+          proof_title: "Already in production",
+          proof_1: "online stores delivered",
+          proof_2: "business orchestrators in production",
+          proof_3: "learners trained at the Academy",
+          proof_4: "to receive your diagnosis",
+          proof_more: "Also underway: a commissioned supply chain platform, a social network app, and 3 architects in apprenticeship.",
           pageTitle: "Hinova Digital — Digital Architecture & AI for French Polynesian Businesses",
           metaDesc: "Hinova Digital builds websites, apps and AI automations you fully own: sovereign, ultra-fast infrastructure designed for businesses in French Polynesia. Free diagnosis.",
           hero_surtitle: "Hinova Digital · Venture Tech Lab<br>Digital architecture & AI · French Polynesia",
