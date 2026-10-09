@@ -1,15 +1,23 @@
 {
-  "name": "Hinova Digital Corp",
+  "name": "Hinova Digital",
   "short_name": "Hinova",
-  "description": "Agence Lab Tech en Polynésie française — souveraineté numérique et leapfrogging technologique au Fenua.",
+  "description": "Architecture numérique & IA pour les entreprises de Polynésie française.",
+  "id": "/",
   "start_url": "/index.html",
   "scope": "/",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#061A22",
-  "theme_color": "#0AB8C4",
+  "orientation": "any",
+  "background_color": "#FFFFFF",
+  "theme_color": "#08343A",
   "lang": "fr",
+  "categories": ["business", "productivity", "education"],
   "icons": [
-    { "src": "/logo-hinova.webp", "sizes": "512x512", "type": "image/webp", "purpose": "any maskable" }
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Diagnostic offert", "url": "/diagnostic.html" },
+    { "name": "Académie", "url": "/academie.html" }
   ]
 }

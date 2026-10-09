@@ -298,11 +298,12 @@
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/webp" href="/logo-hinova.webp" />
     <link rel="apple-touch-icon" href="/logo-hinova.webp" />
-    <meta name="theme-color" content="#061A22" />
+    <meta name="theme-color" content="#08343A" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Hinova" />
-</head>
+    <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}</script>
+  </head>
 <body>
 
     <!-- Onglets de Navigation -->
@@ -332,7 +333,7 @@
             <div class="timeline-card">
                 <span class="time-badge">Aujourd'hui</span>
                 <h3 class="job-title">Fondatrice & Architecte Digitale</h3>
-                <p class="company-name">Hinova Digital Corp</p>
+                <p class="company-name">Hinova Digital</p>
                 <ul class="task-list">
                     <li><strong>Architecture & Conseil :</strong> Conception d'infrastructures digitales sur-mesure pour les entreprises du Fenua, de l'audit au déploiement.</li>
                     <li><strong>Stratégie d'Automatisation :</strong> Orchestration de systèmes d'acquisition automatisés, réduisant fortement la saisie manuelle des données.</li>
@@ -409,7 +410,7 @@
 
     <footer>
         <p>Le format de ce portfolio est enseigné à la <a href="academie.html">Rū-fau-tumu Académie</a></p>
-        <p style="margin-top:8px;">© 2026 Hinova Digital Corp.</p>
+        <p style="margin-top:8px;">© 2026 Hinova Digital.</p>
     </footer>
 
 </body>

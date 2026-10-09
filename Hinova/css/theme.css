@@ -1,0 +1,195 @@
+/* ═══════════════════════════════════════════════════════════════
+   HINOVA DIGITAL — Thème "Lagon numérique" (oct. 2026)
+   Teal sombre (zones fortes) · Bleu numérique (lignes, liens)
+   Doré (accents) · Fonds blancs (lecture)
+   Généré avec la méthode UI/UX Pro Max : Trust & Authority + Conversion
+   ═══════════════════════════════════════════════════════════════ */
+:root {
+  --hv-teal-900: #08343A;   /* teal sombre : hero, footer, menus */
+  --hv-teal-700: #0E4A51;
+  --hv-teal-050: #EEF5F5;   /* surfaces douces */
+  --hv-blue:     #1B64C8;   /* bleu numérique : lignes, liens, focus */
+  --hv-gold:     #B5823A;   /* accents, CTA secondaires */
+  --hv-gold-lt:  #D9B370;   /* doré sur fond sombre */
+  --hv-ink:      #0B2F35;   /* texte principal */
+  --hv-muted:    #4E6A6E;
+  --hv-white:    #FFFFFF;
+  --hv-line:     rgba(27,100,200,.22);
+  --hv-shadow:   0 10px 30px -12px rgba(8,52,58,.18);
+}
+
+html, body { background: var(--hv-white) !important; color: var(--hv-ink); }
+::selection { background: rgba(27,100,200,.18); }
+
+/* Typo : lisibilité (UX : base 16px, interligne 1.6) */
+body { font-size: 16px; line-height: 1.6; }
+h1, h2, h3, .font-montserrat { letter-spacing: -.01em; text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* Cartes "glass" → cartes blanches nettes, liseré bleu numérique */
+.glass, .glass-gold, .card, [class*="glass-"] {
+  background: var(--hv-white) !important;
+  backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+  border: 1px solid var(--hv-line) !important;
+  box-shadow: var(--hv-shadow);
+}
+.glass-gold { border-color: rgba(181,130,58,.45) !important; border-top: 3px solid var(--hv-gold) !important; }
+.glass:hover, .glass-gold:hover { box-shadow: 0 18px 40px -16px rgba(8,52,58,.28); }
+
+/* Sections alternées pour rythmer la lecture */
+main > section:nth-of-type(even), body > section:nth-of-type(odd):not(:first-of-type) {
+  background: linear-gradient(180deg, var(--hv-white), var(--hv-teal-050));
+}
+
+/* ── ZONES TEAL SOMBRE : hero, footer, menu déroulant, bandeaux ── */
+.hero-bg, .hero-video-section, section.hero, #cookieConsent, footer, .nav-dropdown, .dark-zone {
+  background-color: var(--hv-teal-900) !important;
+  color: #F2F8F8 !important;
+}
+.hero-bg *, footer *, .nav-dropdown *, .dark-zone * { border-color: rgba(255,255,255,.14); }
+.hero-bg :is(h1,h2,h3,p,span,li,a,div), footer :is(h1,h2,h3,p,span,li,div),
+.nav-dropdown :is(a,span,li), .dark-zone :is(h1,h2,h3,p,span,li,div) {
+  color: #EAF4F4;
+}
+:is(.hero-bg, .hero-video-section, section.hero, #cookieConsent, footer, .nav-dropdown, .dark-zone) :is(.text-gold, .gold-label, [class*="gold"]) { color: var(--hv-gold-lt) !important; }
+:is(.hero-bg, .hero-video-section, section.hero, #cookieConsent, footer, .nav-dropdown, .dark-zone) :is(.text-cyan, a:hover) { color: #7DB4FF !important; }
+:is(.hero-bg, .hero-video-section, section.hero, #cookieConsent, footer, .nav-dropdown, .dark-zone) :is(.text-slate, .text-pearl) { color: #C9DDDF !important; }
+footer { border-top: 3px solid var(--hv-gold) !important; }
+footer a { color: #D6E7E8 !important; }
+footer a:hover { color: var(--hv-gold-lt) !important; }
+
+/* Ligne numérique signature sous les titres de section */
+section h2::after {
+  content: ""; display: block; width: 56px; height: 2px; margin-top: .75rem;
+  background: linear-gradient(90deg, var(--hv-blue), var(--hv-gold));
+}
+.text-center h2::after, h2.text-center::after { margin-left: auto; margin-right: auto; }
+.hero-bg h2::after { display: none; }
+
+/* Liens et boutons */
+a { transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
+main a:not([class*="btn"]):not([class*="bg-"]) { text-underline-offset: 3px; }
+.bg-cyan, [class*="btn-primary"] { background-color: var(--hv-blue) !important; color: #fff !important; }
+.bg-gold, [class*="btn-gold"] { background-color: var(--hv-gold) !important; color: #fff !important; }
+.bg-gold:hover, .bg-cyan:hover { filter: brightness(1.07); }
+button, a[href], [role="button"] { cursor: pointer; }
+
+/* Accessibilité : focus visibles, cibles tactiles 44px */
+:focus-visible { outline: 3px solid var(--hv-blue) !important; outline-offset: 3px; border-radius: 6px; }
+.hero-bg :focus-visible, footer :focus-visible { outline-color: var(--hv-gold-lt) !important; }
+nav a, button { min-height: 44px; }
+
+/* Formulaires lisibles sur fond blanc */
+input, select, textarea {
+  background: #fff !important; color: var(--hv-ink) !important;
+  border: 1px solid rgba(11,47,53,.22) !important; border-radius: .6rem;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--hv-blue) !important; box-shadow: 0 0 0 3px rgba(27,100,200,.15); }
+::placeholder { color: #7A9296 !important; }
+
+/* Images : coins doux + ombre légère */
+main img:not([class*="logo"]):not([width="16"]) { border-radius: .9rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Zones sombres : forcer un texte clair même sur styles inline */
+:is(.hero-bg, .hero-video-section, section.hero, #cookieConsent, footer, .nav-dropdown, .dark-zone) :is(h1,h2,h3,h4,p,span,strong,em,li,small,div)[style*="color"],
+.hero-bg .hero-heading span { color: #F4FAFA !important; }
+.hero-bg .hero-heading, .hero-bg .gold-label { text-shadow: 0 2px 18px rgba(8,52,58,.55) !important; }
+.hero-bg .gold-label { color: var(--hv-gold-lt) !important; }
+.hero-bg :is(.glass, .glass-gold) {
+  background: rgba(255,255,255,.07) !important; border: 1px solid rgba(217,179,112,.55) !important;
+  box-shadow: none; backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important;
+}
+.hero-bg strong { color: var(--hv-gold-lt) !important; }
+.hero-bg .nav-burger, .hero-bg .lang-btn, .hero-video-section .nav-burger, .hero-video-section .lang-btn { color: #F4FAFA !important; border-color: rgba(255,255,255,.35) !important; background: rgba(255,255,255,.06) !important; }
+
+/* Titres dorés : pas de halo sur fond blanc, taille homogène dans les cartes */
+.gold-title, .gold-number { text-shadow: none !important; animation: none !important; }
+.glass .gold-title, .glass-gold .gold-title, .card-hover .gold-title {
+  font-size: 1.05rem !important; letter-spacing: .04em; text-transform: uppercase; line-height: 1.3;
+}
+@media (min-width: 768px) { .services-grid.md\:grid-cols-4 { grid-template-columns: repeat(2, minmax(0,1fr)) !important; } }
+@media (min-width: 1100px) { .services-grid.md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0,1fr)) !important; } }
+
+/* Titres des héros : blanc lisible, y compris textes en dégradé */
+:is(.hero-bg, .hero-video-section, section.hero) :is(h1, h1 *, h2, h2 *) {
+  color: #F4FAFA !important; -webkit-text-fill-color: #F4FAFA !important; background-image: none !important;
+}
+:is(.hero-bg, .hero-video-section, section.hero) :is(h1, h2) :is(.text-cyan, [class*="accent"], [class*="grad"], em) {
+  color: var(--hv-gold-lt) !important; -webkit-text-fill-color: var(--hv-gold-lt) !important;
+}
+:is(.hero-bg, .hero-video-section, section.hero) .gold-label, :is(.hero-bg, .hero-video-section, section.hero) .gold-label * {
+  color: var(--hv-gold-lt) !important; -webkit-text-fill-color: var(--hv-gold-lt) !important;
+}
+.site-header { background: #fff; border-bottom: 1px solid var(--hv-line); }
+.site-header .nav-burger, .site-header .lang-btn { color: var(--hv-ink) !important; border: 1px solid var(--hv-line) !important; background: #fff !important; }
+section.hero p { color: #DCEAEA !important; text-shadow: 0 1px 10px rgba(8,52,58,.6); }
+
+#cookieConsent { background-color: rgba(8,52,58,.97) !important; }
+#cookieConsent :is(p, span, div) { color: #EAF4F4 !important; }
+#cookieConsent a { color: var(--hv-gold-lt) !important; }
+/* Titres héros fluides : aucun débordement du mobile au grand écran */
+:is(.hero-bg, .hero-video-section, section.hero) h1 { font-size: clamp(1.9rem, 8vw, 4.5rem) !important; overflow-wrap: anywhere; }
+.hero-bg h1.gold-label { font-size: clamp(.72rem, 2.6vw, .95rem) !important; }
+section.hero :is(.cta-secondary, a[class*="secondary"]) { color: #F4FAFA !important; border: 1px solid rgba(255,255,255,.45) !important; background: rgba(255,255,255,.06) !important; }
+
+.hero-bg .hero-heading { font-size: clamp(1.75rem, 5vw, 3.25rem) !important; line-height: 1.15 !important; }
+
+/* CTA secondaires bordés dans les héros sombres */
+:is(.hero-bg, .hero-video-section) a.border { color: #F4FAFA !important; border-color: rgba(255,255,255,.45) !important; background: rgba(255,255,255,.06); }
+:is(.hero-bg, .hero-video-section) a.border span { color: inherit !important; }
+
+/* Texte blanc hérité des anciennes pages sombres : redevient encre hors zones sombres */
+.text-white:not(:is(.hero-bg, .hero-video-section, section.hero, footer, .dark-zone, #cookieConsent, .modal-box, [class*="bg-"], .cta, .btn-cyan) *):not([class*="bg-"]):not(.cta):not(.btn-cyan):not(:is(section.hero, .hero-bg) .text-white) { color: var(--hv-ink) !important; }
+
+/* Navigation unifiée : 5 liens + CTA « Diagnostic offert » */
+.nav-cta { background: var(--hv-blue) !important; color: #fff !important; border-color: var(--hv-blue) !important; font-weight: 700; }
+.nav-cta:hover { filter: brightness(1.08); }
+.nav-dropdown .nav-cta { margin-top: .35rem; text-align: center; border-radius: .6rem; }
+.navlink.active { border-color: var(--hv-blue) !important; color: var(--hv-blue) !important; }
+@media (max-width: 700px) {
+  .desktop-nav { display: flex !important; flex-wrap: wrap; justify-content: flex-end; gap: .35rem; }
+  .desktop-nav .navlink { padding: .45rem .7rem; font-size: .78rem; min-height: 40px; display: inline-flex; align-items: center; }
+}
+
+/* Contraste AA : doré foncé pour les petits textes sur fond clair, texte blanc pur sur boutons */
+.gold-label, .proof-eyebrow, .eyebrow, .text-gold, em[style*="B5823A"] { color: #8F6424 !important; }
+:is(.hero-bg, .hero-video-section, section.hero, footer, .dark-zone, #cookieConsent) :is(.gold-label, .eyebrow, .text-gold, .gold) { color: var(--hv-gold-lt) !important; }
+.btn-cyan, .btn-cyan *, .bg-cyan, .nav-cta, .cta-primary, .cta-primary * { color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; }
+
+/* Lab : modules secondaires repliés */
+.lab-more { border-top: 1px solid var(--hv-line); padding-top: 1.5rem; }
+.lab-more > summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem;
+  padding: 1rem 1.25rem; min-height: 44px; border: 1px solid var(--hv-line); border-radius: .9rem; background: #fff; font: 700 1rem 'Montserrat',sans-serif; color: var(--hv-ink); }
+.lab-more > summary::-webkit-details-marker { display: none; }
+.lab-more > summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--hv-blue); margin-left: auto; }
+.lab-more[open] > summary::after { content: "–"; }
+.lab-more-count { font: 500 .85rem 'Inter',sans-serif; color: var(--hv-muted); }
+
+/* Fiches modules du Lab : fenêtre claire, lisible */
+.modal-box { background: #fff !important; border: 1px solid var(--hv-line) !important; box-shadow: 0 30px 80px -20px rgba(8,52,58,.45) !important; }
+.modal-box :is(h2, h3) { color: var(--hv-ink) !important; }
+.modal-box :is(p, li) { color: var(--hv-muted); }
+.modal-box .cyan { color: var(--hv-blue) !important; }
+.modal { background: rgba(8,52,58,.55) !important; }
+
+/* ══ Lab : cadres visuels harmonisés ══
+   Même hauteur, même fond teal sombre, logos centrés à taille identique */
+#modules .module-visual:not(.mk) {
+  height: 220px !important; display: flex !important; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 50% 40%, #0E4A51 0%, #08343A 75%) !important; padding: 22px;
+}
+#modules .module-visual:not(.mk) img {
+  width: auto !important; height: 100% !important; max-width: 100%; aspect-ratio: 1 / 1;
+  object-fit: cover !important; padding: 0 !important; border-radius: 18px !important;
+  box-shadow: 0 10px 28px -10px rgba(0,0,0,.6);
+}
+#modules .mk-ml { background: #000 !important; padding: 22px !important; }
+#modules .mk-ml img { width: auto !important; height: 100% !important; max-width: 100%; object-fit: contain !important; border-radius: 0 !important; box-shadow: none; }
+#modules .card:hover .module-visual img { transform: scale(1.03); }
+/* Natural Beauty Vahine : logo sur fond blanc (illisible sur fond vert) */
+#modules .module-visual.nbv-visual { background: #fff !important; border-bottom: 1px solid var(--hv-line); }
+#modules .nbv-visual img { object-fit: contain !important; box-shadow: none !important; border-radius: 0 !important; }
