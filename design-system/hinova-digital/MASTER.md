@@ -30,3 +30,9 @@ Montserrat (titres) + Inter (texte), base 16px, interligne 1.6, `text-wrap: bala
 - Marque : « Hinova Digital » (le domaine seul garde « corp »).
 
 Implémentation : `Hinova/css/theme.css`, chargé en dernier sur chaque page.
+
+## Build CSS (après tout ajout de classes Tailwind dans le HTML)
+```bash
+npx tailwindcss@3 -c tailwind.config.js -i tailwind.input.css -o Hinova/css/tailwind.css --minify
+```
+Puis incrémenter `VERSION` dans `Hinova/sw.js` pour que les visiteurs reçoivent la nouvelle version.

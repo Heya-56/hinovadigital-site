@@ -27,25 +27,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'navy': '#FFFFFF', 'navy-mid':'#EEF5F5', 'cyan': '#1E6FD9',
-              'gold': '#B5823A', 'pearl': '#0B2F35', 'slate': '#4E6A6E',
-            },
-            fontFamily: { montserrat: ['Montserrat', 'sans-serif'], inter: ['Inter', 'sans-serif'] },
-            animation: { 'float': 'float 6s ease-in-out infinite' },
-            keyframes: {
-              float: { '0%,100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-12px)' } },
-            },
-          }
-        }
-      }
-    </script>
 
     <style>
       * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -150,6 +131,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Hinova" />
+    <link rel="stylesheet" href="/css/tailwind.css" />
     <link rel="stylesheet" href="/css/theme.css" />
       <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}</script>
       <script>(function(){try{var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=sessionStorage.getItem('ac_intro_seen');if(!rm&&!seen)document.documentElement.classList.add('js-intro');}catch(e){}})();</script>
