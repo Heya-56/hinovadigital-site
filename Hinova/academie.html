@@ -126,6 +126,22 @@
     .back-to-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
     .back-to-top:hover, .back-to-top:focus-visible { border-color:#1E6FD9; background:rgba(30,111,217,0.16); outline:none; }
     @media (prefers-reduced-motion: reduce) { .back-to-top { transition:none; } }
+
+      /* ══ INTRO ACADÉMIE : l'animation joue, puis le texte apparaît ══ */
+      .js-intro #acHero .hero-video-overlay { opacity: 0; transition: opacity .9s ease; }
+      .js-intro #acHeroText > div > * { opacity: 0; transform: translateY(18px); }
+      #acHero.is-revealed .hero-video-overlay { opacity: 1; }
+      #acHero.is-revealed #acHeroText > div > * { animation: acIn .7s cubic-bezier(.2,.7,.2,1) forwards; }
+      #acHero.is-revealed #acHeroText > div > *:nth-child(2) { animation-delay: .12s; }
+      #acHero.is-revealed #acHeroText > div > *:nth-child(3) { animation-delay: .24s; }
+      #acHero.is-revealed #acHeroText > div > *:nth-child(4) { animation-delay: .38s; }
+      @keyframes acIn { to { opacity: 1; transform: none; } }
+      .ac-skip { position: absolute; right: 1.25rem; bottom: 1.25rem; z-index: 3; min-height: 44px; padding: .55rem 1rem;
+        font: 600 .8rem 'Inter', sans-serif; color: #F4FAFA; background: rgba(8,52,58,.55); border: 1px solid rgba(255,255,255,.35);
+        border-radius: 999px; backdrop-filter: blur(6px); transition: opacity .4s ease; }
+      .ac-skip:hover { background: rgba(8,52,58,.8); }
+      #acHero:not(.js-intro-on) .ac-skip, #acHero.is-revealed .ac-skip { opacity: 0; pointer-events: none; }
+      @media (prefers-reduced-motion: reduce) { .js-intro #acHeroText > div > * { opacity: 1; transform: none; } }
 </style>
       <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/webp" href="/logo-hinova.webp" />
@@ -136,6 +152,7 @@
     <meta name="apple-mobile-web-app-title" content="Hinova" />
     <link rel="stylesheet" href="/css/theme.css" />
       <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}</script>
+      <script>(function(){try{var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=sessionStorage.getItem('ac_intro_seen');if(!rm&&!seen)document.documentElement.classList.add('js-intro');}catch(e){}})();</script>
   </head>
 
   <body>
@@ -143,8 +160,8 @@
     <!-- ═══════════════════════════════════════════════════════ -->
     <!-- HEADER + HERO VIDÉO EN BOUCLE -->
     <!-- ═══════════════════════════════════════════════════════ -->
-    <section class="hero-video-section">
-      <video class="hero-video-bg protected-asset" autoplay muted loop playsinline poster="/logo-hinova.webp">
+    <section class="hero-video-section" id="acHero">
+      <video id="acHeroVideo" class="hero-video-bg protected-asset" autoplay muted playsinline preload="auto" poster="/logo-hinova.webp">
         <source src="/hero-academie-loop.mp4" type="video/mp4" />
       </video>
       <div class="hero-video-overlay"></div>
@@ -166,7 +183,7 @@
         </div>
       </header>
 
-      <div class="hero-video-content flex-1 flex items-center justify-center px-6 py-16 md:px-12 lg:px-20 max-w-5xl mx-auto w-full text-center">
+      <div id="acHeroText" class="hero-video-content flex-1 flex items-center justify-center px-6 py-16 md:px-12 lg:px-20 max-w-5xl mx-auto w-full text-center">
         <div class="flex flex-col items-center gap-6">
           <p data-i18n="ac_surtitle" class="font-montserrat font-700 text-sm md:text-base uppercase tracking-widest gold-label">
             Rū-fau-tumu Académie
@@ -178,7 +195,7 @@
           <p data-i18n="ac_subtitle" class="font-inter text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl" style="color:#33555B;">
             Des formations concrètes pour comprendre vos outils, construire votre présence en ligne et ouvrir votre entreprise à l'international.
           </p>
-          <div class="flex flex-col items-start gap-3">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a href="https://hinovadigital.systeme.io/" target="_blank" rel="noopener noreferrer" class="btn-cyan">
               <span data-i18n="ac_cta">Découvrir les formations →</span>
             </a>
@@ -188,6 +205,7 @@
           </div>
         </div>
       </div>
+      <button type="button" id="acSkip" class="ac-skip" aria-label="Passer l'animation d'introduction">Passer l'intro</button>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════ -->
@@ -464,9 +482,9 @@
           ac_surtitle: "Rū-fau-tumu Académie",
           ac_h1_line1: "Navigate toward the future.",
           ac_h1_line2: "Digital leapfrogging for the Fenua.",
-          ac_subtitle: "Hinova Digital's training and tools to navigate, build, and steer your business toward international markets — without ever losing course.",
-          ac_cta: "👉 Discover the trainings",
-          ac_cta_portfolio: "📁 See a professional portfolio example",
+          ac_subtitle: "Hands-on training to understand your tools, build your online presence and open your business to international markets.",
+          ac_cta: "Explore the courses →",
+          ac_cta_portfolio: "See a portfolio example",
           legend_label: "Our Foundation",
           legend_h2: "Why Rū-fau-tumu?",
           legend_body: "Rū-fau-tumu is the name of the legendary spear of the warrior Pai, carved from the hard wood of the purau tree. One night, Hiro and his band of thieves from Ra'iatea tried to tear Mount Rotui away from Moorea using long pohue vines, meaning to carry it off with them. Woken from a dream by his adoptive parents, who cried out for him to grab his spear, Pai climbed the hill of Tataa, from where the view of Moorea is unmatched, and hurled Rū-fau-tumu across the sea. It pierced straight through a peak of the island, giving birth to Mou'a Puta — the Pierced Mountain — before continuing its course all the way to Ra'iatea. The crash woke the roosters of Moorea, whose crowing sent the thieves fleeing before daybreak. That same gesture is what our Academy carries forward: piercing through to the future with the precision and determination of that spear, opening a direct path to tomorrow for Fenua's entrepreneurs. But a well-thrown spear is not enough without a course to hold — that is the role of the tautai, the traditional navigator who read the stars, currents, and winds to sail from one island to another without ever losing his way. The tautai never improvises: he observes, learns the markers, then moves forward with certainty, even at night, even on open sea. In our Academy, becoming a digital tautai means learning to read the markers of AI, payment systems, and international markets, always starting from the same first principle: mastering the basics, just as Pai shaped his weapon before throwing it. It means giving yourself the means to pierce through to your own future — this digital leapfrogging — and to choose your course toward digital sovereignty, with the same force as the spear that marked Moorea's face forever.",
@@ -633,5 +651,30 @@
       });
     })();
   </script>
+
+    <script>
+      /* Intro Académie : texte révélé à la fin de l'animation (max 6 s), passable, une fois par session */
+      (function () {
+        var hero = document.getElementById('acHero'), v = document.getElementById('acHeroVideo'), skip = document.getElementById('acSkip');
+        if (!hero || !v) return;
+        var intro = document.documentElement.classList.contains('js-intro');
+        var done = false;
+        function reveal() {
+          if (done) return; done = true;
+          hero.classList.add('is-revealed');
+          try { sessionStorage.setItem('ac_intro_seen', '1'); } catch (e) {}
+          v.loop = true; var p = v.play(); if (p && p.catch) p.catch(function(){});
+          var cta = hero.querySelector('.btn-cyan'); if (intro && cta && document.activeElement === skip) cta.focus({ preventScroll: true });
+        }
+        if (!intro) { hero.classList.add('is-revealed'); v.loop = true; return; }
+        hero.classList.add('js-intro-on');
+        v.addEventListener('ended', reveal);
+        v.addEventListener('error', reveal);
+        setTimeout(reveal, 6000);                       /* garde-fou : jamais plus de 6 s d'attente */
+        skip.addEventListener('click', reveal);
+        ['wheel', 'touchmove', 'keydown'].forEach(function (ev) { window.addEventListener(ev, reveal, { once: true, passive: true }); });
+        var p = v.play(); if (p && p.catch) p.catch(reveal); /* lecture auto bloquée → texte immédiat */
+      })();
+    </script>
 </body>
 </html>

@@ -137,3 +137,7 @@ section.hero p { color: #DCEAEA !important; text-shadow: 0 1px 10px rgba(8,52,58
 section.hero :is(.cta-secondary, a[class*="secondary"]) { color: #F4FAFA !important; border: 1px solid rgba(255,255,255,.45) !important; background: rgba(255,255,255,.06) !important; }
 
 .hero-bg .hero-heading { font-size: clamp(1.75rem, 5vw, 3.25rem) !important; line-height: 1.15 !important; }
+
+/* CTA secondaires bordés dans les héros sombres */
+:is(.hero-bg, .hero-video-section) a.border { color: #F4FAFA !important; border-color: rgba(255,255,255,.45) !important; background: rgba(255,255,255,.06); }
+:is(.hero-bg, .hero-video-section) a.border span { color: inherit !important; }
