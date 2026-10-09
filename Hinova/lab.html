@@ -30,6 +30,56 @@ h1,h2,h3,h4,.nav{font-family:Montserrat,sans-serif}.gold{color:var(--gold)}.cyan
 .disabled{opacity:.45;cursor:not-allowed;pointer-events:none}
 @media(max-width:700px){.desktop-nav{display:none}.hero-image{object-position:58% center}}
 .module-visual{height:220px;overflow:hidden;background:#FFFFFF}.module-visual img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease,opacity .3s ease}.logo-visual{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.045),transparent 62%)}.logo-visual img{object-fit:contain!important;padding:16px}.card:hover .module-visual img{transform:scale(1.04)}
+
+/* ══ Maquettes produits (cartes Lab) ══ */
+.mk{position:relative;height:220px;width:100%;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px}
+.mk *{box-sizing:border-box}
+.mk-phone{width:84px;height:170px;border-radius:16px;padding:6px;flex:none;box-shadow:0 14px 30px -10px rgba(0,0,0,.45)}
+.mk-screen{height:100%;border-radius:11px;overflow:hidden;display:flex;flex-direction:column;gap:5px;padding:7px}
+.mk-bar{height:5px;border-radius:3px}
+/* Boutiques */
+.mk-shop{background:linear-gradient(135deg,#08343A 0%,#0E4A51 55%,#B5823A 140%)}
+.mk-shop .mk-phone{background:#0b0f12}
+.mk-shop .mk-phone:nth-child(1){transform:translateY(14px) rotate(-6deg)}
+.mk-shop .mk-phone:nth-child(3){transform:translateY(14px) rotate(6deg)}
+.mk-shop .mk-screen{background:#fff}
+.mk-shop .hdr{height:16px;border-radius:5px;background:#08343A}
+.mk-shop .grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.mk-shop .grid i{height:30px;border-radius:5px;background:linear-gradient(135deg,#EEF5F5,#D9B370)}
+.mk-shop .grid i:nth-child(2n){background:linear-gradient(135deg,#EEF5F5,#7FB8C4)}
+.mk-shop .btn{margin-top:auto;height:14px;border-radius:7px;background:#E2703A}
+.mk-shop .hero{height:44px;border-radius:7px;background:linear-gradient(135deg,#D9B370,#E2703A)}
+.mk-shop .line{height:4px;border-radius:2px;background:#d7e2e3}
+.mk-shop .line.s{width:60%}
+/* Pacificompta */
+.mk-pc{background:radial-gradient(circle at 30% 20%,#14504f,#0a2b2e 70%)}
+.mk-pc .mk-phone{background:#0d2427;border:1px solid rgba(255,255,255,.08)}
+.mk-pc .mk-phone:nth-child(2){transform:translateY(-10px)}
+.mk-pc .mk-screen{background:#0f2f33;color:#EAF4F4;font:700 8px/1.2 'Inter',sans-serif}
+.mk-pc .amt{font:800 13px/1 'Montserrat',sans-serif;color:#fff}
+.mk-pc .card-g{border-radius:8px;padding:6px;background:linear-gradient(135deg,#1FB37A,#0E7C66)}
+.mk-pc .card-o{border-radius:8px;padding:6px;background:linear-gradient(135deg,#D9B370,#B5823A)}
+.mk-pc .row{display:flex;align-items:center;gap:4px;font-weight:600;font-size:6.5px;color:#BFD6D6}
+.mk-pc .row b{width:8px;height:8px;border-radius:50%;background:#1FB37A;flex:none}
+.mk-pc .row b.o{background:#D9B370}
+.mk-pc .row span{margin-left:auto;color:#fff}
+.mk-pc svg{width:100%;height:30px}
+/* Orchestrateur */
+.mk-orch{background:radial-gradient(circle at 70% 0%,#123a5c,#071a26 70%);padding:12px}
+.mk-orch .dash{width:100%;height:100%;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(125,180,255,.18);display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto 1fr;gap:6px;padding:8px}
+.mk-orch .kpi{border-radius:7px;background:rgba(255,255,255,.06);padding:5px 6px;color:#EAF4F4;font:600 6.5px/1.2 'Inter',sans-serif}
+.mk-orch .kpi b{display:block;font:800 12px/1.1 'Montserrat',sans-serif;color:#fff}
+.mk-orch .kpi em{font-style:normal;color:#3DDC97}
+.mk-orch .chart{grid-column:span 2;border-radius:7px;background:rgba(255,255,255,.06);padding:4px}
+.mk-orch .gauge{border-radius:7px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center}
+.mk-orch svg{width:100%;height:100%}
+/* ManaLog */
+.mk-ml{background:#000;padding:10px}
+.mk-ml img{width:100%;height:100%;object-fit:contain!important;padding:0!important}
+@media (prefers-reduced-motion:no-preference){
+  .mk-orch .ln{stroke-dasharray:400;stroke-dashoffset:400;animation:mkDraw 1.6s ease forwards .3s}
+  @keyframes mkDraw{to{stroke-dashoffset:0}}
+}
 </style>
     <link rel="stylesheet" href="/css/tailwind.css" />
     <link rel="stylesheet" href="/css/theme.css" />
@@ -96,26 +146,57 @@ h1,h2,h3,h4,.nav{font-family:Montserrat,sans-serif}.gold{color:var(--gold)}.cyan
 <div class="max-w-3xl mb-12">
 <p class="gold eyebrow">LES MODULES</p>
 <h2 class="text-3xl md:text-5xl font-black mt-3">Des outils concrets,<br><span class="cyan">en production.</span></h2>
-<p class="muted mt-5 leading-8">Quatre modules pensés pour les entreprises — gestion, logistique, commerce et données — en cours de finalisation et confrontés aux réalités du terrain. Ouvrez-en un pour découvrir sa raison d'être et ses fonctions.</p>
+<p class="muted mt-5 leading-8">Des solutions pensées pour les entreprises — commerce, pilotage, gestion, logistique et données — en cours de finalisation et confrontés aux réalités du terrain. Ouvrez-en un pour découvrir sa raison d'être et ses fonctions.</p>
 </div>
 
 <p class="gold eyebrow mb-4">POUR LES ENTREPRISES</p>
-<div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+<div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+<article class="card glass p-0 overflow-hidden" data-module="shops">
+<div class="module-visual mk mk-shop" role="img" aria-label="Aperçu de boutiques en ligne sur mobile">
+<div class="mk-phone"><div class="mk-screen"><div class="hdr"></div><div class="grid"><i></i><i></i><i></i><i></i></div><div class="btn"></div></div></div>
+<div class="mk-phone"><div class="mk-screen"><div class="hdr"></div><div class="hero"></div><div class="line"></div><div class="line s"></div><div class="grid"><i></i><i></i></div><div class="btn"></div></div></div>
+<div class="mk-phone"><div class="mk-screen"><div class="hdr"></div><div class="line"></div><div class="line s"></div><div class="line"></div><div class="line s"></div><div class="btn"></div></div></div>
+</div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🛍️</div><span class="number">01</span></div>
+<p class="gold eyebrow mt-6">COMMERCE · E-COMMERCE</p><h3 class="text-2xl font-extrabold mt-2">Boutiques en ligne</h3><p class="cyan font-semibold mt-1">Vendre partout, encaisser directement</p><p class="muted leading-7 mt-4">8 boutiques livrées : rapides, installables sur mobile, et dont la marque comme les données restent les vôtres.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">E-commerce</span><span class="tag">Mobile</span><span class="tag">Paiement</span></div></div></article>
+
+<article class="card glass p-0 overflow-hidden" data-module="orchestrateur">
+<div class="module-visual mk mk-orch" role="img" aria-label="Aperçu du tableau de bord Orchestrateur Business">
+<div class="dash">
+<div class="kpi">Projets<b>24</b><em>+18 %</em></div>
+<div class="kpi">Conversion<b>3,7 %</b><em>+12 %</em></div>
+<div class="kpi">CA<b>2,4 M</b><em>+16 %</em></div>
+<div class="chart"><svg viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true">
+<defs><linearGradient id="mkA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4F8CFF" stop-opacity=".45"/><stop offset="1" stop-color="#4F8CFF" stop-opacity="0"/></linearGradient></defs>
+<path d="M0,55 L25,48 L50,52 L75,36 L100,40 L125,26 L150,30 L175,16 L200,12 L200,70 L0,70 Z" fill="url(#mkA)"/>
+<polyline class="ln" points="0,55 25,48 50,52 75,36 100,40 125,26 150,30 175,16 200,12" fill="none" stroke="#4F8CFF" stroke-width="2.2"/>
+<polyline class="ln" points="0,62 25,58 50,60 75,50 100,52 125,44 150,46 175,38 200,34" fill="none" stroke="#D9B370" stroke-width="1.6"/></svg></div>
+<div class="gauge"><svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="22" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="7"/><circle cx="30" cy="30" r="22" fill="none" stroke="#3DDC97" stroke-width="7" stroke-linecap="round" stroke-dasharray="102 138" transform="rotate(-90 30 30)"/><text x="30" y="34" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="11" fill="#fff">74%</text></svg></div>
+</div></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">📊</div><span class="number">02</span></div>
+<p class="gold eyebrow mt-6">PILOTAGE · ENTREPRISE</p><h3 class="text-2xl font-extrabold mt-2">Orchestrateur Business</h3><p class="cyan font-semibold mt-1">Toute votre activité sur un seul écran</p><p class="muted leading-7 mt-4">Ventes, projets et opérations réunis dans un tableau de bord vivant, avec des automatisations actives en continu.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Tableau de bord</span><span class="tag">Automatisation</span><span class="tag">Pilotage</span></div></div></article>
 
 <article class="card glass p-0 overflow-hidden" data-module="pacificompta">
-<div class="module-visual logo-visual"><img src="/pacificompta-lab.webp" alt="Logo Pacificompta" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🐠</div><span class="number">01</span></div>
+<div class="module-visual mk mk-pc" role="img" aria-label="Aperçu de l'application Pacificompta">
+<div class="mk-phone"><div class="mk-screen"><span>Trésorerie</span><div class="amt">1 284 500 XPF</div>
+<div class="card-g"><span>Encaissé</span><div class="amt" style="font-size:10px">842 000</div></div>
+<div class="row"><b></b>Facture F-0142<span>48 000</span></div><div class="row"><b class="o"></b>Devis D-0087<span>120 000</span></div><div class="row"><b></b>Facture F-0141<span>36 500</span></div></div></div>
+<div class="mk-phone"><div class="mk-screen"><span>Ce mois</span>
+<div class="card-o"><span style="color:#2b1d07">À encaisser</span><div class="amt" style="font-size:10px;color:#2b1d07">442 500</div></div>
+<svg viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,24 15,20 30,22 45,14 60,16 75,8 100,5" fill="none" stroke="#1FB37A" stroke-width="2"/><polyline points="0,27 20,25 40,26 60,21 80,22 100,18" fill="none" stroke="#D9B370" stroke-width="1.5"/></svg>
+<div class="row"><b></b>Payées<span>18</span></div><div class="row"><b class="o"></b>En attente<span>5</span></div></div></div>
+</div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🐠</div><span class="number">03</span></div>
 <p class="gold eyebrow mt-6">GESTION · PROJET CLIENT</p><h3 class="text-2xl font-extrabold mt-2">Pacificompta</h3><p class="cyan font-semibold mt-1">La gestion comptable pensée pour le Pacifique</p><p class="muted leading-7 mt-4">Une application de gestion comptable conçue pour un client, adaptée aux réalités des entrepreneurs et petites structures du Pacifique.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Gestion</span><span class="tag">Comptabilité</span><span class="tag">PME</span></div></div></article>
 
 <article class="card glass p-0 overflow-hidden" data-module="manalog">
-<div class="module-visual logo-visual"><img src="/manalog-lab.webp" alt="ManaLog" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">📦</div><span class="number">02</span></div>
-<p class="gold eyebrow mt-6">LOGISTIQUE · OPÉRATIONS</p><h3 class="text-2xl font-extrabold mt-2">ManaLog</h3><p class="cyan font-semibold mt-1">Piloter les flux, du stock à l'expédition</p><p class="muted leading-7 mt-4">Un logiciel logistique pensé pour organiser les opérations d'un dépôt et suivre les flux avec une logique adaptée au Fenua.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Stock</span><span class="tag">Préparation</span><span class="tag">Expédition</span></div></div></article>
+<div class="module-visual mk mk-ml"><img src="/manalog-logo.webp" alt="Logo officiel ManaLog" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">📦</div><span class="number">04</span></div>
+<p class="gold eyebrow mt-6">IMPORT-EXPORT · ASSISTANT VOCAL</p><h3 class="text-2xl font-extrabold mt-2">ManaLog</h3><p class="cyan font-semibold mt-1">Mana, votre assistant import-export</p><p class="muted leading-7 mt-4">Un mini-logiciel logistique avec Mana, un assistant vocal qui prend en charge vos démarches d'import-export, du fournisseur à l'expédition.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Assistant vocal</span><span class="tag">Import-export</span><span class="tag">Logistique</span></div></div></article>
 
 <article class="card glass p-0 overflow-hidden" data-module="manahub">
-<div class="module-visual"><img src="/manahub-logo.webp" alt="ManaHub" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌺</div><span class="number">03</span></div>
+<div class="module-visual"><img src="/manahub-logo.webp" alt="ManaHub" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌺</div><span class="number">05</span></div>
 <p class="gold eyebrow mt-6">ENTREPRENEURIAT · ÉCOSYSTÈME</p><h3 class="text-2xl font-extrabold mt-2">ManaHub</h3><p class="cyan font-semibold mt-1">Connecter l'entrepreneuriat du Fenua</p><p class="muted leading-7 mt-4">Un écosystème numérique pensé pour relier entrepreneurs, commerce, services et opportunités.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Entrepreneurs</span><span class="tag">Commerce</span><span class="tag">Écosystème</span></div></div></article>
 
 <article class="card glass p-0 overflow-hidden" data-module="atlas">
-<div class="module-visual logo-visual"><img src="/atlas-pacifica-lab.webp" alt="Logo Atlas Pacifica" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌪️</div><span class="number">04</span></div>
+<div class="module-visual logo-visual"><img src="/atlas-pacifica-lab.webp" alt="Logo Atlas Pacifica" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌪️</div><span class="number">06</span></div>
 <p class="gold eyebrow mt-6">CLIMAT · DATA · TERRITOIRE</p><h3 class="text-2xl font-extrabold mt-2">Atlas Pacifica</h3><p class="cyan font-semibold mt-1">Mieux comprendre les saisons cycloniques</p><p class="muted leading-7 mt-4">Un orchestrateur de données qui croise cartographie, climat et historique pour mieux comprendre les saisons cycloniques du Pacifique. Un outil de compréhension, qui ne remplace pas les prévisions officielles.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Climat</span><span class="tag">Cartographie</span><span class="tag">Data</span></div></div></article>
 
 </div>
@@ -125,39 +206,39 @@ h1,h2,h3,h4,.nav{font-family:Montserrat,sans-serif}.gold{color:var(--gold)}.cyan
 <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-8">
 
 <article class="card glass p-0 overflow-hidden" data-module="hinovaapp">
-<div class="module-visual logo-visual"><img src="/hinova-app-lab.webp" alt="Logo Hinova Digital App" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌏</div><span class="number">05</span></div>
+<div class="module-visual logo-visual"><img src="/hinova-app-lab.webp" alt="Logo Hinova Digital App" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌏</div><span class="number">07</span></div>
 <p class="gold eyebrow mt-6">DIGITALISATION · PACIFIQUE</p><h3 class="text-2xl font-extrabold mt-2">Hinova Digital App</h3><p class="cyan font-semibold mt-1">Le parcours entrepreneurial, numérisé</p><p class="muted leading-7 mt-4">Une application qui numérise le parcours de l'entrepreneur, de l'idée à l'activité, et rassemble les services de l'écosystème Hinova.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Services</span><span class="tag">Mobile</span><span class="tag">Écosystème</span></div></div></article>
 
 <article class="card glass p-0 overflow-hidden" data-module="fenua">
-<div class="module-visual logo-visual"><img src="/fenua-resilience-lab.webp" alt="Logo fenua-resilience.app" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌱</div><span class="number">06</span></div>
+<div class="module-visual logo-visual"><img src="/fenua-resilience-lab.webp" alt="Logo fenua-resilience.app" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌱</div><span class="number">08</span></div>
 <p class="gold eyebrow mt-6">PRÉVENTION · SOLIDARITÉ</p><h3 class="text-2xl font-extrabold mt-2">fenua-resilience.app</h3><p class="cyan font-semibold mt-1">Ensemble contre la méthamphétamine au Fenua</p><p class="muted leading-7 mt-4">L'application d'une partenaire et étudiante de l'Académie, engagée contre la méthamphétamine en Polynésie française. Une page créée gratuitement par Hinova Digital.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Prévention</span><span class="tag">Solidarité</span><span class="tag">Engagement</span></div></div></article>
 
 <article class="card glass p-0 overflow-hidden" data-module="hinova">
-<div class="module-visual"><img src="/logo-hinova.webp" alt="Hinova Digital" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">⚡</div><span class="number">07</span></div>
+<div class="module-visual"><img src="/logo-hinova.webp" alt="Hinova Digital" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">⚡</div><span class="number">09</span></div>
 <p class="gold eyebrow mt-6">SOLUTIONS · ARCHITECTURE</p><h3 class="text-2xl font-extrabold mt-2">Hinova Digital</h3><p class="cyan font-semibold mt-1">Créer des solutions numériques</p><p class="muted leading-7 mt-4">Concevoir des solutions modulaires et évolutives pour transformer une idée, un besoin ou un processus en produit numérique.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Architecture</span><span class="tag">Solutions</span><span class="tag">Innovation</span></div></div></article>
 
 <article class="card glass p-0 overflow-hidden" data-module="rufau">
-<div class="module-visual logo-visual"><img src="/rufautumu-lab.webp" alt="Logo Rū-fau-tumu Académie" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🗡️</div><span class="number">08</span></div>
+<div class="module-visual logo-visual"><img src="/rufautumu-lab.webp" alt="Logo Rū-fau-tumu Académie" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🗡️</div><span class="number">10</span></div>
 <p class="gold eyebrow mt-6">TRANSMISSION · ACADÉMIE</p><h3 class="text-2xl font-extrabold mt-2">Rū-fau-tumu Académie</h3><p class="cyan font-semibold mt-1">Apprendre à créer comme un dev no-code</p><p class="muted leading-7 mt-4">La plateforme d'apprentissage en ligne pour apprendre à concevoir et lancer ses propres outils numériques, comme un développeur no-code.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Formation</span><span class="tag">No-code</span><span class="tag">IA</span></div></div></article>
 
 <article class="card glass p-0 overflow-hidden" data-module="crashboy">
-<div class="module-visual"><img src="/crashboy-skull.webp" alt="Crashboy Tahiti" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🏄</div><span class="number">09</span></div>
+<div class="module-visual"><img src="/crashboy-skull.webp" alt="Crashboy Tahiti" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🏄</div><span class="number">11</span></div>
 <p class="gold eyebrow mt-6">MOBILITÉ · COMMUNAUTÉ</p><h3 class="text-2xl font-extrabold mt-2">Crashboy Tahiti</h3><p class="cyan font-semibold mt-1">Mobilité, culture et expérience</p><p class="muted leading-7 mt-4">Un univers numérique autour de la mobilité, de la communauté et de la culture des sports de glisse.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Mobilité</span><span class="tag">Communauté</span><span class="tag">Expérience</span></div></div></article>
 
 <article class="card glass p-0 overflow-hidden" data-module="nbv">
-<div class="module-visual"><img src="/H-heritage.jpg" alt="Natural Beauty Vahine" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌿</div><span class="number">10</span></div>
+<div class="module-visual"><img src="/H-heritage.jpg" alt="Natural Beauty Vahine" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌿</div><span class="number">12</span></div>
 <p class="gold eyebrow mt-6">BEAUTÉ · NATURE · COMMERCE</p><h3 class="text-2xl font-extrabold mt-2">Natural Beauty Vahine</h3><p class="cyan font-semibold mt-1">Une marque beauté à identité polynésienne</p><p class="muted leading-7 mt-4">Développer un univers de marque, de produits et de commerce autour d'une identité naturelle et féminine.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Beauté</span><span class="tag">Marque</span><span class="tag">Commerce</span></div></div></article>
 
 <article class="card glass p-0 overflow-hidden" data-module="heya">
-<div class="module-visual"><img src="/heya-lab.webp" alt="Heianui Tapare, fondatrice de Hinova Digital" loading="lazy" style="object-position:50% 38%"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌺</div><span class="number">11</span></div>
+<div class="module-visual"><img src="/heya-lab.webp" alt="Heianui Tapare, fondatrice de Hinova Digital" loading="lazy" style="object-position:50% 38%"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🌺</div><span class="number">13</span></div>
 <p class="gold eyebrow mt-6">IDENTITÉ · PARCOURS · VISION</p><h3 class="text-2xl font-extrabold mt-2">HeyaTapare.com</h3><p class="cyan font-semibold mt-1">Le portfolio de Heya</p><p class="muted leading-7 mt-4">Un espace personnel qui rassemble une vision, des projets, des expérimentations et un parcours autour du numérique et de l'entrepreneuriat.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Identité</span><span class="tag">Portfolio</span><span class="tag">Vision</span></div></div></article>
 
 <article class="card glass p-0 overflow-hidden" data-module="creatoros">
-<div class="module-visual logo-visual"><img src="/creatoros-lab.webp" alt="CreatorOS" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🎬</div><span class="number">12</span></div>
+<div class="module-visual logo-visual"><img src="/creatoros-lab.webp" alt="CreatorOS" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🎬</div><span class="number">14</span></div>
 <p class="gold eyebrow mt-6">IA · CRÉATION</p><h3 class="text-2xl font-extrabold mt-2">CreatorOS</h3><p class="cyan font-semibold mt-1">Structurer et accélérer la création de contenu</p><p class="muted leading-7 mt-4">Un environnement pour organiser les idées, les workflows et les tâches répétitives sans perdre la direction humaine.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">IA</span><span class="tag">Contenu</span><span class="tag">Workflows</span></div></div></article>
 
 <article class="card glass p-0 overflow-hidden" data-module="maaterre">
-<div class="module-visual logo-visual"><img src="/maa-tere-lab.webp" alt="Maa Tere" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🩷</div><span class="number">13</span></div>
+<div class="module-visual logo-visual"><img src="/maa-tere-lab.webp" alt="Maa Tere" loading="lazy"></div><div class="p-7"><div class="flex justify-between items-start"><div class="module-icon">🩷</div><span class="number">15</span></div>
 <p class="gold eyebrow mt-6">COMMERCE · MOBILITÉ</p><h3 class="text-2xl font-extrabold mt-2">Maa Tere</h3><p class="cyan font-semibold mt-1">Faire vivre le commerce au-delà d'un point fixe</p><p class="muted leading-7 mt-4">Un projet autour du commerce itinérant et de l'expérience terrain, pensé pour rapprocher l'offre, les personnes et les lieux.</p><div class="flex flex-wrap gap-2 mt-5"><span class="tag">Commerce</span><span class="tag">Mobilité</span><span class="tag">Terrain</span></div></div></article>
 
 </div>
@@ -202,6 +283,8 @@ h1,h2,h3,h4,.nav{font-family:Montserrat,sans-serif}.gold{color:var(--gold)}.cyan
 
 <script>
 const modules={
+shops:{eyebrow:"COMMERCE · E-COMMERCE",title:"Boutiques en ligne",subtitle:"Vendre partout, encaisser directement",why:"Des boutiques en ligne rapides et installables sur mobile, conçues pour les artisans et commerces du Fenua : la marque reste la vôtre, les données aussi.",functions:["Catalogue produits géré simplement","Commande et paiement sur mobile","Application installable, même avec un réseau faible","Suivi des commandes et des clients"],url:null},
+orchestrateur:{eyebrow:"PILOTAGE · ENTREPRISE",title:"Orchestrateur Business",subtitle:"Toute votre activité sur un seul écran",why:"L'Orchestrateur relie vos ventes, vos projets et vos opérations dans un tableau de bord unique, avec des automatisations qui travaillent pour vous en continu.",functions:["Indicateurs clés en temps réel","Graphiques de tendance et objectifs","Automatisations des relances et du suivi","Vue par équipe et par projet"],url:null},
 manahub:{eyebrow:"ENTREPRENEURIAT · ÉCOSYSTÈME",title:"ManaHub",subtitle:"Connecter l'entrepreneuriat du Fenua",why:"ManaHub explore un point de convergence pour aider entrepreneurs, commerce et services à se connecter autour d'un écosystème local.",functions:["Présenter une activité et ses offres","Structurer un parcours numérique","Connecter commerce, services et opportunités","Faire évoluer chaque brique selon les besoins"],url:null},
 pacificompta:{eyebrow:"GESTION · ENTREPRISE",title:"Pacificompta",subtitle:"La gestion pensée pour le Pacifique",why:"Pacificompta explore une expérience de gestion plus accessible et contextualisée pour les entrepreneurs et petites structures.",functions:["Suivre les éléments essentiels de gestion","Centraliser les informations utiles","Faciliter le suivi de l'activité","Préparer une évolution progressive de l'outil"],url:null},
 hinovaapp:{eyebrow:"DIGITALISATION · PACIFIQUE",title:"Hinova Digital App",subtitle:"La porte d'entrée numérique de l'écosystème",why:"L'application explore un point d'accès simple aux services et expériences numériques de l'écosystème Hinova.",functions:["Rassembler les points d'accès utiles","Faciliter la découverte des services","Créer des parcours mobiles","Faire évoluer l'expérience selon les usages"],url:null},
@@ -211,8 +294,8 @@ atlas:{eyebrow:"CLIMAT · DATA · TERRITOIRE",title:"Atlas Pacifica",subtitle:"C
 rufau:{eyebrow:"TRANSMISSION · ACADÉMIE",title:"Rū-fau-tumu Académie",subtitle:"Réveiller le potentiel numérique",why:"L'Académie transmet les compétences nécessaires pour comprendre, maîtriser et construire avec les outils numériques.",functions:["Apprendre par la pratique","Comprendre les outils numériques","Créer des projets concrets","Développer l'autonomie numérique"],url:"/academie.html"},
 crashboy:{eyebrow:"MOBILITÉ · COMMUNAUTÉ",title:"Crashboy Tahiti",subtitle:"Mobilité, culture et expérience",why:"Crashboy Tahiti explore un univers numérique autour de la mobilité, de la communauté et de la culture des sports de glisse.",functions:["Présenter l'univers et la communauté","Valoriser les expériences","Créer une présence mobile","Développer des parcours communautaires"],url:null},
 nbv:{eyebrow:"BEAUTÉ · NATURE · COMMERCE",title:"Natural Beauty Vahine",subtitle:"Une marque beauté à identité polynésienne",why:"NBV explore un univers de marque et de commerce autour d'une identité naturelle, féminine et polynésienne.",functions:["Présenter la marque et ses produits","Construire une identité commerciale","Créer un parcours de découverte","Préparer une évolution du commerce"],url:null},
-heya:{eyebrow:"IDENTITÉ · PARCOURS · VISION",title:"HeyaTapare.com",subtitle:"L'espace personnel de vision et de projets",why:"HeyaTapare.com rassemble une vision, des projets, des expérimentations et un parcours autour du numérique et de l'entrepreneuriat.",functions:["Présenter les projets","Structurer le parcours personnel","Partager une vision","Faire évoluer l'univers au fil des projets"],url:"https://heyatapare.com"}creatoros:{eyebrow:"IA · CRÉATION",title:"CreatorOS",subtitle:"Structurer et accélérer la création de contenu",why:"CreatorOS explore un environnement où l'humain garde la direction tandis que les tâches de création peuvent être structurées et accélérées.",functions:["Structurer les idées","Organiser les workflows de création","Accélérer certaines tâches répétitives","Préparer et réutiliser les contenus"],url:null},
-manalog:{eyebrow:"LOGISTIQUE · OPÉRATIONS",title:"ManaLog",subtitle:"Piloter les flux, du stock à l'expédition",why:"ManaLog explore une expérience de gestion logistique adaptée aux opérations d'un dépôt, de la réception au suivi des expéditions.",functions:["Suivre le stock","Préparer les commandes","Organiser les expéditions","Suivre les flux opérationnels"],url:null},
+heya:{eyebrow:"IDENTITÉ · PARCOURS · VISION",title:"HeyaTapare.com",subtitle:"L'espace personnel de vision et de projets",why:"HeyaTapare.com rassemble une vision, des projets, des expérimentations et un parcours autour du numérique et de l'entrepreneuriat.",functions:["Présenter les projets","Structurer le parcours personnel","Partager une vision","Faire évoluer l'univers au fil des projets"],url:"https://heyatapare.com"},creatoros:{eyebrow:"IA · CRÉATION",title:"CreatorOS",subtitle:"Structurer et accélérer la création de contenu",why:"CreatorOS explore un environnement où l'humain garde la direction tandis que les tâches de création peuvent être structurées et accélérées.",functions:["Structurer les idées","Organiser les workflows de création","Accélérer certaines tâches répétitives","Préparer et réutiliser les contenus"],url:null},
+manalog:{eyebrow:"IMPORT-EXPORT · ASSISTANT VOCAL",title:"ManaLog",subtitle:"Mana, votre assistant import-export",why:"ManaLog est un mini-logiciel de logistique avec, à l'intérieur, Mana : un assistant vocal qui prend en charge vos démarches d'import-export — de la recherche fournisseur au suivi de l'expédition.",functions:["Parler à Mana pour lancer une démarche","Recherche et suivi des fournisseurs","Estimation des coûts et formalités","Suivi du stock et des expéditions"],url:null},
 maaterre:{eyebrow:"COMMERCE · MOBILITÉ",title:"Maa Tere",subtitle:"Faire vivre le commerce au-delà d'un point fixe",why:"Maa Tere explore un modèle de commerce mobile et de proximité, pensé autour du terrain, de la mobilité et de l'expérience client.",functions:["Organiser une activité itinérante","Présenter les offres et disponibilités","Structurer les parcours terrain","Faire évoluer le service selon les usages"],url:null},
 };
 const modal=document.getElementById("moduleModal"),closeBtn=document.getElementById("modalClose");

@@ -168,3 +168,10 @@ section.hero :is(.cta-secondary, a[class*="secondary"]) { color: #F4FAFA !import
 .lab-more > summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--hv-blue); margin-left: auto; }
 .lab-more[open] > summary::after { content: "–"; }
 .lab-more-count { font: 500 .85rem 'Inter',sans-serif; color: var(--hv-muted); }
+
+/* Fiches modules du Lab : fenêtre claire, lisible */
+.modal-box { background: #fff !important; border: 1px solid var(--hv-line) !important; box-shadow: 0 30px 80px -20px rgba(8,52,58,.45) !important; }
+.modal-box :is(h2, h3) { color: var(--hv-ink) !important; }
+.modal-box :is(p, li) { color: var(--hv-muted); }
+.modal-box .cyan { color: var(--hv-blue) !important; }
+.modal { background: rgba(8,52,58,.55) !important; }
