@@ -190,3 +190,6 @@ section.hero :is(.cta-secondary, a[class*="secondary"]) { color: #F4FAFA !import
 #modules .mk-ml { background: #000 !important; padding: 22px !important; }
 #modules .mk-ml img { width: auto !important; height: 100% !important; max-width: 100%; object-fit: contain !important; border-radius: 0 !important; box-shadow: none; }
 #modules .card:hover .module-visual img { transform: scale(1.03); }
+/* Natural Beauty Vahine : logo sur fond blanc (illisible sur fond vert) */
+#modules .module-visual.nbv-visual { background: #fff !important; border-bottom: 1px solid var(--hv-line); }
+#modules .nbv-visual img { object-fit: contain !important; box-shadow: none !important; border-radius: 0 !important; }
