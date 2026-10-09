@@ -175,3 +175,18 @@ section.hero :is(.cta-secondary, a[class*="secondary"]) { color: #F4FAFA !import
 .modal-box :is(p, li) { color: var(--hv-muted); }
 .modal-box .cyan { color: var(--hv-blue) !important; }
 .modal { background: rgba(8,52,58,.55) !important; }
+
+/* ══ Lab : cadres visuels harmonisés ══
+   Même hauteur, même fond teal sombre, logos centrés à taille identique */
+#modules .module-visual:not(.mk) {
+  height: 220px !important; display: flex !important; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 50% 40%, #0E4A51 0%, #08343A 75%) !important; padding: 22px;
+}
+#modules .module-visual:not(.mk) img {
+  width: auto !important; height: 100% !important; max-width: 100%; aspect-ratio: 1 / 1;
+  object-fit: cover !important; padding: 0 !important; border-radius: 18px !important;
+  box-shadow: 0 10px 28px -10px rgba(0,0,0,.6);
+}
+#modules .mk-ml { background: #000 !important; padding: 22px !important; }
+#modules .mk-ml img { width: auto !important; height: 100% !important; max-width: 100%; object-fit: contain !important; border-radius: 0 !important; box-shadow: none; }
+#modules .card:hover .module-visual img { transform: scale(1.03); }
