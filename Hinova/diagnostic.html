@@ -193,7 +193,7 @@
                                 <input type="radio" name="frein_principal" value="Processus manuels / organisation interne" class="mt-1"> Processus manuels &amp; organisation interne
                             </label>
                             <label class="flex items-start gap-3 font-inter text-sm cursor-pointer" style="color:#33555B;">
-                                <input type="radio" name="frein_principal" value="Impayés / trésorerie" class="mt-1"> Impayés &amp; tension de trésorerie
+                                <input type="radio" name="frein_principal" value="Impayés / tension de trésorerie" class="mt-1"> Impayés &amp; tension de trésorerie
                             </label>
                             <label class="flex items-start gap-3 font-inter text-sm cursor-pointer" style="color:#33555B;">
                                 <input type="radio" name="frein_principal" value="Autre" class="mt-1"> Autre
@@ -222,6 +222,8 @@
                         diagBtn.disabled = true;
                         diagBtn.textContent = 'Envoi en cours…';
                         const formData = new FormData(diagForm);
+                        /* CRM : copie de la demande vers Airtable (table Diagnostics) via /api/diagnostic */
+                        try { fetch('/api/diagnostic', { method: 'POST', body: new FormData(diagForm), keepalive: true }).catch(function(){}); } catch (e) {}
                         try {
                             const res = await fetch(diagForm.action, {
                                 method: 'POST',
