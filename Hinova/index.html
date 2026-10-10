@@ -335,6 +335,43 @@
       </div>
     </section>
 
+    <!-- LEAPFROGGING PACIFICA — LE PARCOURS DE L'ENTREPRENEUR, DIGITALISÉ -->
+    <style>
+      .lp{padding:5.5rem 1.5rem;background:#EEF5F5}
+      .lp-in{max-width:72rem;margin:0 auto;display:grid;gap:1.25rem}
+      .lp-eyebrow{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#B5823A}
+      .lp h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.6rem,3.6vw,2.4rem);line-height:1.15;color:#0B2F35;text-wrap:balance;margin:0}
+      .lp-lead{color:#4E6A6E;max-width:62ch;font-size:1.02rem;line-height:1.65;margin:0}
+      .lp-steps{list-style:none;padding:0;margin:1.25rem 0 0;display:grid;gap:1rem;grid-template-columns:repeat(3,minmax(0,1fr))}
+      @media(max-width:900px){.lp-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      @media(max-width:560px){.lp-steps{grid-template-columns:1fr}}
+      .lp-step{background:#fff;border:1px solid rgba(27,100,200,.18);border-radius:12px;padding:1.4rem;display:grid;gap:.45rem;align-content:start;position:relative}
+      .lp-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.6rem;line-height:1}
+      .lp-t{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.05rem;color:#0B2F35;margin:0}
+      .lp-b{color:#4E6A6E;font-size:.92rem;line-height:1.6;margin:0}
+      .lp-tool{color:#1B64C8;font-size:.82rem;font-weight:600;margin:.2rem 0 0}
+      .lp-cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem}
+      .lp-btn{display:inline-block;padding:.85rem 1.4rem;border-radius:.6rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;text-decoration:none;min-height:44px}
+      .lp-btn.p{background:#1B64C8;color:#fff} .lp-btn.s{border:1.5px solid #B5823A;color:#8a6127}
+      .lp-btn:focus-visible{outline:3px solid #1B64C8;outline-offset:3px}
+    </style>
+    <section id="leapfrogging" class="lp" aria-labelledby="lpTitle">
+      <div class="lp-in">
+        <p data-i18n="lp_eyebrow" class="lp-eyebrow">Leapfrogging Pacifica</p>
+        <h2 id="lpTitle" data-i18n="lp_h2">Nous digitalisons tout le parcours de l&#39;entrepreneur polynésien.</h2>
+        <p data-i18n="lp_lead" class="lp-lead">De l&#39;idée à l&#39;export, chaque étape de la vie d&#39;une entreprise a son outil numérique. Vous démarrez là où vous en êtes, et vous sautez les étapes coûteuses que d&#39;autres territoires ont dû traverser.</p>
+        <ol class="lp-steps">
+          <li class="lp-step"><span class="lp-num" style="color:#1B64C8">01</span><h3 data-i18n="lp_create_t" class="lp-t">Créer</h3><p data-i18n="lp_create_b" class="lp-b">Clarifier le projet, choisir la bonne structure, chiffrer le démarrage.</p><p data-i18n="lp_create_tool" class="lp-tool">Diagnostic offert · Parcours entrepreneur</p></li>
+          <li class="lp-step"><span class="lp-num" style="color:#B5823A">02</span><h3 data-i18n="lp_seen_t" class="lp-t">Être vu</h3><p data-i18n="lp_seen_b" class="lp-b">Une page ou un site qui vous appartient, avec vos propres liens et boutons d'action.</p><p data-i18n="lp_seen_tool" class="lp-tool">Profil souverain ManaHub · Sites vitrines</p></li>
+          <li class="lp-step"><span class="lp-num" style="color:#1B64C8">03</span><h3 data-i18n="lp_sell_t" class="lp-t">Vendre</h3><p data-i18n="lp_sell_b" class="lp-b">Une boutique en ligne rapide sur mobile, gérée depuis un simple tableau.</p><p data-i18n="lp_sell_tool" class="lp-tool">Boutiques en ligne · ex. OEA Tahiti</p></li>
+          <li class="lp-step"><span class="lp-num" style="color:#B5823A">04</span><h3 data-i18n="lp_paid_t" class="lp-t">Être payé</h3><p data-i18n="lp_paid_b" class="lp-b">Encaisser par carte via une banque locale, l'argent arrive directement sur votre compte.</p><p data-i18n="lp_paid_tool" class="lp-tool">Paiement local avec notre partenaire OSB</p></li>
+          <li class="lp-step"><span class="lp-num" style="color:#1B64C8">05</span><h3 data-i18n="lp_run_t" class="lp-t">Gérer</h3><p data-i18n="lp_run_b" class="lp-b">Stock, réservations, factures et clients réunis au même endroit, sans ressaisie.</p><p data-i18n="lp_run_tool" class="lp-tool">Hinova Orchestrator · applications métier</p></li>
+          <li class="lp-step"><span class="lp-num" style="color:#B5823A">06</span><h3 data-i18n="lp_grow_t" class="lp-t">Grandir</h3><p data-i18n="lp_grow_b" class="lp-b">Trouver des fournisseurs, exporter, former son équipe et décider avec des données.</p><p data-i18n="lp_grow_tool" class="lp-tool">ManaLog · Académie Rū-fau-tumu · Atlas Pacifica</p></li>
+        </ol>
+        <div class="lp-cta"><a href="/parcours/" class="lp-btn p" data-i18n="lp_cta1">Trouver mon étape →</a><a href="/lab/" class="lp-btn s" data-i18n="lp_cta2">Voir nos réalisations</a></div>
+      </div>
+    </section>
+
     <!-- ═══════════════════════════════════════════════════════ -->
     <!-- SECTION 2 — DIAGNOSTIC -->
     <!-- ═══════════════════════════════════════════════════════ -->
@@ -544,6 +581,29 @@
           diag_c3_title: "Une croissance qui repose sur vous seul",
           diag_c3_body: "<em>Constat :</em> dès que le volume augmente, les devis prennent du retard et les relances s'oublient. Votre organisation actuelle ne peut pas grandir sans vous épuiser — et encore moins viser l'export.",
           diag_c3_sol: "Notre réponse → des automatisations IA actives 24 h/24",
+          lp_eyebrow: "Leapfrogging Pacifica",
+          lp_h2: "Nous digitalisons tout le parcours de l'entrepreneur polynésien.",
+          lp_lead: "De l'idée à l'export, chaque étape de la vie d'une entreprise a son outil numérique. Vous démarrez là où vous en êtes, et vous sautez les étapes coûteuses que d'autres territoires ont dû traverser.",
+          lp_create_t: "Créer",
+          lp_create_b: "Clarifier le projet, choisir la bonne structure, chiffrer le démarrage.",
+          lp_create_tool: "Diagnostic offert · Parcours entrepreneur",
+          lp_seen_t: "Être vu",
+          lp_seen_b: "Une page ou un site qui vous appartient, avec vos propres liens et boutons d'action.",
+          lp_seen_tool: "Profil souverain ManaHub · Sites vitrines",
+          lp_sell_t: "Vendre",
+          lp_sell_b: "Une boutique en ligne rapide sur mobile, gérée depuis un simple tableau.",
+          lp_sell_tool: "Boutiques en ligne · ex. OEA Tahiti",
+          lp_paid_t: "Être payé",
+          lp_paid_b: "Encaisser par carte via une banque locale, l'argent arrive directement sur votre compte.",
+          lp_paid_tool: "Paiement local avec notre partenaire OSB",
+          lp_run_t: "Gérer",
+          lp_run_b: "Stock, réservations, factures et clients réunis au même endroit, sans ressaisie.",
+          lp_run_tool: "Hinova Orchestrator · applications métier",
+          lp_grow_t: "Grandir",
+          lp_grow_b: "Trouver des fournisseurs, exporter, former son équipe et décider avec des données.",
+          lp_grow_tool: "ManaLog · Académie Rū-fau-tumu · Atlas Pacifica",
+          lp_cta1: "Trouver mon étape →",
+          lp_cta2: "Voir nos réalisations",
           heya_label: "Notre méthode",
           heya_h2_line1: "Quatre principes,",
           heya_h2_line2: "une technologie qui vous appartient vraiment.",
@@ -598,6 +658,29 @@
           diag_c3_title: "Growth that depends on you alone",
           diag_c3_body: "<em>What we see:</em> as volume grows, quotes run late and follow-ups slip. Your current setup can't scale without burning you out — let alone support exports.",
           diag_c3_sol: "Our answer → AI automations running 24/7",
+          lp_eyebrow: "Leapfrogging Pacifica",
+          lp_h2: "We digitalize the entire journey of the Polynesian entrepreneur.",
+          lp_lead: "From idea to export, every stage of a business has its digital tool. You start where you are, and skip the costly stages other territories had to go through.",
+          lp_create_t: "Start",
+          lp_create_b: "Clarify the project, choose the right structure, cost the launch.",
+          lp_create_tool: "Free diagnosis · Entrepreneur journey",
+          lp_seen_t: "Be seen",
+          lp_seen_b: "A page or site you own, with your own links and call-to-action buttons.",
+          lp_seen_tool: "ManaHub sovereign profile · Showcase sites",
+          lp_sell_t: "Sell",
+          lp_sell_b: "A fast mobile online shop, managed from a simple spreadsheet.",
+          lp_sell_tool: "Online shops · e.g. OEA Tahiti",
+          lp_paid_t: "Get paid",
+          lp_paid_b: "Accept cards through a local bank, with money going straight to your account.",
+          lp_paid_tool: "Local payment with our partner OSB",
+          lp_run_t: "Run",
+          lp_run_b: "Stock, bookings, invoices and customers in one place, no double entry.",
+          lp_run_tool: "Hinova Orchestrator · business apps",
+          lp_grow_t: "Grow",
+          lp_grow_b: "Find suppliers, export, train your team and decide with data.",
+          lp_grow_tool: "ManaLog · Rū-fau-tumu Academy · Atlas Pacifica",
+          lp_cta1: "Find my stage →",
+          lp_cta2: "See our work",
           heya_label: "Our method",
           heya_h2_line1: "Four principles,",
           heya_h2_line2: "technology you truly own.",
