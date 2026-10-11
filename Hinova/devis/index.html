@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="/css/theme.css" />
       <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}</script>
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  </head><body style="background:#F6FAFA">
+  <style>.hv-consent{display:flex!important;gap:.55rem;align-items:flex-start;font-size:.82rem;font-weight:400!important;line-height:1.45;color:inherit}.hv-consent input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:#1B64C8}.hv-consent em{color:#B5823A;font-style:normal}</style></head><body style="background:#F6FAFA">
 <header class="hero-bg" style="padding-bottom:1.5rem"><div class="px-6 pt-6 md:px-12 md:pt-8 flex items-center justify-between gap-4"><a href="/" aria-label="HINOVA DIGITAL"><img src="/logo-hinova.webp" alt="Logo Hinova Digital" class="site-logo protected-asset"></a><div class="flex items-center gap-3 ml-auto" style="position:relative"><button id="navBurgerBtn" class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button><nav id="navDropdown" class="nav-dropdown">
             <a href="/" class="nav-tab">Accueil</a>
             <a href="/vision.html" class="nav-tab">Vision</a>
@@ -85,6 +85,8 @@
         <label>E-mail<input id="f-email" name="email" type="email" autocomplete="email" required></label>
         <label>Téléphone<input id="f-phone" name="phone" type="tel" autocomplete="tel"></label>
         <label>Votre projet en quelques mots<textarea id="f-msg" name="message" rows="3"></textarea></label>
+        <label class="hv-consent"><input type="checkbox" id="f-c1" required> <span>J'accepte d'être recontacté(e) par Hinova Digital au sujet de ma demande. <em>(obligatoire)</em></span></label>
+        <label class="hv-consent"><input type="checkbox" id="f-c2"> <span>Je souhaite recevoir les offres et la newsletter d'Hinova Digital par e-mail (désinscription possible à tout moment).</span></label>
         <input type="text" name="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
         <button class="dv-btn" type="submit" id="send">Envoyer ma demande</button>
         <p class="dv-msg" id="fMsg" role="status"></p>
@@ -96,6 +98,7 @@
 
 <script>
 (function(){
+  function hvMail(d){ var b=['Nom : '+d.name,'Entreprise : '+(d.entreprise||'-'),'E-mail : '+d.email,'Téléphone : '+(d.phone||'-'),'Objet : '+d.offre,(d.resume||''),'Message : '+(d.message||''),'Accord recontact : oui','Newsletter : '+(d.consent_news?'oui':'non')].join('\n'); return 'mailto:contact@hinovadigitalcorp.com?subject='+encodeURIComponent((d.kind==='partenaire'?'Candidature partenaire — ':'Demande de devis — ')+d.offre)+'&body='+encodeURIComponent(b); }
   var F = {
     boutique: { label:'Boutique & site', hint:'Vendre ou présenter votre activité en ligne', tiers:[
       {id:'petite', code:'PB', name:'Petite boutique', desc:'4 produits max, mise en ligne en 72 h', build:20000, month:4200, sched:null},
@@ -150,15 +153,16 @@
     var t=current();
     var data={ kind:'devis', name:$('f-name').value, entreprise:$('f-ent').value, email:$('f-email').value, phone:$('f-phone').value, message:$('f-msg').value,
       botcheck:this.botcheck.value, offre:F[st.fam].label+' · '+t.name,
-      resume:'Création '+fmt(t.build)+' · '+monthTxt(t) };
+      resume:'Création '+fmt(t.build)+' · '+monthTxt(t), consent_contact:$('f-c1').checked, consent_news:$('f-c2').checked };
     var m=$('fMsg');
     if(!data.name.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)){ m.textContent='Indiquez votre nom et un e-mail valide.'; return; }
+    if(!data.consent_contact){ m.textContent='Cochez la case d\'accord pour que nous puissions vous recontacter.'; return; }
     $('send').disabled=true; m.textContent='Envoi en cours…';
     fetch('/api/devis',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(data)})
       .then(function(r){ return r.json().catch(function(){return {ok:false};}); })
       .then(function(j){ if(j.ok){ m.textContent='Māuruuru ! Votre demande est bien reçue. Nous revenons vers vous sous 48 h ouvrées avec votre devis détaillé.'; $('form').querySelectorAll('input,textarea').forEach(function(i){i.disabled=true;}); }
         else { throw 0; } })
-      .catch(function(){ $('send').disabled=false; m.innerHTML='L\'envoi n\'a pas abouti. Écrivez-nous directement à <b style="user-select:all">contact@hinovadigitalcorp.com</b> en indiquant : '+data.offre+'.'; });
+      .catch(function(){ $('send').disabled=false; m.innerHTML='L\'envoi automatique n\'a pas abouti. <a href="'+hvMail(data)+'" style="color:#1B64C8;font-weight:700">Envoyer ma demande par e-mail</a> (votre demande est déjà rédigée) ou écrivez à <b style="user-select:all">contact@hinovadigitalcorp.com</b>.'; });
   });
   render();
 })();
