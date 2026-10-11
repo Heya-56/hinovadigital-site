@@ -373,6 +373,41 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- SECTION MANAHUB — L'ORCHESTRATEUR DU PACIFIQUE -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <style>
+      .mh{position:relative;overflow:hidden;background:#001419;color:#F4F8FA;padding:96px 24px}
+      .mh-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85}
+      .mh-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,20,25,.96) 0%,rgba(0,20,25,.82) 45%,rgba(0,20,25,.25) 100%)}
+      .mh-in{position:relative;max-width:1180px;margin:0 auto}
+      .mh-eyebrow{font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E8C77A}
+      .mh h2{font-family:Montserrat,sans-serif;font-weight:900;font-size:clamp(28px,4vw,44px);line-height:1.15;max-width:640px;margin:14px 0 18px}
+      .mh-lead{font-family:Inter,sans-serif;font-size:16px;line-height:1.7;color:#BFD8D5;max-width:560px}
+      .mh-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:620px;margin:32px 0 36px;list-style:none;padding:0}
+      .mh-item{border-left:3px solid #C9A25E;padding:4px 0 4px 16px}
+      .mh-item h3{font-family:Montserrat,sans-serif;font-weight:700;font-size:16px;margin:0 0 4px;color:#F4F8FA}
+      .mh-item p{font-family:Inter,sans-serif;font-size:14px;line-height:1.6;margin:0;color:#BFD8D5}
+      .mh-btn{display:inline-block;background:#C9A25E;color:#001419;font-family:Montserrat,sans-serif;font-weight:700;font-size:14px;padding:14px 26px;border-radius:14px;text-decoration:none}
+      .mh-btn:focus-visible{outline:3px solid #E8C77A;outline-offset:3px}
+      @media (min-width:768px){.mh{padding:128px 48px}.mh-grid{grid-template-columns:1fr 1fr 1fr;max-width:none}}
+    </style>
+    <section id="manahub" class="mh" aria-labelledby="mhTitle">
+      <img class="mh-bg" src="/manahub-archipels.webp" alt="" loading="lazy" width="1600" height="900">
+      <div class="mh-shade" aria-hidden="true"></div>
+      <div class="mh-in">
+        <p data-i18n="mh_eyebrow" class="mh-eyebrow" translate="no">ManaHub · Pacific Business Orchestrator</p>
+        <h2 id="mhTitle" data-i18n="mh_h2">Une seule plateforme pour faire tourner votre entreprise, d&#39;une île à l&#39;autre.</h2>
+        <p data-i18n="mh_lead" class="mh-lead">ManaHub relie toutes les étapes du parcours : votre page, votre boutique, vos paiements et votre gestion. Chaque île devient un point du réseau, et chaque entrepreneur garde la maîtrise de ses outils.</p>
+        <ul class="mh-grid">
+          <li class="mh-item"><h3 data-i18n="mh_i1_t">Souverain</h3><p data-i18n="mh_i1_b">Vos pages, vos données et vos clients vous appartiennent.</p></li>
+          <li class="mh-item"><h3 data-i18n="mh_i2_t">Payé en local</h3><p data-i18n="mh_i2_b">L&#39;argent arrive directement sur votre compte, sans intermédiaire.</p></li>
+          <li class="mh-item"><h3 data-i18n="mh_i3_t">Pensé pour les îles</h3><p data-i18n="mh_i3_b">Rapide sur mobile, utilisable même quand le réseau faiblit.</p></li>
+        </ul>
+        <a href="/solutions/#diagnostic" class="mh-btn" data-i18n="mh_cta">Rejoindre ManaHub →</a>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
     <!-- SECTION 2 — DIAGNOSTIC -->
     <!-- ═══════════════════════════════════════════════════════ -->
     <section class="py-28 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
@@ -604,6 +639,16 @@
           lp_grow_tool: "ManaLog · Académie Rū-fau-tumu · Atlas Pacifica",
           lp_cta1: "Trouver mon étape →",
           lp_cta2: "Voir nos réalisations",
+          mh_eyebrow: "ManaHub · Pacific Business Orchestrator",
+          mh_h2: "Une seule plateforme pour faire tourner votre entreprise, d'une île à l'autre.",
+          mh_lead: "ManaHub relie toutes les étapes du parcours : votre page, votre boutique, vos paiements et votre gestion. Chaque île devient un point du réseau, et chaque entrepreneur garde la maîtrise de ses outils.",
+          mh_i1_t: "Souverain",
+          mh_i1_b: "Vos pages, vos données et vos clients vous appartiennent.",
+          mh_i2_t: "Payé en local",
+          mh_i2_b: "L'argent arrive directement sur votre compte, sans intermédiaire.",
+          mh_i3_t: "Pensé pour les îles",
+          mh_i3_b: "Rapide sur mobile, utilisable même quand le réseau faiblit.",
+          mh_cta: "Rejoindre ManaHub →",
           heya_label: "Notre méthode",
           heya_h2_line1: "Quatre principes,",
           heya_h2_line2: "une technologie qui vous appartient vraiment.",
@@ -681,6 +726,16 @@
           lp_grow_tool: "ManaLog · Rū-fau-tumu Academy · Atlas Pacifica",
           lp_cta1: "Find my stage →",
           lp_cta2: "See our work",
+          mh_eyebrow: "ManaHub · Pacific Business Orchestrator",
+          mh_h2: "One platform to run your business, from one island to the next.",
+          mh_lead: "ManaHub connects every step of the journey: your page, your shop, your payments and your operations. Every island becomes a point on the network, and every entrepreneur stays in control of their tools.",
+          mh_i1_t: "Sovereign",
+          mh_i1_b: "Your pages, your data and your customers belong to you.",
+          mh_i2_t: "Paid locally",
+          mh_i2_b: "Money goes straight to your own account, with no middleman.",
+          mh_i3_t: "Built for islands",
+          mh_i3_b: "Fast on mobile, usable even when the network is weak.",
+          mh_cta: "Join ManaHub →",
           heya_label: "Our method",
           heya_h2_line1: "Four principles,",
           heya_h2_line2: "technology you truly own.",
