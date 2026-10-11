@@ -4,7 +4,7 @@
  */
 export async function onRequestPost(ctx) {
   try { return await handle(ctx); }
-  catch (e) { return new Response(JSON.stringify({ ok: false, error: 'exception', detail: String(e && e.message || e).slice(0, 300) }), { status: 500, headers: { 'content-type': 'application/json' } }); }
+  catch (e) { return new Response(JSON.stringify({ ok: false, error: 'exception', detail: String(e && e.message || e).slice(0, 300) }), { status: 200, headers: { 'content-type': 'application/json' } }); }
 }
 async function handle({ request, env }) {
   const json = (b, s = 200) => new Response(JSON.stringify(b), { status: s, headers: { 'content-type': 'application/json' } });
@@ -24,6 +24,6 @@ async function handle({ request, env }) {
       'Reçu le': new Date().toISOString().slice(0, 10) } }] }),
   });
   const detail = r.ok ? '' : 'airtable_' + r.status + ':' + (await r.text()).slice(0, 200);
-  return json({ ok: r.ok, detail }, r.ok ? 200 : 502);
+  return json({ ok: r.ok, detail }, 200);
 }
 export const onRequest = () => new Response('Method Not Allowed', { status: 405, headers: { allow: 'POST' } });
