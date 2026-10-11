@@ -97,22 +97,25 @@
 <script>
 (function(){
   var F = {
-    boutique: { label:'Boutique en ligne', hint:'Vendre vos produits sur internet', tiers:[
-      {id:'petite', name:'Petites boutiques', desc:'Vous remplissez vos produits, mise en ligne en 72 h', build:0, month:10000, sched:null},
-      {id:'pro', name:'Pro', desc:'Boutique complète à vos couleurs', build:179000, month:7900, sched:[62500,62500,27000,27000]},
-      {id:'business', name:'Business', desc:'Catalogue plus large, ventes régulières', build:209000, month:13900, sched:[73500,73500,31000,31000]} ]},
-    app: { label:'Application', hint:'Réservation, billetterie, location…', tiers:[
-      {id:'commerce', name:'Application Commerce', desc:'Application installable sur téléphone', build:357000, month:53600, sched:[124500,124500,54000,54000]} ]},
-    orch: { label:'Orchestrateur business', hint:'Tout votre business dans un seul logiciel, à votre nom', tiers:[
-      {id:'socle', name:'Socle', desc:'Diagnostic, architecture et premiers modules', build:357000, month:20000, mile:true},
-      {id:'mini', name:'Mini', desc:'Une activité entièrement orchestrée', build:500000, month:20000, mile:true},
-      {id:'avance', name:'Avancé', desc:'Plusieurs services ou points de vente', build:800000, month:20000, mile:true},
-      {id:'grand', name:'Grand', desc:'Plusieurs business sur une plateforme', build:1480000, month:20000, mile:true} ]}
+    boutique: { label:'Boutique & site', hint:'Vendre ou présenter votre activité en ligne', tiers:[
+      {id:'petite', code:'PB', name:'Petite boutique', desc:'4 produits max, mise en ligne en 72 h', build:20000, month:4200, sched:null},
+      {id:'pro', code:'PRO', name:'Pro', desc:'Site ou boutique complète à vos couleurs', build:179000, month:7900, sched:[62500,62500,27000,27000]},
+      {id:'business', code:'BUS', name:'Business', desc:'Catalogue plus large, ventes régulières', build:209000, month:13900, sched:[73500,73500,31000,31000]} ]},
+    tpe: { label:'Formule partenaire TPE', hint:'Votre logiciel métier payé chaque mois, à votre nom à la fin', tiers:[
+      {id:'tpe', code:'TPE', name:'Formule partenaire TPE', desc:'357 000 XPF réglés 12 000 × 30 mois', build:357000, month:12000, lease:30} ]},
+    pme: { label:'PME (moins de 50 salariés)', hint:'Orchestration de votre activité, engagement au choix', tiers:[
+      {id:'pme12', code:'TPE', name:'PME · 12 mois', desc:'Engagement 12 mois', build:357000, month:4200, from:true, mile:true},
+      {id:'pme36', code:'PME36-SOC12', name:'PME · 36 mois', desc:'Engagement 36 mois', build:500000, month:4200, from:true, mile:true},
+      {id:'pme60', code:'PME60-SOC36', name:'PME · 60 mois', desc:'Engagement 60 mois', build:800000, month:4200, from:true, mile:true} ]},
+    soc: { label:'Société (moins de 500 salariés)', hint:'Plusieurs services, équipes ou activités', tiers:[
+      {id:'soc12', code:'PME36-SOC12', name:'Société · 12 mois', desc:'Engagement 12 mois', build:500000, month:4200, from:true, mile:true},
+      {id:'soc36', code:'PME60-SOC36', name:'Société · 36 mois', desc:'Engagement 36 mois', build:800000, month:4200, from:true, mile:true},
+      {id:'soc60', code:'SOC60', name:'Société · 60 mois', desc:'Engagement 60 mois', build:1480000, month:4200, from:true, mile:true} ]}
   };
-  var st = { fam:'boutique', tier:'pro', bizdev:false };
+  var st = { fam:'boutique', tier:'pro', bizdev:false, annual:false };
   var fmt = function(n){ return n.toLocaleString('fr-FR').replace(/ | /g,' ') + ' XPF'; };
   var $ = function(id){ return document.getElementById(id); };
-  try { var q = new URLSearchParams(location.search); if (F[q.get('famille')]) { st.fam = q.get('famille'); st.tier = F[st.fam].tiers[0].id; } } catch(e){}
+  try { var q = new URLSearchParams(location.search); if (F[q.get('famille')]) { st.fam = q.get('famille'); st.tier = F[st.fam].tiers[0].id; } var oc=q.get('offre'); if(oc){ Object.keys(F).some(function(k){ return F[k].tiers.some(function(t){ if(t.code===oc){ st.fam=k; st.tier=t.id; return true; } }); }); } } catch(e){}
 
   function btn(pressed, html, on){ var b=document.createElement('button'); b.type='button'; b.className='dv-opt'; b.setAttribute('aria-pressed', String(pressed)); b.innerHTML=html; b.addEventListener('click', on); return b; }
   function render(){
@@ -121,31 +124,33 @@
     var tiers=$('tiers'); tiers.innerHTML='';
     F[st.fam].tiers.forEach(function(t){ tiers.appendChild(btn(st.tier===t.id,'<span><b>'+t.name+'</b><br><small>'+t.desc+'</small></span><span class="p">'+(t.build?fmt(t.build):fmt(t.month)+'/mois')+'</span>',function(){ st.tier=t.id; render(); })); });
     var opts=$('opts'); opts.innerHTML='';
-    if (st.fam==='orch') {
-      opts.innerHTML='<p class="dv-step"><span>3</span>Option</p><label class="dv-check"><input type="checkbox" id="bizdev"'+(st.bizdev?' checked':'')+'> <span><b>Développement commercial</b> : accès à notre réseau de partenaires, fournisseurs et clients. +60 000 XPF/mois</span></label>';
-      $('bizdev').addEventListener('change',function(e){ st.bizdev=e.target.checked; summary(); });
+    if (!current().lease) {
+      opts.innerHTML='<p class="dv-step"><span>3</span>Mensualités</p><label class="dv-check"><input type="checkbox" id="annual"'+(st.annual?' checked':'')+'> <span><b>Paiement annuel</b> : 10 mois payés, 2 mois offerts</span></label>';
+      $('annual').addEventListener('change',function(e){ st.annual=e.target.checked; summary(); });
     }
     summary();
   }
   function current(){ return F[st.fam].tiers.filter(function(t){return t.id===st.tier;})[0]; }
+  function monthTxt(t){ return (t.from?'à partir de ':'')+(st.annual&&!t.lease? fmt(t.month*10)+' / an (2 mois offerts)' : fmt(t.month)+' / mois'); }
   function summary(){
-    var t=current(), month=t.month+(st.fam==='orch'&&st.bizdev?60000:0);
+    var t=current();
     $('sOffer').textContent=F[st.fam].label+' · '+t.name;
-    $('sBuild').textContent=t.build?fmt(t.build):'Aucun frais de création';
-    $('sMonth').textContent=fmt(month)+' / mois';
+    $('sBuild').textContent=fmt(t.build);
+    $('sMonth').textContent=monthTxt(t);
     var w=$('sSchedWrap'), s=$('sSched');
-    if (t.sched){ w.hidden=false; $('sSchedLabel').textContent='Création payable en 4 fois (35 / 35 / 15 / 15 %)'; s.innerHTML=t.sched.map(function(v,i){return '<div>Échéance '+(i+1)+'<b>'+v.toLocaleString('fr-FR').replace(/ | /g,' ')+'</b></div>';}).join(''); }
-    else if (t.mile){ w.hidden=false; $('sSchedLabel').textContent='Réglé par jalons, module par module. Le code et le nom de domaine vous sont cédés au paiement intégral.'; s.innerHTML=''; }
+    if (t.sched){ w.hidden=false; $('sSchedLabel').textContent='Création payable en 4 fois (35 / 35 / 15 / 15 %)'; s.innerHTML=t.sched.map(function(v,i){return '<div>Échéance '+(i+1)+'<b>'+v.toLocaleString('fr-FR').replace(/ | /g,' ')+'</b></div>';}).join(''); }
+    else if (t.lease){ w.hidden=false; $('sSchedLabel').textContent='Bail de location avant transfert de propriété : '+t.lease+' × '+fmt(t.month)+'. Le logiciel est à votre nom au dernier paiement.'; s.innerHTML=''; }
+    else if (t.mile){ w.hidden=false; $('sSchedLabel').textContent='Création réglée par jalons sur la durée d\'engagement. Le code et le nom de domaine vous sont cédés au paiement intégral.'; s.innerHTML=''; }
     else { w.hidden=true; }
-    $('sNote').textContent = st.fam==='orch' ? 'Maintenance après création : 20 000 XPF/mois. Formule mensuelle sans apport possible pour nos partenaires apporteurs d\'affaires.' : (t.id==='petite' ? 'Vous créez votre compte, nous branchons votre boutique en moins de 72 h.' : '');
+    $('sNote').textContent = 'Nom de domaine offert la 1re année, puis 2 000 XPF/an. Solution de paiement (OSB) non incluse.' + (t.id==='petite' ? ' Vous créez votre compte, nous branchons votre boutique en moins de 72 h.' : '') + (t.from ? ' Webmastering adapté à votre besoin.' : '');
   }
   $('openForm').addEventListener('click',function(){ $('form').hidden=false; this.hidden=true; $('f-name').focus(); });
   $('form').addEventListener('submit',function(e){
     e.preventDefault();
-    var t=current(), month=t.month+(st.fam==='orch'&&st.bizdev?60000:0);
+    var t=current();
     var data={ kind:'devis', name:$('f-name').value, entreprise:$('f-ent').value, email:$('f-email').value, phone:$('f-phone').value, message:$('f-msg').value,
       botcheck:this.botcheck.value, offre:F[st.fam].label+' · '+t.name,
-      resume:'Création '+(t.build?fmt(t.build):'0 XPF')+' · '+fmt(month)+'/mois'+(st.bizdev&&st.fam==='orch'?' (avec développement commercial)':'') };
+      resume:'Création '+fmt(t.build)+' · '+monthTxt(t) };
     var m=$('fMsg');
     if(!data.name.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)){ m.textContent='Indiquez votre nom et un e-mail valide.'; return; }
     $('send').disabled=true; m.textContent='Envoi en cours…';

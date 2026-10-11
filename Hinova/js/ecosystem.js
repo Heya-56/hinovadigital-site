@@ -79,14 +79,23 @@ async function loadEcosystem() {
 
     g.innerHTML = rs.map(r => {
       const f = r.fields;
-      const href = f["URL CTA"] || ECOSYSTEM_LINKS[f.Slug] || "/parcours/";
+      const mois = f["Abonnement Hinova XPF/mois"];
+      const plan = f["Mensualisations disponibles"];
       return `<article class="glass p-10 card-hover reveal visible">
-        <p class="gold-label">${esc(f.Nom)}</p>
-        <h3 class="font-montserrat font-bold text-xl mt-4" style="color:#0AB8C4">${esc(f.Titre || f.Nom)}</h3>
-        <p class="font-inter text-sm leading-relaxed mt-3" style="color:#81A1A8">${esc(f["Sous-titre"] || f.Description || "")}</p>
-        <a href="${esc(href)}" class="btn-cyan mt-6">${esc(f["CTA principal"] || "DÉCOUVRIR")}</a>
+        <p class="gold-label">${esc(f.Type || "SOLUTION")}</p>
+        <h3 class="font-montserrat font-bold text-xl mt-4" style="color:#1B64C8">${esc(f.Nom)}</h3>
+        <p class="solution-price mt-5">${f["Prix création XPF"] ? xpf(f["Prix création XPF"]) : "Sur devis"}</p>
+        ${mois ? `<p class="font-inter text-sm mt-1" style="color:#4E6A6E">+ ${mois === 4200 && f["Prix création XPF"] > 20000 ? "à partir de " : ""}${xpf(mois)} / mois</p>` : ""}
+        ${plan && !/^\d/.test(plan) ? `<p class="font-inter text-xs mt-2" style="color:#B5823A">${esc(plan)}</p>` : ""}
+        <a href="/devis/?offre=${encodeURIComponent(f.Code || "")}" class="btn-cyan mt-6">ESTIMER MON DEVIS</a>
       </article>`;
-    }).join("");
+    }).join("") + `<article class="glass p-10 card-hover reveal visible">
+        <p class="gold-label">GRANDS COMPTES</p>
+        <h3 class="font-montserrat font-bold text-xl mt-4" style="color:#1B64C8">Plus de 500 salariés</h3>
+        <p class="solution-price mt-5">Sur devis</p>
+        <p class="font-inter text-xs mt-2" style="color:#B5823A">Domaine offert la 1re année · paiement annuel : 2 mois offerts</p>
+        <a href="/diagnostic.html" class="btn-cyan mt-6">PARLER DE MON PROJET</a>
+      </article>`;
   } catch (e) { /* on garde le contenu de secours */ }
 }
 
@@ -197,9 +206,9 @@ async function loadParcours() {
         <h3 class="font-montserrat font-black text-3xl mt-4" style="color:#E0F7FA">${esc(f.Nom)}</h3>
         ${why ? `<p class="font-inter mt-4 max-w-2xl mx-auto" style="color:#B0D8DF">${esc(why)}</p>` : ""}
         <p class="solution-price mt-6">${f["Prix création XPF"] ? xpf(f["Prix création XPF"]) : "Sur devis"}</p>
-        ${mois ? `<p class="font-inter text-sm mt-1" style="color:#81A1A8">+ ${xpf(mois)} / mois · paiement en 4 fois (35 / 35 / 15 / 15)</p>` : ""}
+        ${mois ? `<p class="font-inter text-sm mt-1" style="color:#81A1A8">+ ${xpf(mois)} / mois${f["Mensualisations disponibles"] && !/^\d/.test(f["Mensualisations disponibles"]) ? " · " + esc(f["Mensualisations disponibles"]) : " · création payable en 4 fois"}</p>` : ""}
         <div class="flex flex-wrap gap-3 justify-center mt-8">
-          <a href="/diagnostic.html" class="btn-cyan">PARLER DE MON PROJET</a>
+          <a href="/devis/?offre=${encodeURIComponent(f.Code || "")}" class="btn-cyan">ESTIMER MON DEVIS</a>
           <a href="/solutions/" class="btn-cyan">VOIR TOUTES LES SOLUTIONS</a>
         </div>`;
     }
