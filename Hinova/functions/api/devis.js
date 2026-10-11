@@ -21,7 +21,7 @@ export async function onRequestPost({ request, env }) {
   const kind = d.kind === 'partenaire' ? 'partenaire' : 'devis';
   const source = kind === 'partenaire' ? 'Site — partenaire' : 'Site — devis';
   const recontact = !!d.consent_contact, news = !!d.consent_news;
-  let done = false;
+  let done = false, detail = '';
 
   if (env.AIRTABLE_API_KEY && env.AIRTABLE_BASE_ID) {
     const fields = {
@@ -30,10 +30,15 @@ export async function onRequestPost({ request, env }) {
       'Commentaires': [cut(d.offre), cut(d.resume), cut(d.message)].filter(Boolean).join('\n'),
       'Accord recontact': recontact, 'Newsletter & offres': news,
     };
-    const r = await fetch(`https://api.airtable.com/v0/${env.AIRTABLE_BASE_ID}/Leads`, {
-      method: 'POST', headers: { authorization: `Bearer ${env.AIRTABLE_API_KEY}`, 'content-type': 'application/json' },
-      body: JSON.stringify({ records: [{ fields }], typecast: true }),
-    });
+    const url = `https://api.airtable.com/v0/${env.AIRTABLE_BASE_ID}/Leads`;
+    const hdr = { authorization: `Bearer ${String(env.AIRTABLE_API_KEY).trim()}`, 'content-type': 'application/json' };
+    let r = await fetch(url, { method: 'POST', headers: hdr, body: JSON.stringify({ records: [{ fields }] }) });
+    if (!r.ok) {
+      detail = 'airtable_' + r.status + ':' + (await r.text()).slice(0, 200);
+      const minimal = { 'Nom Prénom': fields['Nom Prénom'], 'Adresse e-mail': email, 'Commentaires': source + '\n' + fields['Commentaires'] };
+      r = await fetch(url, { method: 'POST', headers: hdr, body: JSON.stringify({ records: [{ fields: minimal }] }) });
+      if (!r.ok) detail += ' | retry_' + r.status + ':' + (await r.text()).slice(0, 200);
+    }
     done = r.ok;
   }
   if (env.AIRTABLE_DIAG_WEBHOOK) {
@@ -44,6 +49,6 @@ export async function onRequestPost({ request, env }) {
     done = done || r.ok;
   }
   if (!env.AIRTABLE_DIAG_WEBHOOK && !(env.AIRTABLE_API_KEY && env.AIRTABLE_BASE_ID)) return json({ ok: false, error: 'not_configured' }, 503);
-  return json({ ok: done }, done ? 200 : 502);
+  return json({ ok: done, detail }, done ? 200 : 502);
 }
 export const onRequest = () => new Response('Method Not Allowed', { status: 405, headers: { allow: 'POST' } });

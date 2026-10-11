@@ -13,12 +13,13 @@ export async function onRequestPost({ request, env }) {
   if (!String(d.prenom || '').trim() || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || !avis || !d.consentement) return json({ ok: false, error: 'invalid' }, 422);
   const note = Math.min(5, Math.max(1, parseInt(d.note, 10) || 5));
   const r = await fetch(`https://api.airtable.com/v0/${env.AIRTABLE_BASE_ID}/${encodeURIComponent('Témoignages')}`, {
-    method: 'POST', headers: { authorization: `Bearer ${env.AIRTABLE_API_KEY}`, 'content-type': 'application/json' },
+    method: 'POST', headers: { authorization: `Bearer ${String(env.AIRTABLE_API_KEY).trim()}`, 'content-type': 'application/json' },
     body: JSON.stringify({ records: [{ fields: {
       'Prénom': String(d.prenom).slice(0, 80).trim(), 'Email': email, 'Note': note, 'Avis': avis.slice(0, 3000),
       'Source': String(d.source || 'Académie').slice(0, 80), 'Consentement publication': true,
       'Reçu le': new Date().toISOString().slice(0, 10) } }] }),
   });
-  return json({ ok: r.ok }, r.ok ? 200 : 502);
+  const detail = r.ok ? '' : 'airtable_' + r.status + ':' + (await r.text()).slice(0, 200);
+  return json({ ok: r.ok, detail }, r.ok ? 200 : 502);
 }
 export const onRequest = () => new Response('Method Not Allowed', { status: 405, headers: { allow: 'POST' } });
