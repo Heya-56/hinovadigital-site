@@ -115,9 +115,9 @@ async function loadOffres() {
       const mois = f["Abonnement Hinova XPF/mois"];
       return `<article class="glass p-10 card-hover reveal visible">
         <p class="gold-label">${esc(f.Type || "SOLUTION")}</p>
-        <h3 class="font-montserrat font-bold text-xl mt-4" style="color:#0AB8C4">${esc(f.Nom)}</h3>
+        <h3 class="font-montserrat font-bold text-xl mt-4" style="color:#1B64C8">${esc(f.Nom)}</h3>
         <p class="solution-price mt-5">${f["Prix création XPF"] ? xpf(f["Prix création XPF"]) : "Sur devis"}</p>
-        ${mois ? `<p class="font-inter text-sm mt-1" style="color:#81A1A8">+ ${xpf(mois)} / mois</p>` : ""}
+        ${mois ? `<p class="font-inter text-sm mt-1" style="color:#4E6A6E">+ ${xpf(mois)} / mois</p>` : ""}
         <a href="/parcours/" class="btn-cyan mt-6">IDENTIFIER MA TRAJECTOIRE</a>
       </article>`;
     }).join("");
@@ -151,7 +151,7 @@ async function loadParcours() {
     offres = {};
     (o.records || []).forEach(r => { if (r.fields && r.fields.Active === true) offres[r.id] = r.fields; });
   } catch (e) {
-    box.innerHTML = '<p style="color:#81A1A8">Le moteur de parcours est momentanément indisponible.</p>';
+    box.innerHTML = '<p style="color:#4E6A6E">Le moteur de parcours est momentanément indisponible.</p>';
     return;
   }
   if (!questions.length) { box.innerHTML = ""; return; }
@@ -162,7 +162,7 @@ async function loadParcours() {
   function render() {
     const q = questions[i];
     box.innerHTML = `<p class="gold-label">QUESTION ${i + 1} / ${questions.length}</p>
-      <h3 class="font-montserrat font-bold text-xl mt-3" style="color:#E0F7FA">${esc(q.text)}</h3>
+      <h3 class="font-montserrat font-bold text-xl mt-3" style="color:#0B2F35">${esc(q.text)}</h3>
       <div class="grid gap-3 mt-6">${q.options.map((x, n) =>
         `<button class="question-option" data-rule="${esc(q.id + "-" + (n + 1))}">${esc(x)}</button>`).join("")}</div>`;
     box.querySelectorAll("button").forEach(btn => btn.onclick = () => {
@@ -190,23 +190,23 @@ async function loadParcours() {
       totals[b].score - totals[a].score || totals[b].prio - totals[a].prio)[0];
 
     box.innerHTML = `<p class="gold-label">PARCOURS TERMINÉ</p>
-      <p class="font-inter mt-3" style="color:#81A1A8">Merci ! Votre trajectoire est prête ci-dessous.</p>
+      <p class="font-inter mt-3" style="color:#4E6A6E">Merci ! Votre trajectoire est prête ci-dessous.</p>
       <button class="question-option mt-6" id="restartParcours">Recommencer le parcours</button>`;
-    document.getElementById("restartParcours").onclick = () => { i = 0; picks = []; out.innerHTML = '<p style="color:#81A1A8">Votre recommandation apparaîtra ici.</p>'; render(); };
+    document.getElementById("restartParcours").onclick = () => { i = 0; picks = []; out.innerHTML = '<p style="color:#4E6A6E">Votre recommandation apparaîtra ici.</p>'; render(); };
 
     if (!winner) {
       out.innerHTML = `<p class="gold-label">TRAJECTOIRE</p>
-        <h3 class="font-montserrat font-black text-2xl mt-4" style="color:#E0F7FA">Parlons de votre projet.</h3>
+        <h3 class="font-montserrat font-black text-2xl mt-4" style="color:#0B2F35">Parlons de votre projet.</h3>
         <a href="/diagnostic.html" class="btn-cyan mt-6">PARLER DE MON PROJET</a>`;
     } else {
       const f = offres[winner];
       const mois = f["Abonnement Hinova XPF/mois"];
       const why = best[winner] && best[winner]["Explication client"];
       out.innerHTML = `<p class="gold-label">VOTRE TRAJECTOIRE</p>
-        <h3 class="font-montserrat font-black text-3xl mt-4" style="color:#E0F7FA">${esc(f.Nom)}</h3>
-        ${why ? `<p class="font-inter mt-4 max-w-2xl mx-auto" style="color:#B0D8DF">${esc(why)}</p>` : ""}
+        <h3 class="font-montserrat font-black text-3xl mt-4" style="color:#0B2F35">${esc(f.Nom)}</h3>
+        ${why ? `<p class="font-inter mt-4 max-w-2xl mx-auto" style="color:#33555B">${esc(why)}</p>` : ""}
         <p class="solution-price mt-6">${f["Prix création XPF"] ? xpf(f["Prix création XPF"]) : "Sur devis"}</p>
-        ${mois ? `<p class="font-inter text-sm mt-1" style="color:#81A1A8">+ ${xpf(mois)} / mois${f["Mensualisations disponibles"] && !/^\d/.test(f["Mensualisations disponibles"]) ? " · " + esc(f["Mensualisations disponibles"]) : " · création payable en 4 fois"}</p>` : ""}
+        ${mois ? `<p class="font-inter text-sm mt-1" style="color:#4E6A6E">+ ${xpf(mois)} / mois${f["Mensualisations disponibles"] && !/^\d/.test(f["Mensualisations disponibles"]) ? " · " + esc(f["Mensualisations disponibles"]) : " · création payable en 4 fois"}</p>` : ""}
         <div class="flex flex-wrap gap-3 justify-center mt-8">
           <a href="/devis/?offre=${encodeURIComponent(f.Code || "")}" class="btn-cyan">ESTIMER MON DEVIS</a>
           <a href="/solutions/" class="btn-cyan">VOIR TOUTES LES SOLUTIONS</a>
