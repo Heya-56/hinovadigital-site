@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Devis en ligne — Hinova Digital</title><meta name="description" content="Estimez votre boutique, application ou orchestrateur business en XPF, en une minute."><meta name="theme-color" content="#08343A"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/logo-hinova.webp">
+<link rel="stylesheet" href="/css/ecosystem.css"><link rel="stylesheet" href="/css/tailwind.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+      <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}</script>
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head><body style="background:#F6FAFA">
+<header class="hero-bg" style="padding-bottom:1.5rem"><div class="px-6 pt-6 md:px-12 md:pt-8 flex items-center justify-between gap-4"><a href="/" aria-label="HINOVA DIGITAL"><img src="/logo-hinova.webp" alt="Logo Hinova Digital" class="site-logo protected-asset"></a><div class="flex items-center gap-3 ml-auto" style="position:relative"><button id="navBurgerBtn" class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button><nav id="navDropdown" class="nav-dropdown">
+            <a href="/" class="nav-tab">Accueil</a>
+            <a href="/vision.html" class="nav-tab">Vision</a>
+            <a href="/lab/" class="nav-tab">Lab</a>
+            <a href="/academie.html" class="nav-tab">Académie</a>
+            <a href="/blog.html" class="nav-tab">Journal</a>
+            <a href="/devis/" class="nav-tab">Devis en ligne</a>
+            <a href="/diagnostic.html" class="nav-tab nav-cta">Diagnostic offert</a>
+          </nav></div></div></header>
+<style>
+  .dv{max-width:72rem;margin:0 auto;padding:2rem 1.5rem 4rem;font-family:Inter,system-ui,sans-serif;color:#0B2F35}
+  .dv-eyebrow{font-family:Montserrat,sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#B5823A}
+  .dv h1{font-family:Montserrat,sans-serif;font-weight:900;font-size:clamp(1.8rem,4.2vw,2.8rem);line-height:1.1;margin:.4rem 0 .6rem;text-wrap:balance}
+  .dv-lead{color:#4E6A6E;max-width:62ch;line-height:1.65;margin:0}
+  .dv-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:1.5rem;margin-top:2rem;align-items:start}
+  @media(max-width:880px){.dv-grid{grid-template-columns:1fr}}
+  .dv-card{background:#fff;border:1px solid rgba(27,100,200,.18);border-radius:14px;padding:1.4rem}
+  .dv-step{font-family:Montserrat,sans-serif;font-weight:800;font-size:.95rem;margin:0 0 .8rem}
+  .dv-step span{color:#1B64C8;margin-right:.4rem}
+  .dv-fam{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin-bottom:1.4rem}
+  @media(max-width:520px){.dv-fam{grid-template-columns:1fr}}
+  .dv-opt{border:1.5px solid #D5E3E4;border-radius:12px;padding:.85rem;background:#fff;text-align:left;cursor:pointer;font:inherit;color:inherit;min-height:44px;display:grid;gap:.2rem}
+  .dv-opt b{font-family:Montserrat,sans-serif;font-size:.95rem}
+  .dv-opt small{color:#4E6A6E;font-size:.8rem;line-height:1.4}
+  .dv-opt[aria-pressed="true"]{border-color:#1B64C8;background:#EEF4FC;box-shadow:0 0 0 3px rgba(27,100,200,.12)}
+  .dv-opt:focus-visible,.dv-btn:focus-visible,.dv input:focus-visible,.dv textarea:focus-visible{outline:3px solid #1B64C8;outline-offset:2px}
+  .dv-tiers{display:grid;gap:.6rem;margin-bottom:1.4rem}
+  .dv-tiers .dv-opt{grid-template-columns:1fr auto;align-items:center}
+  .dv-tiers .dv-opt .p{font-family:Montserrat,sans-serif;font-weight:800;color:#1B64C8;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .dv-check{display:flex;gap:.6rem;align-items:flex-start;font-size:.92rem;line-height:1.5;padding:.6rem 0}
+  .dv-check input{width:20px;height:20px;margin-top:2px;accent-color:#1B64C8}
+  .dv-sum{position:sticky;top:1rem;background:#08343A;color:#E8F2F3;border:0}
+  .dv-sum h2{font-family:Montserrat,sans-serif;font-size:1rem;color:#D9B370;margin:0 0 .3rem;letter-spacing:.06em;text-transform:uppercase}
+  .dv-offer{font-family:Montserrat,sans-serif;font-weight:800;font-size:1.25rem;margin:0 0 1rem}
+  .dv-row{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.12);font-variant-numeric:tabular-nums}
+  .dv-row b{font-family:Montserrat,sans-serif;color:#fff}
+  .dv-total{font-size:1.6rem;font-family:Montserrat,sans-serif;font-weight:900;color:#D9B370}
+  .dv-sched{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;margin:.6rem 0 0}
+  .dv-sched div{background:rgba(255,255,255,.07);border-radius:8px;padding:.45rem;text-align:center;font-size:.78rem;font-variant-numeric:tabular-nums}
+  .dv-sched b{display:block;font-size:.85rem;color:#fff}
+  .dv-note{font-size:.78rem;color:#9DB8BB;line-height:1.5;margin:.9rem 0 0}
+  .dv-btn{display:inline-flex;justify-content:center;align-items:center;width:100%;margin-top:1.1rem;background:#D9B370;color:#08343A;border:0;border-radius:10px;padding:.9rem 1rem;font-family:Montserrat,sans-serif;font-weight:800;font-size:.95rem;cursor:pointer;min-height:48px}
+  .dv-form{display:grid;gap:.7rem;margin-top:1rem}
+  .dv-form[hidden]{display:none}
+  .dv-form label{font-size:.82rem;font-weight:600;display:grid;gap:.3rem}
+  .dv-form input,.dv-form textarea{border:1px solid #C9DADB;border-radius:8px;padding:.7rem;font:inherit;font-size:16px;background:#fff;color:#0B2F35}
+  .dv-msg{font-size:.9rem;line-height:1.5;margin:0}
+  .dv-osb{background:#FFF8EC;border:1px solid #EAD4A8;border-radius:10px;padding:.8rem 1rem;font-size:.86rem;line-height:1.5;color:#5A4520;margin-top:1rem}
+</style>
+
+<main class="dv" id="devis">
+  <p class="dv-eyebrow">Devis en ligne · Leapfrogging Pacifica</p>
+  <h1>Estimez votre projet en 1 minute.</h1>
+  <p class="dv-lead">Choisissez ce dont vous avez besoin : le prix s'affiche immédiatement, en XPF. Vous recevez ensuite un devis détaillé, validé avec vous lors d'un échange avec notre équipe commerciale avant toute signature.</p>
+
+  <div class="dv-grid">
+    <section class="dv-card" aria-label="Configurer votre projet">
+      <p class="dv-step"><span>1</span>Que voulez-vous créer ?</p>
+      <div class="dv-fam" id="fam" role="group" aria-label="Famille"></div>
+
+      <p class="dv-step"><span>2</span>Quelle formule ?</p>
+      <div class="dv-tiers" id="tiers" role="group" aria-label="Formule"></div>
+
+      <div id="opts"></div>
+      <div class="dv-osb">💳 <b>Paiement par carte :</b> l'abonnement de paiement se souscrit directement auprès d'OSB, votre banque partenaire. Nous montons le dossier avec vous et le transmettons à OSB. Ce coût n'est pas inclus dans nos tarifs.</div>
+    </section>
+
+    <aside class="dv-card dv-sum" aria-live="polite">
+      <h2>Votre estimation</h2>
+      <p class="dv-offer" id="sOffer">—</p>
+      <div class="dv-row"><span>Création</span><b id="sBuild">—</b></div>
+      <div class="dv-row"><span>Mensuel (fonctionnement)</span><b id="sMonth">—</b></div>
+      <div id="sSchedWrap"><p class="dv-note" id="sSchedLabel" style="margin-top:.8rem">Création payable en 4 fois</p><div class="dv-sched" id="sSched"></div></div>
+      <p class="dv-note" id="sNote"></p>
+      <button class="dv-btn" id="openForm" type="button">Recevoir ce devis →</button>
+      <form class="dv-form" id="form" hidden novalidate>
+        <label>Nom et prénom<input id="f-name" name="name" autocomplete="name" required></label>
+        <label>Entreprise<input id="f-ent" name="entreprise" autocomplete="organization"></label>
+        <label>E-mail<input id="f-email" name="email" type="email" autocomplete="email" required></label>
+        <label>Téléphone<input id="f-phone" name="phone" type="tel" autocomplete="tel"></label>
+        <label>Votre projet en quelques mots<textarea id="f-msg" name="message" rows="3"></textarea></label>
+        <input type="text" name="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <button class="dv-btn" type="submit" id="send">Envoyer ma demande</button>
+        <p class="dv-msg" id="fMsg" role="status"></p>
+      </form>
+      <p class="dv-note">Estimation indicative. Le devis final est établi après échange avec notre équipe et signé avant tout démarrage.</p>
+    </aside>
+  </div>
+</main>
+
+<script>
+(function(){
+  var F = {
+    boutique: { label:'Boutique en ligne', hint:'Vendre vos produits sur internet', tiers:[
+      {id:'petite', name:'Petites boutiques', desc:'Vous remplissez vos produits, mise en ligne en 72 h', build:0, month:10000, sched:null},
+      {id:'pro', name:'Pro', desc:'Boutique complète à vos couleurs', build:179000, month:7900, sched:[62500,62500,27000,27000]},
+      {id:'business', name:'Business', desc:'Catalogue plus large, ventes régulières', build:209000, month:13900, sched:[73500,73500,31000,31000]} ]},
+    app: { label:'Application', hint:'Réservation, billetterie, location…', tiers:[
+      {id:'commerce', name:'Application Commerce', desc:'Application installable sur téléphone', build:357000, month:53600, sched:[124500,124500,54000,54000]} ]},
+    orch: { label:'Orchestrateur business', hint:'Tout votre business dans un seul logiciel, à votre nom', tiers:[
+      {id:'socle', name:'Socle', desc:'Diagnostic, architecture et premiers modules', build:357000, month:20000, mile:true},
+      {id:'mini', name:'Mini', desc:'Une activité entièrement orchestrée', build:500000, month:20000, mile:true},
+      {id:'avance', name:'Avancé', desc:'Plusieurs services ou points de vente', build:800000, month:20000, mile:true},
+      {id:'grand', name:'Grand', desc:'Plusieurs business sur une plateforme', build:1480000, month:20000, mile:true} ]}
+  };
+  var st = { fam:'boutique', tier:'pro', bizdev:false };
+  var fmt = function(n){ return n.toLocaleString('fr-FR').replace(/ | /g,' ') + ' XPF'; };
+  var $ = function(id){ return document.getElementById(id); };
+  try { var q = new URLSearchParams(location.search); if (F[q.get('famille')]) { st.fam = q.get('famille'); st.tier = F[st.fam].tiers[0].id; } } catch(e){}
+
+  function btn(pressed, html, on){ var b=document.createElement('button'); b.type='button'; b.className='dv-opt'; b.setAttribute('aria-pressed', String(pressed)); b.innerHTML=html; b.addEventListener('click', on); return b; }
+  function render(){
+    var fam=$('fam'); fam.innerHTML='';
+    Object.keys(F).forEach(function(k){ fam.appendChild(btn(st.fam===k,'<b>'+F[k].label+'</b><small>'+F[k].hint+'</small>',function(){ st.fam=k; st.tier=F[k].tiers[0].id; render(); })); });
+    var tiers=$('tiers'); tiers.innerHTML='';
+    F[st.fam].tiers.forEach(function(t){ tiers.appendChild(btn(st.tier===t.id,'<span><b>'+t.name+'</b><br><small>'+t.desc+'</small></span><span class="p">'+(t.build?fmt(t.build):fmt(t.month)+'/mois')+'</span>',function(){ st.tier=t.id; render(); })); });
+    var opts=$('opts'); opts.innerHTML='';
+    if (st.fam==='orch') {
+      opts.innerHTML='<p class="dv-step"><span>3</span>Option</p><label class="dv-check"><input type="checkbox" id="bizdev"'+(st.bizdev?' checked':'')+'> <span><b>Développement commercial</b> : accès à notre réseau de partenaires, fournisseurs et clients. +60 000 XPF/mois</span></label>';
+      $('bizdev').addEventListener('change',function(e){ st.bizdev=e.target.checked; summary(); });
+    }
+    summary();
+  }
+  function current(){ return F[st.fam].tiers.filter(function(t){return t.id===st.tier;})[0]; }
+  function summary(){
+    var t=current(), month=t.month+(st.fam==='orch'&&st.bizdev?60000:0);
+    $('sOffer').textContent=F[st.fam].label+' · '+t.name;
+    $('sBuild').textContent=t.build?fmt(t.build):'Aucun frais de création';
+    $('sMonth').textContent=fmt(month)+' / mois';
+    var w=$('sSchedWrap'), s=$('sSched');
+    if (t.sched){ w.hidden=false; $('sSchedLabel').textContent='Création payable en 4 fois (35 / 35 / 15 / 15 %)'; s.innerHTML=t.sched.map(function(v,i){return '<div>Échéance '+(i+1)+'<b>'+v.toLocaleString('fr-FR').replace(/ | /g,' ')+'</b></div>';}).join(''); }
+    else if (t.mile){ w.hidden=false; $('sSchedLabel').textContent='Réglé par jalons, module par module. Le code et le nom de domaine vous sont cédés au paiement intégral.'; s.innerHTML=''; }
+    else { w.hidden=true; }
+    $('sNote').textContent = st.fam==='orch' ? 'Maintenance après création : 20 000 XPF/mois. Formule mensuelle sans apport possible pour nos partenaires apporteurs d\'affaires.' : (t.id==='petite' ? 'Vous créez votre compte, nous branchons votre boutique en moins de 72 h.' : '');
+  }
+  $('openForm').addEventListener('click',function(){ $('form').hidden=false; this.hidden=true; $('f-name').focus(); });
+  $('form').addEventListener('submit',function(e){
+    e.preventDefault();
+    var t=current(), month=t.month+(st.fam==='orch'&&st.bizdev?60000:0);
+    var data={ kind:'devis', name:$('f-name').value, entreprise:$('f-ent').value, email:$('f-email').value, phone:$('f-phone').value, message:$('f-msg').value,
+      botcheck:this.botcheck.value, offre:F[st.fam].label+' · '+t.name,
+      resume:'Création '+(t.build?fmt(t.build):'0 XPF')+' · '+fmt(month)+'/mois'+(st.bizdev&&st.fam==='orch'?' (avec développement commercial)':'') };
+    var m=$('fMsg');
+    if(!data.name.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)){ m.textContent='Indiquez votre nom et un e-mail valide.'; return; }
+    $('send').disabled=true; m.textContent='Envoi en cours…';
+    fetch('/api/devis',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){ return r.json().catch(function(){return {ok:false};}); })
+      .then(function(j){ if(j.ok){ m.textContent='Māuruuru ! Votre demande est bien reçue. Nous revenons vers vous sous 48 h ouvrées avec votre devis détaillé.'; $('form').querySelectorAll('input,textarea').forEach(function(i){i.disabled=true;}); }
+        else { throw 0; } })
+      .catch(function(){ $('send').disabled=false; m.innerHTML='L\'envoi n\'a pas abouti. Écrivez-nous directement à <b style="user-select:all">contact@hinovadigitalcorp.com</b> en indiquant : '+data.offre+'.'; });
+  });
+  render();
+})();
+</script>
+
+<footer></footer><script src="/js/ecosystem.js" defer></script><script src="/js/hinova-ui.js" defer></script></body></html>

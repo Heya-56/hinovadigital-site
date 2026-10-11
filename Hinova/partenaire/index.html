@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Devenir partenaire — Hinova Digital</title><meta name="description" content="Candidature apporteur d’affaires Hinova Digital : votre orchestrateur financé par vos apports."><meta name="theme-color" content="#08343A"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/logo-hinova.webp">
+<link rel="stylesheet" href="/css/ecosystem.css"><link rel="stylesheet" href="/css/tailwind.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+      <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}</script>
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head><body style="background:#F6FAFA">
+<header class="hero-bg" style="padding-bottom:1.5rem"><div class="px-6 pt-6 md:px-12 md:pt-8 flex items-center justify-between gap-4"><a href="/" aria-label="HINOVA DIGITAL"><img src="/logo-hinova.webp" alt="Logo Hinova Digital" class="site-logo protected-asset"></a><div class="flex items-center gap-3 ml-auto" style="position:relative"><button id="navBurgerBtn" class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button><nav id="navDropdown" class="nav-dropdown">
+            <a href="/" class="nav-tab">Accueil</a>
+            <a href="/vision.html" class="nav-tab">Vision</a>
+            <a href="/lab/" class="nav-tab">Lab</a>
+            <a href="/academie.html" class="nav-tab">Académie</a>
+            <a href="/blog.html" class="nav-tab">Journal</a>
+            <a href="/devis/" class="nav-tab">Devis en ligne</a>
+            <a href="/diagnostic.html" class="nav-tab nav-cta">Diagnostic offert</a>
+          </nav></div></div></header>
+<style>
+  .pt{max-width:64rem;margin:0 auto;padding:2rem 1.5rem 4rem;font-family:Inter,system-ui,sans-serif;color:#0B2F35;display:grid;gap:1.6rem}
+  .pt-eyebrow{font-family:Montserrat,sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#B5823A}
+  .pt h1{font-family:Montserrat,sans-serif;font-weight:900;font-size:clamp(1.8rem,4.2vw,2.8rem);line-height:1.1;margin:.4rem 0 .6rem;text-wrap:balance}
+  .pt h2{font-family:Montserrat,sans-serif;font-weight:800;font-size:1.25rem;margin:0}
+  .pt-lead{color:#4E6A6E;max-width:62ch;line-height:1.65;margin:0}
+  .pt-steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+  @media(max-width:760px){.pt-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .pt-steps li{background:#fff;border:1px solid rgba(27,100,200,.18);border-radius:12px;padding:1rem;display:grid;gap:.3rem;align-content:start}
+  .pt-steps b{font-family:Montserrat,sans-serif}.pt-steps span{color:#1B64C8;font-weight:800;font-size:.8rem}
+  .pt-steps p{margin:0;color:#4E6A6E;font-size:.88rem;line-height:1.5}
+  .pt-cta{display:flex;flex-wrap:wrap;gap:.75rem}
+  .pt-btn{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;padding:.85rem 1.3rem;font-family:Montserrat,sans-serif;font-weight:800;font-size:.92rem;cursor:pointer;min-height:48px;border:0;text-decoration:none}
+  .pt-btn.p{background:#1B64C8;color:#fff}.pt-btn.s{background:#fff;color:#8a6127;border:1.5px solid #B5823A}
+  .pt-btn:focus-visible,.pt input:focus-visible,.pt textarea:focus-visible,.pt select:focus-visible{outline:3px solid #1B64C8;outline-offset:2px}
+  .pt-card{background:#fff;border:1px solid rgba(27,100,200,.18);border-radius:14px;padding:1.4rem;display:grid;gap:.8rem}
+  .pt-form{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+  @media(max-width:620px){.pt-form{grid-template-columns:1fr}}
+  .pt-form label{font-size:.82rem;font-weight:600;display:grid;gap:.3rem}
+  .pt-form .full{grid-column:1/-1}
+  .pt-form input,.pt-form textarea,.pt-form select{border:1px solid #C9DADB;border-radius:8px;padding:.7rem;font:inherit;font-size:16px;background:#fff;color:#0B2F35}
+  .pt-chk{display:flex;gap:.6rem;align-items:flex-start;font-weight:400!important;font-size:.88rem!important;line-height:1.5}
+  .pt-chk input{width:20px;height:20px;accent-color:#1B64C8;margin-top:2px}
+  .pt-small{font-size:.82rem;color:#4E6A6E;line-height:1.5;margin:0}
+  /* aperçu */
+  .pv{position:fixed;inset:0;background:rgba(3,20,24,.72);display:flex;align-items:flex-start;justify-content:center;padding:calc(env(safe-area-inset-top,0px) + 1rem) 1rem 1rem;z-index:1000;overflow-y:auto}
+  .pv[hidden]{display:none}
+  .pv-doc{background:linear-gradient(160deg,#03181D,#0A3138);color:#DDEBEC;border-radius:16px;max-width:46rem;width:100%;padding:1.6rem;font-family:Inter,system-ui,sans-serif;display:grid;gap:1.1rem;position:relative}
+  .pv-close{position:absolute;top:.8rem;right:.8rem;background:rgba(255,255,255,.1);color:#fff;border:0;border-radius:50%;width:44px;height:44px;font-size:1.2rem;cursor:pointer}
+  .pv-eye{font-family:Montserrat,sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#D8B16E;margin:0}
+  .pv-doc h3{font-family:Montserrat,sans-serif;font-weight:900;color:#E8C77E;font-size:clamp(1.4rem,4vw,2rem);line-height:1.1;margin:0;text-wrap:balance}
+  .pv-box{border:1px solid rgba(216,177,110,.45);border-radius:12px;padding:1rem;background:rgba(216,177,110,.06);display:grid;gap:.7rem}
+  .pv-big{font-family:Montserrat,sans-serif;font-weight:900;font-size:1.7rem;color:#E8C77E;margin:0}
+  .pv-big small{font-size:.9rem;color:#DDEBEC;font-weight:600}
+  .pv-tbl{overflow-x:auto}
+  .pv table{width:100%;border-collapse:collapse;font-size:.86rem;font-variant-numeric:tabular-nums}
+  .pv th{text-align:left;color:#D8B16E;font-weight:700;padding:.45rem .3rem;border-bottom:1px solid rgba(216,177,110,.5)}
+  .pv td{padding:.45rem .3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+  .pv-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem}
+  @media(max-width:520px){.pv-3{grid-template-columns:1fr}}
+  .pv-3 div{background:rgba(0,0,0,.25);border-radius:10px;padding:.8rem;font-size:.82rem;line-height:1.45}
+  .pv-3 b{display:block;font-family:Montserrat,sans-serif;font-size:1.25rem;color:#E8C77E}
+  .pv-fine{font-size:.76rem;color:#9DB8BB;margin:0;line-height:1.5}
+</style>
+
+<main class="pt">
+  <div>
+    <p class="pt-eyebrow">Candidature · sur sélection</p>
+    <h1>Devenir partenaire Hinova Digital</h1>
+    <p class="pt-lead">Vous êtes patenté et vous connaissez des entrepreneurs qui ont besoin d'outils numériques ? Déposez votre candidature d'apporteur d'affaires. Chaque dossier est étudié, et chaque partenariat est encadré par un contrat signé.</p>
+  </div>
+  <div class="pt-cta">
+    <button class="pt-btn s" type="button" id="openPv">👁 Voir un aperçu de la formule</button>
+    <a class="pt-btn p" href="#candidature">Déposer ma candidature →</a>
+  </div>
+
+  <ol class="pt-steps" aria-label="Déroulement">
+    <li><span>01</span><b>Candidature</b><p>Vous remplissez le formulaire ci-dessous.</p></li>
+    <li><span>02</span><b>Échange</b><p>Nous étudions votre profil et vous rencontrons.</p></li>
+    <li><span>03</span><b>Contrat</b><p>Annexe apporteur d'affaires signée, avec clauses de confidentialité et de non-sollicitation.</p></li>
+    <li><span>04</span><b>Activation</b><p>Votre propre orchestrateur est lancé, et vos commissions s'appliquent.</p></li>
+  </ol>
+
+  <section class="pt-card" id="candidature" aria-labelledby="candTitle">
+    <h2 id="candTitle">Votre candidature</h2>
+    <form class="pt-form" id="pform" novalidate>
+      <label>Nom et prénom<input id="p-name" name="name" autocomplete="name" required></label>
+      <label>Entreprise / nom commercial<input id="p-ent" name="entreprise" autocomplete="organization"></label>
+      <label>E-mail<input id="p-email" name="email" type="email" autocomplete="email" required></label>
+      <label>Téléphone<input id="p-phone" name="phone" type="tel" autocomplete="tel"></label>
+      <label class="full">Votre activité<input id="p-act" name="activite" placeholder="Ex. community manager, salon de coiffure, événementiel…"></label>
+      <label class="full">Ce que vous apportez (réseau, secteur, clients potentiels)<textarea id="p-msg" name="message" rows="4"></textarea></label>
+      <label class="pt-chk full"><input type="checkbox" id="p-pat"> Je suis patenté(e) (la commission est réservée aux patentés).</label>
+      <input type="text" name="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+      <div class="full"><button class="pt-btn p" type="submit" id="psend">Envoyer ma candidature</button></div>
+      <p class="pt-small full" id="pMsg" role="status"></p>
+    </form>
+    <p class="pt-small">Vos informations servent uniquement à étudier votre candidature. Les conditions définitives figurent dans l'annexe signée.</p>
+  </section>
+</main>
+
+<div class="pv" id="pv" hidden role="dialog" aria-modal="true" aria-labelledby="pvTitle">
+  <article class="pv-doc">
+    <button class="pv-close" type="button" id="closePv" aria-label="Fermer l'aperçu">✕</button>
+    <p class="pv-eye">Annexe apporteur d'affaires · Hinova Digital</p>
+    <h3 id="pvTitle">Votre logiciel métier, à votre nom, financé par vos apports.</h3>
+    <p style="margin:0;line-height:1.6">Votre orchestrateur est construit et vous l'utilisez dès le départ, comme un bail de location. Chaque client que vous apportez réduit vos mensualités.</p>
+    <div class="pv-box">
+      <p class="pv-eye">Formule partenaire</p>
+      <p class="pv-big">12 000 ou 25 000 XPF <small>par mois</small></p>
+      <div class="pv-tbl"><table>
+        <thead><tr><th>Niveau</th><th>Mensualité</th><th>Durée</th></tr></thead>
+        <tbody>
+          <tr><td>357 000 XPF · TPE</td><td>12 000</td><td>30 mois (dernière 9 000)</td></tr>
+          <tr><td>357 000 XPF · Pro</td><td>25 000</td><td>15 mois (dernière 7 000)</td></tr>
+          <tr><td>500 000 XPF</td><td>25 000</td><td>20 mois</td></tr>
+          <tr><td>800 000 XPF</td><td>25 000</td><td>32 mois</td></tr>
+          <tr><td>1 480 000 XPF</td><td>25 000</td><td>60 mois (dernière 5 000)</td></tr>
+        </tbody></table></div>
+      <div class="pv-3">
+        <div><b>50 %</b>de commission sur chaque client que vous apportez</div>
+        <div><b>Déduit</b>de vos mensualités, jusqu'à couvrir tout votre orchestrateur</div>
+        <div><b>100 %</b>à vous au terme : code et nom de domaine cédés</div>
+      </div>
+    </div>
+    <p class="pv-fine">Bail de location avant transfert de propriété. Commission réservée aux patentés, versée sur les sommes encaissées. L'abonnement de paiement par carte se souscrit auprès d'OSB et n'est pas inclus. Aperçu non contractuel : seule l'annexe signée fait foi.</p>
+    <a class="pt-btn p" href="#candidature" id="pvGo">Déposer ma candidature →</a>
+  </article>
+</div>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);}, pv=$('pv'), opener=$('openPv');
+  function open(){ pv.hidden=false; document.body.style.overflow='hidden'; $('closePv').focus(); }
+  function close(){ pv.hidden=true; document.body.style.overflow=''; opener.focus(); }
+  opener.addEventListener('click',open); $('closePv').addEventListener('click',close);
+  $('pvGo').addEventListener('click',function(){ pv.hidden=true; document.body.style.overflow=''; });
+  pv.addEventListener('click',function(e){ if(e.target===pv) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!pv.hidden) close(); });
+  $('pform').addEventListener('submit',function(e){
+    e.preventDefault(); var m=$('pMsg');
+    var d={kind:'partenaire',name:$('p-name').value,entreprise:$('p-ent').value,email:$('p-email').value,phone:$('p-phone').value,
+      offre:'Candidature apporteur d\'affaires',resume:'Activité : '+$('p-act').value+' · Patenté : '+($('p-pat').checked?'oui':'non'),
+      message:$('p-msg').value,botcheck:this.botcheck.value};
+    if(!d.name.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)){ m.textContent='Indiquez votre nom et un e-mail valide.'; return; }
+    $('psend').disabled=true; m.textContent='Envoi en cours…';
+    fetch('/api/devis',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){return r.json().catch(function(){return {ok:false};});})
+      .then(function(j){ if(!j.ok) throw 0; m.textContent='Māuruuru ! Votre candidature est bien reçue. Nous vous recontactons après étude de votre dossier.'; this&&0; $('pform').querySelectorAll('input,textarea,button').forEach(function(i){i.disabled=true;}); })
+      .catch(function(){ $('psend').disabled=false; m.innerHTML='L\'envoi n\'a pas abouti. Écrivez-nous à <b style="user-select:all">contact@hinovadigitalcorp.com</b>.'; });
+  });
+})();
+</script>
+
+<footer></footer><script src="/js/ecosystem.js" defer></script><script src="/js/hinova-ui.js" defer></script></body></html>
