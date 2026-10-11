@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const ECOSYSTEM_LINKS = {
   "hinova-digital": "/solutions/",
   "ru-fau-tumu": "/academie.html",
-  "hinovadigital-app": "/parcours/"
+  "hinovadigital-app": "/solutions/#diagnostic"
 };
 
 async function loadEcosystem() {
@@ -118,7 +118,7 @@ async function loadOffres() {
         <h3 class="font-montserrat font-bold text-xl mt-4" style="color:#1B64C8">${esc(f.Nom)}</h3>
         <p class="solution-price mt-5">${f["Prix création XPF"] ? xpf(f["Prix création XPF"]) : "Sur devis"}</p>
         ${mois ? `<p class="font-inter text-sm mt-1" style="color:#4E6A6E">+ ${xpf(mois)} / mois</p>` : ""}
-        <a href="/parcours/" class="btn-cyan mt-6">IDENTIFIER MA TRAJECTOIRE</a>
+        <a href="/solutions/#diagnostic" class="btn-cyan mt-6">IDENTIFIER MA TRAJECTOIRE</a>
       </article>`;
     }).join("");
   } catch (e) { /* on garde le contenu de secours */ }
@@ -209,7 +209,7 @@ async function loadParcours() {
         ${mois ? `<p class="font-inter text-sm mt-1" style="color:#4E6A6E">+ ${xpf(mois)} / mois${f["Mensualisations disponibles"] && !/^\d/.test(f["Mensualisations disponibles"]) ? " · " + esc(f["Mensualisations disponibles"]) : " · création payable en 4 fois"}</p>` : ""}
         <div class="flex flex-wrap gap-3 justify-center mt-8">
           <a href="/devis/?offre=${encodeURIComponent(f.Code || "")}" class="btn-cyan">ESTIMER MON DEVIS</a>
-          <a href="/solutions/" class="btn-cyan">VOIR TOUTES LES SOLUTIONS</a>
+          <a href="#toutes" class="btn-cyan">VOIR TOUTES LES OFFRES</a>
         </div>`;
     }
     out.scrollIntoView({ behavior: "smooth", block: "start" });
