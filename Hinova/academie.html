@@ -573,13 +573,20 @@
             const object = Object.fromEntries(formData);
             const json = JSON.stringify(object);
 
-            const res = await fetch('https://api.web3forms.com/submit', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-              body: json
-            });
-            const result = await res.json();
-
+            object.source = 'Académie';
+            let result = { success: false };
+            try {
+              const r1 = await fetch('/api/temoignage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(object) });
+              const j1 = await r1.json().catch(() => ({}));
+              result.success = !!j1.ok;
+            } catch (_) {}
+            if (!result.success) {
+              try {
+                const r2 = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: json });
+                result = await r2.json();
+              } catch (_) {}
+            }
+            window.__hvLastReview = object;
             if (result.success) {
               feedback.textContent = currentLang === 'fr'
                 ? '✅ Merci ! Ton avis a bien été envoyé et sera publié après relecture.'
@@ -593,9 +600,11 @@
             }
           } catch(err) {
             console.error('review submit error', err);
-            feedback.textContent = currentLang === 'fr'
-              ? "Une erreur est survenue. Réessaie plus tard ou écris-nous directement."
-              : "Something went wrong. Please try again later.";
+            const o = window.__hvLastReview || {};
+            const mail = 'mailto:contact@hinovadigitalcorp.com?subject=' + encodeURIComponent('Avis — Rū-fau-tumu Académie') + '&body=' + encodeURIComponent('Prénom : ' + (o.prenom||'') + '\nNote : ' + (o.note||'') + '/5\nAvis : ' + (o.avis||'') + '\n\nJ\'accepte la relecture et la publication de mon avis.');
+            feedback.innerHTML = currentLang === 'fr'
+              ? "L'envoi automatique n'a pas abouti. <a href=\"" + mail + "\" style=\"color:#1B64C8;font-weight:700\">Envoyer mon avis par e-mail</a> (il est déjà rédigé)."
+              : "Automatic sending failed. <a href=\"" + mail + "\" style=\"color:#1B64C8;font-weight:700\">Send my review by email</a>.";
             feedback.style.color = '#FF6B35';
           } finally {
             btn.disabled = false;
