@@ -159,9 +159,9 @@
     if(!data.consent_contact){ m.textContent='Cochez la case d\'accord pour que nous puissions vous recontacter.'; return; }
     $('send').disabled=true; m.textContent='Envoi en cours…';
     fetch('/api/devis',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(data)})
-      .then(function(r){ return r.json().catch(function(){return {ok:false};}); })
+      .then(function(r){ var st=r.status; return r.json().catch(function(){return {ok:false,error:'http_'+st};}); })
       .then(function(j){ if(j.ok){ m.textContent='Māuruuru ! Votre demande est bien reçue. Nous revenons vers vous sous 48 h ouvrées avec votre devis détaillé.'; $('form').querySelectorAll('input,textarea').forEach(function(i){i.disabled=true;}); }
-        else { window.__hvErr=(j&&(j.error||j.detail))||''; throw 0; } })
+        else { window.__hvErr=j?((j.error||'')+' '+(j.detail||'')+' '+(j.keys?JSON.stringify(j.keys):'')):''; throw 0; } })
       .catch(function(){ $('send').disabled=false; m.innerHTML='L\'envoi automatique n\'a pas abouti. <a href="'+hvMail(data)+'" style="color:#1B64C8;font-weight:700">Envoyer ma demande par e-mail</a> (votre demande est déjà rédigée) ou écrivez à <b style="user-select:all">contact@hinovadigitalcorp.com</b>.<br><small style="opacity:.6">Code : '+(window.__hvErr||'réseau')+'</small>'; });
   });
   render();

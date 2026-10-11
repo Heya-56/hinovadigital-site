@@ -5,7 +5,11 @@
  *  2. AIRTABLE_DIAG_WEBHOOK : relais vers l'automatisation Airtable (comme le diagnostic).
  * Les deux peuvent coexister : le lead est écrit puis l'automatisation est prévenue.
  */
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost(ctx) {
+  try { return await handle(ctx); }
+  catch (e) { return new Response(JSON.stringify({ ok: false, error: 'exception', detail: String(e && e.message || e).slice(0, 300) }), { status: 500, headers: { 'content-type': 'application/json' } }); }
+}
+async function handle({ request, env }) {
   const json = (b, s = 200) => new Response(JSON.stringify(b), { status: s, headers: { 'content-type': 'application/json' } });
   let d;
   try {
@@ -41,14 +45,14 @@ export async function onRequestPost({ request, env }) {
     }
     done = r.ok;
   }
-  if (env.AIRTABLE_DIAG_WEBHOOK) {
+  if (env.AIRTABLE_DIAG_WEBHOOK) try {
     const r = await fetch(env.AIRTABLE_DIAG_WEBHOOK, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({
       source, recu_le: new Date().toISOString(), name: cut(d.name), entreprise: cut(d.entreprise), email, telephone: cut(d.phone),
       secteur: cut(d.offre), frein_principal: cut(d.resume), contexte: cut(d.message),
       accord_recontact: recontact, newsletter: news, destinataire: 'contact@hinovadigitalcorp.com' }) });
     done = done || r.ok;
-  }
+  } catch (e) { detail += ' | webhook:' + String(e.message || e).slice(0, 120); }
   if (!env.AIRTABLE_DIAG_WEBHOOK && !(env.AIRTABLE_API_KEY && env.AIRTABLE_BASE_ID)) return json({ ok: false, error: 'not_configured' }, 503);
-  return json({ ok: done, detail }, done ? 200 : 502);
+  return json({ ok: done, detail, keys: { api: !!env.AIRTABLE_API_KEY, base: !!env.AIRTABLE_BASE_ID, hook: !!env.AIRTABLE_DIAG_WEBHOOK } }, done ? 200 : 502);
 }
 export const onRequest = () => new Response('Method Not Allowed', { status: 405, headers: { allow: 'POST' } });

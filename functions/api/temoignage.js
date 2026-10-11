@@ -2,7 +2,11 @@
  * POST /api/temoignage — avis envoyés depuis le site, écrits dans la table Airtable « Témoignages ».
  * Variables Cloudflare Pages requises : AIRTABLE_API_KEY + AIRTABLE_BASE_ID.
  */
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost(ctx) {
+  try { return await handle(ctx); }
+  catch (e) { return new Response(JSON.stringify({ ok: false, error: 'exception', detail: String(e && e.message || e).slice(0, 300) }), { status: 500, headers: { 'content-type': 'application/json' } }); }
+}
+async function handle({ request, env }) {
   const json = (b, s = 200) => new Response(JSON.stringify(b), { status: s, headers: { 'content-type': 'application/json' } });
   if (!env.AIRTABLE_API_KEY || !env.AIRTABLE_BASE_ID) return json({ ok: false, error: 'not_configured' }, 503);
   let d;
