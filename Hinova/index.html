@@ -343,6 +343,50 @@
       </div>
     </section>
 
+    <!-- PARCOURS VISUEL — LES TROIS PORTES D'ENTRÉE HINOVA -->
+    <section id="explorer-hinova" style="padding:5rem 1.5rem;background:#FFFFFF;" aria-labelledby="explorerTitle">
+      <div style="max-width:1200px;margin:0 auto;">
+        <div style="max-width:760px;margin:0 auto 2rem;text-align:center;">
+          <p style="font-family:Montserrat,sans-serif;font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#B5823A;">Explorez Hinova Digital</p>
+          <h2 id="explorerTitle" style="font-family:Montserrat,sans-serif;font-weight:900;font-size:clamp(1.7rem,4vw,2.7rem);line-height:1.15;color:#0B2F35;margin:.7rem 0 1rem;">Une vision. Des réalisations. Des compétences à transmettre.</h2>
+          <p style="color:#4E6A6E;line-height:1.7;">Choisissez votre porte d'entrée : découvrir notre vision, explorer les solutions construites au Fenua ou apprendre à bâtir vos propres outils.</p>
+        </div>
+        <div class="hd-visual-journey">
+          <a class="hd-journey-card" href="/vision.html">
+            <img src="/leapfrogging-pacifica.webp" alt="Vision Leapfrogging Pacifica : relier les territoires insulaires au monde" loading="lazy" width="900" height="620">
+            <span class="hd-card-shade"></span>
+            <span class="hd-card-content"><span class="hd-card-kicker">01 · La vision</span><strong>Penser au-delà des frontières</strong><span>Notre vision du numérique, de la souveraineté et du leapfrogging depuis le Fenua.</span><span class="hd-card-link">Découvrir notre vision ↗</span></span>
+          </a>
+          <a class="hd-journey-card" href="/lab/">
+            <img src="/manahub-archipels.webp" alt="ManaHub, une architecture numérique pensée pour les archipels" loading="lazy" width="900" height="620">
+            <span class="hd-card-shade"></span>
+            <span class="hd-card-content"><span class="hd-card-kicker">02 · Le laboratoire</span><strong>Des idées aux systèmes concrets</strong><span>Des architectures et des projets conçus pour répondre aux besoins réels des entreprises et territoires insulaires.</span><span class="hd-card-link">Explorer le Lab ↗</span></span>
+          </a>
+          <a class="hd-journey-card" href="/academie.html#module-cloud">
+            <img src="/journal-img/cloud-facture.webp" alt="Illustration pédagogique sur le cloud et les services numériques" loading="lazy" width="900" height="620">
+            <span class="hd-card-shade"></span>
+            <span class="hd-card-content"><span class="hd-card-kicker">03 · L'Académie</span><strong>Apprendre en construisant</strong><span>Comprendre le cloud, la sécurité et les outils numériques, puis mettre en pratique sans jargon.</span><span class="hd-card-link">Découvrir le parcours ↗</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <style>
+      .hd-visual-journey{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;margin-top:2rem}
+      .hd-journey-card{position:relative;display:flex;min-height:390px;overflow:hidden;border-radius:1.1rem;background:#08343A;text-decoration:none;color:#fff;isolation:isolate;box-shadow:0 12px 34px rgba(8,52,58,.12)}
+      .hd-journey-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .55s ease}
+      .hd-card-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,52,58,.05) 0%,rgba(8,52,58,.25) 35%,rgba(8,52,58,.94) 100%)}
+      .hd-card-content{display:flex;flex-direction:column;justify-content:flex-end;gap:.75rem;padding:1.5rem;width:100%;margin-top:auto}
+      .hd-card-kicker{font:800 .7rem Montserrat,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#F0C778}
+      .hd-card-content strong{font:900 1.45rem/1.16 Montserrat,sans-serif;text-wrap:balance}
+      .hd-card-content>span:not(.hd-card-kicker):not(.hd-card-link){font-size:.9rem;line-height:1.55;color:rgba(255,255,255,.9)}
+      .hd-card-link{font:800 .75rem Montserrat,sans-serif;letter-spacing:.04em;color:#F0C778;margin-top:.2rem}
+      .hd-journey-card:focus-visible{outline:3px solid #B5823A;outline-offset:4px}
+      @media(hover:hover) and (pointer:fine){.hd-journey-card:hover>img{transform:scale(1.055)}.hd-journey-card:hover{box-shadow:0 18px 44px rgba(8,52,58,.22)}}
+      @media(max-width:900px){.hd-visual-journey{grid-template-columns:repeat(2,minmax(0,1fr))}.hd-journey-card:last-child{grid-column:1/-1;min-height:320px}}
+      @media(max-width:600px){.hd-visual-journey{grid-template-columns:1fr}.hd-journey-card,.hd-journey-card:last-child{min-height:350px;grid-column:auto}}
+      @media(prefers-reduced-motion:reduce){.hd-journey-card>img{transition:none}}
+    </style>
+
     <!-- LEAPFROGGING PACIFICA — LE PARCOURS DE L'ENTREPRENEUR, DIGITALISÉ -->
     <style>
       .lp{padding:5.5rem 1.5rem;background:#EEF5F5}
