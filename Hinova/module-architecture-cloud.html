@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module Architecture Cloud — Rū-fau-tumu Académie | Hinova Digital</title>
+  <meta name="description" content="Apprenez les bases du cloud, de GitHub et de Cloudflare, la sécurité applicative et la réversibilité grâce à un module pratique de Rū-fau-tumu Académie.">
+  <link rel="canonical" href="https://hinovadigitalcorp.com/module-architecture-cloud.html">
+  <meta name="theme-color" content="#08343A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0B2F35;--teal:#08343A;--blue:#1B64C8;--gold:#B5823A;--muted:#4E6A6E;--paper:#F5F9F9}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,sans-serif;line-height:1.65}
+    a{color:var(--blue)}.wrap{width:min(100% - 2rem,980px);margin-inline:auto}
+    header{background:var(--teal);color:white;padding:1rem 0;border-bottom:3px solid var(--gold)}
+    header a{color:white;text-decoration:none;font-weight:700}.top{display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap}
+    .eyebrow{color:var(--gold);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    .hero{padding:4rem 0 3rem;background:linear-gradient(135deg,#eaf3f3,#fff)}h1,h2,h3{font-family:Montserrat,sans-serif;line-height:1.2}h1{font-size:clamp(2rem,6vw,3.6rem);margin:.7rem 0 1rem;letter-spacing:-.035em}h2{font-size:clamp(1.35rem,3vw,2rem);margin-top:0}h3{font-size:1.08rem}
+    .lead{font-size:1.12rem;max-width:760px;color:#33555B}.meta{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.4rem 0}.pill{border:1px solid #d4e1e1;background:#fff;border-radius:99px;padding:.35rem .75rem;font-size:.8rem}
+    .progress-wrap{margin:1.6rem 0}.progress-label{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted);gap:1rem}.progress{height:8px;background:#dbe7e7;border-radius:99px;overflow:hidden}.progress>span{display:block;height:100%;width:0;background:var(--blue);transition:width .2s}
+    main{padding:2rem 0 4rem}.lesson{background:#fff;border:1px solid #dce8e8;border-radius:1rem;padding:clamp(1.2rem,3vw,2rem);margin:1rem 0;box-shadow:0 8px 28px rgba(8,52,58,.04)}.lesson-num{color:var(--blue);font-weight:900;font-family:Montserrat,sans-serif;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}.callout{background:#eef5f5;border-left:4px solid var(--gold);padding:1rem 1.1rem;border-radius:.3rem;margin:1rem 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.8rem}.mini{background:#f8fbfb;border:1px solid #e0ebeb;border-radius:.7rem;padding:1rem}.mini strong{display:block;color:var(--blue)}code{background:#eef2f2;padding:.12rem .3rem;border-radius:.25rem;font-size:.9em;overflow-wrap:anywhere}
+    details{border:1px solid #dce8e8;border-radius:.65rem;padding:.9rem 1rem;margin:.75rem 0;background:#fff}summary{font-weight:700;cursor:pointer}li{margin:.35rem 0}.checklist label{display:flex;gap:.65rem;align-items:flex-start;padding:.45rem 0}.checklist input{margin-top:.45rem;accent-color:var(--blue)}.btn{display:inline-block;background:var(--blue);color:white;padding:.8rem 1.2rem;border-radius:.55rem;text-decoration:none;font-weight:800;font-family:Montserrat,sans-serif}.btn.secondary{background:transparent;color:var(--ink);border:1px solid #b8cccc}.foot{padding:2rem 0;border-top:1px solid #dbe7e7;color:var(--muted);font-size:.85rem}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress>span{transition:none}}
+  </style>
+</head>
+<body>
+<header><div class="wrap top"><a href="/">HINOVA DIGITAL CORPORATION</a><a href="/academie.html">← Rū-fau-tumu Académie</a></div></header>
+<section class="hero"><div class="wrap">
+  <p class="eyebrow">Rū-fau-tumu Académie · Parcours guidé</p>
+  <h1>Architecture cloud : comprendre, construire et garder la maîtrise.</h1>
+  <p class="lead">Le cloud n'est pas un lieu magique : c'est un ensemble de services, de machines, de réseaux et de règles. Ce module t'apprend à les reconnaître, à choisir une architecture adaptée et à publier un petit projet en comprenant ce que tu fais.</p>
+  <div class="meta"><span class="pill">Niveau : débutant → intermédiaire</span><span class="pill">5 leçons + exercice final</span><span class="pill">Sans prérequis en programmation</span></div>
+  <div class="progress-wrap"><div class="progress-label"><span>Ta progression (cette session)</span><strong id="progressText">0 / 6 étapes</strong></div><div class="progress" role="progressbar" aria-label="Progression du module" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div></div>
+  <p style="font-size:.85rem;color:#4E6A6E">Coche une étape quand tu l'as étudiée. La progression n'est enregistrée que pendant cette session de navigation.</p>
+</div></section>
+<main class="wrap">
+  <section class="lesson" id="l1">
+    <p class="lesson-num">Leçon 01 · Les fondamentaux</p><h2>De quoi parle-t-on quand on dit « cloud » ?</h2>
+    <p>Le cloud consiste à utiliser, à distance, des ressources informatiques exploitées par un fournisseur : serveurs, stockage, bases de données, réseau ou outils de calcul. Au lieu d'acheter et d'entretenir chaque machine, on consomme des services selon ses besoins.</p>
+    <div class="grid"><div class="mini"><strong>DNS</strong>Traduit un nom de domaine en informations permettant de trouver le service visé.</div><div class="mini"><strong>Hébergement</strong>Fait tourner ou distribue le site et ses fichiers.</div><div class="mini"><strong>CDN</strong>Distribue les contenus depuis des points de présence proches des visiteurs.</div><div class="mini"><strong>API / fonction</strong>Permet à des systèmes de communiquer ou d'exécuter une tâche à la demande.</div></div>
+    <div class="callout"><strong>À retenir :</strong> le nom du fournisseur ne dit pas à lui seul où toutes les données sont stockées, qui peut y accéder ni comment récupérer son activité en cas de panne. Il faut vérifier chaque service et chaque contrat.</div>
+    <h3>Mini-exercice</h3><p>Pour une boutique en ligne, liste au moins quatre éléments distincts : domaine/DNS, interface du site, catalogue produits, paiement. Ils peuvent être hébergés ou gérés par des services différents.</p>
+    <label class="checklist"><input type="checkbox" data-step="0"> J'ai compris la différence entre DNS, hébergement, CDN et API.</label>
+  </section>
+  <section class="lesson" id="l2">
+    <p class="lesson-num">Leçon 02 · Les briques de déploiement</p><h2>GitHub + Cloudflare Pages + Workers</h2>
+    <p>Une architecture simple peut séparer le code source, le site visible et les fonctions qui traitent des requêtes. Par exemple :</p>
+    <div class="grid"><div class="mini"><strong>GitHub</strong>Conserve le code, son historique et les changements.</div><div class="mini"><strong>Cloudflare Pages</strong>Publie des fichiers web statiques et peut connecter le déploiement à un dépôt Git.</div><div class="mini"><strong>Cloudflare Workers</strong>Exécute de la logique côté serveur à la demande, par exemple une passerelle API.</div></div>
+    <ol><li>Créer ou choisir le dépôt contenant le projet.</li><li>Connecter ce dépôt au service de publication adapté.</li><li>Configurer la commande et le dossier de sortie si le projet en a besoin.</li><li>Ajouter le domaine et vérifier HTTPS, redirections et pages importantes.</li><li>Lire les journaux et tester le site après chaque déploiement.</li></ol>
+    <div class="callout"><strong>Attention :</strong> le code public ne doit jamais contenir de clé API, mot de passe ou secret. Les secrets doivent être ajoutés dans les paramètres sécurisés du service et lus côté serveur.</div>
+    <label class="checklist"><input type="checkbox" data-step="1"> Je sais expliquer le rôle de GitHub, Pages et Workers.</label>
+  </section>
+  <section class="lesson" id="l3">
+    <p class="lesson-num">Leçon 03 · Sécurité applicative</p><h2>Protéger les accès et les données</h2>
+    <ul><li><strong>Moindre privilège :</strong> chaque personne et service reçoit uniquement les droits nécessaires.</li><li><strong>Secrets :</strong> clés et tokens dans des variables secrètes, jamais dans le dépôt ou le navigateur.</li><li><strong>Validation :</strong> contrôler les données reçues par une API et limiter les abus.</li><li><strong>Mises à jour :</strong> suivre les dépendances et corriger les composants vulnérables.</li><li><strong>Sauvegardes :</strong> vérifier qu'elles existent, qu'elles sont accessibles et qu'une restauration a été testée.</li><li><strong>Observabilité :</strong> surveiller les erreurs, la disponibilité et les usages anormaux sans collecter inutilement des données personnelles.</li></ul>
+    <div class="callout"><strong>Règle d'or :</strong> « le site est en ligne » ne veut pas dire « le site est sécurisé ». La sécurité est un processus de conception, de test et de maintenance.</div>
+    <label class="checklist"><input type="checkbox" data-step="2"> J'ai identifié au moins trois mesures de sécurité à appliquer à mon projet.</label>
+  </section>
+  <section class="lesson" id="l4">
+    <p class="lesson-num">Leçon 04 · Souveraineté et réversibilité</p><h2>Garder le contrôle, même avec un fournisseur mondial</h2>
+    <p>La souveraineté numérique ne se résume pas à choisir un fournisseur local ou étranger. Elle dépend aussi de la maîtrise technique, des contrats, des accès, de la localisation des traitements, de la portabilité et de la capacité à changer de solution.</p>
+    <ul><li><strong>Cartographier :</strong> quelles données sont collectées, où sont-elles traitées et qui y accède ?</li><li><strong>Vérifier :</strong> lire les conditions du service, les engagements de disponibilité, les règles de traitement et les limites de responsabilité.</li><li><strong>Réduire la dépendance :</strong> conserver le code source, documenter la configuration et éviter les dépendances non nécessaires.</li><li><strong>Préparer la sortie :</strong> prévoir des exports de données, des sauvegardes et une procédure de migration.</li><li><strong>Tester :</strong> vérifier réellement qu'un export peut être restauré ou qu'un service peut être remplacé.</li></ul>
+    <div class="callout"><strong>Pour les territoires insulaires :</strong> pense aussi à la connectivité, aux délais de support, à la continuité d'activité, aux coûts en devises et aux compétences disponibles localement.</div>
+    <label class="checklist"><input type="checkbox" data-step="3"> Je sais citer les questions à poser sur la localisation, les accès et la réversibilité.</label>
+  </section>
+  <section class="lesson" id="l5">
+    <p class="lesson-num">Leçon 05 · Concevoir une architecture utile</p><h2>Choisir les briques selon le besoin, pas selon la mode</h2>
+    <p>Commence par le problème à résoudre et les contraintes. Pour une petite vitrine, un hébergement statique peut suffire. Pour une application avec authentification ou logique métier, il faudra aussi des fonctions serveur, une base de données et une stratégie de contrôle d'accès.</p>
+    <div class="grid"><div class="mini"><strong>Besoin</strong>Qu'est-ce que l'utilisateur doit accomplir ?</div><div class="mini"><strong>Données</strong>Quelles données sont sensibles, et qui les détient ?</div><div class="mini"><strong>Budget</strong>Quels coûts fixes, variables et coûts de sortie ?</div><div class="mini"><strong>Résilience</strong>Que se passe-t-il si le fournisseur ou la connexion est indisponible ?</div></div>
+    <p>Un bon schéma montre les flux : visiteur → site → fonction serveur → API ou base de données. Il précise aussi où sont les secrets, où sont les sauvegardes et quel composant peut être remplacé.</p>
+    <label class="checklist"><input type="checkbox" data-step="4"> J'ai dessiné un schéma simple et indiqué les flux de données.</label>
+  </section>
+  <section class="lesson" id="final">
+    <p class="lesson-num">Étape 06 · Mise en pratique</p><h2>Ton livrable final</h2>
+    <p>Choisis une vitrine, une boutique ou un outil interne fictif. Prépare un mini-dossier comprenant :</p>
+    <ol><li>Un schéma d'architecture lisible, avec les services et les flux.</li><li>Une liste des données traitées et des accès autorisés.</li><li>Une checklist de sécurité et de sauvegarde.</li><li>Un plan de réversibilité : comment exporter les données et déplacer le code ?</li><li>Si tu as déjà un dépôt de test, un déploiement non sensible et vérifié.</li></ol>
+    <div class="callout"><strong>Critère de réussite :</strong> tu dois pouvoir expliquer ce que fait chaque brique, ce qu'elle coûte potentiellement, quelles données elle touche et comment tu récupères ton projet.</div>
+    <div class="checklist"><label><input type="checkbox" data-step="5"> J'ai terminé mon schéma et ma checklist.</label></div>
+    <p style="margin-top:1.2rem"><a class="btn" href="mailto:contact@hinovadigitalcorp.com?subject=R%C5%AB-fau-tumu%20-%20Livrable%20Architecture%20Cloud">Envoyer mon livrable / demander un retour →</a></p>
+  </section>
+  <section class="lesson"><h2>Glossaire express</h2>
+    <details><summary>Serverless</summary><p>Un modèle où le fournisseur gère une grande partie de l'infrastructure d'exécution. Cela ne signifie pas qu'il n'y a pas de serveurs.</p></details>
+    <details><summary>CDN</summary><p>Réseau de distribution qui met certains contenus en cache près des visiteurs pour améliorer la vitesse et la disponibilité.</p></details>
+    <details><summary>Réversibilité</summary><p>Capacité pratique à récupérer ses données et à remplacer ou quitter un service sans perdre la maîtrise de son activité.</p></details>
+    <details><summary>Secret applicatif</summary><p>Information confidentielle, comme une clé API, qui doit être protégée et utilisée côté serveur.</p></details>
+  </section>
+</main>
+<footer class="foot"><div class="wrap">Rū-fau-tumu Académie · Hinova Digital Corporation · <a href="/academie.html">Retour à l'Académie</a><p>Ce module est un support pédagogique général. Vérifie toujours les paramètres, conditions et documentations à jour de chaque fournisseur avant une mise en production.</p></div></footer>
+<script>
+(function(){
+  const checks=[...document.querySelectorAll('[data-step]')], fill=document.getElementById('progressFill'), text=document.getElementById('progressText'), bar=document.getElementById('progressBar');
+  function update(){const n=checks.filter(c=>c.checked).length;fill.style.width=(n/6*100)+'%';text.textContent=n+' / 6 étapes';bar.setAttribute('aria-valuenow',String(n));}
+  checks.forEach(c=>c.addEventListener('change',update));update();
+})();
+</script>
+</body>
+</html>
