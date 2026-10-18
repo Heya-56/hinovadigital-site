@@ -3,6 +3,9 @@
  * Deux voies (au moins une doit être configurée dans Cloudflare Pages > Variables d'environnement) :
  *  1. AIRTABLE_API_KEY + AIRTABLE_BASE_ID : écrit directement dans la table « Leads » (recommandé).
  *  2. AIRTABLE_DIAG_WEBHOOK : relais vers l'automatisation Airtable (comme le diagnostic).
+ *  3. RESEND_API_KEY : e-mail de notification interne + accusé de réception au prospect (Resend).
+ *     Options : MAIL_FROM (défaut "Hinova Digital <devis@hinovadigitalcorp.com>", domaine vérifié dans Resend),
+ *     MAIL_NOTIFY (défaut contact@hinovadigitalcorp.com).
  * Les deux peuvent coexister : le lead est écrit puis l'automatisation est prévenue.
  */
 export async function onRequestPost(ctx) {
@@ -52,7 +55,39 @@ async function handle({ request, env }) {
       accord_recontact: recontact, newsletter: news, destinataire: 'contact@hinovadigitalcorp.com' }) });
     done = done || r.ok;
   } catch (e) { detail += ' | webhook:' + String(e.message || e).slice(0, 120); }
-  if (!env.AIRTABLE_DIAG_WEBHOOK && !(env.AIRTABLE_API_KEY && env.AIRTABLE_BASE_ID)) return json({ ok: false, error: 'not_configured' }, 503);
-  return json({ ok: done, detail, keys: { api: !!env.AIRTABLE_API_KEY, base: !!env.AIRTABLE_BASE_ID, hook: !!env.AIRTABLE_DIAG_WEBHOOK } }, 200);
+  if (env.RESEND_API_KEY) try {
+    const b = await mailer(env, { kind, source, email, name: cut(d.name), entreprise: cut(d.entreprise), phone: cut(d.phone),
+      offre: cut(d.offre), resume: cut(d.resume), message: cut(d.message), recontact, news });
+    done = done || b.ok; if (b.detail) detail += ' | ' + b.detail;
+  } catch (e) { detail += ' | mail:' + String(e.message || e).slice(0, 120); }
+  if (!env.AIRTABLE_DIAG_WEBHOOK && !(env.AIRTABLE_API_KEY && env.AIRTABLE_BASE_ID) && !env.RESEND_API_KEY) return json({ ok: false, error: 'not_configured' }, 503);
+  return json({ ok: done, detail, keys: { api: !!env.AIRTABLE_API_KEY, base: !!env.AIRTABLE_BASE_ID, hook: !!env.AIRTABLE_DIAG_WEBHOOK, mail: !!env.RESEND_API_KEY } }, 200);
+}
+const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+async function mailer(env, L) {
+  const hdr = { authorization: `Bearer ${String(env.RESEND_API_KEY).trim()}`, 'content-type': 'application/json' };
+  const from = env.MAIL_FROM || 'Hinova Digital <devis@hinovadigitalcorp.com>';
+  const notify = env.MAIL_NOTIFY || 'contact@hinovadigitalcorp.com';
+  const first = L.name.split(/\s+/)[0];
+  const send = (body) => fetch('https://api.resend.com/emails', { method: 'POST', headers: hdr, body: JSON.stringify({ from, ...body }) });
+  let detail = '', ok = false;
+  // 1. Notification interne
+  const rows = [['Source', L.source], ['Nom', L.name], ['Entreprise', L.entreprise], ['E-mail', L.email], ['Téléphone', L.phone],
+    ['Offre', L.offre], ['Estimation', L.resume], ['Message', L.message], ['Accord recontact', L.recontact ? 'oui' : 'non'], ['Newsletter', L.news ? 'oui' : 'non']]
+    .filter(([, v]) => v).map(([k, v]) => `<tr><td style="padding:4px 12px 4px 0;color:#4E6A6E"><b>${k}</b></td><td style="padding:4px 0">${esc(v).replace(/\n/g, '<br>')}</td></tr>`).join('');
+  let r = await send({ to: [notify], reply_to: L.email,
+    subject: `Nouveau ${L.kind === 'partenaire' ? 'partenaire' : 'devis'} — ${L.name}${L.offre ? ' · ' + L.offre : ''}`,
+    html: `<div style="font-family:Arial,sans-serif;color:#0B2F35"><h2>${esc(L.source)}</h2><table>${rows}</table></div>` });
+  if (r.ok) ok = true; else detail += 'mail_notify_' + r.status + ':' + (await r.text()).slice(0, 150);
+  // 2. Accusé de réception au prospect
+  if (L.kind === 'devis') {
+    r = await send({ to: [L.email], reply_to: notify, subject: 'Māuruuru — votre demande de devis est bien reçue',
+      html: `<div style="font-family:Arial,sans-serif;color:#0B2F35;line-height:1.6"><p>Ia ora na ${esc(first || L.name)},</p>
+<p>Nous avons bien reçu votre demande${L.offre ? ' pour <b>' + esc(L.offre) + '</b>' : ''}${L.resume ? ' (' + esc(L.resume) + ')' : ''}.</p>
+<p>Nous revenons vers vous sous 48 h ouvrées avec votre devis détaillé.</p>
+<p>Māuruuru,<br><b>Hinova Digital</b><br><a href="https://hinovadigitalcorp.com">hinovadigitalcorp.com</a></p></div>` });
+    if (!r.ok) detail += ' mail_ack_' + r.status;
+  }
+  return { ok, detail: detail.trim() };
 }
 export const onRequest = () => new Response('Method Not Allowed', { status: 405, headers: { allow: 'POST' } });
