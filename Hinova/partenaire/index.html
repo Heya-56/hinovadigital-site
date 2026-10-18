@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="/css/theme.css" />
       <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}</script>
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <style>.hv-consent{display:flex!important;gap:.55rem;align-items:flex-start;font-size:.82rem;font-weight:400!important;line-height:1.45;color:inherit}.hv-consent input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:#1B64C8}.hv-consent em{color:#B5823A;font-style:normal}</style></head><body style="background:#F6FAFA">
+  <style>.hv-consent{display:flex!important;gap:.55rem;align-items:flex-start;font-size:.82rem;font-weight:400!important;line-height:1.45;color:inherit}.hv-consent input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:#1B64C8}.hv-consent em{color:#B5823A;font-style:normal}.pt-thanks{padding:40px 24px;text-align:center;border-radius:16px;background:rgba(10,184,196,.08);border:1px solid rgba(10,184,196,.35);color:#0B2F35;line-height:1.6}.pt-thanks-t{font-family:Montserrat,sans-serif;font-weight:900;font-size:1.6rem;color:#C09552;margin-bottom:8px}</style></head><body style="background:#F6FAFA">
 <header class="hero-bg" style="padding-bottom:1.5rem"><div class="px-6 pt-6 md:px-12 md:pt-8 flex items-center justify-between gap-4"><a href="/" aria-label="HINOVA DIGITAL"><img src="/logo-hinova.webp" alt="Logo Hinova Digital" class="site-logo protected-asset"></a><div class="flex items-center gap-3 ml-auto" style="position:relative"><button id="navBurgerBtn" class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button><nav id="navDropdown" class="nav-dropdown">
             <a href="/" class="nav-tab">Accueil</a>
             <a href="/vision.html" class="nav-tab">Vision</a>
@@ -92,6 +92,10 @@
       <div class="full"><button class="pt-btn p" type="submit" id="psend">Envoyer ma candidature</button></div>
       <p class="pt-small full" id="pMsg" role="status"></p>
     </form>
+    <div id="pThanks" class="pt-thanks" role="status" aria-live="polite" hidden>
+      <p class="pt-thanks-t">Māuruuru !</p>
+      <p>Votre candidature est bien reçue. Un e-mail de confirmation vient de vous être envoyé.<br>Nous vous recontactons après étude de votre dossier.</p>
+    </div>
     <p class="pt-small">Vos informations servent uniquement à étudier votre candidature. Les conditions définitives figurent dans l'annexe signée.</p>
   </section>
 </main>
@@ -145,7 +149,8 @@ function hvMail(d){ var b=['Nom : '+d.name,'Entreprise : '+(d.entreprise||'-'),'
     $('psend').disabled=true; m.textContent='Envoi en cours…';
     fetch('/api/devis',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(d)})
       .then(function(r){return r.json().catch(function(){return {ok:false};});})
-      .then(function(j){ if(!j.ok) throw 0; m.textContent='Māuruuru ! Votre candidature est bien reçue. Nous vous recontactons après étude de votre dossier.'; this&&0; $('pform').querySelectorAll('input,textarea,button').forEach(function(i){i.disabled=true;}); })
+      .then(function(j){ if(!j.ok) throw 0; var f=$('pform'), t=$('pThanks'); f.hidden=true; t.hidden=false; t.scrollIntoView({behavior:'smooth',block:'center'});
+        setTimeout(function(){ f.reset(); $('psend').disabled=false; m.textContent=''; t.hidden=true; f.hidden=false; }, 8000); })
       .catch(function(){ $('psend').disabled=false; m.innerHTML='L\'envoi automatique n\'a pas abouti. <a href="'+hvMail(d)+'" style="color:#1B64C8;font-weight:700">Envoyer ma candidature par e-mail</a> ou écrivez à <b style="user-select:all">contact@hinovadigitalcorp.com</b>.'; });
   });
 })();
