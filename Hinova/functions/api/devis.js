@@ -79,15 +79,15 @@ async function mailer(env, L) {
     subject: `Nouveau ${L.kind === 'partenaire' ? 'partenaire' : 'devis'} — ${L.name}${L.offre ? ' · ' + L.offre : ''}`,
     html: `<div style="font-family:Arial,sans-serif;color:#0B2F35"><h2>${esc(L.source)}</h2><table>${rows}</table></div>` });
   if (r.ok) ok = true; else detail += 'mail_notify_' + r.status + ':' + (await r.text()).slice(0, 150);
-  // 2. Accusé de réception au prospect
-  if (L.kind === 'devis') {
-    r = await send({ to: [L.email], reply_to: notify, subject: 'Māuruuru — votre demande de devis est bien reçue',
-      html: `<div style="font-family:Arial,sans-serif;color:#0B2F35;line-height:1.6"><p>Ia ora na ${esc(first || L.name)},</p>
-<p>Nous avons bien reçu votre demande${L.offre ? ' pour <b>' + esc(L.offre) + '</b>' : ''}${L.resume ? ' (' + esc(L.resume) + ')' : ''}.</p>
-<p>Nous revenons vers vous sous 48 h ouvrées avec votre devis détaillé.</p>
+  // 2. Accusé de réception (devis ou candidature partenaire)
+  const isP = L.kind === 'partenaire';
+  r = await send({ to: [L.email], reply_to: notify,
+    subject: isP ? 'Māuruuru — votre candidature partenaire est bien reçue' : 'Māuruuru — votre demande de devis est bien reçue',
+    html: `<div style="font-family:Arial,sans-serif;color:#0B2F35;line-height:1.6"><p>Ia ora na ${esc(first || L.name)},</p>
+${isP ? '<p>Nous avons bien reçu votre candidature pour devenir <b>apporteur d\'affaires</b> Hinova Digital.</p><p>Nous étudions votre dossier et revenons vers vous rapidement.</p>'
+      : `<p>Nous avons bien reçu votre demande${L.offre ? ' pour <b>' + esc(L.offre) + '</b>' : ''}${L.resume ? ' (' + esc(L.resume) + ')' : ''}.</p><p>Nous revenons vers vous sous 48 h ouvrées avec votre devis détaillé.</p>`}
 <p>Māuruuru,<br><b>Hinova Digital</b><br><a href="https://hinovadigitalcorp.com">hinovadigitalcorp.com</a></p></div>` });
-    if (!r.ok) detail += ' mail_ack_' + r.status;
-  }
+  if (!r.ok) detail += ' mail_ack_' + r.status;
   return { ok, detail: detail.trim() };
 }
 export const onRequest = () => new Response('Method Not Allowed', { status: 405, headers: { allow: 'POST' } });
