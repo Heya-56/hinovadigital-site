@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trading Lab — Bots de trading sur mesure | Hinova Digital</title>
+<link rel="canonical" href="https://hinovadigitalcorp.com/trading/">
+<link rel="icon" href="/favicon-32x32.png">
+<meta name="description" content="Hinova Digital, lab de construction : conception de bots de trading algorithmique sur mesure (MT5, cTrader, TradingView). Architecture testée, corrigeable, maintenue.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0d;--panel:#141418;--line:#2a2620;--gold:#d4a73a;--gold2:#f3d27a;--txt:#ece7dc;--mut:#9b958a;--green:#3ecf8e;--red:#ef5a5a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:linear-gradient(rgba(11,11,13,.82),rgba(11,11,13,.93)),url(/trading/trading-hero.webp) center top/cover fixed var(--bg);color:var(--txt);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+a{color:var(--gold2)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:10;background:rgba(11,11,13,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-weight:800;letter-spacing:.5px}.logo span{color:var(--gold)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;font-weight:800;padding:12px 22px;border-radius:10px;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
+.btn.ghost{background:transparent;color:var(--gold2);border:1px solid var(--gold)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.hero{padding:90px 0 70px;min-height:70vh;display:flex;align-items:center}.hero>div{max-width:720px}
+.hero img{width:100%;border-radius:18px;border:1px solid var(--line)}
+h1{font-family:"Playfair Display",serif;font-size:clamp(2rem,5vw,3.3rem);line-height:1.15}
+h1 em{color:var(--gold2);font-style:normal}
+h2{font-family:"Playfair Display",serif;font-size:clamp(1.6rem,3.5vw,2.3rem);margin-bottom:18px}
+.lead{color:var(--mut);margin:18px 0 26px;font-size:1.1rem}
+section{padding:60px 0;border-top:1px solid var(--line)}.card{backdrop-filter:blur(6px);background:rgba(20,20,24,.85)!important}
+@media(max-width:760px){body{background-attachment:scroll}}
+.tag{display:inline-block;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.toggle{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px;margin-bottom:24px}
+.toggle button{background:none;border:0;color:var(--mut);padding:8px 18px;border-radius:999px;cursor:pointer;font-weight:600}
+.toggle button.on{background:var(--gold);color:#111}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{margin-bottom:8px;color:var(--gold2)}
+.card p,.card li{color:var(--mut);font-size:.95rem}
+.card ul{padding-left:18px}
+.arch{font-family:ui-monospace,Menlo,monospace;font-size:.85rem;background:#0f0f12;border:1px solid var(--line);border-radius:12px;padding:18px;overflow-x:auto;white-space:pre;color:var(--gold2)}
+.price{font-size:2.2rem;font-weight:800;color:var(--gold2)}
+.price small{font-size:1rem;color:var(--mut);font-weight:400}
+.warn{background:#1c1410;border:1px solid #5a3b1a;border-radius:14px;padding:20px;color:#e8c9a0;font-size:.95rem}
+form{display:grid;gap:14px}
+label{font-size:.9rem;font-weight:600}
+input,select,textarea{width:100%;background:#0f0f12;border:1px solid var(--line);color:var(--txt);padding:12px;border-radius:10px;font:inherit;margin-top:6px}
+textarea{min-height:110px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.9rem;color:var(--mut)}
+.check input{width:auto;margin-top:4px}
+#paybox{display:none}
+#paybox.show{display:block}
+.ok{color:var(--green);font-weight:600;margin-bottom:12px}
+footer{padding:40px 0;border-top:1px solid var(--line);color:var(--mut);font-size:.85rem}
+/* Overlay CGV */
+#cgv{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;padding:16px}
+#cgv.hide{display:none}
+#cgv .box{background:var(--panel);border:1px solid var(--gold);border-radius:16px;max-width:620px;width:100%;max-height:90vh;overflow:auto;padding:26px}
+#cgv h2{font-size:1.5rem}
+#cgv ol{padding-left:20px;color:var(--mut);font-size:.92rem;margin:12px 0 18px}
+#cgv li{margin-bottom:8px}
+.tabcgv{position:fixed;right:0;top:45%;z-index:50;writing-mode:vertical-rl;background:var(--gold);color:#111;font-weight:800;padding:14px 8px;border-radius:10px 0 0 10px;cursor:pointer;border:0;font-size:.8rem}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ===== OVERLAY CGV (obligatoire à l'entrée) ===== -->
+<div id="cgv" role="dialog" aria-modal="true" aria-labelledby="cgvTitle">
+  <div class="box">
+    <span class="tag">Avertissement — Conditions Générales de Vente</span>
+    <h2 id="cgvTitle">À lire avant d'aller plus loin</h2>
+    <ol>
+      <li><strong>Hinova Digital n'est ni conseiller en investissement financier, ni éducateur financier.</strong> Aucun contenu de cette page ne constitue un conseil en investissement, une recommandation personnalisée ou une incitation à trader.</li>
+      <li>Hinova Digital est un <strong>lab de construction logicielle</strong>. Nous concevons un outil technique (bot) selon <strong>la stratégie fournie par le client</strong>. Nous avons démontré que nos constructions sont testées, documentées et <strong>corrigeables</strong>.</li>
+      <li>Conformément à nos CGV, <strong>Hinova Digital ne peut être tenue responsable</strong> des pertes financières, d'une mauvaise utilisation, d'une modification non autorisée du code, d'un mauvais paramétrage, d'un défaut du broker ou de la plateforme, ou du non-respect par l'utilisateur des conditions d'utilisation du produit.</li>
+      <li>Le maintien en conditions opérationnelles (corrections, mises à jour plateforme/broker, surveillance) n'est assuré <strong>que dans le cadre d'un abonnement Webmastering actif</strong>.</li>
+      <li>Le trading sur marchés financiers (Forex, CFD, indices, métaux, crypto) comporte un <strong>risque élevé de perte en capital</strong>, pouvant dépasser le dépôt initial selon les produits. Les performances passées ou backtestées ne préjugent pas des performances futures.</li>
+      <li>Les séances avec nos traders partenaires relèvent du <strong>partage d'expérience</strong> de professionnels dont le métier est de trader, et non d'un conseil personnalisé.</li>
+    </ol>
+    <label class="check"><input type="checkbox" id="cgvChk"> J'ai lu et j'accepte ces conditions ainsi que les <a href="/mentions.html" target="_blank">CGV et mentions légales</a>. Je reconnais être seul(e) responsable de mes décisions de trading.</label>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn" id="cgvBtn" disabled>J'accepte et j'entre</button>
+      <a class="btn ghost" href="/">Quitter</a>
+    </div>
+  </div>
+</div>
+<button class="tabcgv" onclick="openCgv()">⚠ CGV & RISQUES</button>
+
+<header><div class="wrap">
+  <a href="/" class="logo" style="text-decoration:none;color:var(--txt)">HINOVA <span>DIGITAL</span> · Trading Lab</a>
+  <a class="btn" href="#commande">Commander</a>
+</div></header>
+
+<main class="wrap">
+
+<div class="hero">
+  <div>
+    <span class="tag">Trading algorithmique · Construction sur mesure</span>
+    <h1>Votre stratégie, <em>transformée en bot</em> qui l'exécute sans émotion.</h1>
+    <p class="lead">Vous avez une méthode. Nous construisons l'outil qui l'applique 24h/24, avec discipline, journalisation et garde-fous de risque — sur votre plateforme et chez votre broker.</p>
+    <a class="btn" href="#commande">Démarrer mon projet</a>
+    <a class="btn ghost" href="#archi" style="margin-left:8px">Voir l'architecture</a>
+  </div>
+</div>
+
+<!-- ===== DOUBLE DISCOURS ===== -->
+<section>
+  <span class="tag">Pour qui ?</span>
+  <h2>Deux langages, un même produit</h2>
+  <div class="toggle" role="tablist">
+    <button class="on" data-aud="nontech">Je ne suis pas technique</button>
+    <button data-aud="tech">Je suis développeur / quant</button>
+  </div>
+  <div class="grid" data-panel="nontech">
+    <div class="card"><h3>Vous expliquez, on construit</h3><p>Vous nous décrivez vos règles comme à un collègue : « j'achète quand… je sors quand… je ne risque jamais plus de… ». Nous les traduisons en programme.</p></div>
+    <div class="card"><h3>Il suit vos règles, sans état d'âme</h3><p>Pas de peur, pas d'euphorie, pas d'oubli. Le bot applique exactement ce qui a été validé — ni plus, ni moins.</p></div>
+    <div class="card"><h3>Vous gardez la main</h3><p>Un bouton d'arrêt, des limites de perte journalière, un rapport clair de chaque position. Vous voyez tout, vous décidez tout.</p></div>
+    <div class="card"><h3>On l'entretient</h3><p>Les brokers et plateformes évoluent. Avec le webmastering, nous corrigeons et adaptons votre bot pour qu'il reste fiable.</p></div>
+  </div>
+  <div class="grid" data-panel="tech" hidden>
+    <div class="card"><h3>Spécification formelle</h3><p>Règles d'entrée/sortie, sizing, filtres de session et de volatilité formalisés en spec versionnée avant toute ligne de code.</p></div>
+    <div class="card"><h3>Stack d'exécution</h3><ul><li>MQL5 (Expert Advisor MT5)</li><li>cTrader cBot (C#) / Pine Script + webhooks</li><li>Python (bridge MT5 / API broker REST-FIX)</li></ul></div>
+    <div class="card"><h3>Validation</h3><ul><li>Backtest tick-data + coûts réels (spread, swap, slippage)</li><li>Walk-forward & out-of-sample</li><li>Monte-Carlo sur séquence de trades</li><li>Forward test démo avant live</li></ul></div>
+    <div class="card"><h3>Risk engine & observabilité</h3><ul><li>Kill-switch, max drawdown jour/semaine</li><li>Contrôle d'exposition par symbole</li><li>Logs structurés + alertes (Telegram/email)</li><li>Code source livré, versionné Git</li></ul></div>
+  </div>
+</section>
+
+<!-- ===== ARCHITECTURE ===== -->
+<section id="archi">
+  <span class="tag">Architecture</span>
+  <h2>La bonne architecture pour un bot fiable</h2>
+<div class="arch">[ Données marché ] ──► [ Moteur de signal ] ──► [ Risk Engine ] ──► [ Exécution broker ]
+   flux temps réel        règles de VOTRE         taille, stop,          MT5 / cTrader /
+   + historique           stratégie               max DD, kill-switch    API broker
+                                  │                       │                     │
+                                  └──────────► [ Journal & Monitoring ] ◄───────┘
+                                               logs, alertes, rapports
+                                                        │
+                                          [ Webmastering Hinova Digital ]
+                                          corrections · mises à jour · suivi</div>
+  <div class="grid" style="margin-top:22px">
+    <div class="card"><h3>1. Cadrage</h3><p>Formulaire + entretien : stratégie, actifs, horizon, plateforme, broker, contraintes de risque.</p></div>
+    <div class="card"><h3>2. Spécification</h3><p>Document de règles validé par vous. Rien n'est codé sans votre accord écrit.</p></div>
+    <div class="card"><h3>3. Construction & tests</h3><p>Développement, backtests, rapport de robustesse, tests en compte démo.</p></div>
+    <div class="card"><h3>4. Livraison</h3><p>Installation sur votre plateforme, documentation, code source, passation.</p></div>
+  </div>
+</section>
+
+<!-- ===== TRADERS PARTENAIRES ===== -->
+<section>
+  <span class="tag">Traders partenaires</span>
+  <h2>L'expérience de professionnels du marché</h2>
+  <p class="lead">Hinova Digital fait appel à des traders professionnels, dont c'est le métier. Ils partagent leur expérience et leurs stratégies lors de <strong>séances payantes de 5 heures par mois</strong>. Il s'agit d'un partage d'expérience, non d'un conseil en investissement personnalisé.</p>
+  <a class="btn ghost" href="#commande">Demander les modalités des séances</a>
+</section>
+
+<!-- ===== TARIFS ===== -->
+<section>
+  <span class="tag">Tarifs</span>
+  <h2>Investissement</h2>
+  <div class="toggle" id="cur">
+    <button class="on" data-c="xpf">XPF</button><button data-c="eur">€</button><button data-c="usd">$</button>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Construction du bot</h3>
+      <div class="price" data-p="build">500 000 XPF</div>
+      <p>Paiement unique · cadrage, spécification, développement, tests, installation, documentation, code source.</p>
+    </div>
+    <div class="card">
+      <h3>Webmastering Bot</h3>
+      <div class="price" data-p="wm">20 000 XPF <small>/ mois</small></div>
+      <p>Corrections, mises à jour plateforme/broker, surveillance, ajustements mineurs. <strong>Condition de la garantie de correction.</strong></p>
+    </div>
+  </div>
+  <p style="color:var(--mut);font-size:.85rem;margin-top:14px">TVA non applicable, art. 293 B du CGI.</p>
+</section>
+
+<!-- ===== FORMULAIRE + PAIEMENT ===== -->
+<section id="commande">
+  <span class="tag">Étape obligatoire</span>
+  <h2>Formulaire de pré-commande</h2>
+  <p class="lead">Avant tout achat, nous devons connaître votre projet. Le lien de paiement s'affiche après validation du formulaire.</p>
+
+  <form id="preorder">
+    <div class="row">
+      <label>Nom & prénom *<input name="nom" required autocomplete="name"></label>
+      <label>Email *<input name="email" type="email" required autocomplete="email"></label>
+    </div>
+    <div class="row">
+      <label>Téléphone *<input name="telephone" type="tel" required autocomplete="tel"></label>
+      <label>Pays / Territoire *<input name="pays" required></label>
+    </div>
+    <div class="row">
+      <label>Plateforme de trading *
+        <select name="plateforme" required>
+          <option value="">Choisir…</option><option>MetaTrader 5 (MT5)</option><option>MetaTrader 4 (MT4)</option><option>cTrader</option><option>TradingView</option><option>NinjaTrader</option><option>API broker / exchange</option><option>Autre</option>
+        </select></label>
+      <label>Broker *<input name="broker" required placeholder="ex. nom du broker et type de compte"></label>
+    </div>
+    <div class="row">
+      <label>Actifs tradés<input name="actifs" placeholder="ex. XAUUSD, EURUSD, indices…"></label>
+      <label>Expérience de trading
+        <select name="experience"><option>Débutant</option><option>Intermédiaire</option><option>Confirmé</option><option>Professionnel</option></select></label>
+    </div>
+    <label>Votre stratégie de trading *<textarea name="strategie" required placeholder="Conditions d'entrée, de sortie, stop-loss, take-profit, unité de temps, gestion du risque…"></textarea></label>
+    <label>Intéressé(e) par
+      <select name="interet"><option>Construction du bot</option><option>Construction + Webmastering</option><option>Séances avec un trader partenaire</option><option>Les trois</option></select></label>
+    <label class="check"><input type="checkbox" required> Je confirme avoir accepté les CGV et compris qu'Hinova Digital n'est ni conseiller financier ni éducateur, et ne peut être tenue responsable de mes pertes ni d'une mauvaise utilisation du produit.</label>
+    <label class="check"><input type="checkbox" required> J'accepte que mes données soient traitées pour étudier ma demande (RGPD).</label>
+    <button class="btn" type="submit">Valider ma pré-commande</button>
+  </form>
+
+  <div id="paybox" class="card" style="margin-top:24px">
+    <p class="ok">✓ Pré-commande reçue. Merci !</p>
+    <p style="color:var(--mut);margin-bottom:16px">Vous pouvez régler la construction ci-dessous. Notre équipe vous contacte sous 48 h ouvrées pour le cadrage.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn" id="payBuild" href="#" target="_blank" rel="noopener">Payer la construction</a>
+      <a class="btn ghost" id="payWm" href="#" target="_blank" rel="noopener">Souscrire au Webmastering</a>
+    </div>
+  </div>
+
+  <div class="warn" style="margin-top:28px">
+    <strong>Avertissement sur les risques.</strong> Le trading de produits à effet de levier (Forex, CFD) comporte un risque élevé de perte rapide en capital. Une majorité de comptes d'investisseurs particuliers perdent de l'argent sur ces produits. Assurez-vous de comprendre leur fonctionnement et de pouvoir assumer ce risque. Hinova Digital fournit un outil logiciel et ne gère aucun fonds pour le compte de ses clients.
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  HINOVA DIGITAL, représentée par Heianui TAPARE — EI, SIREN 978 221 281, RCS Lorient — 4 Rue Martin Luther King, 56270 Ploemeur — <a href="mailto:heianui.tapare@hinovadigitalcorp.com">heianui.tapare@hinovadigitalcorp.com</a> — +689 89 56 13 58<br>
+  <a href="/">Accueil</a> · <a href="/mentions.html">CGV & mentions légales</a> · <a href="/politique-de-confidentialite.html">Confidentialité</a>
+</div></footer>
+
+<script>
+/* ====== CONFIG — à remplacer ====== */
+const CONFIG = {
+  formEndpoint: "/api/trading",
+  pay: {
+    xpf:{build:"https://buy.stripe.com/REMPLACER_XPF_500000", wm:"https://buy.stripe.com/REMPLACER_XPF_20000"},
+    eur:{build:"https://buy.stripe.com/REMPLACER_EUR_5000",   wm:"https://buy.stripe.com/REMPLACER_EUR_200"},
+    usd:{build:"https://buy.stripe.com/REMPLACER_USD_5000",   wm:"https://buy.stripe.com/REMPLACER_USD_200"}
+  }
+};
+const PRICES={xpf:{build:"500 000 XPF",wm:"20 000 XPF"},eur:{build:"5 000 €",wm:"200 €"},usd:{build:"5 000 $",wm:"200 $"}};
+let cur="xpf";
+
+/* Overlay CGV */
+const cgv=document.getElementById("cgv"),chk=document.getElementById("cgvChk"),cb=document.getElementById("cgvBtn");
+function store(k,v){try{v===undefined?null:sessionStorage.setItem(k,v);return sessionStorage.getItem(k)}catch(e){return null}}
+if(store("cgvOk")==="1")cgv.classList.add("hide");
+chk.onchange=()=>cb.disabled=!chk.checked;
+cb.onclick=()=>{store("cgvOk","1");cgv.classList.add("hide")};
+function openCgv(){cgv.classList.remove("hide")}
+
+/* Toggle audience */
+document.querySelectorAll("[data-aud]").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll("[data-aud]").forEach(x=>x.classList.toggle("on",x===b));
+  document.querySelectorAll("[data-panel]").forEach(p=>p.hidden=p.dataset.panel!==b.dataset.aud);
+});
+
+/* Devise */
+function render(){
+  document.querySelector('[data-p="build"]').textContent=PRICES[cur].build;
+  document.querySelector('[data-p="wm"]').innerHTML=PRICES[cur].wm+' <small>/ mois</small>';
+  document.getElementById("payBuild").href=CONFIG.pay[cur].build;
+  document.getElementById("payWm").href=CONFIG.pay[cur].wm;
+}
+document.querySelectorAll("[data-c]").forEach(b=>b.onclick=()=>{
+  cur=b.dataset.c;document.querySelectorAll("[data-c]").forEach(x=>x.classList.toggle("on",x===b));render();
+});
+render();
+
+/* Formulaire -> paiement */
+document.getElementById("preorder").onsubmit=async e=>{
+  e.preventDefault();
+  const data=Object.fromEntries(new FormData(e.target));data.devise=cur;data.date=new Date().toISOString();
+  if(CONFIG.formEndpoint){
+    try{const r=await fetch(CONFIG.formEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)});
+      if(!r.ok)throw 0;}catch(_){alert("Envoi impossible, réessayez ou écrivez-nous par email.");return;}
+  }
+  e.target.style.display="none";
+  const p=document.getElementById("paybox");p.classList.add("show");p.scrollIntoView({behavior:"smooth"});
+};
+</script>
+</body>
+</html>

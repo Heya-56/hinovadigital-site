@@ -86,7 +86,7 @@
         '<div class="hv-brand"><a href="/"><img src="/logo-hinova.webp" alt="Hinova Digital"></a>' +
           '<p>' + T.tagline + '</p><span class="hv-mail">contact@hinovadigitalcorp.com</span></div>' +
         '<div class="hv-col"><h4>' + T.sol + '</h4><ul><li><a href="/devis/">' + T.quote + '</a></li><li><a href="/solutions/#diagnostic">' + T.journey + '</a></li><li><a href="/lab/">' + T.lab + '</a></li><li><a href="/academie.html">' + T.acad + '</a></li></ul></div>' +
-        '<div class="hv-col"><h4>' + T.hin + '</h4><ul><li><a href="/vision.html">' + T.vision + '</a></li><li><a href="/blog.html">' + T.journal + '</a></li><li><a href="/diagnostic.html">' + T.diag + '</a></li><li><a href="/partenaire/">' + T.partner + '</a></li></ul></div>' +
+        '<div class="hv-col"><h4>' + T.hin + '</h4><ul><li><a href="/vision.html">' + T.vision + '</a></li><li><a href="/blog.html">' + T.journal + '</a></li><li><a href="/trading/">Trading Lab</a></li><li><a href="/diagnostic.html">' + T.diag + '</a></li><li><a href="/partenaire/">' + T.partner + '</a></li></ul></div>' +
         '<div class="hv-col"><h4>' + T.legal + '</h4><ul><li><a href="/mentions.html">' + T.mentions + '</a></li><li><a href="/politique-de-confidentialite.html">' + T.privacy + '</a></li></ul></div>' +
       '</div>' +
       '<p class="hv-reo">' + T.reo + '</p>' +
