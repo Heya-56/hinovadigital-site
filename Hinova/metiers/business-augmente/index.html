@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestionnaire de business augmenté — Parcours Métiers | Rū-fau-tumu Académie</title>
+  <meta name="description" content="Parcours Métiers Rū-fau-tumu : devenir gestionnaire de business augmenté par l'IA. À distance, mise en pratique selon les règles de votre pays. 1 250 €." />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <link rel="icon" type="image/webp" href="/logo-hinova.webp" />
+  <meta name="theme-color" content="#08343A" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--ink:#0B2F35;--muted:#4E6A6E;--blue:#1B64C8;--gold:#B5823A;--gold-d:#94671f;--deep:#08343A;--mist:#EEF5F5;--line:rgba(27,100,200,.16)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#fff;color:var(--ink);font:400 1rem/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+    .wrap{max-width:68rem;margin:0 auto;padding-left:max(1.25rem,env(safe-area-inset-left,0px));padding-right:max(1.25rem,env(safe-area-inset-right,0px))}
+    h1,h2,h3{font-family:Montserrat,sans-serif;font-weight:900;line-height:1.15;text-wrap:balance}
+    .label{font:700 .75rem Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+    a{color:var(--blue)}
+    .btn{display:inline-block;background:var(--blue);color:#fff;font:700 1rem Montserrat,sans-serif;padding:.95rem 1.8rem;border-radius:.6rem;text-decoration:none;box-shadow:0 0 20px rgba(27,100,200,.35);transition:transform .2s ease,background .2s ease}
+    .btn:hover,.btn:focus-visible{background:#2B7FEA;transform:translateY(-2px)}
+    .btn-ghost{display:inline-block;font:700 .8rem Montserrat,sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 1.4rem;border:1px solid rgba(27,100,200,.4);border-radius:.6rem;text-decoration:none;color:var(--blue)}
+    :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+    header.top{background:var(--deep)}
+    header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1rem}
+    header.top img{width:44px;height:auto;display:block}
+    header.top a.back{color:#D9EBEB;font:600 .85rem Inter,sans-serif;text-decoration:none}
+    header.top a.back:hover{color:#fff;text-decoration:underline}
+
+    .hero{background:var(--deep);color:#F4FAFA;padding-block:3.5rem 4rem}
+    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center}
+    .hero .wrap>*{min-width:0}
+    .hero h1{font-size:clamp(2rem,5vw,3.2rem);margin:.8rem 0 1rem}
+    .hero p.sub{color:#B9D3D3;font-size:1.08rem;max-width:36rem}
+    .hero img{width:100%;border-radius:1rem;border:1px solid rgba(217,178,95,.35);display:block}
+    .facts{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.5rem 0 1.8rem}
+    .facts span{font:600 .82rem Inter,sans-serif;padding:.4rem .8rem;border-radius:999px;border:1px solid rgba(217,178,95,.45);color:#F4FAFA}
+
+    section{padding-block:4rem}
+    section.alt{background:var(--mist)}
+    .head{max-width:44rem;margin-bottom:2rem}
+    .head h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-top:.6rem}
+    .head p{color:var(--muted);margin-top:.8rem}
+
+    .pains{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .pains div{border-left:3px solid var(--gold);padding:.4rem 0 .4rem 1rem;color:var(--ink)}
+
+    .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem}
+    .step{background:#fff;border:1px solid var(--line);border-radius:1rem;padding:1.4rem}
+    .step b{display:block;font:800 .72rem Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:.5rem}
+    .step h3{font-size:1.15rem;margin-bottom:.5rem}
+    .step p{color:var(--muted);font-size:.95rem}
+
+    .bricks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .brick{border:1px solid var(--line);border-radius:.8rem;padding:1.1rem 1.2rem;background:#fff}
+    .brick h3{font-size:1rem;color:var(--blue);margin-bottom:.35rem}
+    .brick p{color:var(--ink);font-size:.93rem}
+
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+    .split>*{min-width:0}
+    ul.check{list-style:none;display:grid;gap:.7rem}
+    ul.check li{padding-left:1.6rem;position:relative}
+    ul.check li::before{content:"";position:absolute;left:0;top:.55em;width:.7rem;height:.7rem;border-radius:2px;background:var(--gold)}
+
+    .offer{background:var(--deep);color:#F4FAFA;border-radius:1.2rem;padding:2.2rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+    .offer>*{min-width:0}
+    .offer .price{font:900 clamp(2.4rem,6vw,3.4rem) Montserrat,sans-serif;color:#D9B25F;line-height:1}
+    .offer ul{list-style:none;display:grid;gap:.45rem;margin-top:1rem;color:#D9EBEB}
+    .offer ul li::before{content:"✓ ";color:#D9B25F;font-weight:700}
+    .offer .cta{display:grid;gap:.8rem;justify-items:start}
+    .offer .btn-ghost{color:#D9EBEB;border-color:rgba(217,235,235,.4)}
+    .offer small{color:#B9D3D3}
+
+    details{border-bottom:1px solid var(--line);padding-block:1rem}
+    summary{cursor:pointer;font:700 1rem Montserrat,sans-serif;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:" +";color:var(--gold)}
+    details[open] summary::after{content:" −"}
+    details p{color:var(--muted);margin-top:.6rem}
+
+    footer{background:var(--deep);color:#B9D3D3;font-size:.85rem}
+    footer .wrap{padding-block:2rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+    footer a{color:#D9EBEB}
+
+    @media(max-width:860px){
+      .hero .wrap,.split,.offer{grid-template-columns:1fr}
+      .pains,.steps,.bricks{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){.pains,.steps,.bricks{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a href="/academie.html#parcours-metiers"><img src="/logo-hinova.webp" alt="Hinova Digital — retour à l'Académie" /></a>
+      <a class="back" href="/academie.html#parcours-metiers">← Tous les Parcours Métiers</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <div>
+          <p class="label" style="color:#D9B25F;">Parcours Métiers · Métier 2</p>
+          <h1>Gestionnaire de business augmenté</h1>
+          <p class="sub">Apprenez à piloter clients, devis, factures et messages depuis un seul endroit, avec un assistant IA qui répond et relance à votre place. Puis construisez votre propre activité selon les règles de votre pays.</p>
+          <div class="facts"><span>100 % à distance</span><span>Suivi sur téléphone possible</span><span>Mise en pratique réelle</span></div>
+          <a class="btn" href="#inscription">Réserver ma place · 1 250 €</a>
+        </div>
+        <img src="/metiers/img/business.webp" alt="Entrepreneure débordée par les messages de ses clients sur plusieurs canaux" width="1200" height="1097" />
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="head">
+          <p class="label">Le problème</p>
+          <h2>Trop de messages, pas assez de ventes</h2>
+          <p>Les demandes arrivent de partout. Sans organisation, l'entrepreneur s'épuise et laisse filer des clients.</p>
+        </div>
+        <div class="pains">
+          <div>Des clients qui attendent une réponse pendant des jours, puis achètent ailleurs.</div>
+          <div>Des devis envoyés à la main, puis oubliés sans relance.</div>
+          <div>Des factures en retard et une trésorerie qu'on ne voit jamais venir.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap">
+        <div class="head">
+          <p class="label">Le parcours</p>
+          <h2>Trois étapes, du concept à votre propre activité</h2>
+        </div>
+        <div class="steps">
+          <div class="step"><b>Étape 1</b><h3>Le comprendre</h3><p>Ce que fait réellement un gestionnaire de business, et ce que l'IA change dans son quotidien.</p></div>
+          <div class="step"><b>Étape 2</b><h3>L'apprendre</h3><p>Chaque brique du métier, expliquée par ce qu'elle fait, avec des exercices guidés.</p></div>
+          <div class="step"><b>Étape 3</b><h3>La mise en pratique</h3><p>Vous montez votre propre système de gestion pour un business réel, conforme aux règles de votre pays.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="head">
+          <p class="label">Ce que vous saurez faire</p>
+          <h2>Les six briques du métier</h2>
+          <p>On apprend ce que fait chaque brique, pas une marque. Vous saurez l'appliquer avec n'importe quel outil, aujourd'hui comme dans cinq ans.</p>
+        </div>
+        <div class="bricks">
+          <div class="brick"><h3>Boîte de réception unifiée</h3><p>Regrouper tous les messages clients dans un seul fil, quel que soit le canal.</p></div>
+          <div class="brick"><h3>Fichier clients</h3><p>Garder l'historique de chaque client : échanges, achats, préférences.</p></div>
+          <div class="brick"><h3>Suivi des ventes</h3><p>Voir où en est chaque opportunité, de la demande à la signature.</p></div>
+          <div class="brick"><h3>Devis et factures</h3><p>Produire les documents à partir des fiches clients, sans ressaisie.</p></div>
+          <div class="brick"><h3>Assistant de réponse</h3><p>Faire préparer par l'IA les réponses aux questions fréquentes, que vous validez.</p></div>
+          <div class="brick"><h3>Relances automatiques</h3><p>Relancer au bon moment un devis sans réponse ou une facture impayée.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap split">
+        <div>
+          <div class="head" style="margin-bottom:1rem;">
+            <p class="label">Pour qui</p>
+            <h2>Ce parcours est fait pour vous si…</h2>
+          </div>
+          <ul class="check">
+            <li>vous gérez une petite entreprise et vous noyez sous les messages ;</li>
+            <li>vous voulez créer une activité de gestion pour d'autres entrepreneurs ;</li>
+            <li>vous travaillez dans un établissement et voulez moderniser son suivi ;</li>
+            <li>vous apprenez surtout depuis votre téléphone.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="head" style="margin-bottom:1rem;">
+            <p class="label">Accompagnement</p>
+            <h2>Avec Heya, architecte et business developer</h2>
+          </div>
+          <ul class="check">
+            <li>Conception du système avec l'œil d'une architecte de solutions IA.</li>
+            <li>Parcours de vente et méthode de relance B2B, issus du terrain commercial.</li>
+            <li>Adaptation aux contraintes de votre pays : moyens de paiement, monnaie, règles locales.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="inscription">
+      <div class="wrap">
+        <div class="offer">
+          <div>
+            <p class="label" style="color:#D9B25F;">Inscription</p>
+            <h2 style="margin-top:.5rem;">Gestionnaire de business augmenté</h2>
+            <ul>
+              <li>Les trois étapes : comprendre, apprendre, mettre en pratique</li>
+              <li>Accès personnel à votre espace de formation protégé</li>
+              <li>Mise en pratique sur votre propre projet de business</li>
+              <li>Parcours indépendant, sans certification</li>
+            </ul>
+          </div>
+          <div class="cta">
+            <p class="price">1 250 €</p>
+            <a class="btn" href="mailto:contact@hinovadigitalcorp.com?subject=Parcours%20M%C3%A9tiers%20-%20Gestionnaire%20de%20business%20augment%C3%A9&amp;body=Bonjour%20Heya%2C%0A%0AJe%20souhaite%20r%C3%A9server%20ma%20place.%0APays%20%3A%0AMon%20projet%20%3A%0A">Réserver ma place</a>
+            <a class="btn-ghost" href="/diagnostic.html">Poser une question d'abord</a>
+            <small>Réponse sous 48 h avec les modalités de paiement adaptées à votre pays.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap" style="max-width:48rem;">
+        <div class="head"><p class="label">Questions fréquentes</p><h2>Avant de vous inscrire</h2></div>
+        <details><summary>Faut-il un ordinateur ?</summary><p>Non. Le parcours se suit entièrement depuis un téléphone. Un ordinateur reste plus confortable pour la mise en pratique.</p></details>
+        <details><summary>Le parcours délivre-t-il un diplôme ?</summary><p>Non, il n'y a pas de certification. Vous repartez avec un système de gestion réel et un projet de business concret, adaptés à votre pays.</p></details>
+        <details><summary>Je ne vis pas en Polynésie, est-ce adapté ?</summary><p>Oui. La mise en pratique suit les règles et les moyens de paiement de votre pays d'origine, par exemple le paiement mobile en Afrique de l'Ouest.</p></details>
+        <details><summary>Comment accède-t-on au contenu ?</summary><p>Après l'inscription, vous recevez un accès personnel à votre espace de formation. Le contenu y est réservé à votre compte.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Hinova Digital · Rū-fau-tumu Académie</span>
+      <span><a href="/mentions.html">Mentions légales</a> · <a href="/politique-de-confidentialite.html">Confidentialité</a></span>
+    </div>
+  </footer>
+</body>
+</html>
