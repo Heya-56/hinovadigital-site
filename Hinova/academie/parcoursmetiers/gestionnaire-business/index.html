@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gestionnaire de business augmenté — Parcours Métiers | Rū-fau-tumu Académie</title>
-  <meta name="description" content="Parcours Métiers Rū-fau-tumu : devenir gestionnaire de business augmenté par l'IA. À distance, mise en pratique selon les règles de votre pays. 1 250 €." />
+  <meta name="description" content="Parcours Métiers Rū-fau-tumu : devenir gestionnaire de business augmenté par l'IA. À distance, mise en pratique selon les règles de votre pays." />
   <meta name="robots" content="noindex, nofollow, noarchive" />
   <meta name="googlebot" content="noindex, nofollow" />
   <link rel="icon" type="image/webp" href="/logo-hinova.webp" />
@@ -98,8 +98,8 @@
 <body>
   <header class="top">
     <div class="wrap">
-      <a href="/academie.html#parcours-metiers"><img src="/logo-hinova.webp" alt="Hinova Digital — retour à l'Académie" /></a>
-      <a class="back" href="/academie.html#parcours-metiers">← Tous les Parcours Métiers</a>
+      <a href="/academie/parcoursmetiers/"><img src="/logo-hinova.webp" alt="Hinova Digital — retour à l'Académie" /></a>
+      <a class="back" href="/academie/parcoursmetiers/">← Tous les Parcours Métiers</a>
     </div>
   </header>
 
@@ -111,9 +111,9 @@
           <h1>Gestionnaire de business augmenté</h1>
           <p class="sub">Apprenez à piloter clients, devis, factures et messages depuis un seul endroit, avec un assistant IA qui répond et relance à votre place. Puis construisez votre propre activité selon les règles de votre pays.</p>
           <div class="facts"><span>100 % à distance</span><span>Suivi sur téléphone possible</span><span>Mise en pratique réelle</span></div>
-          <a class="btn" href="#inscription">Réserver ma place · 1 250 €</a>
+          <a class="btn" href="#inscription">Réserver ma place · <span data-prix>1 250 €</span></a>
         </div>
-        <img src="/metiers/img/business.webp" alt="Entrepreneure débordée par les messages de ses clients sur plusieurs canaux" width="1200" height="1097" />
+        <img src="/academie/parcoursmetiers/img/business.webp" alt="Entrepreneure débordée par les messages de ses clients sur plusieurs canaux" width="1200" height="1097" />
       </div>
     </div>
 
@@ -206,10 +206,10 @@
             </ul>
           </div>
           <div class="cta">
-            <p class="price">1 250 €</p>
+            <p class="price" data-prix>1 250 €</p>
             <a class="btn" href="mailto:contact@hinovadigitalcorp.com?subject=Parcours%20M%C3%A9tiers%20-%20Gestionnaire%20de%20business%20augment%C3%A9&amp;body=Bonjour%20Heya%2C%0A%0AJe%20souhaite%20r%C3%A9server%20ma%20place.%0APays%20%3A%0AMon%20projet%20%3A%0A">Réserver ma place</a>
             <a class="btn-ghost" href="/diagnostic.html">Poser une question d'abord</a>
-            <small>Réponse sous 48 h avec les modalités de paiement adaptées à votre pays.</small>
+            <small id="devise">Réponse sous 48 h avec les modalités de paiement adaptées à votre pays.</small>
           </div>
         </div>
       </div>
@@ -232,5 +232,15 @@
       <span><a href="/mentions.html">Mentions légales</a> · <a href="/politique-de-confidentialite.html">Confidentialité</a></span>
     </div>
   </footer>
+  <script src="/academie/parcoursmetiers/devise.js"></script>
+  <script>
+    (function(){
+      var PM=window.ParcoursMetiers; if(!PM) return;
+      var c=PM.lireChoix(), dev=PM.devisePour(c.pays), p=PM.trouverPays(c.pays), prix=PM.formatPrix(dev);
+      document.querySelectorAll('[data-prix]').forEach(function(el){ el.textContent=prix; });
+      if(p){ document.getElementById('devise').textContent='Tarif pour : '+p[1]+'. Réponse sous 48 h avec les modalités de paiement adaptées à votre pays.'; }
+      var a=document.querySelector('.offer a.btn'); if(a&&p){ a.href=a.href.replace('Pays%20%3A%0A','Pays%20%3A%20'+encodeURIComponent(p[1])+'%0A'); }
+    })();
+  </script>
 </body>
 </html>

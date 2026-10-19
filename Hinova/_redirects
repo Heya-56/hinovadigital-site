@@ -7,3 +7,6 @@
 /lab/ /lab/index.html 200
 /module-architecture-cloud.html /academie#module-cloud 301
 /module-architecture-cloud /academie#module-cloud 301
+/metiers/business-augmente /academie/parcoursmetiers/gestionnaire-business/ 301
+/metiers/business-augmente/ /academie/parcoursmetiers/gestionnaire-business/ 301
+/metiers/* /academie/parcoursmetiers/ 301

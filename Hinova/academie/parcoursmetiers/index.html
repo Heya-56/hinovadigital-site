@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcours Métiers | Rū-fau-tumu Académie</title>
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <link rel="icon" type="image/webp" href="/logo-hinova.webp" />
+  <meta name="theme-color" content="#08343A" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--ink:#0B2F35;--muted:#4E6A6E;--blue:#1B64C8;--gold:#B5823A;--gold-l:#D9B25F;--deep:#08343A;--mist:#EEF5F5;--line:rgba(27,100,200,.16)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#fff;color:var(--ink);font:400 1rem/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+    .wrap{max-width:70rem;margin:0 auto;padding-left:max(1.25rem,env(safe-area-inset-left,0px));padding-right:max(1.25rem,env(safe-area-inset-right,0px))}
+    h1,h2,h3{font-family:Montserrat,sans-serif;font-weight:900;line-height:1.15;text-wrap:balance}
+    .label{font:700 .75rem Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+    :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+    header.top{background:var(--deep)}
+    header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1rem}
+    header.top img{width:44px;height:auto;display:block}
+    header.top a.back{color:#D9EBEB;font:600 .85rem Inter,sans-serif;text-decoration:none}
+    header.top a.back:hover{color:#fff;text-decoration:underline}
+
+    .hero{background:var(--deep);color:#F4FAFA;padding-block:3rem 3.5rem}
+    .hero h1{font-size:clamp(2rem,5vw,3rem);margin:.7rem 0 .9rem}
+    .hero p{color:#B9D3D3;max-width:42rem}
+    .choix{margin-top:1.8rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:40rem}
+    .choix label{display:grid;gap:.4rem;font:700 .72rem Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-l);min-width:0}
+    .choix select{width:100%;min-height:48px;padding:.7rem .9rem;border-radius:.6rem;border:1px solid rgba(217,235,235,.35);background:#0B3F46;color:#F4FAFA;font:500 .95rem Inter,sans-serif}
+    .devise{margin-top:1rem;font-size:.9rem;color:#D9EBEB}
+
+    section{padding-block:3.5rem}
+    .bandeau{display:none;margin-bottom:2rem;border:1px solid rgba(181,130,58,.45);background:#FBF6EC;border-radius:1rem;padding:1.3rem 1.5rem}
+    .bandeau.on{display:block}
+    .bandeau h2{font-size:1.2rem;margin-bottom:.4rem}
+    .bandeau p{color:var(--muted)}
+    .bandeau a{display:inline-block;margin-top:.7rem;font:800 .8rem Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.15rem}
+    .card{overflow:hidden;border:1px solid var(--line);border-radius:1rem;background:#fff;box-shadow:0 10px 28px rgba(8,52,58,.06);display:flex;flex-direction:column}
+    .card img{display:block;width:100%;height:190px;object-fit:cover;background:#eaf3f3}
+    .card .body{padding:1.25rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+    .card .num{font:800 .7rem Montserrat,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+    .card h3{font-size:1.12rem}
+    .card p.desc{color:var(--muted);font-size:.92rem;flex:1}
+    .card .prix{font:900 1.15rem Montserrat,sans-serif;color:#94671f}
+    .card a.go{font:800 .78rem Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);text-decoration:none}
+    .card a.go:hover{text-decoration:underline}
+    .card .bientot{font:700 .72rem Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .card.ouvert{border-color:rgba(181,130,58,.5)}
+    .note{margin-top:2rem;color:var(--muted);font-size:.88rem;text-align:center}
+    footer{background:var(--deep);color:#B9D3D3;font-size:.85rem}
+    footer .wrap{padding-block:2rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+    footer a{color:#D9EBEB}
+    @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:580px){.grid,.choix{grid-template-columns:1fr}.card img{height:210px}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a href="/academie.html#parcours-metiers"><img src="/logo-hinova.webp" alt="Hinova Digital — retour à l'Académie" /></a>
+      <a class="back" href="/academie.html#parcours-metiers">← Retour à l'Académie</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <p class="label" style="color:var(--gold-l);">Rū-fau-tumu Académie · Apprendre un métier en 2027</p>
+        <h1>Parcours Métiers</h1>
+        <p>Cinq métiers où l'IA devient essentielle. Chaque parcours suit trois étapes : le comprendre, l'apprendre, la mise en pratique sur votre propre projet de business.</p>
+        <div class="choix">
+          <label for="profil">Je suis <select id="profil"></select></label>
+          <label for="pays">Mon pays <select id="pays"></select></label>
+        </div>
+        <p class="devise" id="devise" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="bandeau" id="bandeauEntreprise">
+          <h2>Former une équipe ou une promotion</h2>
+          <p>Pour une entreprise ou un établissement, nous construisons une offre groupée : plusieurs parcours, plusieurs participants, à distance.</p>
+          <a href="mailto:contact@hinovadigitalcorp.com?subject=Parcours%20M%C3%A9tiers%20-%20Offre%20entreprise">Demander une offre groupée →</a>
+        </div>
+
+        <div class="grid" id="grille">
+          <article class="card">
+            <img src="/academie/parcoursmetiers/img/donnees.webp" alt="Réseau de neurones lumineux" loading="lazy" />
+            <div class="body"><span class="num">Métier 1</span><h3>Gestionnaire de données</h3>
+              <p class="desc">Rassembler, protéger et rendre utile toute l'information d'une structure pour décider sur des chiffres fiables.</p>
+              <span class="prix" data-prix></span><span class="bientot">Ouverture prochaine</span></div>
+          </article>
+          <article class="card ouvert">
+            <img src="/academie/parcoursmetiers/img/business.webp" alt="Entrepreneure débordée par ses messages clients" loading="lazy" />
+            <div class="body"><span class="num">Métier 2 · Ouvert</span><h3>Gestionnaire de business augmenté</h3>
+              <p class="desc">Piloter clients, devis, factures et messages au même endroit, avec un assistant qui répond et relance pour vous.</p>
+              <span class="prix" data-prix></span><a class="go" data-lien href="/academie/parcoursmetiers/gestionnaire-business/">Découvrir le parcours →</a></div>
+          </article>
+          <article class="card">
+            <img src="/academie/parcoursmetiers/img/erp.webp" alt="Conception d'un logiciel de gestion sur ordinateur" loading="lazy" />
+            <div class="body"><span class="num">Métier 3</span><h3>Concepteur·rice d'ERP</h3>
+              <p class="desc">Réunir achats, stocks, ventes et comptabilité dans un seul système sur mesure, construit brique par brique.</p>
+              <span class="prix" data-prix></span><span class="bientot">Ouverture prochaine</span></div>
+          </article>
+          <article class="card">
+            <img src="/academie/parcoursmetiers/img/cloud.webp" alt="Schéma du cloud, du matériel aux utilisateurs" loading="lazy" />
+            <div class="body"><span class="num">Métier 4</span><h3>Architecte cloud et sécurité</h3>
+              <p class="desc">Décider où vivent les données, les protéger et garder la facture sous contrôle.</p>
+              <span class="prix" data-prix></span><span class="bientot">Ouverture prochaine</span></div>
+          </article>
+          <article class="card">
+            <img src="/academie/parcoursmetiers/img/international.webp" alt="Boussole sculptée posée sur une carte ancienne" loading="lazy" />
+            <div class="body"><span class="num">Métier 5</span><h3>Business developer international et paiements</h3>
+              <p class="desc">Ouvrir de nouveaux marchés et encaisser selon les usages de chaque pays, du paiement mobile à la carte bancaire.</p>
+              <span class="prix" data-prix></span><span class="bientot">Ouverture prochaine</span></div>
+          </article>
+        </div>
+        <p class="note">Parcours indépendants, sans certification. Le contenu est réservé aux inscrits, dans un espace personnel protégé.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Hinova Digital · Rū-fau-tumu Académie</span>
+      <span><a href="/mentions.html">Mentions légales</a> · <a href="/politique-de-confidentialite.html">Confidentialité</a></span>
+    </div>
+  </footer>
+
+  <script src="/academie/parcoursmetiers/devise.js"></script>
+  <script>
+    (function(){
+      var PM=window.ParcoursMetiers, pr=document.getElementById('profil'), py=document.getElementById('pays');
+      var c=PM.lireChoix(); PM.remplirProfils(pr,c.profil); PM.remplirPays(py,c.pays);
+      function maj(){
+        var dev=PM.devisePour(py.value), p=PM.trouverPays(py.value), prix=PM.formatPrix(dev);
+        document.querySelectorAll('[data-prix]').forEach(function(el){ el.textContent=prix; });
+        document.getElementById('devise').textContent = p ? ('Tarifs affichés pour : '+p[1]+' · '+(dev==='EUR'?'paiement en euros':'paiement en '+(dev==='XPF'?'francs CFP':'francs CFA'))) : 'Choisissez votre pays pour voir le tarif dans votre devise.';
+        document.getElementById('bandeauEntreprise').classList.toggle('on', pr.value==='entreprise');
+        var q='?profil='+encodeURIComponent(pr.value)+'&pays='+encodeURIComponent(py.value);
+        document.querySelectorAll('[data-lien]').forEach(function(a){ a.href=a.getAttribute('href').split('?')[0]+q; });
+        PM.garderChoix(pr.value,py.value);
+      }
+      pr.addEventListener('change',maj); py.addEventListener('change',maj); maj();
+    })();
+  </script>
+</body>
+</html>

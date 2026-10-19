@@ -243,93 +243,54 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- SECTION — PARCOURS MÉTIERS (vitrine publique, contenu réservé aux inscrits) -->
+    <!-- SECTION — PARCOURS MÉTIERS (sélecteur public ; catalogue sur /academie/parcoursmetiers, non indexé) -->
     <!-- ═══════════════════════════════════════════════════════ -->
     <style>
       .pm-steps{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:1.5rem}
       .pm-steps span{font:700 .75rem Montserrat,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0B2F35;border:1px solid rgba(181,130,58,.45);border-radius:999px;padding:.45rem .9rem;background:#fff}
-      .pm-price{font:900 1.05rem Montserrat,sans-serif;color:#94671f;margin:.9rem 0 0}
-      .pm-link{display:inline-block;margin-top:.9rem;font:800 .78rem Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#1B64C8;text-decoration:none}
-      .pm-link:hover,.pm-link:focus-visible{text-decoration:underline}
-      .pm-soon{display:inline-block;margin-top:.9rem;font:700 .72rem Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#4E6A6E}
-      .pm-note{font:400 .85rem/1.6 Inter,sans-serif;color:#4E6A6E;max-width:44rem;margin:2rem auto 0}
+      .pm-form{max-width:46rem;margin:2.5rem auto 0;background:#08343A;border:1px solid rgba(181,130,58,.45);border-radius:1.1rem;padding:1.8rem;display:grid;grid-template-columns:1fr 1fr auto;gap:1rem;align-items:end;text-align:left}
+      .pm-form label{display:grid;gap:.4rem;font:700 .72rem Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#D9B25F;min-width:0}
+      .pm-form select{width:100%;min-height:48px;padding:.7rem .9rem;border-radius:.6rem;border:1px solid rgba(217,235,235,.35);background:#0B3F46;color:#F4FAFA;font:500 .95rem Inter,sans-serif}
+      .pm-form select:focus{outline:3px solid #D9B25F;outline-offset:2px}
+      .pm-form button{min-height:48px;white-space:nowrap}
+      .pm-msg{grid-column:1/-1;font:400 .85rem Inter,sans-serif;color:#B9D3D3;margin:0;min-height:1.2em}
+      @media(max-width:700px){.pm-form{grid-template-columns:1fr}}
     </style>
     <section id="parcours-metiers" class="py-24 px-6 md:px-12 lg:px-20" aria-labelledby="pmTitle">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12 reveal">
-          <p class="font-montserrat text-xs uppercase tracking-widest mb-3 gold-label">Parcours Métiers · Apprendre un métier en 2027</p>
-          <h2 id="pmTitle" class="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl" style="color:#0B2F35;">
-            <span class="text-gradient-cyan">Cinq métiers où l'IA devient essentielle</span>
-          </h2>
-          <p class="font-inter text-sm md:text-base leading-relaxed mt-5 max-w-2xl mx-auto" style="color:#4E6A6E;">Chaque parcours se suit à distance, depuis un ordinateur ou un téléphone. Vous en ressortez avec un projet de business construit selon les règles de votre pays.</p>
-          <div class="pm-steps" aria-label="Les trois étapes de chaque parcours"><span>1 · Le comprendre</span><span>2 · L'apprendre</span><span>3 · La mise en pratique</span></div>
-          <div class="divider w-40 mt-8"></div>
-        </div>
+      <div class="max-w-4xl mx-auto text-center reveal">
+        <p class="font-montserrat text-xs uppercase tracking-widest mb-3 gold-label">Parcours Métiers · Apprendre un métier en 2027</p>
+        <h2 id="pmTitle" class="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl" style="color:#0B2F35;">
+          <span class="text-gradient-cyan">Apprenez un métier où l'IA devient essentielle</span>
+        </h2>
+        <p class="font-inter text-sm md:text-base leading-relaxed mt-5 max-w-2xl mx-auto" style="color:#4E6A6E;">Des parcours à distance, à suivre depuis un ordinateur ou un téléphone. Vous en ressortez avec un projet de business construit selon les règles de votre pays.</p>
+        <div class="pm-steps" aria-label="Les trois étapes de chaque parcours"><span>1 · Le comprendre</span><span>2 · L'apprendre</span><span>3 · La mise en pratique</span></div>
 
-        <div class="hd-academy-grid">
-          <article class="hd-academy-card reveal">
-            <img src="/metiers/img/donnees.webp" alt="Réseau de neurones lumineux" loading="lazy" class="protected-asset" />
-            <div class="hd-academy-card-body">
-              <p class="hd-step">Métier 1</p>
-              <h3>Gestionnaire de données</h3>
-              <p>Rassembler, protéger et rendre utile toute l'information d'une structure pour décider sur des chiffres fiables.</p>
-              <p class="pm-price">1 250 €</p>
-              <span class="pm-soon">Ouverture prochaine</span>
-            </div>
-          </article>
-          <article class="hd-academy-card hd-academy-card-final reveal">
-            <img src="/metiers/img/business.webp" alt="Entrepreneure débordée par ses messages clients" loading="lazy" class="protected-asset" />
-            <div class="hd-academy-card-body">
-              <p class="hd-step">Métier 2 · Ouvert</p>
-              <h3>Gestionnaire de business augmenté</h3>
-              <p>Piloter clients, devis, factures et messages au même endroit, avec un assistant qui répond et relance pour vous.</p>
-              <p class="pm-price">1 250 €</p>
-              <a class="pm-link" href="/metiers/business-augmente/">Découvrir le parcours →</a>
-            </div>
-          </article>
-          <article class="hd-academy-card reveal">
-            <img src="/metiers/img/erp.webp" alt="Conception d'un logiciel de gestion sur ordinateur" loading="lazy" class="protected-asset" />
-            <div class="hd-academy-card-body">
-              <p class="hd-step">Métier 3</p>
-              <h3>Concepteur·rice d'ERP</h3>
-              <p>Réunir achats, stocks, ventes et comptabilité dans un seul système sur mesure, construit brique par brique.</p>
-              <p class="pm-price">1 250 €</p>
-              <span class="pm-soon">Ouverture prochaine</span>
-            </div>
-          </article>
-          <article class="hd-academy-card reveal">
-            <img src="/metiers/img/cloud.webp" alt="Schéma du cloud, du matériel aux utilisateurs" loading="lazy" class="protected-asset" />
-            <div class="hd-academy-card-body">
-              <p class="hd-step">Métier 4</p>
-              <h3>Architecte cloud et sécurité</h3>
-              <p>Décider où vivent les données, les protéger et garder la facture sous contrôle.</p>
-              <p class="pm-price">1 250 €</p>
-              <span class="pm-soon">Ouverture prochaine</span>
-            </div>
-          </article>
-          <article class="hd-academy-card reveal">
-            <img src="/metiers/img/international.webp" alt="Boussole sculptée posée sur une carte ancienne" loading="lazy" class="protected-asset" />
-            <div class="hd-academy-card-body">
-              <p class="hd-step">Métier 5</p>
-              <h3>Business developer international et paiements</h3>
-              <p>Ouvrir de nouveaux marchés et encaisser selon les usages de chaque pays, du paiement mobile à la carte bancaire.</p>
-              <p class="pm-price">1 250 €</p>
-              <span class="pm-soon">Ouverture prochaine</span>
-            </div>
-          </article>
-          <article class="hd-academy-card reveal" style="display:flex;flex-direction:column;justify-content:center;background:#08343A;border-color:rgba(181,130,58,.45);">
-            <div class="hd-academy-card-body">
-              <p class="hd-step" style="color:#D9B25F;">Établissements et groupes</p>
-              <h3 style="color:#F4FAFA;">Former une équipe ou une promotion</h3>
-              <p style="color:#B9D3D3;">Plusieurs parcours, plusieurs participants, à distance : nous construisons une offre adaptée à votre établissement.</p>
-              <a class="pm-link" style="color:#D9B25F;" href="mailto:contact@hinovadigitalcorp.com?subject=Parcours%20M%C3%A9tiers%20-%20Offre%20%C3%A9tablissement">Demander une offre →</a>
-            </div>
-          </article>
-        </div>
-
-        <p class="pm-note text-center">Parcours indépendants, sans certification. Le contenu est réservé aux inscrits, dans un espace personnel protégé.</p>
+        <form id="pmForm" class="pm-form" novalidate>
+          <label for="pmProfil">Je suis
+            <select id="pmProfil" name="profil" required></select>
+          </label>
+          <label for="pmPays">Mon pays
+            <select id="pmPays" name="pays" required></select>
+          </label>
+          <button type="submit" class="btn-cyan">Voir les parcours →</button>
+          <p id="pmMsg" class="pm-msg" role="status" aria-live="polite">Les tarifs s'affichent dans la devise de votre pays.</p>
+        </form>
       </div>
     </section>
+    <script src="/academie/parcoursmetiers/devise.js"></script>
+    <script>
+      (function(){
+        var PM=window.ParcoursMetiers; if(!PM) return;
+        var f=document.getElementById('pmForm'), pr=document.getElementById('pmProfil'), py=document.getElementById('pmPays'), m=document.getElementById('pmMsg');
+        var c=PM.lireChoix(); PM.remplirProfils(pr,c.profil); PM.remplirPays(py,c.pays);
+        f.addEventListener('submit',function(e){
+          e.preventDefault();
+          if(!pr.value||!py.value){ m.textContent='Choisissez votre profil et votre pays pour continuer.'; (pr.value?py:pr).focus(); return; }
+          PM.garderChoix(pr.value,py.value);
+          location.href='/academie/parcoursmetiers/?profil='+encodeURIComponent(pr.value)+'&pays='+encodeURIComponent(py.value);
+        });
+      })();
+    </script>
 
     <section id="portfolio" style="background:#EEF5F5;" class="py-24 md:py-28 px-6 md:px-12 lg:px-20">
       <div class="max-w-7xl mx-auto">
