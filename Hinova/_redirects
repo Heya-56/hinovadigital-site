@@ -5,3 +5,5 @@
 /parcours/* /solutions/#diagnostic 301
 /lab /lab/index.html 200
 /lab/ /lab/index.html 200
+/module-architecture-cloud.html /academie#module-cloud 301
+/module-architecture-cloud /academie#module-cloud 301
