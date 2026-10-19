@@ -10,3 +10,5 @@
 /metiers/business-augmente /academie/parcoursmetiers/gestionnaire-business/ 301
 /metiers/business-augmente/ /academie/parcoursmetiers/gestionnaire-business/ 301
 /metiers/* /academie/parcoursmetiers/ 301
+/parcoursgratuit /academie/parcoursgratuit/ 301
+/parcoursgratuit/* /academie/parcoursgratuit/:splat 301

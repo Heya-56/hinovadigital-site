@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQL pour débutants | Parcours gratuit Rū-fau-tumu</title>
+  <meta name="description" content="Apprenez gratuitement les bases de SQL : tables, SELECT, WHERE, ORDER BY et GROUP BY expliqués simplement, avec exercices corrigés et ressources gratuites." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://hinovadigitalcorp.com/academie/parcoursgratuit/sql/" />
+  <meta property="og:title" content="SQL pour débutants | Parcours gratuit Rū-fau-tumu" />
+  <meta property="og:description" content="Apprenez gratuitement les bases de SQL : tables, SELECT, WHERE, ORDER BY et GROUP BY expliqués simplement, avec exercices corrigés et ressources gratuites." />
+  <meta property="og:url" content="https://hinovadigitalcorp.com/academie/parcoursgratuit/sql/" />
+  <link rel="icon" type="image/webp" href="/logo-hinova.webp" />
+  <meta name="theme-color" content="#08343A" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/academie/parcoursgratuit/pg.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a href="/academie.html"><img src="/logo-hinova.webp" alt="Hinova Digital — retour à l'Académie" /></a>
+      <nav aria-label="Parcours gratuit"><a href="/academie/parcoursgratuit/">Parcours gratuit</a><a href="/academie/parcoursgratuit/sql/" aria-current="page">SQL</a><a href="/academie/parcoursgratuit/html-css/">HTML & CSS</a><a href="/academie/parcoursgratuit/python/">Python</a></nav>
+    </div>
+  </header>
+  <main>
+    <div class="hero"><div class="wrap">
+      <p class="label" style="color:var(--gold-l);">Parcours gratuit · Langage 3</p>
+      <h1>SQL pour débutants</h1>
+      <p>Toutes les entreprises gardent leurs clients, leurs ventes et leurs stocks dans des bases de données. SQL est le langage qui permet de leur poser des questions.</p>
+      <div class="badges"><span>Niveau débutant</span><span>Environ 1 h</span><span>Exercices interactifs en ligne</span></div>
+    </div></div>
+    <section><div class="wrap">
+      <div class="head"><p class="label">Définition</p><h2>C'est quoi, SQL ?</h2></div>
+      <div class="def"><p><b>SQL</b> (Structured Query Language) est le langage des bases de données. Une <b>base de données</b> range l'information dans des <b>tables</b>, comme des feuilles de calcul : chaque ligne est un enregistrement (un client), chaque colonne une information (son nom, sa ville).</p>
+      <p>Une <b>requête</b> SQL est une question posée à la base : « quels clients habitent à Dakar ? ».</p></div>
+      <p style="margin-top:1.2rem;max-width:46rem;">Image simple : la base de données est une immense bibliothèque bien rangée. SQL, c'est la façon de demander au bibliothécaire exactement les livres que vous voulez.</p>
+    </div></section>
+
+    <section class="alt"><div class="wrap">
+      <div class="head"><p class="label">Exemple</p><h2>Une table « clients »</h2><p>Toutes les requêtes de cette page utilisent cette table.</p></div>
+      <div style="overflow-x:auto;max-width:46rem;"><table style="width:100%;border-collapse:collapse;background:#fff;border-radius:.7rem;overflow:hidden;font-size:.95rem;">
+        <thead><tr style="background:var(--deep);color:#F4FAFA;text-align:left;"><th style="padding:.6rem .9rem;">id</th><th style="padding:.6rem .9rem;">nom</th><th style="padding:.6rem .9rem;">ville</th><th style="padding:.6rem .9rem;">total_achats</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">1</td><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">Awa</td><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">Dakar</td><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">85000</td></tr>
+          <tr><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">2</td><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">Teva</td><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">Papeete</td><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">42000</td></tr>
+          <tr><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">3</td><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">Moussa</td><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">Thiès</td><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">120000</td></tr>
+          <tr><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">4</td><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">Hina</td><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">Papeete</td><td style="padding:.55rem .9rem;border-top:1px solid var(--line);">15000</td></tr>
+        </tbody></table></div>
+    </div></section>
+
+    <section><div class="wrap">
+      <div class="head"><p class="label">Les notions clés</p><h2>Cinq requêtes pour démarrer</h2></div>
+      <ol class="notions">
+        <li><div><h3>Tout afficher : SELECT</h3><p>Le point de départ de toute requête. L'étoile signifie « toutes les colonnes ».</p>
+<pre><code>SELECT * FROM clients;</code></pre></div></li>
+        <li><div><h3>Choisir les colonnes</h3><p>On peut demander uniquement les informations utiles.</p>
+<pre><code>SELECT nom, ville FROM clients;</code></pre></div></li>
+        <li><div><h3>Filtrer : WHERE</h3><p>On ne garde que les lignes qui respectent une condition.</p>
+<pre><code>SELECT nom FROM clients
+WHERE ville = 'Papeete';      <span class="c">-- Teva et Hina</span></code></pre></div></li>
+        <li><div><h3>Trier : ORDER BY</h3><p>On range le résultat, du plus grand au plus petit avec <code>DESC</code>.</p>
+<pre><code>SELECT nom, total_achats FROM clients
+ORDER BY total_achats DESC;   <span class="c">-- Moussa en premier</span></code></pre></div></li>
+        <li><div><h3>Compter et additionner</h3><p>SQL calcule directement : nombre de clients, total des ventes, regroupé par ville.</p>
+<pre><code>SELECT ville, COUNT(*) AS nb_clients, SUM(total_achats) AS ca
+FROM clients
+GROUP BY ville;</code></pre></div></li>
+      </ol>
+    </div></section>
+
+    <section class="alt"><div class="wrap">
+      <div class="head"><p class="label">Exercice</p><h2>Répondez à trois questions de patron</h2>
+        <p>Écrivez la requête avant de regarder la solution, puis testez-la dans un exercice SQL interactif en ligne.</p></div>
+      <ol class="steps">
+        <li>Quels clients ont acheté pour plus de 50 000 ? <span style="color:var(--muted);">Solution : <code>SELECT nom FROM clients WHERE total_achats &gt; 50000;</code></span></li>
+        <li>Quel est le meilleur client ? <span style="color:var(--muted);">Solution : <code>SELECT nom FROM clients ORDER BY total_achats DESC LIMIT 1;</code></span></li>
+        <li>Combien de clients à Papeete ? <span style="color:var(--muted);">Solution : <code>SELECT COUNT(*) FROM clients WHERE ville = 'Papeete';</code></span></li>
+      </ol>
+    </div></section>
+
+    <section><div class="wrap">
+      <div class="head"><p class="label">Pièges</p><h2>Les erreurs de débutant</h2></div>
+      <ul class="erreurs">
+        <li><b>Oublier les guillemets autour du texte</b>On écrit <code>ville = 'Dakar'</code>, mais <code>total_achats &gt; 50000</code> sans guillemets.</li>
+        <li><b>Modifier sans filtre</b>Une commande de modification ou de suppression sans <code>WHERE</code> touche toutes les lignes de la table.</li>
+        <li><b>Oublier le point-virgule</b>Il marque la fin d'une requête, surtout quand on en écrit plusieurs.</li>
+      </ul>
+    </div></section>
+
+    <section class="alt"><div class="wrap">
+      <div class="head"><p class="label">Pour aller plus loin</p><h2>Ressources gratuites</h2></div>
+      <div class="res"><a href="https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql" target="_blank" rel="noopener noreferrer"><b>OpenClassrooms — Requêtez une base de données avec SQL</b><small>Lire et interroger des données, pas à pas.</small><span class="tag">Gratuit · FR</span></a><a href="https://sqlbolt.com/" target="_blank" rel="noopener noreferrer"><b>SQLBolt</b><small>Leçons courtes et exercices interactifs directement dans le navigateur.</small><span class="tag">Gratuit · EN</span></a><a href="https://www.freecodecamp.org/learn" target="_blank" rel="noopener noreferrer"><b>freeCodeCamp</b><small>Parcours interactifs, dont les bases de données.</small><span class="tag">Gratuit · EN</span></a><a href="https://grow.google/intl/ch-fr/courses-and-tools/" target="_blank" rel="noopener noreferrer"><b>Google — Outils et formations (Ateliers Numériques)</b><small>Cours gratuits sur les compétences numériques, du marketing aux bases de la donnée.</small><span class="tag">Gratuit · FR</span></a></div>
+    </div></section>
+    <section><div class="wrap">
+      <div class="next">
+        <p class="label" style="color:var(--gold-l);">Et ensuite ?</p>
+        <h2>Vous savez interroger des données. Devenez celui qui les gère.</h2>
+        <p>Quand les bases sont acquises, les Parcours Métiers vous apprennent à en faire un métier et à monter votre propre activité, selon les règles de votre pays.</p>
+        <div class="btns"><a class="btn" href="/academie.html#parcours-metiers">Découvrir les Parcours Métiers</a><a class="btn-ghost" href="/academie/parcoursgratuit/">Les autres langages</a></div>
+      </div>
+    </div></section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Hinova Digital · Rū-fau-tumu Académie</span>
+      <span><a href="/academie.html">Académie</a> · <a href="/mentions.html">Mentions légales</a> · <a href="/politique-de-confidentialite.html">Confidentialité</a></span>
+    </div>
+  </footer>
+</body>
+</html>

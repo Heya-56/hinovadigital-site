@@ -210,6 +210,34 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- SECTION — PARCOURS GRATUIT : DÉCOUVERTE DU NUMÉRIQUE -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <style>
+      .pg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2.2rem;text-align:left}
+      .pg-card{display:flex;flex-direction:column;gap:.45rem;background:#fff;border:1px solid rgba(27,100,200,.18);border-radius:1rem;padding:1.3rem;text-decoration:none;color:#0B2F35;transition:transform .2s ease,box-shadow .2s ease}
+      .pg-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(8,52,58,.1)}
+      .pg-card b{font:900 1.5rem Montserrat,sans-serif;color:#1B64C8}
+      .pg-card h3{font:900 1.1rem Montserrat,sans-serif}
+      .pg-card p{font:400 .92rem/1.6 Inter,sans-serif;color:#4E6A6E}
+      .pg-card span{margin-top:auto;font:800 .75rem Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#1B64C8}
+      @media(max-width:760px){.pg-grid{grid-template-columns:1fr}}
+      @media(prefers-reduced-motion:reduce){.pg-card{transition:none}}
+    </style>
+    <section id="parcours-gratuit" class="py-24 px-6 md:px-12 lg:px-20" style="background:#F8FBFB;" aria-labelledby="pgTitle">
+      <div class="max-w-5xl mx-auto text-center reveal">
+        <p class="font-montserrat text-xs uppercase tracking-widest mb-3 gold-label">Parcours gratuit · Découverte du numérique</p>
+        <h2 id="pgTitle" class="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl" style="color:#0B2F35;"><span class="text-gradient-cyan">Apprendre les bases, gratuitement</span></h2>
+        <p class="font-inter text-sm md:text-base leading-relaxed mt-5 max-w-2xl mx-auto" style="color:#4E6A6E;">Les trois langages les plus utilisés au monde, expliqués aux débutants, avec des liens vers des formations gratuites reconnues.</p>
+        <div class="pg-grid">
+          <a class="pg-card" href="/academie/parcoursgratuit/html-css/"><b>&lt;/&gt;</b><h3>HTML &amp; CSS</h3><p>Créer et habiller une page web.</p><span>Commencer →</span></a>
+          <a class="pg-card" href="/academie/parcoursgratuit/python/"><b>py</b><h3>Python</h3><p>Automatiser, calculer, piloter l'IA.</p><span>Découvrir →</span></a>
+          <a class="pg-card" href="/academie/parcoursgratuit/sql/"><b>SQL</b><h3>SQL</h3><p>Interroger les données d'une entreprise.</p><span>Découvrir →</span></a>
+        </div>
+        <div class="mt-10"><a href="/academie/parcoursgratuit/" class="btn-cyan">Voir le parcours gratuit →</a></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
     <!-- SECTION — CE QUE NOUS AVONS DÉJÀ CONSTRUIT -->
     <!-- ═══════════════════════════════════════════════════════ -->
     <style>
