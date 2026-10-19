@@ -13,7 +13,9 @@
     { g: 'Autres', l: [['ma', 'Maroc', 'EUR'], ['tn', 'Tunisie', 'EUR'], ['ca', 'Canada', 'EUR'], ['autre', 'Autre pays', 'EUR']] }
   ];
 
-  var PROFILS = [['entrepreneur', 'Entrepreneur·e'], ['particulier', 'Particulier'], ['entreprise', 'Entreprise ou établissement']];
+  var PROFILS = [['entrepreneur', 'Entrepreneur·e', 'Entrepreneur'], ['particulier', 'Particulier', 'Individual'], ['entreprise', 'Entreprise ou établissement', 'Company or institution']];
+  var GROUPES_EN = { 'Pacifique': 'Pacific', 'Afrique de l\'Ouest': 'West Africa', 'Afrique centrale': 'Central Africa', 'Europe': 'Europe', 'Autres': 'Other' };
+  function en() { return (document.documentElement.lang || 'fr').slice(0, 2) === 'en'; }
 
   function trouverPays(code) {
     for (var i = 0; i < PAYS.length; i++) for (var j = 0; j < PAYS[i].l.length; j++) if (PAYS[i].l[j][0] === code) return PAYS[i].l[j];
@@ -25,16 +27,16 @@
     return n.toLocaleString('fr-FR').replace(/ | /g, ' ') + ' ' + s;
   }
   function remplirPays(select, choisi) {
-    select.innerHTML = '<option value="">Choisir un pays</option>';
+    select.innerHTML = '<option value="">' + (en() ? 'Choose a country' : 'Choisir un pays') + '</option>';
     PAYS.forEach(function (gr) {
-      var og = document.createElement('optgroup'); og.label = gr.g;
+      var og = document.createElement('optgroup'); og.label = en() ? (GROUPES_EN[gr.g] || gr.g) : gr.g;
       gr.l.forEach(function (p) { var o = document.createElement('option'); o.value = p[0]; o.textContent = p[1]; if (p[0] === choisi) o.selected = true; og.appendChild(o); });
       select.appendChild(og);
     });
   }
   function remplirProfils(select, choisi) {
-    select.innerHTML = '<option value="">Choisir un profil</option>';
-    PROFILS.forEach(function (p) { var o = document.createElement('option'); o.value = p[0]; o.textContent = p[1]; if (p[0] === choisi) o.selected = true; select.appendChild(o); });
+    select.innerHTML = '<option value="">' + (en() ? 'Choose a profile' : 'Choisir un profil') + '</option>';
+    PROFILS.forEach(function (p) { var o = document.createElement('option'); o.value = p[0]; o.textContent = en() ? p[2] : p[1]; if (p[0] === choisi) o.selected = true; select.appendChild(o); });
   }
   function lireChoix() {
     var q = new URLSearchParams(location.search), c = {};

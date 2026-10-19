@@ -155,12 +155,12 @@
           <button id="lang-btn" class="lang-btn" onclick="toggleLanguage()" title="Changer de langue / Switch language">EN</button>
           <button id="navBurgerBtn" class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
           <nav id="navDropdown" class="nav-dropdown">
-            <a href="/" class="nav-tab">Accueil</a>
-            <a href="/vision.html" class="nav-tab">Vision</a>
-            <a href="/lab/" class="nav-tab">Lab</a>
-            <a href="/academie.html" class="nav-tab active" aria-current="page">Académie</a>
-            <a href="/blog.html" class="nav-tab">Journal</a>
-            <a href="/diagnostic.html" class="nav-tab nav-cta">Diagnostic offert</a>
+            <a href="/" class="nav-tab" data-i18n="nav_home">Accueil</a>
+            <a href="/vision.html" class="nav-tab" data-i18n="nav_vision">Vision</a>
+            <a href="/lab/" class="nav-tab" data-i18n="nav_lab">Lab</a>
+            <a href="/academie.html" class="nav-tab active" aria-current="page" data-i18n="nav_academy">Académie</a>
+            <a href="/blog.html" class="nav-tab" data-i18n="nav_journal">Journal</a>
+            <a href="/diagnostic.html" class="nav-tab nav-cta" data-i18n="nav_diag">Diagnostic offert</a>
           </nav>
         </div>
       </header>
@@ -187,7 +187,7 @@
           </div>
         </div>
       </div>
-      <button type="button" id="acSkip" class="ac-skip" aria-label="Passer l'animation d'introduction">Passer l'intro</button>
+      <button type="button" id="acSkip" class="ac-skip" aria-label="Passer l'animation d'introduction" data-i18n="skip_intro">Passer l'intro</button>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════ -->
@@ -225,15 +225,15 @@
     </style>
     <section id="parcours-gratuit" class="py-24 px-6 md:px-12 lg:px-20" style="background:#EEF5F5;" aria-labelledby="pgTitle">
       <div class="max-w-5xl mx-auto text-center reveal">
-        <p class="font-montserrat text-xs uppercase tracking-widest mb-3 gold-label">Parcours gratuit · Découverte du numérique</p>
-        <h2 id="pgTitle" class="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl" style="color:#0B2F35;"><span class="text-gradient-cyan">Apprendre les bases, gratuitement</span></h2>
-        <p class="font-inter text-sm md:text-base leading-relaxed mt-5 max-w-2xl mx-auto" style="color:#4E6A6E;">Les trois langages les plus utilisés au monde, expliqués aux débutants, avec des liens vers des formations gratuites reconnues.</p>
+        <p class="font-montserrat text-xs uppercase tracking-widest mb-3 gold-label" data-i18n="pg_label">Parcours gratuit · Découverte du numérique</p>
+        <h2 id="pgTitle" class="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl" style="color:#0B2F35;"><span class="text-gradient-cyan" data-i18n="pg_h2">Apprendre les bases, gratuitement</span></h2>
+        <p class="font-inter text-sm md:text-base leading-relaxed mt-5 max-w-2xl mx-auto" style="color:#4E6A6E;" data-i18n="pg_sub">Les trois langages les plus utilisés au monde, expliqués aux débutants, avec des liens vers des formations gratuites reconnues.</p>
         <div class="pg-grid">
-          <a class="pg-card" href="/academie/parcoursgratuit/html-css/"><b>&lt;/&gt;</b><h3>HTML &amp; CSS</h3><p>Créer et habiller une page web.</p><span>Commencer →</span></a>
-          <a class="pg-card" href="/academie/parcoursgratuit/python/"><b>py</b><h3>Python</h3><p>Automatiser, calculer, piloter l'IA.</p><span>Découvrir →</span></a>
-          <a class="pg-card" href="/academie/parcoursgratuit/sql/"><b>SQL</b><h3>SQL</h3><p>Interroger les données d'une entreprise.</p><span>Découvrir →</span></a>
+          <a class="pg-card" href="/academie/parcoursgratuit/html-css/"><b>&lt;/&gt;</b><h3>HTML &amp; CSS</h3><p data-i18n="pg_html_p">Créer et habiller une page web.</p><span data-i18n="pg_html_go">Commencer →</span></a>
+          <a class="pg-card" href="/academie/parcoursgratuit/python/"><b>py</b><h3>Python</h3><p data-i18n="pg_py_p">Automatiser, calculer, piloter l'IA.</p><span data-i18n="pg_py_go">Découvrir →</span></a>
+          <a class="pg-card" href="/academie/parcoursgratuit/sql/"><b>SQL</b><h3>SQL</h3><p data-i18n="pg_sql_p">Interroger les données d'une entreprise.</p><span data-i18n="pg_sql_go">Découvrir →</span></a>
         </div>
-        <div class="mt-10"><a href="/academie/parcoursgratuit/" class="btn-cyan">Voir le parcours gratuit →</a></div>
+        <div class="mt-10"><a href="/academie/parcoursgratuit/" class="btn-cyan" data-i18n="pg_cta">Voir le parcours gratuit →</a></div>
       </div>
     </section>
 
@@ -259,13 +259,13 @@
     <!-- NOUVEAU MODULE — INSCRIPTION (contenu réservé aux inscrits) -->
     <section id="module-cloud" class="py-24 px-6 md:px-12 lg:px-20" style="background:#F8FBFB;" aria-labelledby="cloudModuleTitle">
       <div class="max-w-4xl mx-auto text-center reveal">
-        <p class="font-montserrat text-xs uppercase tracking-widest mb-3 gold-label">Nouveau module · Rū-fau-tumu Académie</p>
-        <h2 id="cloudModuleTitle" class="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl" style="color:#0B2F35;">Comprendre le cloud. Construire. Garder la maîtrise.</h2>
-        <p class="font-inter text-sm md:text-base leading-relaxed mt-5" style="color:#4E6A6E;">Un parcours guidé pour concevoir, mettre en ligne et sécuriser un projet numérique, pensé pour les entrepreneurs du Fenua. Le contenu complet est réservé aux inscrits.</p>
+        <p class="font-montserrat text-xs uppercase tracking-widest mb-3 gold-label" data-i18n="cloud_label">Nouveau module · Rū-fau-tumu Académie</p>
+        <h2 id="cloudModuleTitle" class="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl" style="color:#0B2F35;" data-i18n="cloud_h2">Comprendre le cloud. Construire. Garder la maîtrise.</h2>
+        <p class="font-inter text-sm md:text-base leading-relaxed mt-5" style="color:#4E6A6E;" data-i18n="cloud_sub">Un parcours guidé pour concevoir, mettre en ligne et sécuriser un projet numérique, pensé pour les entrepreneurs du Fenua. Le contenu complet est réservé aux inscrits.</p>
         <div class="hd-academy-grid mt-10" id="module-visuels"><!-- visuels du module : à fournir --></div>
         <div class="mt-10">
-          <a href="https://github.com/Heya-56/business-digital-academy" target="_blank" rel="noopener noreferrer" class="btn-cyan">M'inscrire au nouveau module →</a>
-          <a href="mailto:contact@hinovadigitalcorp.com?subject=R%C5%AB-fau-tumu%20-%20Nouveau%20module" class="font-montserrat font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-lg border" style="text-decoration:none;color:#0B2F35;">Poser une question</a>
+          <a href="https://github.com/Heya-56/business-digital-academy" target="_blank" rel="noopener noreferrer" class="btn-cyan" data-i18n="cloud_cta">M'inscrire au nouveau module →</a>
+          <a href="mailto:contact@hinovadigitalcorp.com?subject=R%C5%AB-fau-tumu%20-%20Nouveau%20module" class="font-montserrat font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-lg border" style="text-decoration:none;color:#0B2F35;" data-i18n="cloud_ask">Poser une question</a>
         </div>
       </div>
     </section>
@@ -286,22 +286,22 @@
     </style>
     <section id="parcours-metiers" class="py-24 px-6 md:px-12 lg:px-20" aria-labelledby="pmTitle">
       <div class="max-w-4xl mx-auto text-center reveal">
-        <p class="font-montserrat text-xs uppercase tracking-widest mb-3 gold-label">Parcours Métiers · Apprendre un métier en 2027</p>
+        <p class="font-montserrat text-xs uppercase tracking-widest mb-3 gold-label" data-i18n="pm_label">Parcours Métiers · Apprendre un métier en 2027</p>
         <h2 id="pmTitle" class="font-montserrat font-black text-2xl md:text-3xl lg:text-4xl" style="color:#0B2F35;">
-          <span class="text-gradient-cyan">Apprenez un métier où l'IA devient essentielle</span>
+          <span class="text-gradient-cyan" data-i18n="pm_h2">Apprenez un métier où l'IA devient essentielle</span>
         </h2>
-        <p class="font-inter text-sm md:text-base leading-relaxed mt-5 max-w-2xl mx-auto" style="color:#4E6A6E;">Des parcours à distance, à suivre depuis un ordinateur ou un téléphone. Vous en ressortez avec un projet de business construit selon les règles de votre pays.</p>
-        <div class="pm-steps" aria-label="Les trois étapes de chaque parcours"><span>1 · Le comprendre</span><span>2 · L'apprendre</span><span>3 · La mise en pratique</span></div>
+        <p class="font-inter text-sm md:text-base leading-relaxed mt-5 max-w-2xl mx-auto" style="color:#4E6A6E;" data-i18n="pm_sub">Des parcours à distance, à suivre depuis un ordinateur ou un téléphone. Vous en ressortez avec un projet de business construit selon les règles de votre pays.</p>
+        <div class="pm-steps" aria-label="Les trois étapes de chaque parcours"><span data-i18n="pm_s1">1 · Le comprendre</span><span data-i18n="pm_s2">2 · L'apprendre</span><span data-i18n="pm_s3">3 · La mise en pratique</span></div>
 
         <form id="pmForm" class="pm-form" novalidate>
-          <label for="pmProfil">Je suis
+          <label for="pmProfil"><span data-i18n="pm_profil">Je suis</span>
             <select id="pmProfil" name="profil" required></select>
           </label>
-          <label for="pmPays">Mon pays
+          <label for="pmPays"><span data-i18n="pm_pays">Mon pays</span>
             <select id="pmPays" name="pays" required></select>
           </label>
-          <button type="submit" class="btn-cyan">Voir les parcours →</button>
-          <p id="pmMsg" class="pm-msg" role="status" aria-live="polite">Les tarifs s'affichent dans la devise de votre pays.</p>
+          <button type="submit" class="btn-cyan" data-i18n="pm_cta">Voir les parcours →</button>
+          <p id="pmMsg" class="pm-msg" role="status" aria-live="polite" data-i18n="pm_msg">Les tarifs s'affichent dans la devise de votre pays.</p>
         </form>
       </div>
     </section>
@@ -310,10 +310,10 @@
       (function(){
         var PM=window.ParcoursMetiers; if(!PM) return;
         var f=document.getElementById('pmForm'), pr=document.getElementById('pmProfil'), py=document.getElementById('pmPays'), m=document.getElementById('pmMsg');
-        var c=PM.lireChoix(); PM.remplirProfils(pr,c.profil); PM.remplirPays(py,c.pays);
+        var c=PM.lireChoix(); function fill(){ PM.remplirProfils(pr,pr.value||c.profil); PM.remplirPays(py,py.value||c.pays); } fill(); document.addEventListener('hd:lang',fill);
         f.addEventListener('submit',function(e){
           e.preventDefault();
-          if(!pr.value||!py.value){ m.textContent='Choisissez votre profil et votre pays pour continuer.'; (pr.value?py:pr).focus(); return; }
+          if(!pr.value||!py.value){ m.textContent=((typeof t!=='undefined'&&t[document.documentElement.lang])||{}).pm_err||'Choisissez votre profil et votre pays pour continuer.'; (pr.value?py:pr).focus(); return; }
           PM.garderChoix(pr.value,py.value);
           location.href='/academie/parcoursmetiers/?profil='+encodeURIComponent(pr.value)+'&pays='+encodeURIComponent(py.value);
         });
@@ -510,8 +510,8 @@
           Découvre aussi mon site CV sur <a href="https://heyatapare.com" target="_blank" rel="noopener noreferrer" style="color:#1B64C8; text-decoration:underline;">heyatapare.com</a>
         </p>
         <p class="mt-4" style="display:flex;gap:18px;justify-content:center;flex-wrap:wrap">
-          <a href="index.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1B64C8; text-decoration:none">Accueil</a>
-          <a href="blog.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1B64C8; text-decoration:none">Journal</a>
+          <a href="index.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1B64C8; text-decoration:none" data-i18n="foot_home">Accueil</a>
+          <a href="blog.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1B64C8; text-decoration:none" data-i18n="foot_journal">Journal</a>
           <a href="mentions.html" class="font-montserrat text-xs font-bold uppercase tracking-widest" style="color:#1B64C8; text-decoration:none" data-i18n="mentions_link">Mentions Légales</a>
         </p>
       </div>
@@ -525,6 +525,41 @@
 
       const t = {
         fr: {
+          pm_profil: "Je suis",
+          pm_pays: "Mon pays",
+          pm_msg: "Les tarifs s'affichent dans la devise de votre pays.",
+          pm_err: "Choisissez votre profil et votre pays pour continuer.",
+          nav_home: "Accueil",
+          nav_vision: "Vision",
+          nav_lab: "Lab",
+          nav_academy: "Académie",
+          nav_journal: "Journal",
+          nav_diag: "Diagnostic offert",
+          skip_intro: "Passer l'intro",
+          pg_label: "Parcours gratuit · Découverte du numérique",
+          pg_h2: "Apprendre les bases, gratuitement",
+          pg_sub: "Les trois langages les plus utilisés au monde, expliqués aux débutants, avec des liens vers des formations gratuites reconnues.",
+          pg_html_p: "Créer et habiller une page web.",
+          pg_html_go: "Commencer →",
+          pg_py_p: "Automatiser, calculer, piloter l'IA.",
+          pg_py_go: "Découvrir →",
+          pg_sql_p: "Interroger les données d'une entreprise.",
+          pg_sql_go: "Découvrir →",
+          pg_cta: "Voir le parcours gratuit →",
+          cloud_label: "Nouveau module · Rū-fau-tumu Académie",
+          cloud_h2: "Comprendre le cloud. Construire. Garder la maîtrise.",
+          cloud_sub: "Un parcours guidé pour concevoir, mettre en ligne et sécuriser un projet numérique, pensé pour les entrepreneurs du Fenua. Le contenu complet est réservé aux inscrits.",
+          cloud_cta: "M'inscrire au nouveau module →",
+          cloud_ask: "Poser une question",
+          pm_label: "Parcours Métiers · Apprendre un métier en 2027",
+          pm_h2: "Apprenez un métier où l'IA devient essentielle",
+          pm_sub: "Des parcours à distance, à suivre depuis un ordinateur ou un téléphone. Vous en ressortez avec un projet de business construit selon les règles de votre pays.",
+          pm_s1: "1 · Le comprendre",
+          pm_s2: "2 · L'apprendre",
+          pm_s3: "3 · La mise en pratique",
+          pm_cta: "Voir les parcours →",
+          foot_home: "Accueil",
+          foot_journal: "Journal",
           pageTitle: "Rū-fau-tumu Académie — Formation Automatisation Entreprise Fenua | Hinova Digital",
           metaDesc: "L'Académie du Lab Tech Hinova Digital : formations en automatisation d'entreprise et souveraineté numérique en Polynésie française.",
           ac_surtitle: "Rū-fau-tumu Académie",
@@ -569,6 +604,41 @@
           footer_portfolio_link: "Découvre aussi mon univers créatif sur <a href=\"https://heyatapare.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#1B64C8; text-decoration:underline;\">heyatapare.com</a>",
         },
         en: {
+          pm_profil: "I am",
+          pm_pays: "My country",
+          pm_msg: "Prices are shown in your country's currency.",
+          pm_err: "Choose your profile and country to continue.",
+          nav_home: "Home",
+          nav_vision: "Vision",
+          nav_lab: "Lab",
+          nav_academy: "Academy",
+          nav_journal: "Journal",
+          nav_diag: "Free diagnostic",
+          skip_intro: "Skip intro",
+          pg_label: "Free track · Discover digital skills",
+          pg_h2: "Learn the basics, for free",
+          pg_sub: "The three most widely used languages in the world, explained for beginners, with links to recognised free courses.",
+          pg_html_p: "Build and style a web page.",
+          pg_html_go: "Start →",
+          pg_py_p: "Automate, calculate, drive AI.",
+          pg_py_go: "Discover →",
+          pg_sql_p: "Query a business's data.",
+          pg_sql_go: "Discover →",
+          pg_cta: "See the free track →",
+          cloud_label: "New module · Rū-fau-tumu Academy",
+          cloud_h2: "Understand the cloud. Build. Stay in control.",
+          cloud_sub: "A guided programme to design, launch and secure a digital project, built for entrepreneurs of the Fenua. The full content is reserved for registered learners.",
+          cloud_cta: "Sign up for the new module →",
+          cloud_ask: "Ask a question",
+          pm_label: "Career Tracks · Learn a trade in 2027",
+          pm_h2: "Learn a trade where AI is becoming essential",
+          pm_sub: "Remote programmes you can follow from a computer or a phone. You finish with a business project built according to the rules of your country.",
+          pm_s1: "1 · Understand it",
+          pm_s2: "2 · Learn it",
+          pm_s3: "3 · Put it into practice",
+          pm_cta: "See the tracks →",
+          foot_home: "Home",
+          foot_journal: "Journal",
           pageTitle: "Rū-fau-tumu Academy — Business Automation Training for the Fenua | Hinova Digital",
           metaDesc: "The Lab Tech Academy by Hinova Digital: business automation and digital sovereignty training in French Polynesia.",
           ac_surtitle: "Rū-fau-tumu Académie",
@@ -633,6 +703,7 @@
         if (metaDesc) metaDesc.content = dict.metaDesc;
         document.getElementById('lang-btn').textContent = lang === 'fr' ? 'EN' : 'FR';
         try { localStorage.setItem('hd_lang', lang); } catch(e) {}
+        document.dispatchEvent(new CustomEvent('hd:lang', { detail: lang }));
       }
 
       function toggleLanguage() { applyLanguage(currentLang === 'fr' ? 'en' : 'fr'); }
