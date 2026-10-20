@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+    <script src="/js/i18n.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gestionnaire de business augmenté — Parcours Métiers | Rū-fau-tumu Académie</title>
   <meta name="description" content="Parcours Métiers Rū-fau-tumu : devenir gestionnaire de business augmenté par l'IA. À distance, mise en pratique selon les règles de votre pays." />
@@ -238,7 +239,7 @@
       var PM=window.ParcoursMetiers; if(!PM) return;
       var c=PM.lireChoix(), dev=PM.devisePour(c.pays), p=PM.trouverPays(c.pays), prix=PM.formatPrix(dev);
       document.querySelectorAll('[data-prix]').forEach(function(el){ el.textContent=prix; });
-      if(p){ document.getElementById('devise').textContent='Tarif pour : '+p[1]+'. Réponse sous 48 h avec les modalités de paiement adaptées à votre pays.'; }
+      if(p){ var EN=(document.documentElement.lang||'fr').indexOf('en')===0; document.getElementById('devise').textContent=EN?('Price for: '+p[1]+'. Reply within 48 h with payment options suited to your country.'):('Tarif pour : '+p[1]+'. Réponse sous 48 h avec les modalités de paiement adaptées à votre pays.'); }
       var a=document.querySelector('.offer a.btn'); if(a&&p){ a.href=a.href.replace('Pays%20%3A%0A','Pays%20%3A%20'+encodeURIComponent(p[1])+'%0A'); }
     })();
   </script>

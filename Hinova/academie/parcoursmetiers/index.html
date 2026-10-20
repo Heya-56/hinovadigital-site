@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+    <script src="/js/i18n.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Parcours Métiers | Rū-fau-tumu Académie</title>
   <meta name="robots" content="noindex, nofollow, noarchive" />
@@ -142,13 +143,16 @@
       function maj(){
         var dev=PM.devisePour(py.value), p=PM.trouverPays(py.value), prix=PM.formatPrix(dev);
         document.querySelectorAll('[data-prix]').forEach(function(el){ el.textContent=prix; });
-        document.getElementById('devise').textContent = p ? ('Tarifs affichés pour : '+p[1]+' · '+(dev==='EUR'?'paiement en euros':'paiement en '+(dev==='XPF'?'francs CFP':'francs CFA'))) : 'Choisissez votre pays pour voir le tarif dans votre devise.';
+        var EN=(document.documentElement.lang||'fr').indexOf('en')===0;
+        var cur = dev==='EUR' ? (EN?'payment in euros':'paiement en euros') : (EN?'payment in ':'paiement en ')+(dev==='XPF'?(EN?'CFP francs':'francs CFP'):(EN?'CFA francs':'francs CFA'));
+        document.getElementById('devise').textContent = p ? ((EN?'Prices shown for: ':'Tarifs affichés pour : ')+p[1]+' · '+cur) : (EN?'Choose your country to see the price in your currency.':'Choisissez votre pays pour voir le tarif dans votre devise.');
         document.getElementById('bandeauEntreprise').classList.toggle('on', pr.value==='entreprise');
         var q='?profil='+encodeURIComponent(pr.value)+'&pays='+encodeURIComponent(py.value);
         document.querySelectorAll('[data-lien]').forEach(function(a){ a.href=a.getAttribute('href').split('?')[0]+q; });
         PM.garderChoix(pr.value,py.value);
       }
       pr.addEventListener('change',maj); py.addEventListener('change',maj); maj();
+      document.addEventListener('hd:lang',function(){ var a=pr.value,b=py.value; PM.remplirProfils(pr,a); PM.remplirPays(py,b); maj(); });
     })();
   </script>
 </body>
