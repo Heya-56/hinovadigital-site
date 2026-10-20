@@ -2,7 +2,7 @@
    Chargé dans <head> sans defer. Le français est écrit dans le HTML ;
    l'anglais vient de /js/i18n-en.json (texte français exact → texte anglais). */
 (function () {
-  var KEY = 'hd_lang', DICT_URL = '/js/i18n-en.json?v=20261019';
+  var KEY = 'hd_lang', DICT_URL = '/js/i18n-en.json?v=20261019b';
   var SKIP = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1, CODE: 1, PRE: 1, TEXTAREA: 1 };
   var ATTRS = ['alt', 'placeholder', 'aria-label', 'title'];
   var root = document.documentElement;
