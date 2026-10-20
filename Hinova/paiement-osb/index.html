@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+    <script src="/js/i18n.js"></script><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Paiement par carte OSB / PayZen — Hinova Digital</title><link rel="canonical" href="https://hinovadigitalcorp.com/paiement-osb/"><meta name="description" content="Demandez votre solution de paiement par carte PayZen avec OSB, la banque locale de Polynésie française. Dossier pré-rempli par Hinova Digital."><meta name="theme-color" content="#08343A"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/logo-hinova.webp">
+<link rel="stylesheet" href="/css/ecosystem.css"><link rel="stylesheet" href="/css/tailwind.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+      <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}</script>
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <style>.hv-consent{display:flex!important;gap:.55rem;align-items:flex-start;font-size:.82rem;font-weight:400!important;line-height:1.45;color:inherit}.hv-consent input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:#1B64C8}.hv-consent em{color:#B5823A;font-style:normal}.pt-thanks{padding:40px 24px;text-align:center;border-radius:16px;background:rgba(10,184,196,.08);border:1px solid rgba(10,184,196,.35);color:#0B2F35;line-height:1.6}.pt-thanks-t{font-family:Montserrat,sans-serif;font-weight:900;font-size:1.6rem;color:#C09552;margin-bottom:8px}</style></head><body style="background:#F6FAFA">
+<header class="hero-bg" style="padding-bottom:1.5rem"><div class="px-6 pt-6 md:px-12 md:pt-8 flex items-center justify-between gap-4"><a href="/" aria-label="HINOVA DIGITAL"><img src="/logo-hinova.webp" alt="Logo Hinova Digital" class="site-logo protected-asset"></a><div class="flex items-center gap-3 ml-auto" style="position:relative"><button id="navBurgerBtn" class="nav-burger" aria-label="Menu" aria-expanded="false">☰</button><nav id="navDropdown" class="nav-dropdown">
+            <a href="/" class="nav-tab">Accueil</a>
+            <a href="/vision.html" class="nav-tab">Vision</a>
+            <a href="/lab/" class="nav-tab">Lab</a>
+            <a href="/academie.html" class="nav-tab">Académie</a>
+            <a href="/blog.html" class="nav-tab">Journal</a>
+            <a href="/trading/" class="nav-tab">Trading</a>
+            <a href="/devis/" class="nav-tab">Devis en ligne</a>
+            <a href="/diagnostic.html" class="nav-tab nav-cta">Diagnostic offert</a>
+          </nav></div></div></header>
+<style>
+  .pt{max-width:64rem;margin:0 auto;padding:2rem 1.5rem 4rem;font-family:Inter,system-ui,sans-serif;color:#0B2F35;display:grid;gap:1.6rem}
+  .pt-eyebrow{font-family:Montserrat,sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#B5823A}
+  .pt h1{font-family:Montserrat,sans-serif;font-weight:900;font-size:clamp(1.8rem,4.2vw,2.8rem);line-height:1.1;margin:.4rem 0 .6rem;text-wrap:balance}
+  .pt h2{font-family:Montserrat,sans-serif;font-weight:800;font-size:1.25rem;margin:0}
+  .pt-lead{color:#4E6A6E;max-width:62ch;line-height:1.65;margin:0}
+  .pt-steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+  @media(max-width:760px){.pt-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .pt-steps li{background:#fff;border:1px solid rgba(27,100,200,.18);border-radius:12px;padding:1rem;display:grid;gap:.3rem;align-content:start}
+  .pt-steps b{font-family:Montserrat,sans-serif}.pt-steps span{color:#1B64C8;font-weight:800;font-size:.8rem}
+  .pt-steps p{margin:0;color:#4E6A6E;font-size:.88rem;line-height:1.5}
+  .pt-cta{display:flex;flex-wrap:wrap;gap:.75rem}
+  .pt-btn{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;padding:.85rem 1.3rem;font-family:Montserrat,sans-serif;font-weight:800;font-size:.92rem;cursor:pointer;min-height:48px;border:0;text-decoration:none}
+  .pt-btn.p{background:#1B64C8;color:#fff}.pt-btn.s{background:#fff;color:#8a6127;border:1.5px solid #B5823A}
+  .pt-btn:focus-visible,.pt input:focus-visible,.pt textarea:focus-visible,.pt select:focus-visible{outline:3px solid #1B64C8;outline-offset:2px}
+  .pt-card{background:#fff;border:1px solid rgba(27,100,200,.18);border-radius:14px;padding:1.4rem;display:grid;gap:.8rem}
+  .pt-form{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+  @media(max-width:620px){.pt-form{grid-template-columns:1fr}}
+  .pt-form label{font-size:.82rem;font-weight:600;display:grid;gap:.3rem}
+  .pt-form .full{grid-column:1/-1}
+  .pt-form input,.pt-form textarea,.pt-form select{border:1px solid #C9DADB;border-radius:8px;padding:.7rem;font:inherit;font-size:16px;background:#fff;color:#0B2F35}
+  .pt-chk{display:flex;gap:.6rem;align-items:flex-start;font-weight:400!important;font-size:.88rem!important;line-height:1.5}
+  .pt-chk input{width:20px;height:20px;accent-color:#1B64C8;margin-top:2px}
+  .pt-small{font-size:.82rem;color:#4E6A6E;line-height:1.5;margin:0}
+  /* aperçu */
+  .pv{position:fixed;inset:0;background:rgba(3,20,24,.72);display:flex;align-items:flex-start;justify-content:center;padding:calc(env(safe-area-inset-top,0px) + 1rem) 1rem 1rem;z-index:1000;overflow-y:auto}
+  .pv[hidden]{display:none}
+  .pv-doc{background:linear-gradient(160deg,#03181D,#0A3138);color:#DDEBEC;border-radius:16px;max-width:46rem;width:100%;padding:1.6rem;font-family:Inter,system-ui,sans-serif;display:grid;gap:1.1rem;position:relative}
+  .pv-close{position:absolute;top:.8rem;right:.8rem;background:rgba(255,255,255,.1);color:#fff;border:0;border-radius:50%;width:44px;height:44px;font-size:1.2rem;cursor:pointer}
+  .pv-eye{font-family:Montserrat,sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#D8B16E;margin:0}
+  .pv-doc h3{font-family:Montserrat,sans-serif;font-weight:900;color:#E8C77E;font-size:clamp(1.4rem,4vw,2rem);line-height:1.1;margin:0;text-wrap:balance}
+  .pv-box{border:1px solid rgba(216,177,110,.45);border-radius:12px;padding:1rem;background:rgba(216,177,110,.06);display:grid;gap:.7rem}
+  .pv-big{font-family:Montserrat,sans-serif;font-weight:900;font-size:1.7rem;color:#E8C77E;margin:0}
+  .pv-big small{font-size:.9rem;color:#DDEBEC;font-weight:600}
+  .pv-tbl{overflow-x:auto}
+  .pv table{width:100%;border-collapse:collapse;font-size:.86rem;font-variant-numeric:tabular-nums}
+  .pv th{text-align:left;color:#D8B16E;font-weight:700;padding:.45rem .3rem;border-bottom:1px solid rgba(216,177,110,.5)}
+  .pv td{padding:.45rem .3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+  .pv-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem}
+  @media(max-width:520px){.pv-3{grid-template-columns:1fr}}
+  .pv-3 div{background:rgba(0,0,0,.25);border-radius:10px;padding:.8rem;font-size:.82rem;line-height:1.45}
+  .pv-3 b{display:block;font-family:Montserrat,sans-serif;font-size:1.25rem;color:#E8C77E}
+  .pv-fine{font-size:.76rem;color:#9DB8BB;margin:0;line-height:1.5}
+</style>
+
+<main class="pt">
+  <div>
+    <p class="pt-eyebrow">Paiement local · OSB × PayZen</p>
+    <h1>Encaissez par carte, l'argent arrive sur votre compte</h1>
+    <p class="pt-lead">PayZen est la solution de paiement en ligne d'OSB (Océanienne de Services Bancaires, Papeete). Remplissez ce dossier : nous préparons votre contrat multiservice et votre avenant PayZen, puis nous vous accompagnons jusqu'à la mise en service.</p>
+  </div>
+  <ol class="pt-steps" aria-label="Déroulement">
+    <li><span>01</span><b>Dossier</b><p>Vous remplissez le formulaire ci-dessous.</p></li>
+    <li><span>02</span><b>Préparation</b><p>Nous pré-remplissons votre contrat OSB et l'avenant PayZen.</p></li>
+    <li><span>03</span><b>Signature</b><p>Vous signez avec OSB. Pièces à prévoir : Kbis/RCS, N° Tahiti, RIB, pièce d'identité.</p></li>
+    <li><span>04</span><b>Mise en service</b><p>Nous branchons PayZen sur votre site ou votre boutique.</p></li>
+  </ol>
+  <section class="pt-card" id="dossier" aria-labelledby="dTitle">
+    <h2 id="dTitle">Votre dossier PayZen</h2>
+    <form class="pt-form" id="oform" novalidate>
+      <fieldset class="full" style="border:0;padding:0;margin:0;display:flex;gap:1.2rem;flex-wrap:wrap"><legend class="pt-small" style="margin-bottom:.4rem;font-weight:600;color:#0B2F35">Vous êtes</legend>
+        <label class="pt-chk"><input type="radio" name="type" id="o-pp" value="Personne physique (patenté)" checked> Personne physique (patenté)</label>
+        <label class="pt-chk"><input type="radio" name="type" id="o-pm" value="Personne morale"> Société (EURL, SARL, SAS…)</label>
+      </fieldset>
+      <label>Nom et prénom<input id="o-name" autocomplete="name" required></label>
+      <label class="pm" hidden>Raison sociale<input id="o-rs" autocomplete="organization"></label>
+      <label class="pm" hidden>Forme juridique<select id="o-fj"><option value="">Choisir</option><option>EURL</option><option>SARL</option><option>SAS / SASU</option><option>SA</option><option>SNC</option><option>Autre</option></select></label>
+      <label class="pm" hidden>Qualité du représentant légal<input id="o-qual" placeholder="Gérant(e), Président(e)…"></label>
+      <label class="full">Adresse<input id="o-addr" autocomplete="street-address"></label>
+      <label>BP<input id="o-bp"></label>
+      <label>Commune / île<input id="o-ville" placeholder="Papeete, Moorea…"></label>
+      <label>N° RCS<input id="o-rcs"></label>
+      <label>N° Tahiti<input id="o-tahiti" required></label>
+      <label>Téléphone<input id="o-phone" type="tel" autocomplete="tel" required></label>
+      <label>E-mail<input id="o-email" type="email" autocomplete="email" required></label>
+      <label class="full">Mandataire (si une autre personne signe)<input id="o-mand"></label>
+      <label>Abonnement souhaité<select id="o-abo"><option>PayZen Start</option><option>PayZen Pro</option><option>PayZen Expert</option><option>Je ne sais pas, conseillez-moi</option></select></label>
+      <label>Date de démarrage souhaitée<input id="o-date" type="date"></label>
+      <div class="full" style="display:flex;gap:1.2rem;flex-wrap:wrap">
+        <label class="pt-chk opt-sp"><input type="checkbox" id="o-easy"> Option EasyPay (Start et Pro)</label>
+        <label class="pt-chk opt-ex" hidden><input type="checkbox" id="o-ident"> Paiement par identifiant (Expert)</label>
+        <label class="pt-chk opt-ex" hidden><input type="checkbox" id="o-risk"> Gestion des risques (Expert)</label>
+      </div>
+      <label class="full">Votre activité et où vous voulez encaisser (site, boutique, réseaux…)<textarea id="o-msg" rows="3"></textarea></label>
+      <label class="hv-consent full"><input type="checkbox" id="o-c1" required> <span>J'accepte d'être recontacté(e) par Hinova Digital et que mon dossier soit transmis à OSB. <em>(obligatoire)</em></span></label>
+      <label class="hv-consent full"><input type="checkbox" id="o-c2"> <span>Je souhaite recevoir les offres et la newsletter d'Hinova Digital (désinscription à tout moment).</span></label>
+      <input type="text" id="o-bot" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+      <div class="full"><button class="pt-btn p" type="submit" id="osend">Envoyer mon dossier</button></div>
+      <p class="pt-small full" id="oMsg" role="status"></p>
+    </form>
+    <div id="oThanks" class="pt-thanks" role="status" aria-live="polite" hidden>
+      <p class="pt-thanks-t">Māuruuru !</p>
+      <p>Votre dossier PayZen est bien reçu. Nous préparons vos documents OSB et revenons vers vous sous 48 h ouvrées.</p>
+    </div>
+    <p class="pt-small">Les tarifs et prises en charge (OSB ou votre banque) sont fixés par OSB dans votre avenant. Hinova Digital vous accompagne dans la démarche et l'intégration technique.</p>
+  </section>
+</main>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  function sync(){var pm=$('o-pm').checked;document.querySelectorAll('.pm').forEach(function(e){e.hidden=!pm});
+    var ex=$('o-abo').value==='PayZen Expert';document.querySelectorAll('.opt-ex').forEach(function(e){e.hidden=!ex});document.querySelectorAll('.opt-sp').forEach(function(e){e.hidden=ex});}
+  ['o-pp','o-pm','o-abo'].forEach(function(i){$(i).addEventListener('change',sync)});sync();
+  $('oform').addEventListener('submit',function(e){
+    e.preventDefault();var m=$('oMsg');
+    if($('o-bot').value)return;
+    var em=$('o-email').value.trim();
+    if(!$('o-name').value.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)||!$('o-tahiti').value.trim()||!$('o-phone').value.trim()){m.textContent='Indiquez au minimum votre nom, votre N° Tahiti, votre téléphone et un e-mail valide.';return}
+    if(!$('o-c1').checked){m.textContent="Cochez la case d'accord pour que nous puissions traiter votre dossier.";return}
+    var pm=$('o-pm').checked, ex=$('o-abo').value==='PayZen Expert';
+    var opts=[];if(!ex&&$('o-easy').checked)opts.push('EasyPay');if(ex&&$('o-ident').checked)opts.push('Paiement par identifiant');if(ex&&$('o-risk').checked)opts.push('Gestion des risques');
+    var d={access_key:'ee535cad-eac2-43b5-bc2d-d766895e9e9f',subject:'Dossier PayZen / OSB — '+$('o-name').value,from_name:'Site Hinova Digital',
+      'Type de client':pm?'Personne morale':'Personne physique (patenté)','Nom et prénom':$('o-name').value,
+      'Raison sociale':pm?$('o-rs').value:'-','Forme juridique':pm?$('o-fj').value:'-','Qualité du représentant':pm?$('o-qual').value:'-',
+      'Adresse':$('o-addr').value,'BP':$('o-bp').value,'Commune / île':$('o-ville').value,'N° RCS':$('o-rcs').value,'N° Tahiti':$('o-tahiti').value,
+      'Téléphone':$('o-phone').value,email:em,'Mandataire':$('o-mand').value||'-','Abonnement':$('o-abo').value,'Options':opts.join(', ')||'Aucune',
+      'Démarrage souhaité':$('o-date').value||'-','Activité / canaux':$('o-msg').value,'Accord recontact':'oui','Newsletter':$('o-c2').checked?'oui':'non'};
+    $('osend').disabled=true;m.textContent='Envoi en cours…';
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)})
+      .then(function(r){return r.json()}).then(function(j){if(!j.success)throw 0;$('oform').hidden=true;var t=$('oThanks');t.hidden=false;t.scrollIntoView({behavior:'smooth',block:'center'});
+        fetch('/api/devis',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:'osb',name:d['Nom et prénom'],entreprise:pm?d['Raison sociale']:'',email:em,phone:d['Téléphone'],offre:'Dossier PayZen / OSB',resume:d['Abonnement']+' · '+d['Options']+' · N° Tahiti '+d['N° Tahiti'],message:d['Activité / canaux'],consent_contact:true,consent_news:$('o-c2').checked})}).catch(function(){});})
+      .catch(function(){$('osend').disabled=false;m.innerHTML="L'envoi n'a pas abouti. Réessayez, ou écrivez à <b style=\"user-select:all\">contact@hinovadigitalcorp.com</b>.";});
+  });
+})();
+</script>
+<footer></footer><script src="/js/ecosystem.js?v=20261010g" defer></script><script src="/js/hinova-ui.js" defer></script></body></html>
