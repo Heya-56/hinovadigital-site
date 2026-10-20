@@ -244,9 +244,9 @@
       .nav-dropdown.open { display:flex; }
       .nav-dropdown a.nav-tab { padding:0.7rem 0.9rem; border-radius:0.55rem; display:block; }
       .nav-dropdown a.nav-tab:hover, .nav-dropdown a.nav-tab.active { background:rgba(27,100,200,0.14); }
-        .back-to-top { position:fixed; bottom:22px; right:22px; width:46px; height:46px; border-radius:50%; background:rgba(8,52,58,0.92); border:1px solid rgba(27,100,200,0.4); color:#1B64C8; display:flex; align-items:center; justify-content:center; font-size:1.25rem; cursor:pointer; opacity:0; visibility:hidden; transform:translateY(12px); transition: opacity .3s ease, transform .3s ease, visibility .3s ease, border-color .2s ease, background .2s ease; z-index:150; box-shadow:0 8px 24px rgba(0,0,0,0.35); text-decoration:none; }
+        .back-to-top { position:fixed; bottom:22px; right:22px; width:46px; height:46px; border-radius:50%; background:rgba(8,52,58,0.92); border:1.5px solid #D4A85A; color:#D4A85A; box-shadow:0 0 0 1px rgba(212,168,90,.25),0 0 14px rgba(212,168,90,.35); display:flex; align-items:center; justify-content:center; font-size:1.25rem; cursor:pointer; opacity:0; visibility:hidden; transform:translateY(12px); transition: opacity .3s ease, transform .3s ease, visibility .3s ease, border-color .2s ease, background .2s ease; z-index:150; box-shadow:0 8px 24px rgba(0,0,0,0.35); text-decoration:none; }
     .back-to-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
-    .back-to-top:hover, .back-to-top:focus-visible { border-color:#1B64C8; background:rgba(27,100,200,0.16); outline:none; }
+    .back-to-top:hover, .back-to-top:focus-visible { border-color:#F0CB7E; color:#F0CB7E; background:rgba(212,168,90,0.14); outline:none; }
     @media (prefers-reduced-motion: reduce) { .back-to-top { transition:none; } }
 
       /* ══ Bandeau de preuves ══ */
@@ -354,7 +354,7 @@
         </div>
         <div class="hd-visual-journey">
           <a class="hd-journey-card" href="/vision.html">
-            <img src="/leapfrogging-pacifica.webp" alt="Vision Leapfrogging Pacifica : relier les territoires insulaires au monde" loading="lazy" width="900" height="620">
+            <img src="/leapfrogging.webp" alt="Vision Leapfrogging Pacifica : relier les territoires insulaires au monde" loading="lazy" width="900" height="620">
             <span class="hd-card-shade"></span>
             <span class="hd-card-content"><span class="hd-card-kicker" data-i18n="exp1_k">01 · La vision</span><strong data-i18n="exp1_t">Penser au-delà des frontières</strong><span data-i18n="exp1_b">Notre vision du numérique, de la souveraineté et du leapfrogging depuis le Fenua.</span><span class="hd-card-link" data-i18n="exp1_l">Découvrir notre vision ↗</span></span>
           </a>
@@ -441,6 +441,7 @@
       .mh-item h3{font-family:Montserrat,sans-serif;font-weight:700;font-size:16px;margin:0 0 4px;color:#F4F8FA}
       .mh-item p{font-family:Inter,sans-serif;font-size:14px;line-height:1.6;margin:0;color:#BFD8D5}
       .mh-btn{display:inline-block;background:#C9A25E;color:#001419;font-family:Montserrat,sans-serif;font-weight:700;font-size:14px;padding:14px 26px;border-radius:14px;text-decoration:none}
+      .mh-soon{opacity:.7;cursor:default;border:1px dashed #E8C77A;background:transparent;color:#E8C77A}
       .mh-btn:focus-visible{outline:3px solid #E8C77A;outline-offset:3px}
       @media (min-width:768px){.mh{padding:128px 48px}.mh-grid{grid-template-columns:1fr 1fr 1fr;max-width:none}}
     </style>
@@ -456,7 +457,7 @@
           <li class="mh-item"><h3 data-i18n="mh_i2_t">Payé en local</h3><p data-i18n="mh_i2_b">L&#39;argent arrive directement sur votre compte, sans intermédiaire.</p></li>
           <li class="mh-item"><h3 data-i18n="mh_i3_t">Pensé pour les îles</h3><p data-i18n="mh_i3_b">Rapide sur mobile, utilisable même quand le réseau faiblit.</p></li>
         </ul>
-        <a href="/solutions/#diagnostic" class="mh-btn" data-i18n="mh_cta">Rejoindre ManaHub →</a>
+        <span class="mh-btn mh-soon" role="note" aria-disabled="true" data-i18n="mh_cta">Bientôt disponible</span>
       </div>
     </section>
 
@@ -742,7 +743,7 @@
           mh_i2_b: "L'argent arrive directement sur votre compte, sans intermédiaire.",
           mh_i3_t: "Pensé pour les îles",
           mh_i3_b: "Rapide sur mobile, utilisable même quand le réseau faiblit.",
-          mh_cta: "Rejoindre ManaHub →",
+          mh_cta: "Bientôt disponible",
           heya_label: "Notre méthode",
           heya_h2_line1: "Quatre principes,",
           heya_h2_line2: "une technologie qui vous appartient vraiment.",
@@ -870,7 +871,7 @@
           mh_i2_b: "Money goes straight to your own account, with no middleman.",
           mh_i3_t: "Built for islands",
           mh_i3_b: "Fast on mobile, usable even when the network is weak.",
-          mh_cta: "Join ManaHub →",
+          mh_cta: "Coming soon",
           heya_label: "Our method",
           heya_h2_line1: "Four principles,",
           heya_h2_line2: "technology you truly own.",
