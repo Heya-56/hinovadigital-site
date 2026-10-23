@@ -13,3 +13,6 @@
 /parcoursgratuit /academie/parcoursgratuit/ 301
 /parcoursgratuit/* /academie/parcoursgratuit/:splat 301
 /guide /guide/ 301
+/lab.html /lab/ 301
+/projets.html /lab/ 301
+/projets-lab.html /lab/ 301
