@@ -12,3 +12,4 @@
 /metiers/* /academie/parcoursmetiers/ 301
 /parcoursgratuit /academie/parcoursgratuit/ 301
 /parcoursgratuit/* /academie/parcoursgratuit/:splat 301
+/guide /guide/ 301
