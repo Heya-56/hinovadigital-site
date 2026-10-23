@@ -121,7 +121,36 @@ async function loadOffres() {
         <a href="/solutions/#diagnostic" class="btn-cyan mt-6">IDENTIFIER MA TRAJECTOIRE</a>
       </article>`;
     }).join("");
+    highlightEtape(g, rs);
   } catch (e) { /* on garde le contenu de secours */ }
+}
+
+/* ---------- Lien depuis le parcours Leapfrogging (?etape=…) ----------
+   Met en avant les offres correspondant à l'étape choisie sur l'accueil.
+   Repère par mots-clés dans Type + Nom (Airtable "Offres Hinova"). */
+const ETAPES = {
+  "creer":   { label: "Créer",    re: /sur.?mesure|cr[ée]ation|soci[ée]t[ée]|grand/i },
+  "etre-vu": { label: "Être vu",  re: /vitrine|site|page|petite/i },
+  "vendre":  { label: "Vendre",   re: /boutique|e-?commerce|pro|business/i },
+  "gerer":   { label: "Gérer",    re: /orchestr|appli|commerce|pme|gestion/i }
+};
+function highlightEtape(g, rs) {
+  const k = new URLSearchParams(location.search).get("etape");
+  const e = ETAPES[k]; if (!e) return;
+  const cards = [...g.children];
+  let hit = 0;
+  cards.forEach((c, i) => {
+    const f = rs[i].fields;
+    if (e.re.test((f.Type || "") + " " + f.Nom)) { c.style.outline = "3px solid #0AB8C4"; c.style.order = -1; hit++; }
+  });
+  if (!hit) return;
+  g.style.display = g.style.display || "";
+  const note = document.createElement("p");
+  note.className = "font-inter text-center mb-8";
+  note.style.color = "#0B2F35";
+  note.innerHTML = `Étape <strong>${esc(e.label)}</strong> : les offres adaptées sont en tête. <a href="/solutions/#toutes" style="color:#1B64C8;text-decoration:underline">Voir toutes les offres</a>`;
+  g.parentNode.insertBefore(note, g);
+  document.getElementById("toutes").scrollIntoView({ behavior: "smooth" });
 }
 
 /* ---------- Page Parcours : Questions + Règles Trajectoire + Offres ----------
