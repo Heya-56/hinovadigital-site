@@ -11,7 +11,9 @@ const API = "https://hinova-site.hinovadigital.workers.dev";
 /* ---------- Utilitaires ---------- */
 
 async function get(path) {
-  const r = await fetch(API + path);
+  const ctl = new AbortController();
+  const tm = setTimeout(() => ctl.abort(), 8000);
+  const r = await fetch(API + path, { signal: ctl.signal }).finally(() => clearTimeout(tm));
   if (!r.ok) throw new Error(r.status);
   return r.json();
 }
@@ -103,6 +105,7 @@ async function loadEcosystem() {
 
 async function loadOffres() {
   const g = document.getElementById("solutions-grid");
+  if (g.dataset.static) { highlightStatic(); return; } /* grille écrite dans la page : on n'écrase pas */
   try {
     const d = await get("/offres");
     const rs = (d.records || [])
@@ -153,6 +156,21 @@ function highlightEtape(g, rs) {
   document.getElementById("toutes").scrollIntoView({ behavior: "smooth" });
 }
 
+function highlightStatic() {
+  const k = new URLSearchParams(location.search).get("etape");
+  const e = ETAPES[k]; if (!e) return;
+  const hits = [...document.querySelectorAll("[data-etapes]")].filter(c => c.dataset.etapes.split(" ").includes(k));
+  if (!hits.length) return;
+  hits.forEach(c => c.classList.add("of-hit"));
+  const g = document.getElementById("solutions-grid");
+  const note = document.createElement("p");
+  note.className = "font-inter text-center mb-6";
+  note.style.color = "#0B2F35";
+  note.innerHTML = `Étape <strong>${esc(e.label)}</strong> : les offres adaptées sont encadrées.`;
+  g.parentNode.insertBefore(note, document.querySelector(".of-cur"));
+  document.getElementById("toutes").scrollIntoView({ behavior: "smooth" });
+}
+
 /* ---------- Page Parcours : Questions + Règles Trajectoire + Offres ----------
    Chaque clic ajoute le Score de sa règle (ID "Q01-2" = question Q01, option 2)
    à l'offre recommandée. L'offre au total le plus haut l'emporte ;
@@ -180,7 +198,8 @@ async function loadParcours() {
     offres = {};
     (o.records || []).forEach(r => { if (r.fields && r.fields.Active === true) offres[r.id] = r.fields; });
   } catch (e) {
-    box.innerHTML = '<p style="color:#4E6A6E">Le moteur de parcours est momentanément indisponible.</p>';
+    box.innerHTML = '<p style="color:#0B2F35">Choisissez directement votre offre ci-dessous, ou laissez-nous vous orienter :</p><div class="flex flex-wrap gap-3 mt-5"><a href="#toutes" class="btn-cyan">Voir les offres et les prix</a><a href="/diagnostic.html" class="font-montserrat font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-lg border">Diagnostic offert</a></div>';
+    const res = document.getElementById("resultat"); if (res) res.hidden = true;
     return;
   }
   if (!questions.length) { box.innerHTML = ""; return; }
