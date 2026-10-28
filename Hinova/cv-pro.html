@@ -121,6 +121,12 @@
             }
         }
 
+        /* Écrans larges : la photo est en portrait, on l'affiche entière au lieu de la recadrer (tête et menton coupés) */
+        @media (min-width: 768px) {
+            .hero-media { background: radial-gradient(ellipse at center, #e4e6e8 0%, #c9cdd1 100%); }
+            .hero-img { object-fit: contain; object-position: center bottom; }
+        }
+
         .hero-title {
             font-family: var(--font-serif);
             font-size: 3rem;
