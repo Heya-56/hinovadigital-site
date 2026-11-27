@@ -3,8 +3,8 @@
 /parcours /solutions/#diagnostic 301
 /parcours/ /solutions/#diagnostic 301
 /parcours/* /solutions/#diagnostic 301
-/lab /lab/index.html 200
-/lab/ /lab/index.html 200
+/lab / 301
+/lab/ / 301
 /module-architecture-cloud.html /academie#module-cloud 301
 /module-architecture-cloud /academie#module-cloud 301
 /metiers/business-augmente /academie/parcoursmetiers/gestionnaire-business/ 301
@@ -13,6 +13,6 @@
 /parcoursgratuit /academie/parcoursgratuit/ 301
 /parcoursgratuit/* /academie/parcoursgratuit/:splat 301
 /guide /guide/ 301
-/lab.html /lab/ 301
-/projets.html /lab/ 301
-/projets-lab.html /lab/ 301
+/lab.html / 301
+/projets.html / 301
+/projets-lab.html / 301
